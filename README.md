@@ -2,7 +2,7 @@
 
 ¡Bienvenido a **Cobblemon Exclusivity Studio**! Una herramienta de desarrollo web diseñada para administradores de servidores de Minecraft con el mod Cobblemon. Su propósito principal es facilitar la creación de Data Packs personalizados para bloquear recetas de crafteo y anular los "drops" (recompensas al derrotar) de más de 600 ítems y Pokémon.
 
-## ✨ Características Principales
+##  Características Principales
 
 *   **100% Client-Side:** Todo el procesamiento y la generación de archivos se realiza en tu navegador. No hay backend, lo que garantiza máxima privacidad y velocidad.
 *   **Base de Datos Completa:** Incluye más de 600 ítems oficiales de Cobblemon (Pokéballs, Medicinas, Gemas, Mentas, Bayas, etc.).
@@ -14,7 +14,7 @@
 *   **Previsualización JSON en Vivo:** Código con resaltado de sintaxis estilo Monokai.
 *   **Copiar Comando /give:** Generadores de comandos de un clic, ideales para configurar recompensas en plugins como BattlePass.
 
-## 🚀 Cómo usarlo
+##  Cómo usarlo
 
 1.  Abre el archivo `index.html` en cualquier navegador web moderno.
 2.  Usa el buscador o los filtros de categoría para encontrar el ítem que quieres modificar.
@@ -24,14 +24,14 @@
     *   **Incluir en Pack:** Marca el ítem para la descarga masiva final.
 4.  Haz clic en "Descargar JSON" individual si solo ocupas un archivo, o arma tu Data Pack y cliquea **"Generar Pack Completo"** en la barra superior.
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 *   **HTML5 & JS Vanilla:** Rendimiento ultra rápido sin frameworks pesados.
 *   **Tailwind CSS (CDN):** Sistema de diseño responsivo de utilidad y paleta oscura inmersiva de la marca Cobblemon.
 *   **JSZip (CDN):** Empaquetado de Data Packs en ZIP del lado del cliente.
 *   **Lucide Icons (CDN):** Iconografía minimalista en formato SVG.
 
-## 🤝 Contribuciones y Problemas
+##  Contribuciones y Problemas
 Si encuentras algún problema técnico con formatos de archivos JSON cambiados en nuevas versiones de Cobblemon, puedes modificar las plantillas `buildRecipeJSON` o `buildDropOverrideJSON` fácilmente en la sección `<script>` de `index.html`.
 
 Desarrollado con Excelencia de Ingeniería Naval. ⚓
