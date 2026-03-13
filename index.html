@@ -1222,16 +1222,6 @@ function getItemVisual(item, size = 32) {
       style="object-fit:contain; image-rendering:pixelated;"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
     /><span style="font-size:${Math.round(size * 0.65)}px; line-height:1; display:none;" title="${item.name}">${item.emoji}</span>`;
-}  const src = `${ASSETS_PATH}${filename}`;
-  return `
-    <img
-      src="${src}"
-      alt="${item.name}"
-      width="${size}" height="${size}"
-      style="object-fit:contain; image-rendering:pixelated;"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
-    /><span style="font-size:${Math.round(size * 0.65)}px; line-height:1; display:none;">${item.emoji}</span>`;
-}
 
 
 // ==========================================
