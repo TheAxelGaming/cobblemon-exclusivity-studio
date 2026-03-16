@@ -1,0 +1,827 @@
+# ============================================
+#  CobblePass FREE - Pase Gratuito
+#  100 Niveles - Recompensas cada 5 niveles
+#  Ciclo de IDs: 1 -> 2 -> 6 -> 4 (repetir)
+#  Iconos DINAMICOS por nivel
+# ============================================
+
+name: 'Free'
+default-points-required: 100
+
+items:
+  doesnt-have-pass-item:
+    material: 'GRAY_STAINED_GLASS_PANE'
+    name: ' '
+  locked-tier-item:
+    material: 'GRAY_STAINED_GLASS_PANE'
+    name: ' '
+  unlocked-tier-item:
+    material: 'GRAY_STAINED_GLASS_PANE'
+    name: ' '
+  claimed-tier-item:
+    material: 'GRAY_STAINED_GLASS_PANE'
+    name: ' '
+
+tier-up-actions:
+  - '[message] {&7Has alcanzado el &etier %tier% &7del &aPase Gratuito&7!}'
+
+tiers:
+  # =============================================
+  #  NIVELES 1-10 | 100 puntos por nivel
+  # =============================================
+  '1':
+    required-points: 100
+  '2':
+    required-points: 100
+  '3':
+    required-points: 100
+  '4':
+    required-points: 100
+  '5':
+    rewards: ['1']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '6':
+    required-points: 100
+  '7':
+    required-points: 100
+  '8':
+    required-points: 100
+  '9':
+    required-points: 100
+  '10':
+    rewards: ['2']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 11-20 | 150 puntos por nivel
+  # =============================================
+  '11':
+    required-points: 150
+  '12':
+    required-points: 150
+  '13':
+    required-points: 150
+  '14':
+    required-points: 150
+  '15':
+    rewards: ['6']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '16':
+    required-points: 150
+  '17':
+    required-points: 150
+  '18':
+    required-points: 150
+  '19':
+    required-points: 150
+  '20':
+    rewards: ['4']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 21-30 | 200 puntos por nivel
+  # =============================================
+  '21':
+    required-points: 200
+  '22':
+    required-points: 200
+  '23':
+    required-points: 200
+  '24':
+    required-points: 200
+  '25':
+    rewards: ['1']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '26':
+    required-points: 200
+  '27':
+    required-points: 200
+  '28':
+    required-points: 200
+  '29':
+    required-points: 200
+  '30':
+    rewards: ['2']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 31-40 | 250 puntos por nivel
+  # =============================================
+  '31':
+    required-points: 250
+  '32':
+    required-points: 250
+  '33':
+    required-points: 250
+  '34':
+    required-points: 250
+  '35':
+    rewards: ['6']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '36':
+    required-points: 250
+  '37':
+    required-points: 250
+  '38':
+    required-points: 250
+  '39':
+    required-points: 250
+  '40':
+    rewards: ['4']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 41-50 | 350 puntos por nivel
+  # =============================================
+  '41':
+    required-points: 350
+  '42':
+    required-points: 350
+  '43':
+    required-points: 350
+  '44':
+    required-points: 350
+  '45':
+    rewards: ['1']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '46':
+    required-points: 350
+  '47':
+    required-points: 350
+  '48':
+    required-points: 350
+  '49':
+    required-points: 350
+  '50':
+    rewards: ['2']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 51-60 | 450 puntos por nivel
+  # =============================================
+  '51':
+    required-points: 450
+  '52':
+    required-points: 450
+  '53':
+    required-points: 450
+  '54':
+    required-points: 450
+  '55':
+    rewards: ['6']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '56':
+    required-points: 450
+  '57':
+    required-points: 450
+  '58':
+    required-points: 450
+  '59':
+    required-points: 450
+  '60':
+    rewards: ['4']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 61-70 | 550 puntos por nivel
+  # =============================================
+  '61':
+    required-points: 550
+  '62':
+    required-points: 550
+  '63':
+    required-points: 550
+  '64':
+    required-points: 550
+  '65':
+    rewards: ['1']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '66':
+    required-points: 550
+  '67':
+    required-points: 550
+  '68':
+    required-points: 550
+  '69':
+    required-points: 550
+  '70':
+    rewards: ['2']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 71-80 | 700 puntos por nivel
+  # =============================================
+  '71':
+    required-points: 700
+  '72':
+    required-points: 700
+  '73':
+    required-points: 700
+  '74':
+    required-points: 700
+  '75':
+    rewards: ['6']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '76':
+    required-points: 700
+  '77':
+    required-points: 700
+  '78':
+    required-points: 700
+  '79':
+    required-points: 700
+  '80':
+    rewards: ['4']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 81-90 | 850 puntos por nivel
+  # =============================================
+  '81':
+    required-points: 850
+  '82':
+    required-points: 850
+  '83':
+    required-points: 850
+  '84':
+    required-points: 850
+  '85':
+    rewards: ['1']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '86':
+    required-points: 850
+  '87':
+    required-points: 850
+  '88':
+    required-points: 850
+  '89':
+    required-points: 850
+  '90':
+    rewards: ['2']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+
+  # =============================================
+  #  NIVELES 91-100 | 1000 puntos por nivel
+  # =============================================
+  '91':
+    required-points: 1000
+  '92':
+    required-points: 1000
+  '93':
+    required-points: 1000
+  '94':
+    required-points: 1000
+  '95':
+    rewards: ['6']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'
+  '96':
+    required-points: 1000
+  '97':
+    required-points: 1000
+  '98':
+    required-points: 1000
+  '99':
+    required-points: 1000
+  '100':
+    rewards: ['4']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&eTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &cBloqueado'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aDesbloqueado'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+      name: '&aTier %tier%'
+      lore:
+        - ''
+        - '&7Recompensas:'
+        - '%lore_addon%'
+        - ''
+        - '&7Estado: &aReclamado'

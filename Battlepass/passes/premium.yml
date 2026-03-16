@@ -1,0 +1,994 @@
+# ============================================
+#  CobblePass PREMIUM - Pase Premium
+#  100 Niveles - Icono dinamico por recompensa
+#  Iconos: Arclight Cobblemon IDs
+# ============================================
+
+name: 'Premium'
+default-points-required: 100
+required-permission: ''
+
+items:
+  doesnt-have-pass-item:
+    material: 'COBBLEMON_POKE_BALL'
+    name: '&eTier %tier%'
+    lore:
+      - ''
+      - '&7Recompensas:'
+      - '%lore_addon%'
+      - ''
+      - '&7Estado: &eNo Elegible'
+      - '&cCompra el CobblePass Premium para'
+      - '&cdesbloquear estas recompensas.'
+  locked-tier-item:
+    material: 'COBBLEMON_POKE_BALL'
+    name: '&eTier %tier%'
+    lore:
+      - ''
+      - '&7Recompensas:'
+      - '%lore_addon%'
+      - ''
+      - '&7Estado: &cBloqueado'
+  unlocked-tier-item:
+    material: 'COBBLEMON_POKE_BALL'
+    name: '&aTier %tier%'
+    lore:
+      - ''
+      - '&7Recompensas:'
+      - '%lore_addon%'
+      - ''
+      - '&7Estado: &aDesbloqueado'
+  claimed-tier-item:
+    material: 'COBBLEMON_POKE_BALL'
+    name: '&aTier %tier%'
+    lore:
+      - ''
+      - '&7Recompensas:'
+      - '%lore_addon%'
+      - ''
+      - '&7Estado: &aReclamado'
+
+tier-up-actions:
+  - '[message] {&7Has alcanzado el &etier %tier% &7del &6&lCobblePass Premium&7!}'
+
+tiers:
+  # =============================================
+  #  NIVELES 1-10 | 100 puntos
+  # =============================================
+  '1':
+    rewards: ['1']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+  '2':
+    rewards: ['6']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+  '3':
+    rewards: ['2']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '4':
+    rewards: ['7']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '5':
+    rewards: ['1']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+  '6':
+    rewards: ['6']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+  '7':
+    rewards: ['2']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '8':
+    rewards: ['7']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '9':
+    rewards: ['1']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+  '10':
+    rewards: ['8']
+    required-points: 100
+    locked-tier-item:
+      material: 'COBBLEMON_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_REVIVE'
+
+  # =============================================
+  #  NIVELES 11-20 | 150 puntos
+  # =============================================
+  '11':
+    rewards: ['2']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '12':
+    rewards: ['6']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+  '13':
+    rewards: ['1']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+  '14':
+    rewards: ['7']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '15':
+    rewards: ['3']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '16':
+    rewards: ['2']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '17':
+    rewards: ['10']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '18':
+    rewards: ['6']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+  '19':
+    rewards: ['7']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '20':
+    rewards: ['9']
+    required-points: 150
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+
+  # =============================================
+  #  NIVELES 21-30 | 200 puntos
+  # =============================================
+  '21':
+    rewards: ['1']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_POKE_BALL'
+  '22':
+    rewards: ['10']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '23':
+    rewards: ['2']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '24':
+    rewards: ['11']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '25':
+    rewards: ['3']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '26':
+    rewards: ['7']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '27':
+    rewards: ['4']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '28':
+    rewards: ['6']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+  '29':
+    rewards: ['2']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '30':
+    rewards: ['8', '5']
+    required-points: 200
+    locked-tier-item:
+      material: 'COBBLEMON_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_REVIVE'
+
+  # =============================================
+  #  NIVELES 31-40 | 250 puntos
+  # =============================================
+  '31':
+    rewards: ['3']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '32':
+    rewards: ['11']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '33':
+    rewards: ['7']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '34':
+    rewards: ['10']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '35':
+    rewards: ['4']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '36':
+    rewards: ['2']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_GREAT_BALL'
+  '37':
+    rewards: ['12']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '38':
+    rewards: ['6']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_POTION'
+  '39':
+    rewards: ['3']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '40':
+    rewards: ['9', '12']
+    required-points: 250
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+
+  # =============================================
+  #  NIVELES 41-50 | 350 puntos
+  # =============================================
+  '41':
+    rewards: ['10']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '42':
+    rewards: ['3']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '43':
+    rewards: ['11']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '44':
+    rewards: ['7']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '45':
+    rewards: ['5']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '46':
+    rewards: ['4']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '47':
+    rewards: ['12']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '48':
+    rewards: ['3']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '49':
+    rewards: ['14']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    unlocked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    claimed-tier-item:
+      material: 'COBBLEMON_PP_UP'
+  '50':
+    rewards: ['13', '9']
+    required-points: 350
+    locked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    claimed-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+
+  # =============================================
+  #  NIVELES 51-60 | 450 puntos
+  # =============================================
+  '51':
+    rewards: ['3']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '52':
+    rewards: ['11']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '53':
+    rewards: ['12']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '54':
+    rewards: ['10']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '55':
+    rewards: ['5']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '56':
+    rewards: ['4']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '57':
+    rewards: ['7']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    unlocked-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+    claimed-tier-item:
+      material: 'COBBLEMON_SUPER_POTION'
+  '58':
+    rewards: ['14']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    unlocked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    claimed-tier-item:
+      material: 'COBBLEMON_PP_UP'
+  '59':
+    rewards: ['3']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '60':
+    rewards: ['8', '13']
+    required-points: 450
+    locked-tier-item:
+      material: 'COBBLEMON_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_REVIVE'
+
+  # =============================================
+  #  NIVELES 61-70 | 550 puntos
+  # =============================================
+  '61':
+    rewards: ['11']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '62':
+    rewards: ['3']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '63':
+    rewards: ['12']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '64':
+    rewards: ['10']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '65':
+    rewards: ['5']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '66':
+    rewards: ['14']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    unlocked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    claimed-tier-item:
+      material: 'COBBLEMON_PP_UP'
+  '67':
+    rewards: ['4']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '68':
+    rewards: ['9']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+  '69':
+    rewards: ['3']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '70':
+    rewards: ['13', '12']
+    required-points: 550
+    locked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    claimed-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+
+  # =============================================
+  #  NIVELES 71-80 | 700 puntos
+  # =============================================
+  '71':
+    rewards: ['3']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '72':
+    rewards: ['12']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '73':
+    rewards: ['11']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '74':
+    rewards: ['5']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '75':
+    rewards: ['14']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    unlocked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    claimed-tier-item:
+      material: 'COBBLEMON_PP_UP'
+  '76':
+    rewards: ['10']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '77':
+    rewards: ['9']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+  '78':
+    rewards: ['4']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '79':
+    rewards: ['3']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '80':
+    rewards: ['13', '8']
+    required-points: 700
+    locked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    claimed-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+
+  # =============================================
+  #  NIVELES 81-90 | 850 puntos
+  # =============================================
+  '81':
+    rewards: ['12']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '82':
+    rewards: ['3']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '83':
+    rewards: ['14']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    unlocked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    claimed-tier-item:
+      material: 'COBBLEMON_PP_UP'
+  '84':
+    rewards: ['11']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '85':
+    rewards: ['5']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '86':
+    rewards: ['9']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+  '87':
+    rewards: ['10']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '88':
+    rewards: ['13']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+    claimed-tier-item:
+      material: 'COBBLEMON_ABILITY_CAPSULE'
+  '89':
+    rewards: ['4']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '90':
+    rewards: ['9', '14', '12']
+    required-points: 850
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+
+  # =============================================
+  #  NIVELES 91-100 | 1000 puntos
+  #  MASTER BALL en nivel 100
+  # =============================================
+  '91':
+    rewards: ['3']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_ULTRA_BALL'
+  '92':
+    rewards: ['12']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '93':
+    rewards: ['14']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    unlocked-tier-item:
+      material: 'COBBLEMON_PP_UP'
+    claimed-tier-item:
+      material: 'COBBLEMON_PP_UP'
+  '94':
+    rewards: ['9']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+  '95':
+    rewards: ['5', '13']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    unlocked-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+    claimed-tier-item:
+      material: 'COBBLEMON_RARE_CANDY'
+  '96':
+    rewards: ['11']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_DUSK_BALL'
+  '97':
+    rewards: ['10']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_TIMER_BALL'
+  '98':
+    rewards: ['12']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    unlocked-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+    claimed-tier-item:
+      material: 'COBBLEMON_EXP_CANDY_L'
+  '99':
+    rewards: ['9', '14']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+    claimed-tier-item:
+      material: 'COBBLEMON_MAX_REVIVE'
+  '100':
+    rewards: ['15']
+    required-points: 1000
+    locked-tier-item:
+      material: 'COBBLEMON_MASTER_BALL'
+    unlocked-tier-item:
+      material: 'COBBLEMON_MASTER_BALL'
+    claimed-tier-item:
+      material: 'COBBLEMON_MASTER_BALL'

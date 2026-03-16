@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
   <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/battlepass.css">
   <style>
 /* ================================================================
    styles.css — Estilos de Cobblemon Exclusivity Studio
@@ -66,7 +67,7 @@ html, body {
 }
 
 /* ── Panel izquierdo (Explorer) ──────────────────────────────── */
-#panel-left {
+.panel-left {
   width: 280px;
   min-width: 220px;
   flex-shrink: 0;
@@ -78,7 +79,7 @@ html, body {
 }
 
 /* ── Panel central (Configurator) ────────────────────────────── */
-#panel-center {
+.panel-center {
   flex: 1;
   background: #0F1117;
   overflow-y: auto;
@@ -86,7 +87,7 @@ html, body {
 }
 
 /* ── Panel derecho (JSON Preview) ────────────────────────────── */
-#panel-right {
+.panel-right {
   width: 340px;
   min-width: 260px;
   flex-shrink: 0;
@@ -297,8 +298,16 @@ html, body {
         <div class="brand-sub">Data Pack Generator — Fabric 1.21</div>
       </div>
     </div>
+    <div style="display:flex;gap:5px;background:#0F1117;padding:4px;border-radius:10px;border:1px solid #2A3347;margin:0 20px;">
+      <button id="tab-exclusivity" class="active" style="padding:6px 16px;border-radius:8px;border:none;background:#2A3347;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">Exclusivity</button>
+      <button id="tab-battlepass" style="padding:6px 16px;border-radius:8px;border:none;background:transparent;color:#6B7FA3;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">BattlePass</button>
+    </div>
     <div style="display:flex;align-items:center;gap:10px;">
       <span class="badge badge-blue" id="sel-count-badge">0 en el Pack</span>
+            <button class="btn-yellow" id="btn-export-bp-zip" style="background:#4CAF50;border-color:#388E3C;margin-right:10px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Pack ZIP (Complete)
+      </button>
       <button class="btn-yellow" id="btn-gen-pack" aria-label="Generar Pack Completo como ZIP">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -313,9 +322,11 @@ html, body {
 
   <!-- 3-PANEL LAYOUT -->
   <div id="panels">
+    <!-- EXCLUSIVITY VIEW -->
+    <div id="exclusivity-view" style="display:flex; flex:1; overflow:hidden;">
 
     <!-- ══════ LEFT: EXPLORER ══════ -->
-    <aside id="panel-left">
+    <aside id="panel-left" class="panel-left">
 
       <!-- Búsqueda -->
       <div style="padding:12px 12px 8px;">
@@ -373,7 +384,7 @@ html, body {
     </aside>
 
     <!-- ══════ CENTER: CONFIGURATOR ══════ -->
-    <main id="panel-center">
+    <main id="panel-center" class="panel-center">
 
       <!-- Estado vacío -->
       <div id="no-selection">
@@ -526,7 +537,7 @@ html, body {
     </main>
 
     <!-- ══════ RIGHT: JSON PREVIEW ══════ -->
-    <aside id="panel-right">
+    <aside id="panel-right" class="panel-right">
 
       <!-- Header del preview -->
       <div style="padding:12px 14px;border-bottom:1px solid #2A3347;
@@ -560,6 +571,37 @@ html, body {
 // ✦ Fabric 1.21 — fabric:load_conditions</span></div>
 
     </aside>
+  </div><!-- /exclusivity-view -->
+
+    <!-- BATTLEPASS VIEW -->
+    <div id="battlepass-view" style="display:none; flex:1; overflow:hidden;">
+      <aside id="bp-panel-left" class="panel-left" style="width:300px;">
+        <div style="padding:15px; border-bottom:1px solid #2A3347; display:flex; gap:10px;">
+          <button class="cat-pill active" id="bp-tab-tiers" style="flex:1;">Tiers / Levels</button>
+          <button class="cat-pill" id="bp-tab-quests" style="flex:1;">Quests</button>
+        </div>
+        <div id="bp-list" style="flex:1; overflow-y:auto; padding:10px;"></div>
+      </aside>
+      <main id="bp-panel-center" class="panel-center" style="display:flex; flex-direction:column;">
+        <div id="bp-editor-content" style="flex:1; padding:20px; overflow-y:auto;"></div>
+      </main>
+      <aside id="bp-panel-right" class="panel-right" style="width:340px;">
+        <div style="padding:15px; border-bottom:1px solid #2A3347; font-weight:700; color:#fff;">YAML Preview</div>
+        <div style="padding:10px; display:flex; gap:5px; background:#161B27;">
+          <button class="btn-primary" id="btn-export-premium" style="flex:1; font-size:10px;">Export Premium</button>
+          <button class="btn-primary" id="btn-export-free" style="flex:1; font-size:10px; background:#4A90D9;">Export Free</button>
+        </div>
+        <div style="padding:10px; display:flex; gap:5px; background:#161B27; border-top:1px solid #2A3347;">
+          <button class="btn-primary" id="btn-export-daily" style="flex:1; font-size:10px; background:#F5C518; color:#000;">Export Daily</button>
+          <button class="btn-primary" id="btn-export-weekly" style="flex:1; font-size:10px; background:#A6E22E; color:#000;">Export Weekly</button>
+        </div>
+        <div id="bp-yaml-preview" class="json-preview" style="flex:1;">El YAML aparecerá aquí...</div>
+        <div style="padding:10px; border-top:1px solid #2A3347;">
+          <div id="bp-preview-filename" style="font-size:11px; color:#6B7FA3; margin-bottom:8px;">—</div>
+          <button class="btn-ghost" id="bp-btn-copy-yaml" style="width:100%;">Copiar YAML</button>
+        </div>
+      </aside>
+    </div><!-- /battlepass-view -->
   </div><!-- /panels -->
 </div><!-- /app -->
 
@@ -568,1124 +610,21 @@ html, body {
      ═══════════════════════════════════════════════════════════ -->
 <!-- CDN: JSZip y Lucide Icons -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-<script>
-// ==========================================
-// CONFIGURACIÓN GLOBAL
-// ==========================================
-/**
- * config.js — Constantes globales de la aplicación
- * Cobblemon Exclusivity Studio
- */
+<!-- Core App Modules -->
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/generator.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+<!-- BattlePass Modules -->
+<script src="js/battlepass/TierManager.js"></script>
+<script src="js/battlepass/QuestManager.js"></script>
+<script src="js/battlepass/materials.js"></script>
+<script src="js/battlepass/ui.js"></script>
 
-const PACK_FORMAT   = 15;          // pack_format para Minecraft 1.21.x
-const PACK_ZIP_NAME = 'cobblemon_exclusivity_pack.zip';
-const NAMESPACE     = 'cobblemon';
-const ASSETS_PATH   = './assets/items/';
-
-
-// ==========================================
-// DATA: Ítems y Categorías
-// ==========================================
-/**
- * data.js — Base de datos generada automáticamente
- * Incluye todos los ítems válidos extraídos del mod Cobblemon.
- */
-
-const ITEMS = [
-  { id: 'ability_capsule', name: 'Ability Capsule', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ability_patch', name: 'Ability Patch', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ability_shield', name: 'Ability Shield', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'absorb_bulb', name: 'Absorb Bulb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'adamant_mint', name: 'Adamant Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'aguav_berry', name: 'Aguav Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'air_balloon', name: 'Air Balloon', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'amulet_coin', name: 'Amulet Coin', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'antidote', name: 'Antidote', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'apicot_berry', name: 'Apicot Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'apricorn_boat', name: 'Apricorn Boat', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'apricorn_chest_boat', name: 'Apricorn Chest Boat', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'apricorn_door', name: 'Apricorn Door', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'apricorn_hanging_sign', name: 'Apricorn Hanging Sign', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'apricorn_sign', name: 'Apricorn Sign', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_black', name: 'Aprijuice Black', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_blue', name: 'Aprijuice Blue', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_green', name: 'Aprijuice Green', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_pink', name: 'Aprijuice Pink', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_red', name: 'Aprijuice Red', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_white', name: 'Aprijuice White', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'aprijuice_yellow', name: 'Aprijuice Yellow', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'armor_fossil', name: 'Armor Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'aspear_berry', name: 'Aspear Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'assault_vest', name: 'Assault Vest', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'auspicious_armor', name: 'Auspicious Armor', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'automaton_armor_trim_smithing_template', name: 'Automaton Armor Trim Smithing Template', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'awakening', name: 'Awakening', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'azure_ball', name: 'Azure Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'azure_rod', name: 'Azure Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'azure_rod_cast', name: 'Azure Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'babiri_berry', name: 'Babiri Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'beast_ball', name: 'Beast Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'beast_rod', name: 'Beast Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'beast_rod_cast', name: 'Beast Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'belue_berry', name: 'Belue Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'berry_juice', name: 'Berry Juice', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'berry_sweet', name: 'Berry Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'big_malasada', name: 'Big Malasada', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'big_root', name: 'Big Root', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'binding_band', name: 'Binding Band', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'black_apricorn', name: 'Black Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'black_apricorn_seed', name: 'Black Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'black_augurite', name: 'Black Augurite', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'black_belt', name: 'Black Belt', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'black_glasses', name: 'Black Glasses', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'black_sludge', name: 'Black Sludge', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'black_tumblestone', name: 'Black Tumblestone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'blue_apricorn', name: 'Blue Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'blue_apricorn_seed', name: 'Blue Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'blue_mint_leaf', name: 'Blue Mint Leaf', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'blue_mint_seeds', name: 'Blue Mint Seeds', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'bluk_berry', name: 'Bluk Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'blunder_policy', name: 'Blunder Policy', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'bobber_hook', name: 'Bobber Hook', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'bold_mint', name: 'Bold Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'brave_mint', name: 'Brave Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'bright_powder', name: 'Bright Powder', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'brittle_candy', name: 'Brittle Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'bug_gem', name: 'Bug Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'bugwort', name: 'Bugwort', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'burn_heal', name: 'Burn Heal', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'bygone_sherd', name: 'Bygone Sherd', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'calcium', name: 'Calcium', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'calm_mint', name: 'Calm Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_black', name: 'Campfire Pot Black', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_black_open', name: 'Campfire Pot Black Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_blue', name: 'Campfire Pot Blue', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_blue_open', name: 'Campfire Pot Blue Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_green', name: 'Campfire Pot Green', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_green_open', name: 'Campfire Pot Green Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_pink', name: 'Campfire Pot Pink', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_pink_open', name: 'Campfire Pot Pink Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_red', name: 'Campfire Pot Red', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_red_open', name: 'Campfire Pot Red Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_white', name: 'Campfire Pot White', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_white_open', name: 'Campfire Pot White Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_yellow', name: 'Campfire Pot Yellow', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'campfire_pot_yellow_open', name: 'Campfire Pot Yellow Open', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'candied_apple', name: 'Candied Apple', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'candied_berry', name: 'Candied Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'capture_sherd', name: 'Capture Sherd', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'carbos', name: 'Carbos', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'careful_mint', name: 'Careful Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'casteliacone', name: 'Casteliacone', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'cell_battery', name: 'Cell Battery', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'charcoal', name: 'Charcoal', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'charcoal_stick', name: 'Charcoal Stick', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'charti_berry', name: 'Charti Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'cheri_berry', name: 'Cheri Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'cherish_ball', name: 'Cherish Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'cherish_rod', name: 'Cherish Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'cherish_rod_cast', name: 'Cherish Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'chesto_berry', name: 'Chesto Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'chilan_berry', name: 'Chilan Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'chipped_pot', name: 'Chipped Pot', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'choice_band', name: 'Choice Band', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'choice_scarf', name: 'Choice Scarf', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'choice_specs', name: 'Choice Specs', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'chople_berry', name: 'Chople Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'citrine_ball', name: 'Citrine Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'citrine_rod', name: 'Citrine Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'citrine_rod_cast', name: 'Citrine Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'claw_fossil', name: 'Claw Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'cleanse_tag', name: 'Cleanse Tag', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'clear_amulet', name: 'Clear Amulet', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'clever_feather', name: 'Clever Feather', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'clever_mochi', name: 'Clever Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'clover_sweet', name: 'Clover Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'coarse_mulch', name: 'Coarse Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'coba_berry', name: 'Coba Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'cobblemon_logo', name: 'Cobblemon Logo', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'cobblemon_logo_blue', name: 'Cobblemon Logo Blue', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'cobblemon_logo_green', name: 'Cobblemon Logo Green', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'cobblemon_logo_purple', name: 'Cobblemon Logo Purple', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'cobblemon_logo_yellow', name: 'Cobblemon Logo Yellow', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'colbur_berry', name: 'Colbur Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'cornn_berry', name: 'Cornn Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'courage_candy', name: 'Courage Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'cover_fossil', name: 'Cover Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'covert_cloak', name: 'Covert Cloak', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'coward_candy', name: 'Coward Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'cracked_pot', name: 'Cracked Pot', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'custap_berry', name: 'Custap Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'cyan_mint_leaf', name: 'Cyan Mint Leaf', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'cyan_mint_seeds', name: 'Cyan Mint Seeds', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'damp_rock', name: 'Damp Rock', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dark_gem', name: 'Dark Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'dawn_stone', name: 'Dawn Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'deep_sea_scale', name: 'Deep Sea Scale', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'deep_sea_tooth', name: 'Deep Sea Tooth', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'destiny_knot', name: 'Destiny Knot', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dire_hit', name: 'Dire Hit', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dive_ball', name: 'Dive Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'dive_rod', name: 'Dive Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dive_rod_cast', name: 'Dive Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dome_fossil', name: 'Dome Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'dome_sherd', name: 'Dome Sherd', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dragon_fang', name: 'Dragon Fang', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dragon_gem', name: 'Dragon Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'dragon_scale', name: 'Dragon Scale', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dream_ball', name: 'Dream Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'dream_rod', name: 'Dream Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dream_rod_cast', name: 'Dream Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dubious_disc', name: 'Dubious Disc', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'durin_berry', name: 'Durin Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'dusk_ball', name: 'Dusk Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'dusk_rod', name: 'Dusk Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dusk_rod_cast', name: 'Dusk Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'dusk_stone', name: 'Dusk Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'eggant_berry', name: 'Eggant Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'eject_button', name: 'Eject Button', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'eject_pack', name: 'Eject Pack', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'electirizer', name: 'Electirizer', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'electric_gem', name: 'Electric Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'electric_seed', name: 'Electric Seed', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'elixir', name: 'Elixir', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'empty_slot_fishing_rod', name: 'Empty Slot Fishing Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'empty_slot_pokeball', name: 'Empty Slot Pokeball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'energy_root', name: 'Energy Root', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'enigma_berry', name: 'Enigma Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'ether', name: 'Ether', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'everstone', name: 'Everstone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'eviolite', name: 'Eviolite', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'exp_candy_l', name: 'Exp Candy L', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'exp_candy_m', name: 'Exp Candy M', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'exp_candy_s', name: 'Exp Candy S', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'exp_candy_xl', name: 'Exp Candy Xl', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'exp_candy_xs', name: 'Exp Candy Xs', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'exp_share', name: 'Exp Share', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'expert_belt', name: 'Expert Belt', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'fairy_feather', name: 'Fairy Feather', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'fairy_gem', name: 'Fairy Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'fast_ball', name: 'Fast Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'fast_rod', name: 'Fast Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'fast_rod_cast', name: 'Fast Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'fighting_gem', name: 'Fighting Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'figy_berry', name: 'Figy Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'fine_remedy', name: 'Fine Remedy', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'fire_gem', name: 'Fire Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'fire_stone', name: 'Fire Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'flame_orb', name: 'Flame Orb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'float_stone', name: 'Float Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'flower_sweet', name: 'Flower Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'flying_gem', name: 'Flying Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'focus_band', name: 'Focus Band', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'focus_sash', name: 'Focus Sash', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'fossilized_bird', name: 'Fossilized Bird', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'fossilized_dino', name: 'Fossilized Dino', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'fossilized_drake', name: 'Fossilized Drake', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'fossilized_fish', name: 'Fossilized Fish', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'fresh_start_mochi', name: 'Fresh Start Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'friend_ball', name: 'Friend Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'friend_rod', name: 'Friend Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'friend_rod_cast', name: 'Friend Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'full_heal', name: 'Full Heal', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'full_restore', name: 'Full Restore', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'galarica_cuff', name: 'Galarica Cuff', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'galarica_nuts', name: 'Galarica Nuts', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'galarica_wreath', name: 'Galarica Wreath', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ganlon_berry', name: 'Ganlon Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'genius_feather', name: 'Genius Feather', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'genius_mochi', name: 'Genius Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'gentle_mint', name: 'Gentle Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'ghost_gem', name: 'Ghost Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'grass_gem', name: 'Grass Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'grassy_seed', name: 'Grassy Seed', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'great_ball', name: 'Great Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'great_rod', name: 'Great Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'great_rod_cast', name: 'Great Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'green_apricorn', name: 'Green Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'green_apricorn_seed', name: 'Green Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'green_mint_leaf', name: 'Green Mint Leaf', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'green_mint_seeds', name: 'Green Mint Seeds', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'grepa_berry', name: 'Grepa Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'grip_claw', name: 'Grip Claw', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ground_gem', name: 'Ground Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'growth_mulch', name: 'Growth Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'guard_spec', name: 'Guard Spec', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'haban_berry', name: 'Haban Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'hard_stone', name: 'Hard Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'hasty_mint', name: 'Hasty Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'heal_ball', name: 'Heal Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'heal_powder', name: 'Heal Powder', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'heal_rod', name: 'Heal Rod', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'heal_rod_cast', name: 'Heal Rod Cast', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'health_candy', name: 'Health Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'health_feather', name: 'Health Feather', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'health_mochi', name: 'Health Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'hearty_grains', name: 'Hearty Grains', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'heat_rock', name: 'Heat Rock', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'heavy_ball', name: 'Heavy Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'heavy_duty_boots', name: 'Heavy Duty Boots', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'heavy_rod', name: 'Heavy Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'heavy_rod_cast', name: 'Heavy Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'helix_fossil', name: 'Helix Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'helix_sherd', name: 'Helix Sherd', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'hondew_berry', name: 'Hondew Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'hopo_berry', name: 'Hopo Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'hp_up', name: 'Hp Up', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'humid_mulch', name: 'Humid Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'hyper_potion', name: 'Hyper Potion', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'iapapa_berry', name: 'Iapapa Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'ice_gem', name: 'Ice Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'ice_heal', name: 'Ice Heal', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'ice_stone', name: 'Ice Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'icy_rock', name: 'Icy Rock', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'impish_mint', name: 'Impish Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'iron', name: 'Iron', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'iron_ball', name: 'Iron Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'jaboca_berry', name: 'Jaboca Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'jaw_fossil', name: 'Jaw Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'jolly_mint', name: 'Jolly Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'jubilife_muffin', name: 'Jubilife Muffin', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'kasib_berry', name: 'Kasib Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'kebia_berry', name: 'Kebia Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'kee_berry', name: 'Kee Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'kelpsy_berry', name: 'Kelpsy Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'kings_rock', name: 'Kings Rock', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lagging_tail', name: 'Lagging Tail', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lansat_berry', name: 'Lansat Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'lava_cookie', name: 'Lava Cookie', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lax_mint', name: 'Lax Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'leaf_stone', name: 'Leaf Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'leek_and_potato_stew', name: 'Leek And Potato Stew', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'leftovers', name: 'Leftovers', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'leppa_berry', name: 'Leppa Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'level_ball', name: 'Level Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'level_rod', name: 'Level Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'level_rod_cast', name: 'Level Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'liechi_berry', name: 'Liechi Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'life_orb', name: 'Life Orb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'light_ball', name: 'Light Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'light_clay', name: 'Light Clay', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'link_cable', name: 'Link Cable', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'loaded_dice', name: 'Loaded Dice', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'loamy_mulch', name: 'Loamy Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'lonely_mint', name: 'Lonely Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'love_ball', name: 'Love Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'love_rod', name: 'Love Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'love_rod_cast', name: 'Love Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'love_sweet', name: 'Love Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'lucky_egg', name: 'Lucky Egg', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lum_berry', name: 'Lum Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'luminous_moss', name: 'Luminous Moss', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lumiose_galette', name: 'Lumiose Galette', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lure_ball', name: 'Lure Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'lure_rod', name: 'Lure Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'lure_rod_cast', name: 'Lure Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'luxury_ball', name: 'Luxury Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'luxury_rod', name: 'Luxury Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'luxury_rod_cast', name: 'Luxury Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'magmarizer', name: 'Magmarizer', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'magnet', name: 'Magnet', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'mago_berry', name: 'Mago Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'magost_berry', name: 'Magost Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'malicious_armor', name: 'Malicious Armor', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'maranga_berry', name: 'Maranga Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'master_ball', name: 'Master Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'master_rod', name: 'Master Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'master_rod_cast', name: 'Master Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'masterpiece_teacup', name: 'Masterpiece Teacup', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'max_elixir', name: 'Max Elixir', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'max_ether', name: 'Max Ether', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'max_potion', name: 'Max Potion', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'max_revive', name: 'Max Revive', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'medicinal_brew', name: 'Medicinal Brew', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'medicinal_leek', name: 'Medicinal Leek', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'mental_herb', name: 'Mental Herb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'metal_alloy', name: 'Metal Alloy', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'metal_coat', name: 'Metal Coat', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'metal_powder', name: 'Metal Powder', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'metronome', name: 'Metronome', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'micle_berry', name: 'Micle Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'mighty_candy', name: 'Mighty Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'mild_mint', name: 'Mild Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'miracle_seed', name: 'Miracle Seed', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'mirror_herb', name: 'Mirror Herb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'misty_seed', name: 'Misty Seed', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'modest_mint', name: 'Modest Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'moomoo_milk', name: 'Moomoo Milk', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'moon_ball', name: 'Moon Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'moon_rod', name: 'Moon Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'moon_rod_cast', name: 'Moon Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'moon_stone', name: 'Moon Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'mulch_base', name: 'Mulch Base', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'muscle_band', name: 'Muscle Band', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'muscle_feather', name: 'Muscle Feather', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'muscle_mochi', name: 'Muscle Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'mystic_water', name: 'Mystic Water', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'naive_mint', name: 'Naive Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'nanab_berry', name: 'Nanab Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'naughty_mint', name: 'Naughty Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'nest_ball', name: 'Nest Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'nest_rod', name: 'Nest Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'nest_rod_cast', name: 'Nest Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'net_ball', name: 'Net Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'net_rod', name: 'Net Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'net_rod_cast', name: 'Net Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'never_melt_ice', name: 'Never Melt Ice', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'nomel_berry', name: 'Nomel Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'normal_gem', name: 'Normal Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'nostalgic_sherd', name: 'Nostalgic Sherd', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'npc_editor', name: 'Npc Editor', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'numb_candy', name: 'Numb Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'occa_berry', name: 'Occa Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'old_amber_fossil', name: 'Old Amber Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'old_gateau', name: 'Old Gateau', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'open_faced_sandwich', name: 'Open Faced Sandwich', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'oran_berry', name: 'Oran Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'oval_stone', name: 'Oval Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'pamtre_berry', name: 'Pamtre Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'paralyze_heal', name: 'Paralyze Heal', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'park_ball', name: 'Park Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'park_rod', name: 'Park Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'park_rod_cast', name: 'Park Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'passho_berry', name: 'Passho Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'payapa_berry', name: 'Payapa Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'peat_block', name: 'Peat Block', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'peat_mulch', name: 'Peat Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'pecha_berry', name: 'Pecha Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'pep_up_flower', name: 'Pep Up Flower', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'persim_berry', name: 'Persim Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'petaya_berry', name: 'Petaya Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'pewter_crunchies', name: 'Pewter Crunchies', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pinap_berry', name: 'Pinap Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'pink_apricorn', name: 'Pink Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'pink_apricorn_seed', name: 'Pink Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'pink_mint_leaf', name: 'Pink Mint Leaf', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'pink_mint_seeds', name: 'Pink Mint Seeds', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'plume_fossil', name: 'Plume Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'poison_barb', name: 'Poison Barb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poison_gem', name: 'Poison Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_bait', name: 'Poke Bait', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_ball', name: 'Poke Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_bitter', name: 'Poke Puff Base Bitter', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_dry', name: 'Poke Puff Base Dry', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_mild', name: 'Poke Puff Base Mild', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_plain', name: 'Poke Puff Base Plain', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_sour', name: 'Poke Puff Base Sour', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_spicy', name: 'Poke Puff Base Spicy', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_puff_base_sweet', name: 'Poke Puff Base Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_rod', name: 'Poke Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_rod_cast', name: 'Poke Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'poke_snack', name: 'Poke Snack', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_black', name: 'Pokedex Black', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_blue', name: 'Pokedex Blue', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_green', name: 'Pokedex Green', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_pink', name: 'Pokedex Pink', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_red', name: 'Pokedex Red', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_white', name: 'Pokedex White', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokedex_yellow', name: 'Pokedex Yellow', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pokerod_smithing_template', name: 'Pokerod Smithing Template', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pomeg_berry', name: 'Pomeg Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_base', name: 'Ponigiri Base', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_beef', name: 'Ponigiri Beef', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_beetroot', name: 'Ponigiri Beetroot', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_brown_mushroom', name: 'Ponigiri Brown Mushroom', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_carrot', name: 'Ponigiri Carrot', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_chicken', name: 'Ponigiri Chicken', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_cod', name: 'Ponigiri Cod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_egg', name: 'Ponigiri Egg', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_filling', name: 'Ponigiri Filling', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_golden_carrot', name: 'Ponigiri Golden Carrot', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_kelp', name: 'Ponigiri Kelp', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_leek', name: 'Ponigiri Leek', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_mutton', name: 'Ponigiri Mutton', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_poisonous', name: 'Ponigiri Poisonous', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_porkchop', name: 'Ponigiri Porkchop', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_potato', name: 'Ponigiri Potato', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_pumpkin', name: 'Ponigiri Pumpkin', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_rabbit', name: 'Ponigiri Rabbit', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_red_mushroom', name: 'Ponigiri Red Mushroom', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_rotten', name: 'Ponigiri Rotten', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_salmon', name: 'Ponigiri Salmon', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_tasty_tail', name: 'Ponigiri Tasty Tail', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ponigiri_vivichoke', name: 'Ponigiri Vivichoke', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'potato_mochi', name: 'Potato Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'potion', name: 'Potion', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'power_anklet', name: 'Power Anklet', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'power_band', name: 'Power Band', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'power_belt', name: 'Power Belt', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'power_bracer', name: 'Power Bracer', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'power_herb', name: 'Power Herb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'power_lens', name: 'Power Lens', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'power_weight', name: 'Power Weight', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pp_max', name: 'Pp Max', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'pp_up', name: 'Pp Up', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'premier_ball', name: 'Premier Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'premier_rod', name: 'Premier Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'premier_rod_cast', name: 'Premier Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'prism_scale', name: 'Prism Scale', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'protective_pads', name: 'Protective Pads', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'protector', name: 'Protector', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'protein', name: 'Protein', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'psychic_gem', name: 'Psychic Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'psychic_seed', name: 'Psychic Seed', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'punching_glove', name: 'Punching Glove', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'qualot_berry', name: 'Qualot Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'quick_ball', name: 'Quick Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'quick_candy', name: 'Quick Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'quick_claw', name: 'Quick Claw', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'quick_powder', name: 'Quick Powder', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'quick_rod', name: 'Quick Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'quick_rod_cast', name: 'Quick Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'quiet_mint', name: 'Quiet Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'rabuta_berry', name: 'Rabuta Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'rage_candy_bar', name: 'Rage Candy Bar', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'rare_candy', name: 'Rare Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'rash_mint', name: 'Rash Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'rawst_berry', name: 'Rawst Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'razor_claw', name: 'Razor Claw', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'razor_fang', name: 'Razor Fang', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'razz_berry', name: 'Razz Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'reaper_cloth', name: 'Reaper Cloth', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'red_apricorn', name: 'Red Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'red_apricorn_seed', name: 'Red Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'red_card', name: 'Red Card', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'red_mint_leaf', name: 'Red Mint Leaf', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'red_mint_seeds', name: 'Red Mint Seeds', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'relaxed_mint', name: 'Relaxed Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'relic_coin', name: 'Relic Coin', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'relic_coin_pouch', name: 'Relic Coin Pouch', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'remedy', name: 'Remedy', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'repeat_ball', name: 'Repeat Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'repeat_rod', name: 'Repeat Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'repeat_rod_cast', name: 'Repeat Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'resist_feather', name: 'Resist Feather', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'resist_mochi', name: 'Resist Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'revival_herb', name: 'Revival Herb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'revive', name: 'Revive', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'rich_mulch', name: 'Rich Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'rindo_berry', name: 'Rindo Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'ring_target', name: 'Ring Target', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'roasted_leek', name: 'Roasted Leek', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'rock_gem', name: 'Rock Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'rocky_helmet', name: 'Rocky Helmet', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'room_service', name: 'Room Service', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'root_fossil', name: 'Root Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'roseate_ball', name: 'Roseate Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'roseate_rod', name: 'Roseate Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'roseate_rod_cast', name: 'Roseate Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'roselei_berry', name: 'Roselei Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'roseli_berry', name: 'Roseli Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'rowap_berry', name: 'Rowap Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'saccharine_boat', name: 'Saccharine Boat', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'saccharine_chest_boat', name: 'Saccharine Chest Boat', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'saccharine_door', name: 'Saccharine Door', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'saccharine_hanging_sign', name: 'Saccharine Hanging Sign', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'saccharine_sign', name: 'Saccharine Sign', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sachet', name: 'Sachet', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'safari_ball', name: 'Safari Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'safari_rod', name: 'Safari Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'safari_rod_cast', name: 'Safari Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'safety_goggles', name: 'Safety Goggles', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sail_fossil', name: 'Sail Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'salac_berry', name: 'Salac Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'sandy_mulch', name: 'Sandy Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'sassy_mint', name: 'Sassy Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'scatter_bang', name: 'Scatter Bang', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'scope_lens', name: 'Scope Lens', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'scroll_of_darkness', name: 'Scroll Of Darkness', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'scroll_of_waters', name: 'Scroll Of Waters', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'serious_mint', name: 'Serious Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'shalour_sable', name: 'Shalour Sable', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sharp_beak', name: 'Sharp Beak', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'shed_shell', name: 'Shed Shell', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'shell_bell', name: 'Shell Bell', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'shell_helmet', name: 'Shell Helmet', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'shiny_icon', name: 'Shiny Icon', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'shiny_stone', name: 'Shiny Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'shuca_berry', name: 'Shuca Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'sickly_candy', name: 'Sickly Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'silk_scarf', name: 'Silk Scarf', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'silver_powder', name: 'Silver Powder', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sinister_tea_masterpiece_base', name: 'Sinister Tea Masterpiece Base', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sinister_tea_unremarkable_base', name: 'Sinister Tea Unremarkable Base', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sitrus_berry', name: 'Sitrus Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'skull_fossil', name: 'Skull Fossil', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'sky_tumblestone', name: 'Sky Tumblestone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'slate_ball', name: 'Slate Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'slate_rod', name: 'Slate Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'slate_rod_cast', name: 'Slate Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'slow_candy', name: 'Slow Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'smart_candy', name: 'Smart Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'smoke_ball', name: 'Smoke Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'smoked_tail_curry', name: 'Smoked Tail Curry', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'smooth_rock', name: 'Smooth Rock', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'soft_sand', name: 'Soft Sand', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'soothe_bell', name: 'Soothe Bell', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'spell_tag', name: 'Spell Tag', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'spelon_berry', name: 'Spelon Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'sport_ball', name: 'Sport Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'sport_rod', name: 'Sport Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sport_rod_cast', name: 'Sport Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'star_sweet', name: 'Star Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'starf_berry', name: 'Starf Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'steel_gem', name: 'Steel Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'sticky_barb', name: 'Sticky Barb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sticky_glob', name: 'Sticky Glob', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'strawberry_sweet', name: 'Strawberry Sweet', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'sun_stone', name: 'Sun Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'super_potion', name: 'Super Potion', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'superb_remedy', name: 'Superb Remedy', cat: 'medicine', emoji: '💊', desc: 'Ítem de Cobblemon' },
-  { id: 'surprise_mulch', name: 'Surprise Mulch', cat: 'farm', emoji: '🍂', desc: 'Ítem de Cobblemon' },
-  { id: 'suspicious_sherd', name: 'Suspicious Sherd', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'sweet_apple', name: 'Sweet Apple', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'sweet_heart', name: 'Sweet Heart', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'swift_feather', name: 'Swift Feather', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'swift_mochi', name: 'Swift Mochi', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'syrupy_apple', name: 'Syrupy Apple', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'tamato_berry', name: 'Tamato Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'tanga_berry', name: 'Tanga Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'tart_apple', name: 'Tart Apple', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'tasty_tail', name: 'Tasty Tail', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'terrain_extender', name: 'Terrain Extender', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'throat_spray', name: 'Throat Spray', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'thunder_stone', name: 'Thunder Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'timer_ball', name: 'Timer Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'timer_rod', name: 'Timer Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'timer_rod_cast', name: 'Timer Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'timid_mint', name: 'Timid Mint', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'touga_berry', name: 'Touga Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'tough_candy', name: 'Tough Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'toxic_orb', name: 'Toxic Orb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'tumblestone', name: 'Tumblestone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'twisted_spoon', name: 'Twisted Spoon', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ultra_ball', name: 'Ultra Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'ultra_rod', name: 'Ultra Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'ultra_rod_cast', name: 'Ultra Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'unremarkable_teacup', name: 'Unremarkable Teacup', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'upgrade', name: 'Upgrade', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'utility_umbrella', name: 'Utility Umbrella', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'verdant_ball', name: 'Verdant Ball', cat: 'pokeball', emoji: '🔵', desc: 'Ítem de Cobblemon' },
-  { id: 'verdant_rod', name: 'Verdant Rod', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'verdant_rod_cast', name: 'Verdant Rod Cast', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'vivichoke', name: 'Vivichoke', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'vivichoke_dip', name: 'Vivichoke Dip', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'vivichoke_seeds', name: 'Vivichoke Seeds', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'wacan_berry', name: 'Wacan Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'water_gem', name: 'Water Gem', cat: 'gem', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'water_stone', name: 'Water Stone', cat: 'stone', emoji: '💎', desc: 'Ítem de Cobblemon' },
-  { id: 'watmel_berry', name: 'Watmel Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'weak_candy', name: 'Weak Candy', cat: 'candy', emoji: '🍬', desc: 'Ítem de Cobblemon' },
-  { id: 'weakness_policy', name: 'Weakness Policy', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'wepear_berry', name: 'Wepear Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'whipped_dream', name: 'Whipped Dream', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'white_apricorn', name: 'White Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'white_apricorn_seed', name: 'White Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'white_herb', name: 'White Herb', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'white_mint_leaf', name: 'White Mint Leaf', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'white_mint_seeds', name: 'White Mint Seeds', cat: 'mint', emoji: '🌿', desc: 'Ítem de Cobblemon' },
-  { id: 'wide_lens', name: 'Wide Lens', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'wiki_berry', name: 'Wiki Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'wise_glasses', name: 'Wise Glasses', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'x_accuracy', name: 'X Accuracy', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'x_attack', name: 'X Attack', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'x_defense', name: 'X Defense', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'x_sp_atk', name: 'X Sp Atk', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'x_sp_def', name: 'X Sp Def', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'x_speed', name: 'X Speed', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'yache_berry', name: 'Yache Berry', cat: 'berry', emoji: '🫐', desc: 'Ítem de Cobblemon' },
-  { id: 'yellow_apricorn', name: 'Yellow Apricorn', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'yellow_apricorn_seed', name: 'Yellow Apricorn Seed', cat: 'apricorn', emoji: '🌰', desc: 'Ítem de Cobblemon' },
-  { id: 'zinc', name: 'Zinc', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' },
-  { id: 'zoom_lens', name: 'Zoom Lens', cat: 'held', emoji: '🎒', desc: 'Ítem de Cobblemon' }
-];
-
-
-
-/**
- * Retorna un elemento visual para el ítem (imagen PNG o emoji fallback).
- * Carga directamente del repositorio oficial de Cobblemon.
- * @param {object} item - Ítem del array ITEMS
- * @param {number} size - Tamaño en px (ancho y alto)
- * @returns {string} HTML string
- */
-function getItemVisual(item, size = 32) {
-  const src = `https://raw.githubusercontent.com/Cobblemon-Mod/Cobblemon/main/common/src/main/resources/assets/cobblemon/textures/item/${item.id}.png`;
-  return `
-    <img
-      src="${src}"
-      alt="${item.name}"
-      title="${item.name}"
-      width="${size}" height="${size}"
-      style="object-fit:contain; image-rendering:pixelated;"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
-    /><span style="font-size:${Math.round(size * 0.65)}px; line-height:1; display:none;" title="${item.name}">${item.emoji}</span>`;
-
-
-// ==========================================
-// GENERACIÓN JSON
-// ==========================================
-/**
- * generator.js — Generación de archivos JSON para el datapack
- * Funciones puras sin efectos secundarios (no tocan el DOM).
- */
-
-/**
- * Bloquea la receta de crafteo de un ítem.
- * Usa fabric:load_conditions con "fabric:false" para que Fabric API
- * ignore el archivo al cargar el juego, efectivamente suprimiendo la receta.
- * @param {string} itemId - ID técnico del ítem (sin namespace)
- * @returns {object} JSON del recipe blocker
- */
-function buildRecipeJSON(itemId) {
-  return {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [ { "item": `${NAMESPACE}:${itemId}` } ],
-    "result": { "id": `${NAMESPACE}:${itemId}`, "count": 1 },
-    "fabric:load_conditions": [
-      { "condition": "fabric:false" }
-    ]
-  };
-}
-
-/**
- * Genera un override de Species para vaciar los drops del Pokémon.
- * Ruta destino: data/cobblemon/species/overrides/<id>.json
- * @param {string} itemId - ID técnico del ítem
- * @returns {object} JSON del species override
- */
-function buildDropOverrideJSON(itemId) {
-  return {
-    "drops": {
-      "amount": 0,
-      "entries": []
-    }
-  };
-}
-
-// Alias mantenido por compatibilidad con llamadas existentes
-const buildLootJSON = buildDropOverrideJSON;
-
-/**
- * Aplica resaltado de sintaxis estilo Monokai a un objeto JSON.
- * Retorna HTML con spans coloreados.
- * @param {object} json - Objeto a resaltar
- * @returns {string} HTML con spans
- */
-function syntaxHighlight(json) {
-  const str = JSON.stringify(json, null, 2);
-  return str.replace(
-    /(\"(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*\"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-    match => {
-      let cls = 'json-num';
-      if (/^"/.test(match)) {
-        cls = /:$/.test(match) ? 'json-key' : 'json-str';
-      } else if (/true|false/.test(match)) {
-        cls = 'json-bool';
-      } else if (/null/.test(match)) {
-        cls = 'json-null';
-      }
-      return `<span class="${cls}">${match}</span>`;
-    }
-  ).replace(/[{}\[\],]/g, m => `<span class="json-punc">${m}</span>`);
-}
-
-/**
- * Descarga un objeto JSON como archivo .json en el navegador.
- * @param {string} filename - Nombre del archivo a descargar
- * @param {object} data - Objeto JSON a serializar
- */
-function downloadJSON(filename, data) {
-  try {
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(a.href);
-  } catch (err) {
-    console.error('[CobblemonStudio] Error descargando JSON:', err);
-    showToast('❌', 'Error al descargar el archivo.');
-  }
-}
-
-
-// ==========================================
-// INTERFAZ DE USUARIO (UI)
-// ==========================================
-/**
- * ui.js — Funciones de renderizado y manipulación del DOM
- * Gestiona la vista: lista de ítems, configurador, preview JSON y toasts.
- */
-
-// ============================================================
-// TOAST
-// ============================================================
-let _toastTimer = null;
-
-function showToast(icon, msg) {
-  const toast = document.getElementById('toast');
-  document.getElementById('toast-icon').textContent = icon;
-  document.getElementById('toast-msg').textContent  = msg;
-  toast.classList.add('show');
-  if (_toastTimer) clearTimeout(_toastTimer);
-  _toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
-}
-
-// ============================================================
-// TOGGLES
-// ============================================================
-function setTrack(name, val) {
-  const track = document.getElementById(`track-${name}`);
-  if (!track) return;
-  track.classList.toggle('active', val);
-}
-
-// ============================================================
-// RENDER LISTA
-// ============================================================
-function renderList() {
-  const list = document.getElementById('item-list');
-  const q    = state.search.toLowerCase();
-  const cat  = state.activeCategory;
-
-  const filtered = ITEMS.filter(item => {
-    const matchCat = cat === 'all' || item.cat === cat;
-    const matchQ   = item.name.toLowerCase().includes(q) || item.id.toLowerCase().includes(q);
-    return matchCat && matchQ;
-  });
-
-  document.getElementById('total-count').textContent = filtered.length;
-  list.innerHTML = '';
-
-  if (filtered.length === 0) {
-    list.innerHTML = `<div style="text-align:center;padding:32px 0;color:#6B7FA3;font-size:13px;">
-      Sin resultados para "<em>${q}</em>"
-    </div>`;
-  }
-
-  filtered.forEach(item => {
-    const opts    = state.options[item.id];
-    const inPack  = opts.inPack;
-    const isActive = state.selected === item.id;
-
-    const card = document.createElement('div');
-    card.className = `item-card fade-in ${isActive ? 'active' : ''} ${inPack ? 'selected-for-pack' : ''}`;
-    card.addEventListener('click', () => selectItem(item.id));
-
-    const badges = [];
-    if (opts.recipe) badges.push(`<span class="badge badge-blue"  style="font-size:10px;padding:1px 6px;">R</span>`);
-    if (opts.loot)   badges.push(`<span class="badge badge-yellow" style="font-size:10px;padding:1px 6px;">D</span>`);
-
-    const checkmark = inPack
-      ? `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"
-             stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
-      : '';
-
-    card.innerHTML = `
-      <div class="item-img">${getItemVisual(item, 32)}</div>
-      <div style="flex:1;min-width:0;">
-        <div class="item-name">${item.name}</div>
-        <div class="item-id">${NAMESPACE}:${item.id}</div>
-        ${badges.length ? `<div style="margin-top:3px;display:flex;gap:3px;">${badges.join('')}</div>` : ''}
-      </div>
-      <div class="pack-check ${inPack ? 'checked' : ''}">${checkmark}</div>`;
-
-    list.appendChild(card);
-  });
-
-  // Actualizar contadores
-  const packCount = Object.values(state.options).filter(o => o.inPack).length;
-  document.getElementById('pack-count').textContent      = packCount;
-  document.getElementById('sel-count-badge').textContent = `${packCount} en el Pack`;
-}
-
-// ============================================================
-// SELECCIONAR ÍTEM
-// ============================================================
-const CAT_LABELS = {
-  pokeball: 'Pokéball', stone: 'Piedra Evo', battle: 'Combate',
-  candy: 'Caramelo', berry: 'Baya', held: 'Hold Item',
-  medicine: 'Medicina', mint: 'Menta', apricorn: 'Apricorn',
-  gem: 'Gema', farm: 'Cultivo'
-};
-const CAT_COLORS = {
-  pokeball: 'blue', stone: 'blue', battle: 'red',
-  candy: 'yellow', berry: 'green', held: 'blue',
-  medicine: 'red', mint: 'green', apricorn: 'yellow',
-  gem: 'blue', farm: 'green'
-};
-
-function selectItem(id) {
-  state.selected = id;
-  const item = ITEMS.find(i => i.id === id);
-  const opts = state.options[id];
-
-  document.getElementById('no-selection').style.display  = 'none';
-  document.getElementById('item-config').style.display   = 'block';
-
-  document.getElementById('cfg-img').innerHTML   = getItemVisual(item, 52);
-  document.getElementById('cfg-name').textContent = item.name;
-  document.getElementById('cfg-id').textContent   = `${NAMESPACE}:${item.id}`;
-
-  const color = CAT_COLORS[item.cat] || 'blue';
-  const label = CAT_LABELS[item.cat] || item.cat;
-  document.getElementById('cfg-badges').innerHTML = `<span class="badge badge-${color}">${label}</span>`;
-
-  setTrack('recipe', opts.recipe);
-  setTrack('drop',   opts.loot);
-  setTrack('pack',   opts.inPack);
-
-  updateGiveCmd(id);
-  updatePreview(id);
-  renderList();
-}
-
-// ============================================================
-// PREVIEW JSON
-// ============================================================
-function setTab(tab) {
-  state.activeTab = tab;
-  document.querySelectorAll('.preview-tab').forEach(btn => {
-    const isActive = btn.dataset.tab === tab;
-    btn.style.color        = isActive ? '#4A90D9' : '#6B7FA3';
-    btn.style.borderBottom = isActive ? '2px solid #4A90D9' : '2px solid transparent';
-  });
-  if (state.selected) updatePreview(state.selected);
-}
-
-function updatePreview(id) {
-  const out      = document.getElementById('json-output');
-  const fn       = document.getElementById('preview-filename');
-  const jsonObj  = state.activeTab === 'recipe'
-    ? buildRecipeJSON(id)
-    : buildDropOverrideJSON(id);
-  const filePath = state.activeTab === 'recipe'
-    ? `data/${NAMESPACE}/recipes/${id}.json`
-    : `data/${NAMESPACE}/species/overrides/${id}.json`;
-
-  fn.textContent = filePath;
-  out.innerHTML  = syntaxHighlight(jsonObj);
-}
-
-// ============================================================
-// GIVE COMMAND
-// ============================================================
-function updateGiveCmd(id) {
-  document.getElementById('give-cmd').textContent = `/give %player% ${NAMESPACE}:${id} 1`;
-}
-
-function copyGiveCmd() {
-  const cmd = document.getElementById('give-cmd').textContent;
-  navigator.clipboard.writeText(cmd)
-    .then(() => showToast('✓', 'Comando /give copiado!'))
-    .catch(() => showToast('❌', 'No se pudo copiar'));
-}
-
-// ============================================================
-// ACCIONES RÁPIDAS
-// ============================================================
-function downloadCurrentRecipe() {
-  if (!state.selected) return;
-  downloadJSON(`${state.selected}.json`, buildRecipeJSON(state.selected));
-  showToast('⬇️', `recipe/${state.selected}.json descargado`);
-}
-
-function downloadCurrentLoot() {
-  if (!state.selected) return;
-  downloadJSON(`${state.selected}.json`, buildDropOverrideJSON(state.selected));
-  showToast('⬇️', `species_override/${state.selected}.json descargado`);
-}
-
-function copyPreview() {
-  if (!state.selected) return;
-  const jsonObj = state.activeTab === 'recipe'
-    ? buildRecipeJSON(state.selected)
-    : buildDropOverrideJSON(state.selected);
-  navigator.clipboard.writeText(JSON.stringify(jsonObj, null, 2))
-    .then(() => showToast('✓', 'JSON copiado al portapapeles'))
-    .catch(() => showToast('❌', 'No se pudo copiar'));
-}
-
-
-// ==========================================
-// LÓGICA PRINCIPAL (APP)
-// ==========================================
-/**
- * app.js — Punto de entrada principal de la aplicación
- * Inicializa el estado, registra todos los event listeners y arranca la app.
- */
-
-// ============================================================
-// ESTADO GLOBAL DE LA APLICACIÓN
-// ============================================================
-const state = {
-  selected:       null,   // ID del ítem activo en el configurador
-  options:        {},     // { [itemId]: { recipe: bool, loot: bool, inPack: bool } }
-  activeCategory: 'all',
-  activeTab:      'recipe',
-  search:         ''
-};
-
-// Inicializar opciones por defecto para todos los ítems
-ITEMS.forEach(item => {
-  state.options[item.id] = { recipe: false, loot: false, inPack: false };
-});
-
-// ============================================================
-// TOGGLES — Opciones del ítem seleccionado
-// ============================================================
-function toggleOption(name) {
-  if (!state.selected) return;
-  const opts = state.options[state.selected];
-  if (name === 'recipe') opts.recipe = !opts.recipe;
-  if (name === 'drop')   opts.loot   = !opts.loot;
-  if (name === 'pack')   opts.inPack = !opts.inPack;
-
-  setTrack('recipe', opts.recipe);
-  setTrack('drop',   opts.loot);
-  setTrack('pack',   opts.inPack);
-
-  updatePreview(state.selected);
-  renderList();
-}
-
-// ============================================================
-// EVENT LISTENERS — Delegación de eventos (no onclick inline)
-// ============================================================
-document.addEventListener('DOMContentLoaded', () => {
-
-  // Búsqueda en tiempo real
-  document.getElementById('search-input').addEventListener('input', e => {
-    state.search = e.target.value;
-    renderList();
-  });
-
-  // Filtros de categoría
-  document.querySelectorAll('.cat-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      state.activeCategory = pill.dataset.cat;
-      renderList();
-    });
-  });
-
-  // Botones de selección masiva
-  document.getElementById('btn-sel-all').addEventListener('click', () => {
-    const q   = state.search.toLowerCase();
-    const cat = state.activeCategory;
-    ITEMS
-      .filter(i => (cat === 'all' || i.cat === cat) &&
-                   (i.name.toLowerCase().includes(q) || i.id.toLowerCase().includes(q)))
-      .forEach(i => { state.options[i.id].inPack = true; });
-    renderList();
-  });
-
-  document.getElementById('btn-clear-sel').addEventListener('click', () => {
-    ITEMS.forEach(i => { state.options[i.id].inPack = false; });
-    if (state.selected) setTrack('pack', false);
-    renderList();
-  });
-
-  // Toggles del configurador
-  document.getElementById('toggle-recipe').addEventListener('click', () => toggleOption('recipe'));
-  document.getElementById('toggle-drop').addEventListener('click',   () => toggleOption('drop'));
-  document.getElementById('toggle-pack').addEventListener('click',   () => toggleOption('pack'));
-
-  // Give command
-  document.getElementById('give-cmd').addEventListener('click', copyGiveCmd);
-
-  // Botones de acciones rápidas
-  document.getElementById('btn-download-recipe').addEventListener('click', downloadCurrentRecipe);
-  document.getElementById('btn-download-loot').addEventListener('click',   downloadCurrentLoot);
-  document.getElementById('btn-copy-json').addEventListener('click',       copyPreview);
-
-  // Tabs de preview
-  document.querySelectorAll('.preview-tab').forEach(btn => {
-    btn.addEventListener('click', () => setTab(btn.dataset.tab));
-  });
-
-  // ============================================================
-  // GENERAR PACK COMPLETO (ZIP)
-  // ============================================================
-  document.getElementById('btn-gen-pack').addEventListener('click', async () => {
-    const packItems = ITEMS.filter(i => state.options[i.id].inPack);
-
-    if (packItems.length === 0) {
-      showToast('⚠️', 'Selecciona al menos 1 ítem para el Pack');
-      return;
-    }
-
-    try {
-      const zip = new JSZip();
-
-      // pack.mcmeta
-      zip.file('pack.mcmeta', JSON.stringify({
-        "pack": {
-          "pack_format": PACK_FORMAT,
-          "description": "§b⚡ §fCobblemon Exclusivity Pack §b⚡\n§7Generated by Cobblemon Exclusivity Studio"
-        }
-      }, null, 2));
-
-      let recipeCount = 0;
-      let dropCount   = 0;
-
-      packItems.forEach(item => {
-        const opts = state.options[item.id];
-
-        if (opts.recipe) {
-          zip.file(
-            `data/${NAMESPACE}/recipes/${item.id}.json`,
-            JSON.stringify(buildRecipeJSON(item.id), null, 2)
-          );
-          recipeCount++;
-        }
-
-        if (opts.loot) {
-          zip.file(
-            `data/${NAMESPACE}/species/overrides/${item.id}.json`,
-            JSON.stringify(buildDropOverrideJSON(item.id), null, 2)
-          );
-          dropCount++;
-        }
-
-        // Si está en el pack pero sin toggles → añadir recipe por defecto
-        if (!opts.recipe && !opts.loot) {
-          zip.file(
-            `data/${NAMESPACE}/recipes/${item.id}.json`,
-            JSON.stringify(buildRecipeJSON(item.id), null, 2)
-          );
-          recipeCount++;
-        }
-      });
-
-      showToast('📦', `Generando Pack (${packItems.length} ítems)…`);
-
-      const blob = await zip.generateAsync({ type: 'blob' });
-      const a    = document.createElement('a');
-      a.href     = URL.createObjectURL(blob);
-      a.download = PACK_ZIP_NAME;
-      a.click();
-      URL.revokeObjectURL(a.href);
-
-      showToast('✅', `Pack generado! ${recipeCount} recetas + ${dropCount} drops bloqueados`);
-
-    } catch (err) {
-      console.error('[CobblemonStudio] Error generando ZIP:', err);
-      showToast('❌', 'Error al generar el Pack. Ver consola.');
-    }
-  });
-
-  // ============================================================
-  // INICIALIZACIÓN
-  // ============================================================
-  renderList();
-  lucide.createIcons();
-});
-
-</script>
 </body>
 </html>

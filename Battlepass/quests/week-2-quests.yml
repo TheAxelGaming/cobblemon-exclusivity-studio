@@ -1,0 +1,41 @@
+actions-version: 2
+
+quests:
+  1:
+    type: COBBLEMON_CATCH
+    name: '&b&lExperto Capturador'
+    required-progress: 75
+    incremental: true
+    item:
+      material: COBBLEMON_ULTRA_BALL
+      name: '&b&lExperto Capturador'
+      lore:
+        - '&7Captura &e75 Pokemon.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/75'
+
+  2:
+    type: COBBLEMON_MINING
+    name: '&b&lMinero Evolutivo'
+    required-progress: 20
+    incremental: true
+    item:
+      material: COBBLEMON_FIRE_STONE
+      name: '&b&lMinero Evolutivo'
+      lore:
+        - '&7Pica &e20 menas &7de piedras evolutivas.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/20'
+
+  3:
+    type: COBBLEMON_BATTLE
+    name: '&b&lLuchador Experto'
+    required-progress: 5
+    incremental: true
+    item:
+      material: COBBLEMON_EXP_CANDY_M
+      name: '&b&lLuchador Experto'
+      lore:
+        - '&7Gana &e5 combates &7contra un NPC.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/5'

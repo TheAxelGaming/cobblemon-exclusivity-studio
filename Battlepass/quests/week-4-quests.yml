@@ -1,0 +1,41 @@
+actions-version: 2
+
+quests:
+  1:
+    type: COBBLEMON_CRAFT
+    name: '&b&lArtesano Avanzado'
+    required-progress: 5
+    incremental: true
+    item:
+      material: COBBLEMON_HEALING_MACHINE
+      name: '&b&lArtesano Avanzado'
+      lore:
+        - '&7Fabrica &e5 Maquinas de Curacion&7.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/5'
+
+  2:
+    type: COBBLEMON_BATTLE
+    name: '&b&lCampeon Pokemon'
+    required-progress: 15
+    incremental: true
+    item:
+      material: COBBLEMON_EXP_CANDY_L
+      name: '&b&lCampeon Pokemon'
+      lore:
+        - '&7Gana &e15 combates &7contra NPCs.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/15'
+
+  3:
+    type: COBBLEMON_CATCH
+    name: '&b&lLeyenda Pokemon'
+    required-progress: 150
+    incremental: true
+    item:
+      material: COBBLEMON_MASTER_BALL
+      name: '&b&lLeyenda Pokemon'
+      lore:
+        - '&7Captura &e150 Pokemon.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/150'

@@ -1,0 +1,41 @@
+actions-version: 2
+
+quests:
+  1:
+    type: COBBLEMON_BERRY
+    name: '&b&lAgricultor Pokemon'
+    required-progress: 50
+    incremental: true
+    item:
+      material: COBBLEMON_SITRUS_BERRY
+      name: '&b&lAgricultor Pokemon'
+      lore:
+        - '&7Recolecta &e50 Bayas o Apricorns.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/50'
+
+  2:
+    type: COBBLEMON_BREED
+    name: '&b&lMaestro Criador'
+    required-progress: 10
+    incremental: true
+    item:
+      material: EGG
+      name: '&b&lMaestro Criador'
+      lore:
+        - '&7Eclosiona &e10 huevos &7Pokemon.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/10'
+
+  3:
+    type: COBBLEMON_CATCH
+    name: '&b&lColeccionista'
+    required-progress: 100
+    incremental: true
+    item:
+      material: COBBLEMON_QUICK_BALL
+      name: '&b&lColeccionista'
+      lore:
+        - '&7Captura &e100 Pokemon.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/100'

@@ -1,0 +1,77 @@
+# ============================================
+#  CobblePass - Misiones Semanales (Semana 1)
+#  4 misiones de alta dificultad
+#  Tipos: placeholder, block-break, craft
+#  Iconos: Arclight Cobblemon IDs
+# ============================================
+
+actions-version: 2
+
+quests:
+  1:
+    type: placeholder
+    placeholder: '%cobblemon:pokedex_amount_caught%'
+    name: '&6&lMaestro Captura'
+    required-progress: 50
+    points: 150
+    difficulty: hard
+    item:
+      material: COBBLEMON_ULTRA_BALL
+      name: '&6&lMaestro Captura'
+      lore:
+        - '&7Atrapa &e50 Pokemon &7a lo largo'
+        - '&7de la semana. Solo los mejores'
+        - '&7entrenadores lo logran.'
+        - ''
+        - '%progress_bar% &7(&a%percentage_progress%&7)'
+
+  2:
+    type: placeholder
+    placeholder: '%cobblemon_eggs_hatched%'
+    name: '&6&lCriador Experto'
+    required-progress: 1
+    points: 200
+    difficulty: hard
+    item:
+      material: COBBLEMON_POKE_EGG
+      name: '&6&lCriador Experto'
+      lore:
+        - '&7Eclosiona &e1 huevo Pokemon'
+        - '&7para completar esta mision'
+        - '&7de crianza avanzada.'
+        - ''
+        - '%progress_bar% &7(&a%percentage_progress%&7)'
+
+  3:
+    type: block-break
+    material: ancient_debris
+    name: '&6&lMinero Legendario'
+    required-progress: 5
+    points: 250
+    difficulty: hard
+    item:
+      material: ANCIENT_DEBRIS
+      name: '&6&lMinero Legendario'
+      lore:
+        - '&7Pica &e5 escombros ancestrales'
+        - '&7en las profundidades del Nether.'
+        - '&7Solo los mas valientes lo intentan.'
+        - ''
+        - '%progress_bar% &7(&a%percentage_progress%&7)'
+
+  4:
+    type: craft
+    material: COBBLEMON_HEALER
+    name: '&6&lIngeniero Pokemon'
+    required-progress: 1
+    points: 180
+    difficulty: hard
+    item:
+      material: COBBLEMON_HEALER
+      name: '&6&lIngeniero Pokemon'
+      lore:
+        - '&7Fabrica &e1 Maquina de Curacion'
+        - '&7para tu centro Pokemon.'
+        - '&6&lRecompensa de prestigio!'
+        - ''
+        - '%progress_bar% &7(&a%percentage_progress%&7)'

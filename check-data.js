@@ -1,0 +1,1 @@
+const fs = require('fs'); const html = fs.readFileSync('index.html', 'utf8'); const scripts = html.match(/<script(?![^>]*src=)[^>]*>([\s\S]*?)<\/script>/g); const code = scripts[1].replace(/<script>/,'').replace(/<\/script>/,''); try { eval(code + '; console.log(\'ITEMS.length:\', ITEMS.length);'); } catch (e) { console.log('Error executing extracted code:', e.message); }

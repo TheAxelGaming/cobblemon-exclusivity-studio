@@ -1,0 +1,41 @@
+actions-version: 2
+
+quests:
+  1:
+    type: COBBLEMON_CATCH
+    name: '&a&lCapturar Salvajes'
+    required-progress: 3
+    incremental: true
+    item:
+      material: COBBLEMON_POKE_BALL
+      name: '&a&lCapturar Salvajes'
+      lore:
+        - '&7Captura &e3 Pokemon &7salvajes.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/3'
+
+  2:
+    type: COBBLEMON_BERRY
+    name: '&a&lRecolector de Bayas'
+    required-progress: 10
+    incremental: true
+    item:
+      material: COBBLEMON_ORAN_BERRY
+      name: '&a&lRecolector de Bayas'
+      lore:
+        - '&7Recolecta &e10 Bayas/Apricorns.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/10'
+
+  3:
+    type: COBBLEMON_BATTLE
+    name: '&a&lCombate NPC'
+    required-progress: 1
+    incremental: true
+    item:
+      material: COBBLEMON_EXP_CANDY_S
+      name: '&a&lCombate NPC'
+      lore:
+        - '&7Gana &e1 combate &7contra un NPC.'
+        - ''
+        - '&7Progreso: &a%total_progress%&7/1'
