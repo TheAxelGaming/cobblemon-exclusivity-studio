@@ -65,6 +65,61 @@ window.updateCalculator = () => {
   }
 };
 
+// ==========================================
+// PROYECTO (.studio / JSON)
+// ==========================================
+
+window.exportStudioProject = () => {
+    const project = {
+        version: '1.0',
+        timestamp: new Date().toISOString(),
+        tiers: tierManager.tiers,
+        dailyQuests: questManager.dailyQuests,
+        weeklyQuests: questManager.weeklyQuests
+    };
+
+    const data = JSON.stringify(project, null, 2);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `cobblemon_studio_project_${new Date().toISOString().split('T')[0]}.studio`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('💾', 'Proyecto guardado correctamente');
+};
+
+window.importStudioProject = (file) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const project = JSON.parse(e.target.result);
+            if (!project.tiers || !project.dailyQuests || !project.weeklyQuests) {
+                throw new Error('Formato de proyecto inválido');
+            }
+
+            // Actualizar Managers
+            tierManager.tiers = project.tiers;
+            questManager.dailyQuests = project.dailyQuests;
+            questManager.weeklyQuests = project.weeklyQuests;
+
+            // Guardar en LocalStorage
+            tierManager.save();
+            questManager.save();
+
+            // Refrescar UI
+            bpRenderList();
+            bpRenderEditor();
+            showToast('✅', 'Proyecto cargado con éxito');
+        } catch (err) {
+            console.error('Error cargando proyecto:', err);
+            showToast('❌', 'Error al cargar el proyecto.');
+        }
+    };
+    reader.readAsText(file);
+};
+
+
 document.addEventListener('DOMContentLoaded', () => {
     
   // Navbar Tabs
@@ -157,6 +212,22 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if(weeksInput) weeksInput.addEventListener('input', window.updateCalculator);
   if(ratioInput) ratioInput.addEventListener('input', window.updateCalculator);
+
+  // Proyecto (Guardar/Cargar)
+  const btnSaveProject = document.getElementById('btn-save-project');
+  const btnLoadProject = document.getElementById('btn-load-project');
+  const inputLoadProject = document.getElementById('input-load-project');
+
+  if (btnSaveProject) btnSaveProject.addEventListener('click', () => window.exportStudioProject());
+  if (btnLoadProject) btnLoadProject.addEventListener('click', () => inputLoadProject.click());
+  if (inputLoadProject) {
+      inputLoadProject.addEventListener('change', (e) => {
+          if (e.target.files.length > 0) {
+              window.importStudioProject(e.target.files[0]);
+              e.target.value = ''; 
+          }
+      });
+  }
 
   document.getElementById('btn-apply-calc').addEventListener('click', () => {
     const dailyPts = parseInt(document.getElementById('bp-res-daily').textContent);
