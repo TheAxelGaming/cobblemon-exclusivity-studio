@@ -6,9 +6,27 @@ const bpState = {
   activeTab: localStorage.getItem('bp_activeTab') || 'tiers',  // 'tiers' | 'quests'
   questSubTab: localStorage.getItem('bp_questSubTab') || 'daily', // 'daily' | 'weekly'
   selectedId: null,
-  tierPage: parseInt(localStorage.getItem('bp_tierPage')) || 0 // 0 = Tiers 1-7, 1 = Tiers 8-14, etc.
+  tierPage: parseInt(localStorage.getItem('bp_tierPage')) || 0, // 0 = Tiers 1-7, 1 = Tiers 8-14, etc.
+  calcExpanded: localStorage.getItem('bp_calcExpanded') === 'true' // Retraído por defecto (false)
 };
 const progressManager = new ProgressManager();
+
+window.toggleProgressCalc = () => {
+    bpState.calcExpanded = !bpState.calcExpanded;
+    localStorage.setItem('bp_calcExpanded', bpState.calcExpanded);
+    
+    const panel = document.getElementById('bp-progress-calculator');
+    const arrow = document.getElementById('bp-calc-arrow');
+    
+    if (panel) {
+        panel.style.display = bpState.calcExpanded ? 'flex' : 'none';
+        if (bpState.calcExpanded && window.updateCalculator) window.updateCalculator();
+    }
+    
+    if (arrow) {
+        arrow.style.transform = bpState.calcExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+};
 
 window.updateCalculator = () => {
   const weeksInput = document.getElementById('bp-calc-weeks');
@@ -123,6 +141,15 @@ document.addEventListener('DOMContentLoaded', () => {
      bpRenderList();
      bpRenderEditor();
   });
+
+  // Sync Sidebar Tab Active Class on Load
+  if (bpState.activeTab === 'quests') {
+      document.getElementById('bp-tab-tiers').classList.remove('active');
+      document.getElementById('bp-tab-quests').classList.add('active');
+  } else {
+      document.getElementById('bp-tab-quests').classList.remove('active');
+      document.getElementById('bp-tab-tiers').classList.add('active');
+  }
 
   // Iniciar listeners del calculador
   const weeksInput = document.getElementById('bp-calc-weeks');
@@ -241,11 +268,14 @@ function bpRenderList() {
     // YAML Buttons Visibility Logic
     const tierYamlBtns = document.getElementById('bp-yaml-export-tiers');
     const questYamlBtns = document.getElementById('bp-yaml-export-quests');
+    const calcHeader = document.getElementById('bp-calc-header');
     const calcPanel = document.getElementById('bp-progress-calculator');
+    const calcArrow = document.getElementById('bp-calc-arrow');
     
     if (bpState.activeTab === 'tiers') {
        if (tierYamlBtns) tierYamlBtns.style.display = 'flex';
        if (questYamlBtns) questYamlBtns.style.display = 'none';
+       if (calcHeader) calcHeader.style.display = 'none';
        if (calcPanel) calcPanel.style.display = 'none';
 
        // Botón de Reiniciar en Tiers
@@ -275,9 +305,12 @@ function bpRenderList() {
     } else {
        if (tierYamlBtns) tierYamlBtns.style.display = 'none';
        if (questYamlBtns) questYamlBtns.style.display = 'flex';
+       
+       if (calcHeader) calcHeader.style.display = 'flex';
        if (calcPanel) {
-         calcPanel.style.display = 'flex';
-         if (window.updateCalculator) window.updateCalculator(); // Actualizar al abrir
+         calcPanel.style.display = bpState.calcExpanded ? 'flex' : 'none';
+         if (calcArrow) calcArrow.style.transform = bpState.calcExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+         if (bpState.calcExpanded && window.updateCalculator) window.updateCalculator();
        }
 
        // Quests
