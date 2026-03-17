@@ -8,6 +8,44 @@ const bpState = {
   selectedId: null,
   tierPage: parseInt(localStorage.getItem('bp_tierPage')) || 0 // 0 = Tiers 1-7, 1 = Tiers 8-14, etc.
 };
+const progressManager = new ProgressManager();
+
+window.updateCalculator = () => {
+  const weeksInput = document.getElementById('bp-calc-weeks');
+  const ratioInput = document.getElementById('bp-calc-ratio');
+  if(!weeksInput || !ratioInput) return;
+
+  const weeks = parseInt(weeksInput.value) || 1;
+  const ratio = (parseInt(ratioInput.value) || 60) / 100;
+  
+  // Get counts from managers
+  const dailyCount = questManager.dailyQuests.length;
+  const weeklyCount = questManager.weeklyQuests.length;
+
+  const results = progressManager.calculate(weeks, dailyCount, weeklyCount, ratio);
+  
+  if (results) {
+    document.getElementById('bp-res-daily').textContent = results.dailyPoints;
+    document.getElementById('bp-res-weekly').textContent = results.weeklyPoints;
+
+    // Handle Alerts
+    const alertsDiv = document.getElementById('bp-calc-alerts');
+    if(alertsDiv) {
+      alertsDiv.innerHTML = '';
+      results.alerts.forEach(alert => {
+        const div = document.createElement('div');
+        div.style.fontSize = '10px';
+        div.style.padding = '4px 8px';
+        div.style.borderRadius = '4px';
+        div.style.background = alert.type === 'warning' ? 'rgba(245,197,24,0.1)' : 'rgba(74,144,217,0.1)';
+        div.style.color = alert.type === 'warning' ? '#F5C518' : '#4A90D9';
+        div.style.border = `1px solid ${alert.type === 'warning' ? 'rgba(245,197,24,0.2)' : 'rgba(74,144,217,0.2)'}`;
+        div.textContent = alert.message;
+        alertsDiv.appendChild(div);
+      });
+    }
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -84,6 +122,29 @@ document.addEventListener('DOMContentLoaded', () => {
      localStorage.setItem('bp_activeTab', 'quests');
      bpRenderList();
      bpRenderEditor();
+  });
+
+  // Iniciar listeners del calculador
+  const weeksInput = document.getElementById('bp-calc-weeks');
+  const ratioInput = document.getElementById('bp-calc-ratio');
+  
+  if(weeksInput) weeksInput.addEventListener('input', window.updateCalculator);
+  if(ratioInput) ratioInput.addEventListener('input', window.updateCalculator);
+
+  document.getElementById('btn-apply-calc').addEventListener('click', () => {
+    const dailyPts = parseInt(document.getElementById('bp-res-daily').textContent);
+    const weeklyPts = parseInt(document.getElementById('bp-res-weekly').textContent);
+
+    if (isNaN(dailyPts) || isNaN(weeklyPts)) return;
+
+    // Apply to all daily quests
+    questManager.dailyQuests.forEach(q => q.points = dailyPts);
+    // Apply to all weekly quests
+    questManager.weeklyQuests.forEach(q => q.points = weeklyPts);
+
+    showToast('📈', 'Puntos actualizados en todas las misiones');
+    bpRenderList();
+    bpRenderEditor();
   });
 
   // Export Buttons
@@ -180,10 +241,12 @@ function bpRenderList() {
     // YAML Buttons Visibility Logic
     const tierYamlBtns = document.getElementById('bp-yaml-export-tiers');
     const questYamlBtns = document.getElementById('bp-yaml-export-quests');
+    const calcPanel = document.getElementById('bp-progress-calculator');
     
     if (bpState.activeTab === 'tiers') {
        if (tierYamlBtns) tierYamlBtns.style.display = 'flex';
        if (questYamlBtns) questYamlBtns.style.display = 'none';
+       if (calcPanel) calcPanel.style.display = 'none';
 
        // Botón de Reiniciar en Tiers
        const resetDiv = document.createElement('div');
@@ -212,6 +275,10 @@ function bpRenderList() {
     } else {
        if (tierYamlBtns) tierYamlBtns.style.display = 'none';
        if (questYamlBtns) questYamlBtns.style.display = 'flex';
+       if (calcPanel) {
+         calcPanel.style.display = 'flex';
+         if (window.updateCalculator) window.updateCalculator(); // Actualizar al abrir
+       }
 
        // Quests
        const tgl = document.createElement('div');

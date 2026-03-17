@@ -52,7 +52,7 @@ html, body {
 }
 
 /* ── Panel izquierdo (Explorer) ──────────────────────────────── */
-#panel-left {
+.panel-left {
   width: 280px;
   min-width: 220px;
   flex-shrink: 0;
@@ -64,14 +64,14 @@ html, body {
   transition: width 0.3s ease, min-width 0.3s ease, margin-left 0.3s ease;
   position: relative;
 }
-#panel-left.collapsed {
+.panel-left.collapsed {
   width: 0;
   min-width: 0;
   border-right: none;
 }
 
 /* ── Panel central (Configurator) ────────────────────────────── */
-#panel-center {
+.panel-center {
   flex: 1;
   background: #0F1117;
   overflow-y: auto;
@@ -79,7 +79,7 @@ html, body {
 }
 
 /* ── Panel derecho (JSON Preview) ────────────────────────────── */
-#panel-right {
+.panel-right {
   width: 340px;
   min-width: 260px;
   flex-shrink: 0;
@@ -91,7 +91,7 @@ html, body {
   transition: width 0.3s ease, min-width 0.3s ease, margin-right 0.3s ease;
   position: relative;
 }
-#panel-right.collapsed {
+.panel-right.collapsed {
   width: 0;
   min-width: 0;
   border-left: none;
@@ -285,7 +285,7 @@ html, body {
   border-right: none;
 }
 
-#panel-left.collapsed #btn-toggle-left {
+.panel-left.collapsed #btn-toggle-left {
   right: -24px;
   position: fixed;
   left: 0;
@@ -318,12 +318,13 @@ html, body {
   
   #panel-left, #panel-right {
     width: 100% !important;
-    min-width: 100% !important;
-    height: 50vh;
-    border: none;
   }
-
-  #panel-left.collapsed, #panel-right.collapsed {
+   .panel-left, .panel-right {
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+  }
+  .panel-left.collapsed, .panel-right.collapsed {
     height: 0;
     overflow: hidden;
   }
