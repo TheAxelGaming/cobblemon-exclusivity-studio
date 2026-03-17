@@ -1,5 +1,5 @@
 /* ================================================================
-   styles.css — Estilos de Cobblemon Exclusivity Studio
+   styles.css — Estilos de Cobblemon Studio
    Tema oscuro con acentos azul/amarillo de Cobblemon
    ================================================================ */
 
@@ -61,6 +61,13 @@ html, body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: width 0.3s ease, min-width 0.3s ease, margin-left 0.3s ease;
+  position: relative;
+}
+#panel-left.collapsed {
+  width: 0;
+  min-width: 0;
+  border-right: none;
 }
 
 /* ── Panel central (Configurator) ────────────────────────────── */
@@ -81,6 +88,13 @@ html, body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: width 0.3s ease, min-width 0.3s ease, margin-right 0.3s ease;
+  position: relative;
+}
+#panel-right.collapsed {
+  width: 0;
+  min-width: 0;
+  border-left: none;
 }
 
 /* ── Toggle switch ───────────────────────────────────────────── */
@@ -236,4 +250,93 @@ html, body {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   height: 100%; opacity: 0.4; gap: 12px;
+}
+/* ── Sidebar Toggle Buttons ──────────────────────────────────── */
+.sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 48px;
+  background: #1E2534;
+  border: 1px solid #2A3347;
+  color: #6B7FA3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s;
+}
+.sidebar-toggle:hover {
+  background: #2A3347;
+  color: #4A90D9;
+}
+
+#btn-toggle-left {
+  right: -24px;
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+#btn-toggle-right {
+  left: -24px;
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}
+
+#panel-left.collapsed #btn-toggle-left {
+  right: -24px;
+  position: fixed;
+  left: 0;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid #2A3347;
+  border-left: none;
+}
+
+#panel-right.collapsed #btn-toggle-right {
+  position: fixed;
+  right: 0;
+  left: auto;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #2A3347;
+  border-right: none;
+}
+
+/* ── Mobile Layout Adjustments ────────────────────────────────── */
+@media (max-width: 1024px) {
+  #panel-right {
+    width: 300px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  #panels {
+    flex-direction: column;
+  }
+  
+  #panel-left, #panel-right {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 50vh;
+    border: none;
+  }
+
+  #panel-left.collapsed, #panel-right.collapsed {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .sidebar-toggle {
+    display: none; /* En móvil usamos un menú diferente o botones en el topbar */
+  }
+
+  #topbar {
+    padding: 0 10px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
 }

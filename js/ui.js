@@ -18,6 +18,45 @@ function showToast(icon, msg) {
 }
 
 // ============================================================
+// SIDEBAR COLLAPSE LOGIC
+// ============================================================
+function initSidebarToggles() {
+  const toggles = [
+    { btn: 'btn-toggle-left', panel: 'panel-left', key: 'ui_panelLeft_collapsed', dir: 'left' },
+    { btn: 'btn-toggle-right', panel: 'panel-right', key: 'ui_panelRight_collapsed', dir: 'right' },
+    { btn: 'bp-btn-toggle-left', panel: 'bp-panel-left', key: 'ui_bpPanelLeft_collapsed', dir: 'left' },
+    { btn: 'bp-btn-toggle-right', panel: 'bp-panel-right', key: 'ui_bpPanelRight_collapsed', dir: 'right' }
+  ];
+
+  toggles.forEach(t => {
+    const btn = document.getElementById(t.btn);
+    const panel = document.getElementById(t.panel);
+    if (!btn || !panel) return;
+
+    const toggle = () => {
+      const isCollapsed = panel.classList.toggle('collapsed');
+      if (t.dir === 'left') {
+        btn.innerHTML = isCollapsed ? '→' : '←';
+      } else {
+        btn.innerHTML = isCollapsed ? '←' : '→';
+      }
+      localStorage.setItem(t.key, isCollapsed);
+    };
+
+    btn.addEventListener('click', toggle);
+
+    // Restore state
+    if (localStorage.getItem(t.key) === 'true') {
+      panel.classList.add('collapsed');
+      if (t.dir === 'left') btn.innerHTML = '→';
+      else btn.innerHTML = '←';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initSidebarToggles);
+
+// ============================================================
 // TOGGLES
 // ============================================================
 function setTrack(name, val) {

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cobblemon Exclusivity Studio</title>
-  <meta name="description" content="Gestiona ítems de Cobblemon: bloquea recetas, drops y genera Data Packs completos."/>
+  <title>Cobblemon Studio</title>
+  <meta name="description" content="Gestiona Cobblemon: Datapacks, BattlePass y más herramientas para tu servidor."/>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -286,36 +286,31 @@ html, body {
   <header id="topbar">
     <div class="brand">
       <div class="brand-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white"
-             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-          <path d="M2 17l10 5 10-5"/>
-          <path d="M2 12l10 5 10-5"/>
-        </svg>
+        <img src="assets/logo.png" alt="Logo" style="width: 24px; height: 24px; object-fit: contain;">
       </div>
       <div>
-        <div class="brand-title">Cobblemon Exclusivity Studio</div>
-        <div class="brand-sub">Data Pack Generator — Fabric 1.21</div>
+        <div class="brand-title">Cobblemon Studio</div>
+        <div class="brand-sub">Creator Suite — Fabric 1.21</div>
       </div>
     </div>
     <div style="display:flex;gap:5px;background:#0F1117;padding:4px;border-radius:10px;border:1px solid #2A3347;margin:0 20px;">
-      <button id="tab-exclusivity" class="active" style="padding:6px 16px;border-radius:8px;border:none;background:#2A3347;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">Exclusivity</button>
+      <button id="tab-exclusivity" class="active" style="padding:6px 16px;border-radius:8px;border:none;background:#2A3347;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">Datapacks</button>
       <button id="tab-battlepass" style="padding:6px 16px;border-radius:8px;border:none;background:transparent;color:#6B7FA3;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">BattlePass</button>
     </div>
     <div style="display:flex;align-items:center;gap:10px;">
       <span class="badge badge-blue" id="sel-count-badge">0 en el Pack</span>
             <button class="btn-yellow" id="btn-export-bp-zip" style="background:#4CAF50;border-color:#388E3C;margin-right:10px;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Pack ZIP (Complete)
+        <span id="btn-export-bp-text">Descargar pase y quess</span>
       </button>
-      <button class="btn-yellow" id="btn-gen-pack" aria-label="Generar Pack Completo como ZIP">
+      <button class="btn-yellow" id="btn-gen-pack" aria-label="Generar Datapack">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"/>
           <line x1="12" y1="8" x2="12" y2="16"/>
           <line x1="8" y1="12" x2="16" y2="12"/>
         </svg>
-        Generar Pack Completo
+        Generar Datapack
       </button>
     </div>
   </header>
@@ -381,6 +376,9 @@ html, body {
         <button class="btn-ghost" id="btn-sel-all"   style="flex:1;font-size:12px;padding:7px 10px;">Sel. Todo</button>
         <button class="btn-ghost" id="btn-clear-sel" style="flex:1;font-size:12px;padding:7px 10px;">Limpiar</button>
       </div>
+
+      <!-- Botón colapsar -->
+      <button id="btn-toggle-left" class="sidebar-toggle" aria-label="Contraer panel izquierdo">←</button>
     </aside>
 
     <!-- ══════ CENTER: CONFIGURATOR ══════ -->
@@ -570,6 +568,8 @@ html, body {
 // ✦ Cobblemon Exclusivity Studio
 // ✦ Fabric 1.21 — fabric:load_conditions</span></div>
 
+      <!-- Botón colapsar -->
+      <button id="btn-toggle-right" class="sidebar-toggle" aria-label="Contraer panel derecho">→</button>
     </aside>
   </div><!-- /exclusivity-view -->
 
@@ -580,18 +580,36 @@ html, body {
           <button class="cat-pill active" id="bp-tab-tiers" style="flex:1;">Tiers / Levels</button>
           <button class="cat-pill" id="bp-tab-quests" style="flex:1;">Quests</button>
         </div>
+        
+        <!-- Export Selection Controls -->
+        <div id="bp-export-controls" style="padding:10px 15px; border-bottom:1px solid #2A3347; display:flex; flex-direction:column; gap:8px; background:rgba(74,144,217,0.05);">
+          <div style="font-size:10px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; font-weight:700;">Opciones de Exportación</div>
+          <div style="display:flex; gap:12px;">
+            <label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-size:12px; color:#C8D4E8;">
+              <input type="checkbox" id="check-export-tiers" checked style="width:14px; height:14px; accent-color:#4A90D9;">
+              Incluir Pase
+            </label>
+            <label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-size:12px; color:#C8D4E8;">
+              <input type="checkbox" id="check-export-quests" checked style="width:14px; height:14px; accent-color:#4A90D9;">
+              Incluir Quess
+            </label>
+          </div>
+        </div>
+
         <div id="bp-list" style="flex:1; overflow-y:auto; padding:10px;"></div>
+        <!-- Botón colapsar (BattlePass) -->
+        <button id="bp-btn-toggle-left" class="sidebar-toggle" style="right:-24px; border-radius: 0 8px 8px 0; border-left: none;" aria-label="Contraer panel izquierdo">←</button>
       </aside>
       <main id="bp-panel-center" class="panel-center" style="display:flex; flex-direction:column;">
         <div id="bp-editor-content" style="flex:1; padding:20px; overflow-y:auto;"></div>
       </main>
       <aside id="bp-panel-right" class="panel-right" style="width:340px;">
         <div style="padding:15px; border-bottom:1px solid #2A3347; font-weight:700; color:#fff;">YAML Preview</div>
-        <div style="padding:10px; display:flex; gap:5px; background:#161B27;">
+        <div id="bp-yaml-export-tiers" style="padding:10px; display:flex; gap:5px; background:#161B27;">
           <button class="btn-primary" id="btn-export-premium" style="flex:1; font-size:10px;">Export Premium</button>
           <button class="btn-primary" id="btn-export-free" style="flex:1; font-size:10px; background:#4A90D9;">Export Free</button>
         </div>
-        <div style="padding:10px; display:flex; gap:5px; background:#161B27; border-top:1px solid #2A3347;">
+        <div id="bp-yaml-export-quests" style="padding:10px; display:flex; gap:5px; background:#161B27; border-top:1px solid #2A3347;">
           <button class="btn-primary" id="btn-export-daily" style="flex:1; font-size:10px; background:#F5C518; color:#000;">Export Daily</button>
           <button class="btn-primary" id="btn-export-weekly" style="flex:1; font-size:10px; background:#A6E22E; color:#000;">Export Weekly</button>
         </div>
@@ -600,6 +618,8 @@ html, body {
           <div id="bp-preview-filename" style="font-size:11px; color:#6B7FA3; margin-bottom:8px;">—</div>
           <button class="btn-ghost" id="bp-btn-copy-yaml" style="width:100%;">Copiar YAML</button>
         </div>
+        <!-- Botón colapsar derecho (BattlePass) -->
+        <button id="bp-btn-toggle-right" class="sidebar-toggle" style="left:-24px; border-radius: 8px 0 0 8px; border-right: none;" aria-label="Contraer panel derecho">→</button>
       </aside>
     </div><!-- /battlepass-view -->
   </div><!-- /panels -->
@@ -623,7 +643,8 @@ html, body {
 <!-- BattlePass Modules -->
 <script src="js/battlepass/TierManager.js"></script>
 <script src="js/battlepass/QuestManager.js"></script>
-<script src="js/battlepass/materials.js"></script>
+    <script src="js/minecraft_data.js"></script>
+    <script src="js/battlepass/materials.js"></script>
 <script src="js/battlepass/ui.js"></script>
 
 </body>

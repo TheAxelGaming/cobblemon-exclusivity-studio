@@ -39,6 +39,17 @@ class QuestManager {
      return list.find(q => q.id === id.toString());
   }
 
+  getAdjacentQuestId(type, currentId, delta) {
+    const list = type === 'daily' ? this.dailyQuests : this.weeklyQuests;
+    const index = list.findIndex(q => q.id === currentId.toString());
+    if (index === -1) return null;
+    const nextIndex = index + delta;
+    if (nextIndex >= 0 && nextIndex < list.length) {
+      return list[nextIndex].id;
+    }
+    return null;
+  }
+
   updateQuest(type, id, data) {
      const q = this.getQuest(type, id);
      if (q) {

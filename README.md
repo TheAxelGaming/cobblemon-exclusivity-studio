@@ -1,13 +1,11 @@
-# Cobblemon Exclusivity Studio
+# Cobblemon Studio
 
-¡Bienvenido a **Cobblemon Exclusivity Studio**! Una herramienta de desarrollo web diseñada para administradores de servidores de Minecraft con el mod Cobblemon. Su propósito principal es facilitar la creación de Data Packs personalizados para bloquear recetas de crafteo y anular los "drops" (recompensas al derrotar) de más de 600 ítems y Pokémon.
+¡Bienvenido a **Cobblemon Studio**! Una herramienta de desarrollo web diseñada para administradores de servidores de Minecraft con el mod Cobblemon. Su propósito es ser una suite de herramientas multifuncional para gestionar diversos aspectos de tu servidor.
 
 ##  Características Principales
 
 *   **100% Client-Side:** Todo el procesamiento y la generación de archivos se realiza en tu navegador.
-*   **Base de Datos Completa:** Más de 600 ítems oficiales de Cobblemon.
-*   **Imágenes Oficiales Dinámicas:** Carga en tiempo real desde el repositorio oficial de Cobblemon.
-*   **Exclusivity Studio:**
+*   **Datapacks Studio (Anteriormente Exclusivity):**
     *   **Bloqueo de Recetas (Fabric):** Genera archivos `recipe.json` con `fabric:load_conditions`.
     *   **Bloqueo de Drops:** Genera sobreescrituras de especies con `drops: { "amount": 0 }`.
     *   **Exportación Masiva:** Genera un Data Pack `.zip` completo con un clic.

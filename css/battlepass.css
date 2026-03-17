@@ -154,13 +154,22 @@
 }
 
 /* Weekly & Daily Quests (14 slots) */
-.gui-quests {
+.gui-slots-grid.gui-quests {
   top: 46px;
   left: 25px;
   grid-template-columns: repeat(7, 18px);
   grid-template-rows: repeat(2, 18px);
   gap: 0px;
 }
+
+/* Ajuste específico para centrar la segunda fila de 5 slots en un grid de 7 */
+.gui-slots-grid.gui-quests > :nth-child(8) {
+  grid-column-start: 2;
+}
+
+/* Áreas de clic para flechas integradas */
+.gui-arrow-prev { position:absolute; bottom:12px; left:66px; width:15px; height:20px; cursor:pointer; z-index:20; }
+.gui-arrow-next { position:absolute; bottom:12px; left:96px; width:15px; height:20px; cursor:pointer; z-index:20; }
 
 /* Individual Slot styles */
 .gui-slot {
@@ -219,8 +228,41 @@
 }
 .bp-modal-header h3 { color: #fff; margin: 0; font-size: 16px; }
 .bp-modal-header button { background: none; border: none; color: #fff; cursor: pointer; font-size: 18px; }
+.bp-modal-tabs {
+    display: flex;
+    gap: 5px;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid #2A3347;
+}
+
+.bp-tab-btn {
+    background: #1A2133;
+    border: 1px solid #2A3347;
+    color: #6B7FA3;
+    padding: 6px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.bp-tab-btn:hover {
+    background: #2A3347;
+    color: #fff;
+}
+
+.bp-tab-btn.active {
+    background: #3B82F6;
+    border-color: #3B82F6;
+    color: #fff;
+}
+
+/* Scrollable area for items */
 .bp-modal-body {
-  padding: 20px; overflow-y: auto; flex: 1;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  flex: 1;
 }
 .bp-cat-title {
   color: #6B7FA3; font-size: 12px; margin-bottom: 15px; margin-top: 25px;

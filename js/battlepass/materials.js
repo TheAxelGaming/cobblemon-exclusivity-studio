@@ -58,6 +58,7 @@ const BATTLEPASS_MATERIALS = {
 
 // Modal Logic
 let bpSelectorCallback = null;
+let activeMaterialTab = 'cobblemon';
 
 function renderMaterialSelectorModal() {
     let modal = document.getElementById('bp-material-modal');
@@ -68,8 +69,13 @@ function renderMaterialSelectorModal() {
         modal.innerHTML = `
             <div class="bp-modal-content">
                 <div class="bp-modal-header">
-                    <h3>Seleccionar Material</h3>
+                    <h3>Seleccionar Recompensa</h3>
                     <button onclick="closeMaterialSelector()">✕</button>
+                </div>
+                <div class="bp-modal-tabs">
+                    <button id="tab-material-cobblemon" class="bp-tab-btn active" onclick="switchMaterialTab('cobblemon')">Cobblemon</button>
+                    <button id="tab-material-minecraft" class="bp-tab-btn" onclick="switchMaterialTab('minecraft')">Minecraft</button>
+                    <button id="tab-material-otros" class="bp-tab-btn" onclick="switchMaterialTab('otros')">Otros</button>
                 </div>
                 <div class="bp-modal-body" id="bp-modal-items"></div>
             </div>
@@ -78,31 +84,101 @@ function renderMaterialSelectorModal() {
     }
 }
 
+window.switchMaterialTab = function(tabId) {
+    activeMaterialTab = tabId;
+    // Update UI
+    document.querySelectorAll('.bp-tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(`tab-material-${tabId}`).classList.add('active');
+    
+    renderActiveTabItems();
+};
+
+function renderActiveTabItems(currentValue) {
+    let html = '';
+    const getVisual = window.getSlotVisualHtml || ((m) => `<div class="gui-slot-icon">📦</div>`);
+    const container = document.getElementById('bp-modal-items');
+    
+    if (activeMaterialTab === 'cobblemon') {
+        for (const [category, items] of Object.entries(BATTLEPASS_MATERIALS)) {
+            html += `<h4 class="bp-cat-title">${category.toUpperCase()}</h4>`;
+            html += `<div class="bp-item-grid">`;
+            for (const itemId of items) {
+                const visualHtml = getVisual(itemId);
+                const activeClass = itemId === currentValue ? 'active' : '';
+                html += `
+                    <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${itemId}')">
+                        <div class="bp-grid-icon">${visualHtml}</div>
+                        <div class="bp-grid-name">${itemId.replace('COBBLEMON_', '')}</div>
+                    </div>
+                `;
+            }
+            html += `</div>`;
+        }
+    } else if (activeMaterialTab === 'minecraft') {
+        const grouped = {};
+        MINECRAFT_ITEMS.forEach(item => {
+            if (!grouped[item.cat]) grouped[item.cat] = [];
+            grouped[item.cat].push(item);
+        });
+
+        // Orden de categorías deseado
+        const catOrder = ['Combat', 'Tools', 'Materials', 'Food', 'Blocks', 'Utility', 'Other'];
+        
+        // Ordenar las categorías encontradas según el orden deseado
+        const sortedCats = Object.keys(grouped).sort((a, b) => {
+            const indexA = catOrder.indexOf(a);
+            const indexB = catOrder.indexOf(b);
+            if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+            if (indexA === -1) return 1;
+            if (indexB === -1) return -1;
+            return indexA - indexB;
+        });
+
+        for (const cat of sortedCats) {
+            html += `<h4 class="bp-cat-title">${cat.toUpperCase()}</h4>`;
+            html += `<div class="bp-item-grid">`;
+            grouped[cat].forEach(item => {
+                const visualHtml = getVisual(item.id);
+                const activeClass = item.id === currentValue ? 'active' : '';
+                html += `
+                    <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${item.id}')">
+                        <div class="bp-grid-icon">${visualHtml}</div>
+                        <div class="bp-grid-name">${item.name}</div>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+        }
+    } else if (activeMaterialTab === 'otros') {
+        html += `<div class="bp-item-grid" style="padding-top:10px;">`;
+        OTHER_ITEMS.forEach(item => {
+            const visualHtml = getVisual(item.id);
+            const activeClass = item.id === currentValue ? 'active' : '';
+            html += `
+                <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${item.id}')">
+                    <div class="bp-grid-icon">${visualHtml}</div>
+                    <div class="bp-grid-name">${item.name}</div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+    }
+    
+    container.innerHTML = html;
+}
+
 window.openMaterialSelector = function(currentValue, callback) {
     bpSelectorCallback = callback;
     renderMaterialSelectorModal();
     
-    let html = '';
-    // Use a local reference to be safe
-    const getVisual = window.getSlotVisualHtml || ((m) => `<div class="gui-slot-icon">📦</div>`);
-
-    for (const [category, items] of Object.entries(BATTLEPASS_MATERIALS)) {
-        html += `<h4 class="bp-cat-title">${category.toUpperCase()}</h4>`;
-        html += `<div class="bp-item-grid">`;
-        for (const itemId of items) {
-            const visualHtml = getVisual(itemId);
-            const activeClass = itemId === currentValue ? 'active' : '';
-            html += `
-                <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${itemId}')">
-                    <div class="bp-grid-icon">${visualHtml}</div>
-                    <div class="bp-grid-name">${itemId.replace('COBBLEMON_', '')}</div>
-                </div>
-            `;
-        }
-        html += `</div>`;
-    }
+    // Default to cobblemon unless currentValue suggests otherwise
+    if (currentValue && currentValue.startsWith('minecraft:')) activeMaterialTab = 'minecraft';
+    else if (currentValue && (currentValue.includes('points') || currentValue.includes('vault'))) activeMaterialTab = 'otros';
+    else activeMaterialTab = 'cobblemon';
     
-    document.getElementById('bp-modal-items').innerHTML = html;
+    switchMaterialTab(activeMaterialTab);
+    renderActiveTabItems(currentValue);
+    
     document.getElementById('bp-material-modal').style.display = 'flex';
 };
 

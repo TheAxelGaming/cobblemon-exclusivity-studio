@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     viewExc.style.display = 'flex';
     viewBP.style.display = 'none';
+
+    // Button Visibility Logic
+    if (document.getElementById('btn-export-bp-zip')) document.getElementById('btn-export-bp-zip').style.display = 'none';
+    if (document.getElementById('btn-gen-pack')) document.getElementById('btn-gen-pack').style.display = 'inline-flex';
+    if (document.getElementById('sel-count-badge')) document.getElementById('sel-count-badge').style.display = 'inline-flex';
+
     if (window.renderList) window.renderList();
     localStorage.setItem('bp_view', 'exclusivity');
   });
@@ -42,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     viewExc.style.display = 'none';
     viewBP.style.display = 'flex';
     
+    // Button Visibility Logic
+    if (document.getElementById('btn-export-bp-zip')) document.getElementById('btn-export-bp-zip').style.display = 'inline-flex';
+    if (document.getElementById('btn-gen-pack')) document.getElementById('btn-gen-pack').style.display = 'none';
+    if (document.getElementById('sel-count-badge')) document.getElementById('sel-count-badge').style.display = 'none';
+
     localStorage.setItem('bp_view', 'battlepass');
     bpRenderList();
   });
@@ -50,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedView = localStorage.getItem('bp_view');
   if (savedView === 'battlepass') {
       tabBP.click();
+  } else {
+      tabExc.click(); // Ensure buttons visibility correct in initial state
   }
 
   // Sidebar Tabs
@@ -107,16 +120,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ZIP Export Logic
+  const updateExportBtnText = () => {
+    const includeTiers = document.getElementById('check-export-tiers').checked;
+    const includeQuests = document.getElementById('check-export-quests').checked;
+    const btnText = document.getElementById('btn-export-bp-text');
+    
+    if (includeTiers && includeQuests) {
+      btnText.textContent = 'Descargar pase y quess';
+    } else if (includeTiers) {
+      btnText.textContent = 'Descargar pase';
+    } else if (includeQuests) {
+      btnText.textContent = 'Descargar misiones';
+    } else {
+      btnText.textContent = 'Nada seleccionado';
+    }
+  };
+
+  document.getElementById('check-export-tiers').addEventListener('change', updateExportBtnText);
+  document.getElementById('check-export-quests').addEventListener('change', updateExportBtnText);
+
   document.getElementById('btn-export-bp-zip').onclick = async () => {
+    const includeTiers = document.getElementById('check-export-tiers').checked;
+    const includeQuests = document.getElementById('check-export-quests').checked;
+
+    if (!includeTiers && !includeQuests) {
+      showToast('⚠️', 'Selecciona al menos una opción para exportar');
+      return;
+    }
+
     const zip = new JSZip();
     const folder = zip.folder("battlepass");
-    const passes = folder.folder("passes");
-    const quests = folder.folder("quests");
+    
+    if (includeTiers) {
+      const passes = folder.folder("passes");
+      passes.file("free.yml", tierManager.exportToYaml('free'));
+      passes.file("premium.yml", tierManager.exportToYaml('premium'));
+    }
 
-    passes.file("free.yml", tierManager.exportToYaml('free'));
-    passes.file("premium.yml", tierManager.exportToYaml('premium'));
-    quests.file("daily.yml", questManager.exportToYaml('daily'));
-    quests.file("weekly.yml", questManager.exportToYaml('weekly'));
+    if (includeQuests) {
+      const quests = folder.folder("quests");
+      quests.file("daily.yml", questManager.exportToYaml('daily'));
+      quests.file("weekly.yml", questManager.exportToYaml('weekly'));
+    }
 
     const content = await zip.generateAsync({type:"blob"});
     const link = document.createElement("a");
@@ -132,7 +177,14 @@ function bpRenderList() {
     const list = document.getElementById('bp-list');
     list.innerHTML = '';
 
+    // YAML Buttons Visibility Logic
+    const tierYamlBtns = document.getElementById('bp-yaml-export-tiers');
+    const questYamlBtns = document.getElementById('bp-yaml-export-quests');
+    
     if (bpState.activeTab === 'tiers') {
+       if (tierYamlBtns) tierYamlBtns.style.display = 'flex';
+       if (questYamlBtns) questYamlBtns.style.display = 'none';
+
        // Botón de Reiniciar en Tiers
        const resetDiv = document.createElement('div');
        resetDiv.style.padding = '0 10px 10px';
@@ -158,6 +210,9 @@ function bpRenderList() {
            list.appendChild(div);
        });
     } else {
+       if (tierYamlBtns) tierYamlBtns.style.display = 'none';
+       if (questYamlBtns) questYamlBtns.style.display = 'flex';
+
        // Quests
        const tgl = document.createElement('div');
        tgl.style.display = 'flex'; tgl.style.gap = '5px'; tgl.style.marginBottom = '10px';
@@ -265,18 +320,33 @@ function extractAmount(rewards) {
 
 window.getSlotVisualHtml = function(materialStr, amount = 1) {
     if (!materialStr || materialStr === '') return '';
-    const name = materialStr.replace(/&[a-zA-Z0-9]/g, ''); // strip colors
-    const id = name.toLowerCase().replace('cobblemon_', '').replace('cobblemon:', '').trim();
+    const fullId = materialStr.replace(/&[a-zA-Z0-9]/g, '').trim(); // strip colors
+    const cleanId = fullId.toLowerCase().replace('cobblemon_', '').replace('cobblemon:', '').trim();
     
     let html = '';
-    // Buscar el item en la lista general de ITEMS (Exclusivity)
-    const found = ITEMS.find(i => i.id === id);
-    if (found) {
-        html = `<img src="assets/items/${found.id}.png" class="gui-slot-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="gui-slot-icon" style="display:none;">📦</div>`;
-    } else {
-        // Fallbacks para otros (vanilla)
-        html = `<div class="gui-slot-icon">📦</div>`;
+    
+    // 1. Verificar si es Minecraft Vanilla
+    if (fullId.startsWith('minecraft:')) {
+        const itemName = fullId.split(':')[1];
+        // Intentamos cargar la imagen de assets/minecraft_items/
+        html = `<img src="assets/minecraft_items/${itemName}.png" class="gui-slot-img" onerror="this.outerHTML='<div class=\'gui-slot-icon\'>📦</div>';">`;
+    } 
+    // 2. Verificar si es de Otros (puntos, dinero)
+    else if (fullId.includes('points') || fullId.includes('vault:')) {
+        const otherItem = OTHER_ITEMS.find(i => i.id === fullId);
+        const emoji = otherItem ? otherItem.emoji : '🎫';
+        html = `<div class="gui-slot-icon" style="font-size:14px; display:flex; align-items:center; justify-content:center;">${emoji}</div>`;
+    }
+    // 3. Ítems de Cobblemon (con assets de imagen)
+    else {
+        const id = cleanId;
+        const found = ITEMS.find(i => i.id === id);
+        if (found) {
+            html = `<img src="assets/items/${found.id}.png" class="gui-slot-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="gui-slot-icon" style="display:none;">📦</div>`;
+        } else {
+            html = `<div class="gui-slot-icon">📦</div>`;
+        }
     }
 
     if (amount > 1) {
@@ -406,23 +476,19 @@ function bpRenderEditor() {
         
         let bgImg = bpState.questSubTab === 'daily' ? 'assets/battlepass/daily_quests.png' : 'assets/battlepass/week.png';
         
+        const quests = bpState.questSubTab === 'daily' ? questManager.dailyQuests : questManager.weeklyQuests;
         let questSlots = '';
-        for(let i=0; i<14; i++) {
-           if(i === 0) {
-               // El slot actual
-               questSlots += `<div class="gui-slot" style="background:rgba(255,255,255,0.1); border-radius:4px;" title="Quest ${q.name.replace(/&[0-9a-flk-or]/g, '')}">
-                    ${getSlotVisualHtml(q.material, q.requiredProgress)}
-               </div>`;
+        for(let i=0; i<12; i++) {
+           const qItem = quests[i];
+           if (qItem) {
+               const isSelected = qItem.id === bpState.selectedId;
+               const selStyle = isSelected ? 'background:rgba(255,255,255,0.2); border:1px solid #fff;' : '';
+               questSlots += `
+                <div class="gui-slot" style="${selStyle}" onclick="bpSelectQuestFromGui('${qItem.id}')" title="Quest ${qItem.name.replace(/&[0-9a-flk-or]/g, '')}">
+                    ${getSlotVisualHtml(qItem.material, qItem.requiredProgress)}
+                </div>`;
            } else {
-               // Las otras quests como relleno o vacío
-               const otherQ = (bpState.questSubTab === 'daily' ? questManager.dailyQuests : questManager.weeklyQuests)[i];
-               if(otherQ) {
-                   questSlots += `<div class="gui-slot" title="Quest ${otherQ.name.replace(/&[0-9a-flk-or]/g, '')}">
-                        ${getSlotVisualHtml(otherQ.material, otherQ.requiredProgress)}
-                    </div>`;
-               } else {
-                   questSlots += `<div class="gui-slot"></div>`;
-               }
+               questSlots += `<div class="gui-slot"></div>`;
            }
         }
 
@@ -430,9 +496,15 @@ function bpRenderEditor() {
           <!-- GUI VISUAL PREVIEW -->
           <div class="gui-container" style="background-image: url('${bgImg}');">
               <div class="gui-slots-grid gui-quests">${questSlots}</div>
+              
+              <!-- Áreas de Navegación integradas en el GUI -->
+              <div class="gui-arrow-prev" onclick="bpChangeQuest(-1)" title="Misión Anterior"></div>
+              <div class="gui-arrow-next" onclick="bpChangeQuest(1)" title="Siguiente Misión"></div>
           </div>
 
-          <h2 style="color:#fff; font-size:20px; margin-bottom:20px; border-bottom:1px solid #2A3347; padding-bottom:10px;">Editando Quest #${q.id}</h2>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; border-bottom:1px solid #2A3347; padding-bottom:10px;">
+            <h2 style="color:#fff; font-size:20px; margin:0;">Editando Quest #${q.id}</h2>
+          </div>
           
           <div class="bp-form-group">
              <label>Nombre de la misión</label>
@@ -440,10 +512,17 @@ function bpRenderEditor() {
           </div>
           
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
-             <div class="bp-form-group">
-                <label>Tipo (Ej: COBBLEMON_CATCH, block-break)</label>
-                <input type="text" class="bp-input" id="ined-qtype" value="${q.type}" onchange="bpSaveQuest('${bpState.questSubTab}', '${q.id}')">
-             </div>
+              <div class="bp-form-group">
+                <label>Tipo de Misión</label>
+                <select class="bp-input" id="ined-qtype" style="background:#0F1117; color:#C8D4E8;" onchange="bpSaveQuest('${bpState.questSubTab}', '${q.id}')">
+                    <option value="COBBLEMON_CATCH" ${q.type==='COBBLEMON_CATCH'?'selected':''}>Captura (CATCH)</option>
+                    <option value="COBBLEMON_BATTLE" ${q.type==='COBBLEMON_BATTLE'?'selected':''}>Batalla (BATTLE)</option>
+                    <option value="COBBLEMON_BERRY" ${q.type==='COBBLEMON_BERRY'?'selected':''}>Bayas (BERRY)</option>
+                    <option value="placeholder" ${q.type==='placeholder'?'selected':''}>Placeholder (PAPI)</option>
+                    <option value="block-break" ${q.type==='block-break'?'selected':''}>Romper Bloques</option>
+                    <option value="craft" ${q.type==='craft'?'selected':''}>Crafteo (Craft)</option>
+                </select>
+              </div>
              <div class="bp-form-group">
                 <label>Required Progress</label>
                 <input type="number" class="bp-input" id="ined-qreq" value="${q.requiredProgress}" onchange="bpSaveQuest('${bpState.questSubTab}', '${q.id}')">
@@ -518,5 +597,36 @@ window.bpDeleteQuest = function(type, id) {
         bpRenderList();
         bpRenderEditor();
         showToast('🗑️', 'Misión eliminada');
+    }
+};
+
+window.bpSelectQuestFromGui = function(id) {
+    bpState.selectedId = id;
+    bpRenderList();
+    bpRenderEditor();
+    
+    // Auto-scroll
+    const items = document.querySelectorAll('.bp-list-item');
+    items.forEach(it => {
+        if (it.querySelector('.bp-item-title').textContent.includes(id)) {
+            it.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
+};
+
+window.bpChangeQuest = function(delta) {
+    const nextId = questManager.getAdjacentQuestId(bpState.questSubTab, bpState.selectedId, delta);
+    if (nextId) {
+        bpState.selectedId = nextId;
+        bpRenderList();
+        bpRenderEditor();
+        
+        // Auto-scroll
+        const items = document.querySelectorAll('.bp-list-item');
+        items.forEach(it => {
+            if (it.querySelector('.bp-item-title').textContent.includes(bpState.selectedId)) {
+                it.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
     }
 };
