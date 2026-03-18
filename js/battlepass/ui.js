@@ -119,31 +119,59 @@ window.importStudioProject = (file) => {
     reader.readAsText(file);
 };
 
-window.exportProjectCode = () => {
+window.exportProjectCode = async () => {
     const project = {
         tiers: tierManager.tiers,
         dailyQuests: questManager.dailyQuests,
         weeklyQuests: questManager.weeklyQuests
     };
     const json = JSON.stringify(project);
-    // Usamos btoa con escape para caracteres especiales (UTF-8)
-    const code = btoa(unescape(encodeURIComponent(json)));
     
-    navigator.clipboard.writeText(code).then(() => {
-        showToast('📋', 'Código de proyecto copiado al portapapeles');
-    }).catch(err => {
-        console.error('Error al copiar:', err);
-        // Fallback: mostrar en un prompt si falla clipboard API
-        prompt('Copia este código de proyecto:', code);
-    });
+    try {
+        const zip = new JSZip();
+        zip.file("project.json", json);
+        
+        // Comprimimos al máximo (DEFLATE nivel 9)
+        const code = await zip.generateAsync({
+            type: "base64",
+            compression: "DEFLATE",
+            compressionOptions: { level: 9 }
+        });
+        
+        navigator.clipboard.writeText(code).then(() => {
+            showToast('📋', 'Código comprimido copiado');
+        }).catch(err => {
+            console.error('Error al copiar:', err);
+            prompt('Copia este código optimizado:', code);
+        });
+    } catch (err) {
+        console.error('Error comprimiendo proyecto:', err);
+        showToast('❌', 'Error al generar el código.');
+    }
 };
 
-window.importProjectCode = () => {
-    const code = prompt('Pega aquí el código del proyecto:');
+window.importProjectCode = async () => {
+    const code = prompt('Pega aquí el código del proyecto (comprimido o normal):');
     if (!code) return;
 
     try {
-        const json = decodeURIComponent(escape(atob(code)));
+        let json;
+        
+        // Intentamos cargar como ZIP primero (formato nuevo comprimido)
+        try {
+            const zip = await new JSZip().loadAsync(code, { base64: true });
+            const file = zip.file("project.json");
+            if (file) {
+                json = await file.async("string");
+            }
+        } catch (e) {
+            // Fallback: Si falla como ZIP, intentamos el formato antiguo (Base64 directo)
+            console.log('Detectado código sin comprimir, intentando fallback...');
+            json = decodeURIComponent(escape(atob(code)));
+        }
+
+        if (!json) throw new Error('No se pudo extraer información del código');
+        
         const project = JSON.parse(json);
 
         if (!project.tiers || !project.dailyQuests || !project.weeklyQuests) {
@@ -159,10 +187,10 @@ window.importProjectCode = () => {
         
         bpRenderList();
         bpRenderEditor();
-        showToast('✅', 'Proyecto importado desde código');
+        showToast('✅', 'Proyecto importado con éxito');
     } catch (err) {
         console.error('Error al importar código:', err);
-        showToast('❌', 'El código no es válido.');
+        showToast('❌', 'El código no es válido o está corrupto.');
     }
 };
 
