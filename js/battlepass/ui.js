@@ -119,19 +119,52 @@ window.importStudioProject = (file) => {
     reader.readAsText(file);
 };
 
+// ==========================================
+// PROYECTO (.studio / JSON / MICRO-CODE)
+// ==========================================
+
+const PROJECT_MAP = {
+    t: 'tiers', d: 'dailyQuests', w: 'weeklyQuests',
+    i: 'id', n: 'name', type: 'type', rp: 'requiredProgress', ic: 'incremental', m: 'material', l: 'lore',
+    p: 'points', df: 'difficulty', ph: 'placeholder', mf: 'materialField',
+    fr: 'freeRewards', fm: 'freeMaterial', fa: 'freeAmount',
+    pr: 'premiumRewards', pm: 'premiumMaterial', pa: 'premiumAmount', rpts: 'requiredPoints'
+};
+
+const invertMap = (map) => Object.fromEntries(Object.entries(map).map(([k, v]) => [v, k]));
+const PROJECT_MAP_INV = invertMap(PROJECT_MAP);
+
 window.exportProjectCode = async () => {
-    const project = {
+    // 1. Preparar datos mínimos (Micro-JSON)
+    const minimize = (obj, map) => {
+        if (Array.isArray(obj)) return obj.map(item => minimize(item, map));
+        if (typeof obj !== 'object' || obj === null) return obj;
+        
+        const mini = {};
+        for (let key in obj) {
+            let val = obj[key];
+            // Omitir valores vacíos/por defecto para ahorrar espacio
+            if (val === null || val === undefined || val === '' || (Array.isArray(val) && val.length === 0)) continue;
+            
+            const shortKey = map[key] || key;
+            mini[shortKey] = minimize(val, map);
+        }
+        return mini;
+    };
+
+    const projectData = {
         tiers: tierManager.tiers,
         dailyQuests: questManager.dailyQuests,
         weeklyQuests: questManager.weeklyQuests
     };
-    const json = JSON.stringify(project);
+
+    const miniProject = minimize(projectData, PROJECT_MAP_INV);
+    const json = JSON.stringify(miniProject);
     
     try {
         const zip = new JSZip();
-        zip.file("project.json", json);
+        zip.file("p", json); // "p" por "project"
         
-        // Comprimimos al máximo (DEFLATE nivel 9)
         const code = await zip.generateAsync({
             type: "base64",
             compression: "DEFLATE",
@@ -139,58 +172,84 @@ window.exportProjectCode = async () => {
         });
         
         navigator.clipboard.writeText(code).then(() => {
-            showToast('📋', 'Código comprimido copiado');
+            showToast('🚀', 'Micro-Código copiado (Ultra corto)');
         }).catch(err => {
-            console.error('Error al copiar:', err);
-            prompt('Copia este código optimizado:', code);
+            prompt('Copia este Micro-Código:', code);
         });
     } catch (err) {
-        console.error('Error comprimiendo proyecto:', err);
+        console.error('Error Micro-Code:', err);
         showToast('❌', 'Error al generar el código.');
     }
 };
 
 window.importProjectCode = async () => {
-    const code = prompt('Pega aquí el código del proyecto (comprimido o normal):');
+    const code = prompt('Pega aquí el código del proyecto:');
     if (!code) return;
 
     try {
         let json;
+        let isMini = false;
         
-        // Intentamos cargar como ZIP primero (formato nuevo comprimido)
         try {
             const zip = await new JSZip().loadAsync(code, { base64: true });
-            const file = zip.file("project.json");
+            // Intentamos buscar "p" (nuevo formato mini) o "project.json" (formato anterior comprimido)
+            const file = zip.file("p") || zip.file("project.json");
             if (file) {
                 json = await file.async("string");
+                if (zip.file("p")) isMini = true;
             }
         } catch (e) {
-            // Fallback: Si falla como ZIP, intentamos el formato antiguo (Base64 directo)
-            console.log('Detectado código sin comprimir, intentando fallback...');
+            // Fallback: Base64 directo (formato original v1)
             json = decodeURIComponent(escape(atob(code)));
         }
 
-        if (!json) throw new Error('No se pudo extraer información del código');
+        if (!json) throw new Error('Inválido');
         
-        const project = JSON.parse(json);
+        let data = JSON.parse(json);
 
-        if (!project.tiers || !project.dailyQuests || !project.weeklyQuests) {
-            throw new Error('Código inválido');
+        // Si es mini, reconstruir con mapeo y valores por defecto
+        if (isMini) {
+            const maximize = (obj, map) => {
+                if (Array.isArray(obj)) return obj.map(item => maximize(item, map));
+                if (typeof obj !== 'object' || obj === null) return obj;
+                
+                const full = {};
+                for (let shortKey in obj) {
+                    const longKey = map[shortKey] || shortKey;
+                    full[longKey] = maximize(obj[shortKey], map);
+                }
+                return full;
+            };
+            data = maximize(data, PROJECT_MAP);
+
+            // Asegurar campos básicos de Tiers si faltan por la purga
+            if (data.tiers) {
+                data.tiers.forEach(t => {
+                    t.freeRewards = t.freeRewards || [];
+                    t.premiumRewards = t.premiumRewards || [];
+                    t.freeMaterial = t.freeMaterial || '';
+                    t.premiumMaterial = t.premiumMaterial || '';
+                    t.freeAmount = t.freeAmount || 0;
+                    t.premiumAmount = t.premiumAmount || 0;
+                });
+            }
         }
 
-        tierManager.tiers = project.tiers;
-        questManager.dailyQuests = project.dailyQuests;
-        questManager.weeklyQuests = project.weeklyQuests;
+        if (!data.tiers && !data.t) throw new Error('Formato roto');
+
+        tierManager.tiers = data.tiers || data.t;
+        questManager.dailyQuests = data.dailyQuests || data.d;
+        questManager.weeklyQuests = data.weeklyQuests || data.w;
 
         tierManager.save();
         questManager.save();
         
         bpRenderList();
         bpRenderEditor();
-        showToast('✅', 'Proyecto importado con éxito');
+        showToast('✅', 'Proyecto restaurado con éxito');
     } catch (err) {
-        console.error('Error al importar código:', err);
-        showToast('❌', 'El código no es válido o está corrupto.');
+        console.error('Error import:', err);
+        showToast('❌', 'Código inválido o incompatible.');
     }
 };
 
