@@ -119,6 +119,53 @@ window.importStudioProject = (file) => {
     reader.readAsText(file);
 };
 
+window.exportProjectCode = () => {
+    const project = {
+        tiers: tierManager.tiers,
+        dailyQuests: questManager.dailyQuests,
+        weeklyQuests: questManager.weeklyQuests
+    };
+    const json = JSON.stringify(project);
+    // Usamos btoa con escape para caracteres especiales (UTF-8)
+    const code = btoa(unescape(encodeURIComponent(json)));
+    
+    navigator.clipboard.writeText(code).then(() => {
+        showToast('📋', 'Código de proyecto copiado al portapapeles');
+    }).catch(err => {
+        console.error('Error al copiar:', err);
+        // Fallback: mostrar en un prompt si falla clipboard API
+        prompt('Copia este código de proyecto:', code);
+    });
+};
+
+window.importProjectCode = () => {
+    const code = prompt('Pega aquí el código del proyecto:');
+    if (!code) return;
+
+    try {
+        const json = decodeURIComponent(escape(atob(code)));
+        const project = JSON.parse(json);
+
+        if (!project.tiers || !project.dailyQuests || !project.weeklyQuests) {
+            throw new Error('Código inválido');
+        }
+
+        tierManager.tiers = project.tiers;
+        questManager.dailyQuests = project.dailyQuests;
+        questManager.weeklyQuests = project.weeklyQuests;
+
+        tierManager.save();
+        questManager.save();
+        
+        bpRenderList();
+        bpRenderEditor();
+        showToast('✅', 'Proyecto importado desde código');
+    } catch (err) {
+        console.error('Error al importar código:', err);
+        showToast('❌', 'El código no es válido.');
+    }
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -228,6 +275,13 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+
+  // Código (Copiar/Pegar)
+  const btnCopyCode = document.getElementById('btn-copy-code');
+  const btnImportCode = document.getElementById('btn-import-code');
+
+  if (btnCopyCode) btnCopyCode.addEventListener('click', () => window.exportProjectCode());
+  if (btnImportCode) btnImportCode.addEventListener('click', () => window.importProjectCode());
 
   document.getElementById('btn-apply-calc').addEventListener('click', () => {
     const dailyPts = parseInt(document.getElementById('bp-res-daily').textContent);

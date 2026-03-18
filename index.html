@@ -662,15 +662,25 @@ html, body {
           <div id="bp-preview-filename" style="font-size:11px; color:#6B7FA3;">—</div>
           <button class="btn-ghost" id="bp-btn-copy-yaml" style="width:100%;">Copiar YAML</button>
           
-          <div id="bp-project-controls" style="display:flex; gap:8px; margin-top:4px;">
-            <button class="btn-ghost" id="btn-save-project" style="flex:1; font-size:11px; padding:6px; border:1px solid rgba(166,226,46,0.2); color:#A6E22E; display:flex; align-items:center; justify-content:center;">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-              Guardar
-            </button>
-            <button class="btn-ghost" id="btn-load-project" style="flex:1; font-size:11px; padding:6px; border:1px solid rgba(74,144,217,0.2); color:#4A90D9; display:flex; align-items:center; justify-content:center;">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              Cargar
-            </button>
+          <div id="bp-project-controls" style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+            <div style="display:flex; gap:8px;">
+              <button class="btn-ghost" id="btn-save-project" style="flex:1; font-size:11px; padding:6px; border:1px solid rgba(166,226,46,0.2); color:#A6E22E; display:flex; align-items:center; justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Guardar
+              </button>
+              <button class="btn-ghost" id="btn-load-project" style="flex:1; font-size:11px; padding:6px; border:1px solid rgba(74,144,217,0.2); color:#4A90D9; display:flex; align-items:center; justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Cargar
+              </button>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn-ghost" id="btn-copy-code" style="flex:1; font-size:10px; padding:5px; border:1px solid rgba(166,226,46,0.15); color:#A6E22E; opacity:0.8;">
+                Copiar Código
+              </button>
+              <button class="btn-ghost" id="btn-import-code" style="flex:1; font-size:10px; padding:5px; border:1px solid rgba(74,144,217,0.15); color:#4A90D9; opacity:0.8;">
+                Pegar Código
+              </button>
+            </div>
             <input type="file" id="input-load-project" style="display:none;" accept=".json,.studio">
           </div>
         </div>
