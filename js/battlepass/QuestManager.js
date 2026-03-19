@@ -11,27 +11,50 @@ class QuestManager {
       try {
         this.dailyQuests = JSON.parse(savedDaily);
         this.weeklyQuests = JSON.parse(savedWeekly);
+        
+        // Ensure new fields exist for old saved data
+        this.dailyQuests.forEach(q => {
+          if (!q.difficulty) q.difficulty = 'easy';
+          if (q.permanent === undefined) q.permanent = false;
+        });
+
+        const savedStrategy = localStorage.getItem('bp_strategy');
+        this.strategy = savedStrategy ? JSON.parse(savedStrategy) : {
+            enabled: true,
+            easy: 3,
+            medium: 2,
+            hard: 1
+        };
+
         return;
       } catch (e) { console.error("Error loading quests", e); }
     }
 
     this.dailyQuests = [
-      { id: '1', type: 'COBBLEMON_CATCH', name: '&a&lCapturar Salvajes', requiredProgress: 3, incremental: true, material: 'COBBLEMON_POKE_BALL', lore: ['&7Captura &e3 Pokemon &7salvajes.'] },
-      { id: '2', type: 'COBBLEMON_BERRY', name: '&a&lRecolector de Bayas', requiredProgress: 10, incremental: true, material: 'COBBLEMON_ORAN_BERRY', lore: ['&7Recolecta &e10 Bayas/Apricorns.'] },
-      { id: '3', type: 'COBBLEMON_BATTLE', name: '&a&lCombate NPC', requiredProgress: 1, incremental: true, material: 'COBBLEMON_EXP_CANDY_S', lore: ['&7Gana &e1 combate &7contra un NPC.'] }
+      { id: '1', type: 'COBBLEMON_CATCH', name: '&a&lCapturar Salvajes', requiredProgress: 3, incremental: true, material: 'COBBLEMON_POKE_BALL', lore: ['&7Captura &e3 Pokemon &7salvajes.'], difficulty: 'easy', permanent: false },
+      { id: '2', type: 'COBBLEMON_BERRY', name: '&a&lRecolector de Bayas', requiredProgress: 10, incremental: true, material: 'COBBLEMON_ORAN_BERRY', lore: ['&7Recolecta &e10 Bayas/Apricorns.'], difficulty: 'easy', permanent: false },
+      { id: '3', type: 'COBBLEMON_BATTLE', name: '&a&lCombate NPC', requiredProgress: 1, incremental: true, material: 'COBBLEMON_EXP_CANDY_S', lore: ['&7Gana &e1 combate &7contra un NPC.'], difficulty: 'medium', permanent: false }
     ];
 
     this.weeklyQuests = [
-      { id: '1', type: 'placeholder', placeholder: '%cobblemon:pokedex_amount_caught%', name: '&6&lMaestro Captura', requiredProgress: 50, points: 150, difficulty: 'hard', material: 'COBBLEMON_ULTRA_BALL', lore: ['&7Atrapa &e50 Pokemon &7a lo largo', '&7de la semana.'] },
-      { id: '2', type: 'placeholder', placeholder: '%cobblemon_eggs_hatched%', name: '&6&lCriador Experto', requiredProgress: 1, points: 200, difficulty: 'hard', material: 'COBBLEMON_POKE_EGG', lore: ['&7Eclosiona &e1 huevo Pokemon', '&7para completar esta mision.'] },
-      { id: '3', type: 'block-break', materialField: 'ancient_debris', name: '&6&lMinero Legendario', requiredProgress: 5, points: 250, difficulty: 'hard', material: 'ANCIENT_DEBRIS', lore: ['&7Pica &e5 escombros ancestrales.'] },
-      { id: '4', type: 'craft', materialField: 'COBBLEMON_HEALER', name: '&6&lIngeniero Pokemon', requiredProgress: 1, points: 180, difficulty: 'hard', material: 'COBBLEMON_HEALER', lore: ['&7Fabrica &e1 Maquina de Curacion.'] }
+      { id: '1', type: 'placeholder', placeholder: '%cobblemon:pokedex_amount_caught%', name: '&6&lMaestro Captura', requiredProgress: 50, points: 150, difficulty: 'hard', material: 'COBBLEMON_ULTRA_BALL', lore: ['&7Atrapa &e50 Pokemon &7a lo largo', '&7de la semana.'], permanent: false },
+      { id: '2', type: 'placeholder', placeholder: '%cobblemon_eggs_hatched%', name: '&6&lCriador Experto', requiredProgress: 1, points: 200, difficulty: 'hard', material: 'COBBLEMON_POKE_EGG', lore: ['&7Eclosiona &e1 huevo Pokemon', '&7para completar esta mision.'], permanent: false },
+      { id: '3', type: 'block-break', materialField: 'ancient_debris', name: '&6&lMinero Legendario', requiredProgress: 5, points: 250, difficulty: 'hard', material: 'ANCIENT_DEBRIS', lore: ['&7Pica &e5 escombros ancestrales.'], permanent: false },
+      { id: '4', type: 'craft', materialField: 'COBBLEMON_HEALER', name: '&6&lIngeniero Pokemon', requiredProgress: 1, points: 180, difficulty: 'hard', material: 'COBBLEMON_HEALER', lore: ['&7Fabrica &e1 Maquina de Curacion.'], permanent: false }
     ];
+
+    this.strategy = {
+        enabled: true,
+        easy: 3,
+        medium: 2,
+        hard: 1
+    };
   }
 
   save() {
     localStorage.setItem('bp_daily_quests', JSON.stringify(this.dailyQuests));
     localStorage.setItem('bp_weekly_quests', JSON.stringify(this.weeklyQuests));
+    localStorage.setItem('bp_strategy', JSON.stringify(this.strategy));
   }
 
   getQuest(type, id) {
@@ -67,7 +90,9 @@ class QuestManager {
           name: 'Nueva Misión',
           requiredProgress: 1,
           material: 'COBBLEMON_POKE_BALL',
-          lore: ['&7Nueva misión por configurar.']
+          lore: ['&7Nueva misión por configurar.'],
+          difficulty: 'easy',
+          permanent: false
       };
       list.push(newQuest);
       this.save();
@@ -84,6 +109,22 @@ class QuestManager {
   }
 
   exportToYaml(type) {
+    if (type === 'settings') {
+      const permanentIds = this.dailyQuests.filter(q => q.permanent).map(q => q.id);
+      const settingsObj = {
+        'daily-quest-difficulty': {
+          enabled: this.strategy.enabled,
+          strategy: {
+            easy: this.strategy.easy,
+            medium: this.strategy.medium,
+            hard: this.strategy.hard
+          }
+        },
+        'permanent-daily-quest-ids': permanentIds
+      };
+      return jsyaml.dump(settingsObj, { quotingType: "'", forceQuotes: true });
+    }
+
     const list = type === 'daily' ? this.dailyQuests : this.weeklyQuests;
     const yamlObj = {
        'actions-version': 2,

@@ -2,7 +2,7 @@
 
 ¡Bienvenido a **Cobblemon Studio**! Una herramienta de desarrollo web diseñada para administradores de servidores de Minecraft con el mod Cobblemon. Su propósito es ser una suite de herramientas multifuncional para gestionar diversos aspectos de tu servidor.
 
-##  Características Principales
+## Características Principales
 
 *   **100% Client-Side:** Todo el procesamiento y la generación de archivos se realiza en tu navegador.
 *   **Datapacks Studio (Anteriormente Exclusivity):**
@@ -12,15 +12,18 @@
 *   **BattlePass Studio (NUEVO):**
     *   **Gestión de Niveles (Tiers):** Configura los 100 niveles del pase con recompensas gratuitas y premium.
     *   **Gestión de Misiones:** Crea y edita misiones diarias, semanales y fijas.
-    *   **Exportación YAML:** Genera archivos listos para el plugin BattlePass.
+    *   **Editor de Eventos:** Configura misiones especiales para eventos (ej. Navidad, Aniversario) con recompensas de alto valor.
+    *   **Progress Balancer:** Sistema inteligente que recalcula automáticamente los puntos necesarios para misiones diarias/semanales basándose en los eventos programados.
+    *   **Alertas de Dificultad:** Notificaciones automáticas si la progresión del pase se vuelve demasiado sencilla debido a los eventos.
+    *   **Exportación YAML:** Genera archivos listos para el plugin BattlePass, incluyendo events.yml.
     *   **Previsualización GUI:** Incluye una recreación visual del menú de recompensas para ver cómo quedarán los ítems.
     *   **Navegación Fluida:** Sistema de navegación nivel por nivel para una edición precisa.
 
-##  Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 *   **HTML5 & JS Vanilla:** Rendimiento ultra rápido.
 *   **CSS Moderno:** Diseño responsivo con sistema de layout flexible (Flexbox).
 *   **JSZip & js-yaml:** Generación de archivos ZIP y YAML directamente en el navegador.
 *   **Lucide Icons:** Iconografía minimalista.
 
-Desarrollado con Excelencia de Ingeniería Naval. ⚓
+Desarrollado con Excelencia de Ingeniería Naval.

@@ -576,9 +576,11 @@ html, body {
     <!-- BATTLEPASS VIEW -->
     <div id="battlepass-view" style="display:none; flex:1; overflow:hidden;">
       <aside id="bp-panel-left" class="panel-left" style="width:300px;">
-        <div style="padding:15px; border-bottom:1px solid #2A3347; display:flex; gap:10px;">
-          <button class="cat-pill active" id="bp-tab-tiers" style="flex:1;">Tiers / Levels</button>
-          <button class="cat-pill" id="bp-tab-quests" style="flex:1;">Quests</button>
+        <div style="padding:15px; border-bottom:1px solid #2A3347; display:flex; gap:5px;">
+          <button class="cat-pill active" id="bp-tab-tiers" style="flex:1; font-size:11px; padding:4px 0;">Tiers</button>
+          <button class="cat-pill" id="bp-tab-quests" style="flex:1; font-size:11px; padding:4px 0;">Misiones</button>
+          <button class="cat-pill" id="bp-tab-events" style="flex:1; font-size:11px; padding:4px 0;">Eventos</button>
+          <button class="cat-pill" id="bp-tab-settings" style="flex:1; font-size:11px; padding:4px 0;">Ajustes</button>
         </div>
         
 
@@ -592,7 +594,7 @@ html, body {
             </label>
             <label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-size:12px; color:#C8D4E8;">
               <input type="checkbox" id="check-export-quests" checked style="width:14px; height:14px; accent-color:#4A90D9;">
-              Incluir Quess
+              Incluir Misiones
             </label>
           </div>
         </div>
@@ -656,6 +658,8 @@ html, body {
         <div id="bp-yaml-export-quests" style="padding:10px; display:flex; gap:5px; background:#161B27; border-top:1px solid #2A3347;">
           <button class="btn-primary" id="btn-export-daily" style="flex:1; font-size:10px; background:#F5C518; color:#000;">Export Daily</button>
           <button class="btn-primary" id="btn-export-weekly" style="flex:1; font-size:10px; background:#A6E22E; color:#000;">Export Weekly</button>
+          <button class="btn-primary" id="btn-export-events" style="flex:1; font-size:10px; background:#FF5722; color:#fff;">Export Events</button>
+          <button class="btn-primary" id="btn-export-settings" style="flex:1; font-size:10px; background:#4A90D9; color:#fff;">Export Settings</button>
         </div>
         <div id="bp-yaml-preview" class="json-preview" style="flex:1;">El YAML aparecerá aquí...</div>
         <div style="padding:10px; border-top:1px solid #2A3347; display:flex; flex-direction:column; gap:8px;">
@@ -709,6 +713,7 @@ html, body {
   <script src="js/minecraft_data.js"></script>
   <script src="js/battlepass/materials.js"></script>
   <script src="js/battlepass/QuestManager.js"></script>
+  <script src="js/battlepass/EventManager.js"></script>
   <script src="js/battlepass/ProgressManager.js"></script>
   <script src="js/battlepass/ui.js"></script>
 

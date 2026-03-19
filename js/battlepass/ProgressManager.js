@@ -14,11 +14,14 @@ class ProgressManager {
    * @param {number} dailyCount - Cantidad de misiones diarias activas (ej. 3)
    * @param {number} weeklyCount - Cantidad de misiones semanales activas (ej. 8)
    * @param {number} dailyRatio - Porcentaje de XP que viene de diarias (0.0 a 1.0)
+   * @param {number} eventPoints - Puntos totales provenientes de eventos
    */
-  calculate(durationWeeks, dailyCount, weeklyCount, dailyRatio = 0.6) {
+  calculate(durationWeeks, dailyCount, weeklyCount, dailyRatio = 0.6, eventPoints = 0) {
     if (durationWeeks <= 0) return null;
 
-    const weeklyXpTarget = this.totalXpNeeded / durationWeeks;
+    // Los puntos de eventos reducen directamente el objetivo total
+    const remainingXpNeeded = Math.max(0, this.totalXpNeeded - eventPoints);
+    const weeklyXpTarget = remainingXpNeeded / durationWeeks;
     
     // XP que debe venir de las diarias CADA SEMANA
     const totalDailyXpPerWeek = weeklyXpTarget * dailyRatio;
@@ -31,6 +34,16 @@ class ProgressManager {
 
     // Validaciones y Alertas
     const alerts = [];
+    
+    // Alerta de "Pase demasiado fácil"
+    const reductionPercent = (eventPoints / this.totalXpNeeded) * 100;
+    if (reductionPercent >= 20) {
+        alerts.push({
+            type: 'danger',
+            message: `⚠️ El pase se completará un ${Math.round(reductionPercent)}% más rápido de lo previsto debido a los eventos activos.`
+        });
+    }
+
     if (dailyPoints > 500) {
       alerts.push({
         type: 'warning',
@@ -38,7 +51,7 @@ class ProgressManager {
       });
     }
 
-    if (dailyPoints < 50 && durationWeeks > 0) {
+    if (dailyPoints < 50 && durationWeeks > 0 && remainingXpNeeded > 0) {
        alerts.push({
         type: 'info',
         message: `ℹ️ El pase es muy largo para tan poca XP. Las misiones darán muy pocos puntos (${dailyPoints}).`
@@ -46,9 +59,12 @@ class ProgressManager {
     }
 
     return {
+      totalXpNeeded: this.totalXpNeeded,
+      remainingXpNeeded,
       weeklyXpTarget: Math.round(weeklyXpTarget),
       dailyPoints,
       weeklyPoints,
+      reductionPercent,
       alerts
     };
   }
