@@ -156,6 +156,98 @@ class QuestManager {
 
     return jsyaml.dump(yamlObj, { quotingType: "'", forceQuotes: true });
   }
+
+  /**
+   * Importa un archivo YML de misiones (daily o weekly).
+   * Auto-detecta el tipo basándose en heurísticas:
+   * - Si las quests tienen campos 'points' o 'difficulty' → weekly
+   * - Si las quests son simples con 'incremental' → daily
+   * - También se puede forzar un tipo con el segundo parámetro
+   * @param {string} yamlText - Contenido del archivo YML
+   * @param {string|null} forceType - Forzar 'daily' o 'weekly' (null = auto-detectar)
+   * @param {string} fileName - Nombre del archivo original para ayudar a detectar
+   * @returns {{ type: string, questCount: number }} Resumen de la importación
+   */
+  importFromYaml(yamlText, forceType = null, fileName = '') {
+    const data = jsyaml.load(yamlText);
+    if (!data || !data.quests) throw new Error('El archivo no contiene quests válidos');
+
+    const questKeys = Object.keys(data.quests).sort((a, b) => parseInt(a) - parseInt(b));
+    
+    // Auto-detectar tipo
+    let detectedType = forceType;
+    if (!detectedType) {
+      const lowerName = fileName.toLowerCase();
+      if (lowerName.includes('daily') || lowerName.includes('diaria')) {
+        detectedType = 'daily';
+      } else if (lowerName.includes('week') || lowerName.includes('semanal')) {
+        detectedType = 'weekly';
+      } else {
+        // Heuristic: weekly quests usually have 'points' or 'difficulty' fields
+        const hasWeeklyFields = questKeys.some(key => {
+          const q = data.quests[key];
+          return q.points !== undefined || q.difficulty !== undefined;
+        });
+        // Heuristic: daily quests usually have 'incremental: true'
+        const hasDailyFields = questKeys.some(key => {
+          const q = data.quests[key];
+          return q.incremental === true;
+        });
+
+        if (hasWeeklyFields && !hasDailyFields) {
+          detectedType = 'weekly';
+        } else {
+          detectedType = 'daily';
+        }
+      }
+    }
+
+    const importedQuests = [];
+
+    questKeys.forEach(key => {
+      const qData = data.quests[key];
+      
+      const quest = {
+        id: key.toString(),
+        type: qData.type || 'COBBLEMON_CATCH',
+        name: qData.name || 'Misión Importada',
+        requiredProgress: qData['required-progress'] || 1,
+        material: (qData.item && qData.item.material) || qData.material || 'COBBLEMON_POKE_BALL',
+        lore: [],
+        difficulty: qData.difficulty || 'easy',
+        permanent: false
+      };
+
+      // Extract lore from the item block (skip the last progress line)
+      if (qData.item && qData.item.lore) {
+        quest.lore = qData.item.lore.filter(line => 
+          !line.includes('%total_progress%') && 
+          !line.includes('%progress_bar%') && 
+          !line.includes('%percentage_progress%') &&
+          line !== ''
+        );
+      }
+
+      // Optional fields
+      if (qData.incremental !== undefined) quest.incremental = qData.incremental;
+      if (qData.placeholder) quest.placeholder = qData.placeholder;
+      if (qData.points) quest.points = qData.points;
+      if (qData.material && qData.type === 'block-break') quest.materialField = qData.material;
+      if (qData.material && qData.type === 'craft') quest.materialField = qData.material;
+
+      importedQuests.push(quest);
+    });
+
+    // Replace the quests of the detected type
+    if (detectedType === 'daily') {
+      this.dailyQuests = importedQuests;
+    } else {
+      this.weeklyQuests = importedQuests;
+    }
+
+    this.save();
+    return { type: detectedType, questCount: importedQuests.length };
+  }
 }
 
 const questManager = new QuestManager();

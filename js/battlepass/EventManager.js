@@ -63,4 +63,8 @@ class EventManager {
     });
     return jsyaml.dump(yamlObj);
   }
+
+  getTotalEventPoints() {
+    return this.events.reduce((sum, e) => sum + (parseInt(e.points) || 0), 0);
+  }
 }

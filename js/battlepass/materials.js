@@ -27,13 +27,38 @@ const BATTLEPASS_MATERIALS = {
     "COBBLEMON_X_ATTACK", "COBBLEMON_X_DEFENSE", "COBBLEMON_X_SP_ATK", "COBBLEMON_X_SP_DEF",
     "COBBLEMON_X_SPEED", "COBBLEMON_X_ACCURACY", "COBBLEMON_DIRE_HIT", "COBBLEMON_GUARD_SPEC"
   ],
+  "competitive": [
+    "COBBLEMON_LEFTOVERS", "COBBLEMON_ROCKY_HELMET", "COBBLEMON_LIFE_ORB", "COBBLEMON_FOCUS_SASH",
+    "COBBLEMON_ASSAULT_VEST", "COBBLEMON_CHOICE_BAND", "COBBLEMON_CHOICE_SPECS", "COBBLEMON_CHOICE_SCARF",
+    "COBBLEMON_EVIOLITE", "COBBLEMON_AIR_BALLOON", "COBBLEMON_WEAKNESS_POLICY", "COBBLEMON_HEAVY_DUTY_BOOTS",
+    "COBBLEMON_EXPERT_BELT", "COBBLEMON_SCOPE_LENS", "COBBLEMON_ABILITY_CAPSULE", "COBBLEMON_ABILITY_PATCH"
+  ],
+  "mints": [
+    "COBBLEMON_ADAMANT_MINT", "COBBLEMON_MODEST_MINT", "COBBLEMON_JOLLY_MINT", "COBBLEMON_TIMID_MINT",
+    "COBBLEMON_BOLD_MINT", "COBBLEMON_CALM_MINT", "COBBLEMON_IMPISH_MINT", "COBBLEMON_CAREFUL_MINT",
+    "COBBLEMON_HASTY_MINT", "COBBLEMON_NAIVE_MINT", "COBBLEMON_BRAVE_MINT", "COBBLEMON_QUIET_MINT",
+    "COBBLEMON_RELAXED_MINT", "COBBLEMON_SASSY_MINT", "COBBLEMON_NAUGHTY_MINT", "COBBLEMON_LAX_MINT",
+    "COBBLEMON_MILD_MINT", "COBBLEMON_RASH_MINT", "COBBLEMON_GENTLE_MINT", "COBBLEMON_LONELY_MINT",
+    "COBBLEMON_SERIOUS_MINT"
+  ],
+  "bottle_caps": [
+    "COBBLEMON_SILVER_BOTTLE_CAP", "COBBLEMON_GOLD_BOTTLE_CAP"
+  ],
   "evolution_items": [
     "COBBLEMON_FIRE_STONE", "COBBLEMON_WATER_STONE", "COBBLEMON_THUNDER_STONE", "COBBLEMON_LEAF_STONE",
     "COBBLEMON_MOON_STONE", "COBBLEMON_SUN_STONE", "COBBLEMON_DAWN_STONE", "COBBLEMON_DUSK_STONE",
     "COBBLEMON_SHINY_STONE", "COBBLEMON_ICE_STONE", "COBBLEMON_KINGS_ROCK", "COBBLEMON_METAL_COAT",
     "COBBLEMON_DRAGON_SCALE", "COBBLEMON_UPGRADE", "COBBLEMON_DUBIOUS_DISC", "COBBLEMON_RAZOR_CLAW",
     "COBBLEMON_RAZOR_FANG", "COBBLEMON_PRISM_SCALE", "COBBLEMON_ELECTIRIZER", "COBBLEMON_MAGMARIZER",
-    "COBBLEMON_PROTECTOR", "COBBLEMON_OVAL_STONE", "COBBLEMON_REAPER_CLOTH", "COBBLEMON_LINK_CABLE"
+    "COBBLEMON_PROTECTOR", "COBBLEMON_OVAL_STONE", "COBBLEMON_REAPER_CLOTH", "COBBLEMON_LINK_CABLE",
+    "COBBLEMON_WHIPPED_DREAM", "COBBLEMON_SACHET", "COBBLEMON_CRACKED_POT", "COBBLEMON_CHIPPED_POT",
+    "COBBLEMON_SWEET_APPLE", "COBBLEMON_TART_APPLE", "COBBLEMON_EVERSTONE"
+  ],
+  "breeding": [
+    "COBBLEMON_DESTINY_KNOT", "COBBLEMON_LUCK_INCENSE", "COBBLEMON_SEA_INCENSE",
+    "COBBLEMON_LAX_INCENSE", "COBBLEMON_FULL_INCENSE", "COBBLEMON_ROSE_INCENSE",
+    "COBBLEMON_PURE_INCENSE", "COBBLEMON_ROCK_INCENSE", "COBBLEMON_ODD_INCENSE",
+    "COBBLEMON_WAVE_INCENSE"
   ],
   "held_items": [
     "COBBLEMON_EXP_SHARE", "COBBLEMON_LUCKY_EGG", "COBBLEMON_BLACK_BELT", "COBBLEMON_BLACK_GLASSES",
@@ -41,17 +66,21 @@ const BATTLEPASS_MATERIALS = {
     "COBBLEMON_LIGHT_CLAY", "COBBLEMON_MAGNET", "COBBLEMON_MENTAL_HERB", "COBBLEMON_MIRACLE_SEED",
     "COBBLEMON_MYSTIC_WATER", "COBBLEMON_NEVER_MELT_ICE", "COBBLEMON_POISON_BARB", "COBBLEMON_POWER_HERB",
     "COBBLEMON_QUICK_CLAW", "COBBLEMON_SHARP_BEAK", "COBBLEMON_SILK_SCARF", "COBBLEMON_SILVER_POWDER",
-    "COBBLEMON_SOFT_SAND", "COBBLEMON_SPELL_TAG", "COBBLEMON_TWISTED_SPOON", "COBBLEMON_WHITE_HERB",
-    "COBBLEMON_LEFTOVERS", "COBBLEMON_ROCKY_HELMET"
+    "COBBLEMON_SOFT_SAND", "COBBLEMON_SPELL_TAG", "COBBLEMON_TWISTED_SPOON", "COBBLEMON_WHITE_HERB"
   ],
   "berries": [
     "COBBLEMON_ORAN_BERRY", "COBBLEMON_SITRUS_BERRY", "COBBLEMON_LUM_BERRY", "COBBLEMON_LEPPA_BERRY",
     "COBBLEMON_CHERI_BERRY", "COBBLEMON_CHESTO_BERRY", "COBBLEMON_PECHA_BERRY", "COBBLEMON_RAWST_BERRY",
     "COBBLEMON_ASPEAR_BERRY", "COBBLEMON_PERSIM_BERRY", "COBBLEMON_RAZZ_BERRY", "COBBLEMON_BLUK_BERRY",
-    "COBBLEMON_NANAB_BERRY", "COBBLEMON_WEPEAR_BERRY", "COBBLEMON_PINAP_BERRY"
+    "COBBLEMON_NANAB_BERRY", "COBBLEMON_WEPEAR_BERRY", "COBBLEMON_PINAP_BERRY",
+    "COBBLEMON_ENIGMA_BERRY", "COBBLEMON_LANSAT_BERRY", "COBBLEMON_STARF_BERRY"
+  ],
+  "rare_items": [
+    "COBBLEMON_SHINY_CHARM", "COBBLEMON_KEY_STONE", "COBBLEMON_REPEL",
+    "COBBLEMON_ESCAPE_ROPE", "COBBLEMON_POKE_EGG"
   ],
   "utility": [
-    "COBBLEMON_POKE_EGG", "COBBLEMON_HEALER", "COBBLEMON_POKEDEX", "COBBLEMON_POKE_ROD",
+    "COBBLEMON_HEALER", "COBBLEMON_POKEDEX", "COBBLEMON_POKE_ROD",
     "COBBLEMON_POKE_BAIT", "COBBLEMON_POKE_SNACK", "COBBLEMON_BERRY_JUICE"
   ]
 };
@@ -59,6 +88,7 @@ const BATTLEPASS_MATERIALS = {
 // Modal Logic
 let bpSelectorCallback = null;
 let activeMaterialTab = 'cobblemon';
+let bpSearchTerm = '';
 
 function renderMaterialSelectorModal() {
     let modal = document.getElementById('bp-material-modal');
@@ -69,8 +99,16 @@ function renderMaterialSelectorModal() {
         modal.innerHTML = `
             <div class="bp-modal-content">
                 <div class="bp-modal-header">
-                    <h3>Seleccionar Recompensa</h3>
-                    <button onclick="closeMaterialSelector()">✕</button>
+                    <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                            <h3>Seleccionar Recompensa</h3>
+                            <button onclick="closeMaterialSelector()">✕</button>
+                        </div>
+                        <div class="bp-search-container">
+                            <input type="text" id="bp-item-search" placeholder="Buscar ítem por nombre..." autocomplete="off">
+                            <span class="bp-search-icon">🔍</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="bp-modal-tabs">
                     <button id="tab-material-cobblemon" class="bp-tab-btn active" onclick="switchMaterialTab('cobblemon')">Cobblemon</button>
@@ -81,6 +119,13 @@ function renderMaterialSelectorModal() {
             </div>
         `;
         document.body.appendChild(modal);
+        
+        // Add search listener
+        const searchInput = modal.querySelector('#bp-item-search');
+        searchInput.addEventListener('input', (e) => {
+            bpSearchTerm = e.target.value.toLowerCase();
+            renderActiveTabItems();
+        });
     }
 }
 
@@ -100,31 +145,39 @@ function renderActiveTabItems(currentValue) {
     
     if (activeMaterialTab === 'cobblemon') {
         for (const [category, items] of Object.entries(BATTLEPASS_MATERIALS)) {
-            html += `<h4 class="bp-cat-title">${category.toUpperCase()}</h4>`;
-            html += `<div class="bp-item-grid">`;
-            for (const itemId of items) {
-                const visualHtml = getVisual(itemId);
-                const activeClass = itemId === currentValue ? 'active' : '';
-                html += `
-                    <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${itemId}')">
-                        <div class="bp-grid-icon">${visualHtml}</div>
-                        <div class="bp-grid-name">${itemId.replace('COBBLEMON_', '')}</div>
-                    </div>
-                `;
+            const filteredItems = items.filter(itemId => 
+                itemId.toLowerCase().replace('cobblemon_', '').includes(bpSearchTerm)
+            );
+            
+            if (filteredItems.length > 0) {
+                html += `<h4 class="bp-cat-title">${category.toUpperCase()}</h4>`;
+                html += `<div class="bp-item-grid">`;
+                for (const itemId of filteredItems) {
+                    const visualHtml = getVisual(itemId);
+                    const activeClass = itemId === currentValue ? 'active' : '';
+                    html += `
+                        <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${itemId}')">
+                            <div class="bp-grid-icon">${visualHtml}</div>
+                            <div class="bp-grid-name">${itemId.replace('COBBLEMON_', '')}</div>
+                        </div>
+                    `;
+                }
+                html += `</div>`;
             }
-            html += `</div>`;
         }
     } else if (activeMaterialTab === 'minecraft') {
+        const filteredMinecraft = MINECRAFT_ITEMS.filter(item => 
+            item.name.toLowerCase().includes(bpSearchTerm) || 
+            item.id.toLowerCase().includes(bpSearchTerm)
+        );
+        
         const grouped = {};
-        MINECRAFT_ITEMS.forEach(item => {
+        filteredMinecraft.forEach(item => {
             if (!grouped[item.cat]) grouped[item.cat] = [];
             grouped[item.cat].push(item);
         });
 
-        // Orden de categorías deseado
         const catOrder = ['Combat', 'Tools', 'Materials', 'Food', 'Blocks', 'Utility', 'Other'];
-        
-        // Ordenar las categorías encontradas según el orden deseado
         const sortedCats = Object.keys(grouped).sort((a, b) => {
             const indexA = catOrder.indexOf(a);
             const indexB = catOrder.indexOf(b);
@@ -150,18 +203,34 @@ function renderActiveTabItems(currentValue) {
             html += `</div>`;
         }
     } else if (activeMaterialTab === 'otros') {
-        html += `<div class="bp-item-grid" style="padding-top:10px;">`;
-        OTHER_ITEMS.forEach(item => {
-            const visualHtml = getVisual(item.id);
-            const activeClass = item.id === currentValue ? 'active' : '';
-            html += `
-                <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${item.id}')">
-                    <div class="bp-grid-icon">${visualHtml}</div>
-                    <div class="bp-grid-name">${item.name}</div>
-                </div>
-            `;
-        });
-        html += `</div>`;
+        const filteredOtros = OTHER_ITEMS.filter(item => 
+            item.name.toLowerCase().includes(bpSearchTerm) || 
+            item.id.toLowerCase().includes(bpSearchTerm)
+        );
+        
+        if (filteredOtros.length > 0) {
+            html += `<div class="bp-item-grid" style="padding-top:10px;">`;
+            filteredOtros.forEach(item => {
+                const visualHtml = getVisual(item.id);
+                const activeClass = item.id === currentValue ? 'active' : '';
+                html += `
+                    <div class="bp-grid-item ${activeClass}" onclick="selectMaterial('${item.id}')">
+                        <div class="bp-grid-icon">${visualHtml}</div>
+                        <div class="bp-grid-name">${item.name}</div>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+        }
+    }
+
+    if (html === '' && bpSearchTerm !== '') {
+        html = `
+            <div style="text-align:center; padding: 40px 20px; color: #6B7FA3;">
+                <div style="font-size: 32px; margin-bottom: 10px;">🔍</div>
+                <div style="font-size: 14px;">No se encontraron resultados para "${bpSearchTerm}"</div>
+            </div>
+        `;
     }
     
     container.innerHTML = html;
@@ -170,6 +239,11 @@ function renderActiveTabItems(currentValue) {
 window.openMaterialSelector = function(currentValue, callback) {
     bpSelectorCallback = callback;
     renderMaterialSelectorModal();
+    
+    // Reset search when opening
+    bpSearchTerm = '';
+    const searchInput = document.getElementById('bp-item-search');
+    if (searchInput) searchInput.value = '';
     
     // Default to cobblemon unless currentValue suggests otherwise
     if (currentValue && currentValue.startsWith('minecraft:')) activeMaterialTab = 'minecraft';

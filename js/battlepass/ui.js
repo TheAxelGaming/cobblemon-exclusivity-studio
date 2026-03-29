@@ -12,6 +12,44 @@ const bpState = {
 const progressManager = new ProgressManager();
 const eventManager = new EventManager();
 
+// Custom confirmation modal (replaces native confirm() which Chrome blocks on file:// URLs)
+function showConfirm(message, onAccept, onCancel) {
+    const overlay = document.createElement('div');
+    overlay.className = 'bp-confirm-overlay';
+    overlay.innerHTML = `
+        <div class="bp-confirm-box">
+            <div class="bp-confirm-icon">⚠️</div>
+            <p class="bp-confirm-message">${message}</p>
+            <div class="bp-confirm-buttons">
+                <button class="bp-confirm-btn bp-confirm-cancel">Cancelar</button>
+                <button class="bp-confirm-btn bp-confirm-accept">Aceptar</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+    // Animate in
+    requestAnimationFrame(() => overlay.classList.add('visible'));
+
+    overlay.querySelector('.bp-confirm-accept').onclick = () => {
+        overlay.classList.remove('visible');
+        setTimeout(() => overlay.remove(), 200);
+        if (onAccept) onAccept();
+    };
+    overlay.querySelector('.bp-confirm-cancel').onclick = () => {
+        overlay.classList.remove('visible');
+        setTimeout(() => overlay.remove(), 200);
+        if (onCancel) onCancel();
+    };
+    // Close on backdrop click
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('visible');
+            setTimeout(() => overlay.remove(), 200);
+            if (onCancel) onCancel();
+        }
+    });
+}
+
 window.toggleProgressCalc = () => {
     bpState.calcExpanded = !bpState.calcExpanded;
     localStorage.setItem('bp_calcExpanded', bpState.calcExpanded);
@@ -516,11 +554,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    if (includeQuests && confirm('¿Deseas actualizar la Estrategia de Dificultad en settings.yml?')) {
-        const yamlSettings = questManager.exportToYaml('settings');
-        document.getElementById('bp-yaml-preview').innerHTML = `<pre style="color:#A6E22E;font-size:12px;margin:0;font-family:'JetBrains Mono',monospace;">${yamlSettings}</pre>`;
-        document.getElementById('bp-preview-filename').textContent = 'settings.yml';
-        showToast('⚙️', 'Revisando estrategia en settings.yml');
+    if (includeQuests) {
+        showConfirm('¿Deseas actualizar la Estrategia de Dificultad en settings.yml?', () => {
+            const yamlSettings = questManager.exportToYaml('settings');
+            document.getElementById('bp-yaml-preview').innerHTML = `<pre style="color:#A6E22E;font-size:12px;margin:0;font-family:'JetBrains Mono',monospace;">${yamlSettings}</pre>`;
+            document.getElementById('bp-preview-filename').textContent = 'settings.yml';
+            showToast('⚙️', 'Revisando estrategia en settings.yml');
+        });
     }
 
     const zip = new JSZip();
@@ -546,6 +586,90 @@ document.addEventListener('DOMContentLoaded', () => {
     link.click();
     showToast('📦', 'Pack ZIP generado!');
   };
+
+  // ==========================================
+  // YML IMPORT (Multi-file, auto-detect)
+  // ==========================================
+  const btnImportYml = document.getElementById('btn-import-yml');
+  const inputImportYml = document.getElementById('input-import-yml');
+
+  if (btnImportYml && inputImportYml) {
+    btnImportYml.addEventListener('click', () => inputImportYml.click());
+    
+    inputImportYml.addEventListener('change', async (e) => {
+      const files = Array.from(e.target.files);
+      if (files.length === 0) return;
+
+      const results = [];
+      
+      for (const file of files) {
+        try {
+          const text = await file.text();
+          const data = jsyaml.load(text);
+          
+          if (!data) {
+            results.push({ file: file.name, error: 'Archivo vacío o inválido' });
+            continue;
+          }
+
+          // Detect type: pass (has 'tiers') or quest (has 'quests')
+          if (data.tiers) {
+            // It's a pass file (Free or Premium)
+            const result = tierManager.importFromYaml(text);
+            results.push({ file: file.name, type: 'pass', mode: result.mode, count: result.tierCount, name: result.name });
+          } else if (data.quests) {
+            // It's a quest file
+            const result = questManager.importFromYaml(text, null, file.name);
+            results.push({ file: file.name, type: 'quest', mode: result.type, count: result.questCount });
+          } else {
+            results.push({ file: file.name, error: 'No se reconoce el formato' });
+          }
+        } catch (err) {
+          console.error(`Error importando ${file.name}:`, err);
+          results.push({ file: file.name, error: err.message });
+        }
+      }
+
+      // Build summary
+      const passes = results.filter(r => r.type === 'pass');
+      const quests = results.filter(r => r.type === 'quest');
+      const errors = results.filter(r => r.error);
+
+      let summaryParts = [];
+      if (passes.length > 0) {
+        summaryParts.push(passes.map(p => `${p.name} (${p.count} tiers)`).join(', '));
+      }
+      if (quests.length > 0) {
+        summaryParts.push(quests.map(q => `${q.mode === 'daily' ? 'Diarias' : 'Semanales'} (${q.count})`).join(', '));
+      }
+
+      if (errors.length > 0) {
+        showToast('⚠️', `Errores: ${errors.map(e => e.file).join(', ')}`);
+      }
+
+      if (summaryParts.length > 0) {
+        showToast('✅', `Importado: ${summaryParts.join(' + ')}`);
+      }
+
+      // Show import results modal
+      bpShowImportResults(results);
+
+      // Refresh UI
+      bpRenderList();
+      bpRenderEditor();
+
+      // Reset input
+      e.target.value = '';
+    });
+  }
+
+  // ==========================================
+  // PASS WIZARD (Quick Create)
+  // ==========================================
+  const btnPassWizard = document.getElementById('btn-pass-wizard');
+  if (btnPassWizard) {
+    btnPassWizard.addEventListener('click', () => bpShowWizard());
+  }
 
 });
 
@@ -1016,7 +1140,7 @@ function bpRenderEditor() {
              <input type="text" class="bp-input" id="ined-qlore" value="${q.lore[0] || ''}" onchange="bpSaveQuest('${bpState.questSubTab}', '${q.id}')">
           </div>
 
-          <button class="btn-ghost" onclick="bpDeleteQuest('${bpState.questSubTab}', '${q.id}')" style="margin-top:20px; color:#f44336; border-color:rgba(244,67,54,0.3); width:fit-content; font-size:12px;">
+          <button class="btn-ghost" onmousedown="bpDeleteQuest('${bpState.questSubTab}', '${q.id}')" style="margin-top:20px; color:#f44336; border-color:rgba(244,67,54,0.3); width:fit-content; font-size:12px;">
              Eliminar esta misión
           </button>
         `;
@@ -1124,7 +1248,7 @@ function bpRenderEditor() {
                   </div>
               </div>
 
-              <button class="btn-ghost" onclick="bpDeleteEvent('${e.id}')" style="margin-top:10px; color:#f44336; border-color:rgba(244,67,54,0.3); width:fit-content; font-size:12px;">
+              <button class="btn-ghost" onmousedown="bpDeleteEvent('${e.id}')" style="margin-top:10px; color:#f44336; border-color:rgba(244,67,54,0.3); width:fit-content; font-size:12px;">
                  Eliminar este evento
               </button>
           </div>
@@ -1168,12 +1292,12 @@ window.bpSaveQuest = function(sub, id) {
 };
 
 window.bpResetTiers = function() {
-    if (confirm('¿Estás seguro de que quieres borrar TODA la configuración del pase? Esto no se puede deshacer.')) {
+    showConfirm('¿Estás seguro de que quieres borrar TODA la configuración del pase? Esto no se puede deshacer.', () => {
         tierManager.resetTiers();
         bpRenderList();
         bpRenderEditor();
         showToast('🗑️', 'Pase reiniciado');
-    }
+    });
 };
 
 window.bpAddQuest = function() {
@@ -1185,13 +1309,13 @@ window.bpAddQuest = function() {
 };
 
 window.bpDeleteQuest = function(type, id) {
-    if (confirm('¿Borrar esta misión?')) {
+    showConfirm('¿Borrar esta misión?', () => {
         questManager.deleteQuest(type, id);
         bpState.selectedId = null;
         bpRenderList();
         bpRenderEditor();
         showToast('🗑️', 'Misión eliminada');
-    }
+    });
 };
 
 window.bpSelectQuestFromGui = function(id) {
@@ -1257,12 +1381,418 @@ window.bpSaveEvent = function(oldId) {
 };
 
 window.bpDeleteEvent = function(id) {
-    if (confirm('¿Eliminar este evento?')) {
+    showConfirm('¿Eliminar este evento?', () => {
         eventManager.deleteEvent(id);
         bpState.selectedId = null;
         bpRenderList();
         bpRenderEditor();
         if (window.updateCalculator) window.updateCalculator();
         showToast('🗑️', 'Evento eliminado');
-    }
+    });
 };
+
+// ==========================================
+// IMPORT RESULTS MODAL
+// ==========================================
+function bpShowImportResults(results) {
+    const overlay = document.createElement('div');
+    overlay.className = 'bp-confirm-overlay';
+    
+    let cardsHtml = '';
+    results.forEach(r => {
+        if (r.error) {
+            cardsHtml += `
+                <div style="background:rgba(239,83,80,0.1); border:1px solid rgba(239,83,80,0.3); border-radius:8px; padding:12px; display:flex; align-items:center; gap:10px;">
+                    <div style="font-size:20px;">❌</div>
+                    <div>
+                        <div style="color:#EF5350; font-size:13px; font-weight:600;">${r.file}</div>
+                        <div style="color:#B0BEC5; font-size:11px;">${r.error}</div>
+                    </div>
+                </div>`;
+        } else if (r.type === 'pass') {
+            const icon = r.mode === 'free' ? '🟢' : '🟡';
+            const color = r.mode === 'free' ? '#4CAF50' : '#FFC107';
+            cardsHtml += `
+                <div style="background:rgba(${r.mode === 'free' ? '76,175,80' : '255,193,7'},0.1); border:1px solid rgba(${r.mode === 'free' ? '76,175,80' : '255,193,7'},0.3); border-radius:8px; padding:12px; display:flex; align-items:center; gap:10px;">
+                    <div style="font-size:20px;">${icon}</div>
+                    <div style="flex:1;">
+                        <div style="color:${color}; font-size:13px; font-weight:600;">Pase ${r.name}</div>
+                        <div style="color:#B0BEC5; font-size:11px;">${r.count} niveles importados</div>
+                    </div>
+                    <div style="color:#6B7FA3; font-size:10px; font-family:'JetBrains Mono',monospace;">${r.file}</div>
+                </div>`;
+        } else if (r.type === 'quest') {
+            const icon = r.mode === 'daily' ? '📋' : '📅';
+            const color = r.mode === 'daily' ? '#A6E22E' : '#F5C518';
+            const label = r.mode === 'daily' ? 'Misiones Diarias' : 'Misiones Semanales';
+            cardsHtml += `
+                <div style="background:rgba(166,226,46,0.1); border:1px solid rgba(166,226,46,0.3); border-radius:8px; padding:12px; display:flex; align-items:center; gap:10px;">
+                    <div style="font-size:20px;">${icon}</div>
+                    <div style="flex:1;">
+                        <div style="color:${color}; font-size:13px; font-weight:600;">${label}</div>
+                        <div style="color:#B0BEC5; font-size:11px;">${r.count} misiones importadas</div>
+                    </div>
+                    <div style="color:#6B7FA3; font-size:10px; font-family:'JetBrains Mono',monospace;">${r.file}</div>
+                </div>`;
+        }
+    });
+
+    overlay.innerHTML = `
+        <div style="background:#1A1F2E; border:1px solid #4A90D9; border-radius:14px; padding:30px 35px; max-width:500px; width:90%; box-shadow:0 20px 60px rgba(0,0,0,0.5); transform:scale(0.9); transition:transform 0.2s;">
+            <div style="text-align:center; margin-bottom:20px;">
+                <div style="font-size:36px; margin-bottom:8px;">📂</div>
+                <h3 style="color:#fff; margin:0; font-size:18px;">Importación Completada</h3>
+                <p style="color:#6B7FA3; font-size:12px; margin:6px 0 0;">${results.length} archivo${results.length > 1 ? 's' : ''} procesado${results.length > 1 ? 's' : ''}</p>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; max-height:300px; overflow-y:auto;">
+                ${cardsHtml}
+            </div>
+            <div style="text-align:center;">
+                <button class="btn-primary" style="padding:10px 30px;" onclick="this.closest('.bp-confirm-overlay').remove();">Entendido</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => {
+        overlay.classList.add('visible');
+        overlay.querySelector('div').style.transform = 'scale(1)';
+    });
+}
+
+// ==========================================
+// PASS WIZARD (Quick Create)
+// ==========================================
+function bpShowWizard() {
+    let wizardStep = 1;
+    const wizardData = {
+        mode: 'both', // 'free', 'premium', 'both'
+        totalLevels: 100,
+        scalingPreset: 'smooth', // 'linear', 'smooth', 'custom'
+        pointsPerDecade: [100, 150, 200, 250, 350, 450, 550, 700, 850, 1000],
+        linearPoints: 100,
+        rewardEveryFree: 5,
+        rewardEveryPremium: 1,
+        cycleMaterials: ['COBBLEMON_POKE_BALL', 'COBBLEMON_GREAT_BALL', 'COBBLEMON_POTION', 'COBBLEMON_RARE_CANDY']
+    };
+
+    const overlay = document.createElement('div');
+    overlay.className = 'bp-confirm-overlay';
+    overlay.id = 'wizard-overlay';
+
+    function renderWizard() {
+        let stepContent = '';
+
+        if (wizardStep === 1) {
+            stepContent = `
+                <div style="display:flex; flex-direction:column; gap:18px;">
+                    <div>
+                        <label style="display:block; font-size:11px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">¿Qué pases quieres configurar?</label>
+                        <div style="display:flex; gap:8px;">
+                            <button class="wiz-opt ${wizardData.mode === 'both' ? 'active' : ''}" onclick="window._wizSetMode('both')">
+                                <span style="font-size:20px;">🎯</span>
+                                <span>Ambos (Free + Premium)</span>
+                            </button>
+                            <button class="wiz-opt ${wizardData.mode === 'free' ? 'active' : ''}" onclick="window._wizSetMode('free')">
+                                <span style="font-size:20px;">🟢</span>
+                                <span>Solo Free</span>
+                            </button>
+                            <button class="wiz-opt ${wizardData.mode === 'premium' ? 'active' : ''}" onclick="window._wizSetMode('premium')">
+                                <span style="font-size:20px;">🟡</span>
+                                <span>Solo Premium</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:11px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">Número de Niveles</label>
+                        <div style="display:flex; gap:8px;">
+                            <button class="wiz-opt-sm ${wizardData.totalLevels === 50 ? 'active' : ''}" onclick="window._wizSetLevels(50)">50</button>
+                            <button class="wiz-opt-sm ${wizardData.totalLevels === 75 ? 'active' : ''}" onclick="window._wizSetLevels(75)">75</button>
+                            <button class="wiz-opt-sm ${wizardData.totalLevels === 100 ? 'active' : ''}" onclick="window._wizSetLevels(100)">100</button>
+                            <input type="number" class="bp-input" style="width:80px; text-align:center;" value="${wizardData.totalLevels}" onchange="window._wizSetLevels(parseInt(this.value)||100)" min="10" max="200">
+                        </div>
+                    </div>
+                </div>`;
+        } else if (wizardStep === 2) {
+            const presetLabels = {
+                linear: 'Lineal — Mismo XP en todos los niveles',
+                smooth: 'Escalado Suave — XP aumenta por decena (recomendado)',
+                custom: 'Personalizado — Tú defines cada decena'
+            };
+
+            let decadeInputs = '';
+            const numDecades = Math.ceil(wizardData.totalLevels / 10);
+            for (let d = 0; d < numDecades; d++) {
+                const from = d * 10 + 1;
+                const to = Math.min((d + 1) * 10, wizardData.totalLevels);
+                decadeInputs += `
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:11px; color:#6B7FA3; min-width:60px;">Nv ${from}-${to}</span>
+                        <input type="number" class="bp-input" style="width:80px; text-align:center;" 
+                               value="${wizardData.pointsPerDecade[d] || 100}" 
+                               onchange="window._wizSetDecade(${d}, parseInt(this.value)||100)"
+                               ${wizardData.scalingPreset !== 'custom' ? 'disabled' : ''}>
+                        <span style="font-size:10px; color:#4A90D9;">pts</span>
+                    </div>`;
+            }
+
+            stepContent = `
+                <div style="display:flex; flex-direction:column; gap:18px;">
+                    <div>
+                        <label style="display:block; font-size:11px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">Escalado de Puntos</label>
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                            ${Object.entries(presetLabels).map(([key, label]) => `
+                                <button class="wiz-opt-wide ${wizardData.scalingPreset === key ? 'active' : ''}" onclick="window._wizSetScaling('${key}')">
+                                    <span style="font-size:14px;">${key === 'linear' ? '📏' : key === 'smooth' ? '📈' : '🎛️'}</span>
+                                    <span>${label}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ${wizardData.scalingPreset === 'linear' ? `
+                        <div>
+                            <label style="display:block; font-size:11px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">Puntos por Nivel</label>
+                            <input type="number" class="bp-input" style="width:120px; text-align:center;" value="${wizardData.linearPoints}" onchange="window._wizSetLinear(parseInt(this.value)||100)">
+                        </div>
+                    ` : ''}
+                    <div style="max-height:200px; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                        ${decadeInputs}
+                    </div>
+                    <div style="background:rgba(74,144,217,0.08); border:1px solid rgba(74,144,217,0.2); border-radius:6px; padding:10px; font-size:11px; color:#C8D4E8;">
+                        <strong style="color:#4A90D9;">XP Total:</strong> ${wizardData.pointsPerDecade.slice(0, numDecades).reduce((sum, pts, i) => {
+                            const levelsInDecade = i < numDecades - 1 ? 10 : wizardData.totalLevels - i * 10;
+                            return sum + pts * levelsInDecade;
+                        }, 0).toLocaleString()} puntos para completar el pase
+                    </div>
+                </div>`;
+        } else if (wizardStep === 3) {
+            // Get ALL items from BATTLEPASS_MATERIALS (organized by category)
+            const allMaterials = [];
+            for (const [cat, items] of Object.entries(BATTLEPASS_MATERIALS)) {
+                items.forEach(id => allMaterials.push(id));
+            }
+
+            // Filter by wizard search
+            const wizSearch = (wizardData._search || '').toLowerCase();
+            
+            // Category labels in Spanish
+            const catLabels = {
+                pokeballs: 'Pokeballs',
+                medicine: 'Medicina',
+                exp_items: 'EXP / Caramelos',
+                vitamins: 'Vitaminas',
+                battle_items: 'Items de Batalla',
+                competitive: 'Items Competitivos',
+                mints: 'Mentas',
+                bottle_caps: 'Chapas',
+                evolution_items: 'Items de Evolucion',
+                breeding: 'Crianza / Inciensos',
+                held_items: 'Items Equipables',
+                berries: 'Bayas',
+                rare_items: 'Items Raros',
+                utility: 'Utilidad'
+            };
+
+            // Build categorized material grid
+            let materialsHtml = '';
+            for (const [cat, items] of Object.entries(BATTLEPASS_MATERIALS)) {
+                const filtered = items.filter(id => 
+                    wizSearch === '' || id.toLowerCase().replace('cobblemon_', '').includes(wizSearch)
+                );
+                if (filtered.length === 0) continue;
+
+                materialsHtml += `<div style="margin-bottom:10px;">
+                    <div style="font-size:10px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; font-weight:600; border-bottom:1px solid #2A3347; padding-bottom:4px;">${catLabels[cat] || cat}</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px;">
+                        ${filtered.map(mat => {
+                            const isSelected = wizardData.cycleMaterials.includes(mat);
+                            return `<div class="wiz-mat-item ${isSelected ? 'active' : ''}" onclick="window._wizToggleMat('${mat}')" title="${mat.replace('COBBLEMON_','').replace(/_/g,' ')}">
+                                        ${getSlotVisualHtml(mat, 1)}
+                                    </div>`;
+                        }).join('')}
+                    </div>
+                </div>`;
+            }
+
+            // Selected items preview strip
+            let selectedStrip = '';
+            if (wizardData.cycleMaterials.length > 0) {
+                selectedStrip = `
+                    <div style="background:rgba(76,175,80,0.08); border:1px solid rgba(76,175,80,0.2); border-radius:6px; padding:8px 10px; margin-bottom:12px;">
+                        <div style="font-size:10px; color:#4CAF50; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; font-weight:600;">${wizardData.cycleMaterials.length} seleccionados (se rotan en orden)</div>
+                        <div style="display:flex; flex-wrap:wrap; gap:3px;">
+                            ${wizardData.cycleMaterials.map((mat, i) => `
+                                <div style="position:relative; width:30px; height:30px; border-radius:4px; background:#1E2534; border:1px solid #4CAF50; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="window._wizToggleMat('${mat}')" title="Quitar ${mat.replace('COBBLEMON_','').replace(/_/g,' ')}">
+                                    ${getSlotVisualHtml(mat, 1)}
+                                    <span style="position:absolute; top:-3px; right:-3px; background:#f44336; color:#fff; width:12px; height:12px; border-radius:50%; font-size:8px; display:flex; align-items:center; justify-content:center; font-weight:700;">✕</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>`;
+            }
+
+            let cyclePreview = '';
+            for (let i = 0; i < Math.min(10, wizardData.totalLevels); i++) {
+                const cycleIdx = wizardData.cycleMaterials.length > 0 ? (i % wizardData.cycleMaterials.length) : 0;
+                const mat = wizardData.cycleMaterials[cycleIdx] || '';
+                cyclePreview += `
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:2px;">
+                        <div style="width:28px; height:28px; border-radius:4px; background:#1E2534; border:1px solid #2A3347; display:flex; align-items:center; justify-content:center;">
+                            ${getSlotVisualHtml(mat, 1)}
+                        </div>
+                        <span style="font-size:9px; color:#6B7FA3;">${i + 1}</span>
+                    </div>`;
+            }
+
+            stepContent = `
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                    ${wizardData.mode !== 'premium' ? `
+                    <div>
+                        <label style="display:block; font-size:11px; color:#4CAF50; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">🟢 FREE — Recompensa cada...</label>
+                        <div style="display:flex; gap:6px;">
+                            ${[1,3,5,10].map(n => `
+                                <button class="wiz-opt-sm ${wizardData.rewardEveryFree === n ? 'active' : ''}" onclick="window._wizSetFreeEvery(${n})">Cada ${n}</button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+                    ${wizardData.mode !== 'free' ? `
+                    <div>
+                        <label style="display:block; font-size:11px; color:#FFC107; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">🟡 PREMIUM — Recompensa cada...</label>
+                        <div style="display:flex; gap:6px;">
+                            ${[1,2,3,5].map(n => `
+                                <button class="wiz-opt-sm ${wizardData.rewardEveryPremium === n ? 'active' : ''}" onclick="window._wizSetPremEvery(${n})">Cada ${n}</button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    ${selectedStrip}
+
+                    <div>
+                        <label style="display:block; font-size:11px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">Ciclo de Materiales — Selecciona items</label>
+                        <div style="position:relative; margin-bottom:8px;">
+                            <input type="text" class="bp-input" placeholder="🔍 Buscar material..." value="${wizardData._search || ''}" oninput="window._wizSearchMat(this.value)" style="padding-left:12px; font-size:12px;">
+                        </div>
+                        <div style="max-height:200px; overflow-y:auto; border:1px solid #2A3347; border-radius:8px; padding:8px; background:rgba(0,0,0,0.2);">
+                            ${materialsHtml || '<div style="text-align:center; padding:20px; color:#6B7FA3; font-size:12px;">🔍 No se encontraron materiales</div>'}
+                        </div>
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:11px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; font-weight:600;">Vista Previa (Primeros 10 niveles)</label>
+                        <div style="display:flex; gap:4px; overflow-x:auto; padding:8px; background:#161B27; border-radius:6px; border:1px solid #2A3347;">
+                            ${cyclePreview}
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        const stepDots = [1,2,3].map(s => `
+            <div style="width:${s === wizardStep ? '24px' : '8px'}; height:8px; border-radius:4px; background:${s === wizardStep ? '#4A90D9' : '#2A3347'}; transition:all 0.3s;"></div>
+        `).join('');
+
+        const stepTitles = { 1: 'Configuración Básica', 2: 'Escalado de Puntos', 3: 'Recompensas' };
+
+        overlay.innerHTML = `
+            <div class="wiz-modal">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <div>
+                        <h3 style="color:#fff; margin:0; font-size:18px; font-weight:700;">⚡ Crear Pase Rápido</h3>
+                        <p style="color:#6B7FA3; font-size:12px; margin:4px 0 0;">Paso ${wizardStep}/3 — ${stepTitles[wizardStep]}</p>
+                    </div>
+                    <button style="background:none; border:none; color:#6B7FA3; cursor:pointer; font-size:20px;" onclick="document.getElementById('wizard-overlay').remove()">✕</button>
+                </div>
+                <div style="display:flex; justify-content:center; gap:6px; margin-bottom:20px;">${stepDots}</div>
+                <div style="min-height:200px;">${stepContent}</div>
+                <div style="display:flex; justify-content:space-between; margin-top:24px; padding-top:16px; border-top:1px solid #2A3347;">
+                    <button class="btn-ghost" style="padding:8px 20px;" onclick="${wizardStep === 1 ? "document.getElementById('wizard-overlay').remove()" : "window._wizPrev()"}">
+                        ${wizardStep === 1 ? 'Cancelar' : '← Anterior'}
+                    </button>
+                    <button class="btn-primary" style="padding:8px 24px; background:${wizardStep === 3 ? 'linear-gradient(135deg,#4CAF50,#2E7D32)' : '#4A90D9'}; font-weight:700;" onclick="${wizardStep === 3 ? "window._wizFinish()" : "window._wizNext()"}">
+                        ${wizardStep === 3 ? '✨ Crear Pase' : 'Siguiente →'}
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    // Wizard navigation
+    window._wizNext = () => { wizardStep = Math.min(3, wizardStep + 1); renderWizard(); };
+    window._wizPrev = () => { wizardStep = Math.max(1, wizardStep - 1); renderWizard(); };
+
+    // Step 1 setters
+    window._wizSetMode = (m) => { wizardData.mode = m; renderWizard(); };
+    window._wizSetLevels = (n) => { wizardData.totalLevels = Math.max(10, Math.min(200, n)); renderWizard(); };
+
+    // Step 2 setters
+    window._wizSetScaling = (preset) => {
+        wizardData.scalingPreset = preset;
+        const numDecades = Math.ceil(wizardData.totalLevels / 10);
+        if (preset === 'linear') {
+            wizardData.pointsPerDecade = Array(numDecades).fill(wizardData.linearPoints);
+        } else if (preset === 'smooth') {
+            const smooth = [100, 150, 200, 250, 350, 450, 550, 700, 850, 1000];
+            wizardData.pointsPerDecade = [];
+            for (let i = 0; i < numDecades; i++) {
+                wizardData.pointsPerDecade.push(smooth[Math.min(i, smooth.length - 1)]);
+            }
+        }
+        renderWizard();
+    };
+    window._wizSetLinear = (pts) => {
+        wizardData.linearPoints = pts;
+        const numDecades = Math.ceil(wizardData.totalLevels / 10);
+        wizardData.pointsPerDecade = Array(numDecades).fill(pts);
+        renderWizard();
+    };
+    window._wizSetDecade = (idx, pts) => { wizardData.pointsPerDecade[idx] = pts; renderWizard(); };
+
+    // Step 3 setters
+    window._wizSetFreeEvery = (n) => { wizardData.rewardEveryFree = n; renderWizard(); };
+    window._wizSetPremEvery = (n) => { wizardData.rewardEveryPremium = n; renderWizard(); };
+    window._wizToggleMat = (mat) => {
+        const idx = wizardData.cycleMaterials.indexOf(mat);
+        if (idx >= 0) wizardData.cycleMaterials.splice(idx, 1);
+        else wizardData.cycleMaterials.push(mat);
+        renderWizard();
+    };
+    window._wizSearchMat = (val) => {
+        wizardData._search = val;
+        renderWizard();
+    };
+
+    // Finish
+    window._wizFinish = () => {
+        showConfirm('Esto reemplazará tu configuración actual del pase. ¿Continuar?', () => {
+            // Generate for free
+            if (wizardData.mode === 'free' || wizardData.mode === 'both') {
+                tierManager.generateFromWizard({
+                    totalLevels: wizardData.totalLevels,
+                    pointsPerDecade: wizardData.pointsPerDecade,
+                    rewardEvery: wizardData.rewardEveryFree,
+                    rewardCycle: wizardData.cycleMaterials,
+                    mode: 'free'
+                });
+            }
+            // Generate for premium
+            if (wizardData.mode === 'premium' || wizardData.mode === 'both') {
+                tierManager.generateFromWizard({
+                    totalLevels: wizardData.totalLevels,
+                    pointsPerDecade: wizardData.pointsPerDecade,
+                    rewardEvery: wizardData.rewardEveryPremium,
+                    rewardCycle: wizardData.cycleMaterials,
+                    mode: 'premium'
+                });
+            }
+
+            document.getElementById('wizard-overlay').remove();
+            bpRenderList();
+            bpRenderEditor();
+            showToast('✨', `Pase de ${wizardData.totalLevels} niveles creado!`);
+        });
+    };
+
+    renderWizard();
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => overlay.classList.add('visible'));
+}
