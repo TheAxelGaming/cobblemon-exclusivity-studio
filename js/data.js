@@ -4245,6 +4245,132 @@ const ITEMS = [
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "silver_bottle_cap",
+    "name": "Silver Bottle Cap",
+    "cat": "held",
+    "emoji": "🥈",
+    "desc": "Maximiza un IV de un Pokémon"
+  },
+  {
+    "id": "gold_bottle_cap",
+    "name": "Gold Bottle Cap",
+    "cat": "held",
+    "emoji": "🥇",
+    "desc": "Maximiza todos los IVs de un Pokémon"
+  },
+  {
+    "id": "repel",
+    "name": "Repel",
+    "cat": "held",
+    "emoji": "🔵",
+    "desc": "Repele Pokémon salvajes temporalmente"
+  },
+  {
+    "id": "escape_rope",
+    "name": "Escape Rope",
+    "cat": "held",
+    "emoji": "🪢",
+    "desc": "Permite escapar de cuevas rápidamente"
+  },
+  {
+    "id": "shiny_charm",
+    "name": "Shiny Charm",
+    "cat": "held",
+    "emoji": "✨",
+    "desc": "Aumenta la probabilidad de encontrar Pokémon Shiny"
+  },
+  {
+    "id": "key_stone",
+    "name": "Key Stone",
+    "cat": "stone",
+    "emoji": "💎",
+    "desc": "Piedra clave para la Mega Evolución"
+  },
+  {
+    "id": "sea_incense",
+    "name": "Sea Incense",
+    "cat": "held",
+    "emoji": "🌊",
+    "desc": "Incienso que potencia movimientos de tipo Agua"
+  },
+  {
+    "id": "luck_incense",
+    "name": "Luck Incense",
+    "cat": "held",
+    "emoji": "🍀",
+    "desc": "Duplica el dinero ganado en combate"
+  },
+  {
+    "id": "lax_incense",
+    "name": "Lax Incense",
+    "cat": "held",
+    "emoji": "💨",
+    "desc": "Reduce la precisión del oponente"
+  },
+  {
+    "id": "full_incense",
+    "name": "Full Incense",
+    "cat": "held",
+    "emoji": "💨",
+    "desc": "Hace que el portador ataque de último"
+  },
+  {
+    "id": "rose_incense",
+    "name": "Rose Incense",
+    "cat": "held",
+    "emoji": "🌹",
+    "desc": "Potencia movimientos de tipo Planta"
+  },
+  {
+    "id": "pure_incense",
+    "name": "Pure Incense",
+    "cat": "held",
+    "emoji": "🤍",
+    "desc": "Reduce encuentros con Pokémon salvajes"
+  },
+  {
+    "id": "rock_incense",
+    "name": "Rock Incense",
+    "cat": "held",
+    "emoji": "🪨",
+    "desc": "Potencia movimientos de tipo Roca"
+  },
+  {
+    "id": "odd_incense",
+    "name": "Odd Incense",
+    "cat": "held",
+    "emoji": "🔮",
+    "desc": "Potencia movimientos de tipo Psíquico"
+  },
+  {
+    "id": "wave_incense",
+    "name": "Wave Incense",
+    "cat": "held",
+    "emoji": "🌊",
+    "desc": "Potencia movimientos de tipo Agua"
+  },
+  {
+    "id": "healer",
+    "name": "Healer",
+    "cat": "utility",
+    "emoji": "🏥",
+    "desc": "Máquina portátil para curar Pokémon"
+  },
+  {
+    "id": "pokedex",
+    "name": "Pokédex",
+    "cat": "utility",
+    "emoji": "📱",
+    "desc": "Enciclopedia digital de Pokémon"
+  },
+  {
+    "id": "poke_egg",
+    "name": "Poké Egg",
+    "cat": "utility",
+    "emoji": "🥚",
+    "desc": "Huevo de Pokémon que puede eclosionar"
   }
 ];
 
@@ -4854,7 +4980,25 @@ const ITEM_IMAGES = {
   "saccharine_sign": "saccharine_sign.png",
   "white_apricorn_seed": "white_apricorn_seed.png",
   "yellow_apricorn_seed": "yellow_apricorn_seed.png",
-  "yellow_apricorn": "yellow_apricorn.png"
+  "yellow_apricorn": "yellow_apricorn.png",
+  "silver_bottle_cap": "silver_bottle_cap.png",
+  "gold_bottle_cap": "gold_bottle_cap.png",
+  "repel": "repel.png",
+  "escape_rope": "escape_rope.png",
+  "shiny_charm": "shiny_charm.png",
+  "key_stone": "key_stone.png",
+  "sea_incense": "sea_incense.png",
+  "luck_incense": "luck_incense.png",
+  "lax_incense": "lax_incense.png",
+  "full_incense": "full_incense.png",
+  "rose_incense": "rose_incense.png",
+  "pure_incense": "pure_incense.png",
+  "rock_incense": "rock_incense.png",
+  "odd_incense": "odd_incense.png",
+  "wave_incense": "wave_incense.png",
+  "healer": "healer.png",
+  "pokedex": "pokedex.png",
+  "poke_egg": "poke_egg.png"
 };
 
 function getItemVisual(item, size = 32) {

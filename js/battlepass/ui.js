@@ -1568,7 +1568,8 @@ function bpShowWizard() {
         } else if (wizardStep === 3) {
             // Get ALL items from BATTLEPASS_MATERIALS (organized by category)
             const allMaterials = [];
-            for (const [cat, items] of Object.entries(BATTLEPASS_MATERIALS)) {
+            for (const [cat, catData] of Object.entries(BATTLEPASS_MATERIALS)) {
+                const items = catData.items || catData;
                 items.forEach(id => allMaterials.push(id));
             }
 
@@ -1595,14 +1596,19 @@ function bpShowWizard() {
 
             // Build categorized material grid
             let materialsHtml = '';
-            for (const [cat, items] of Object.entries(BATTLEPASS_MATERIALS)) {
-                const filtered = items.filter(id => 
+            for (const [cat, catData] of Object.entries(BATTLEPASS_MATERIALS)) {
+                const catItems = catData.items || catData;
+                const source = catData.source || 'base';
+                const filtered = catItems.filter(id => 
                     wizSearch === '' || id.toLowerCase().replace('cobblemon_', '').includes(wizSearch)
                 );
                 if (filtered.length === 0) continue;
 
+                const srcBadge = source !== 'base'
+                    ? `<span style="font-size:8px; background:#FF9800; color:#000; padding:1px 4px; border-radius:3px; margin-left:4px; font-weight:400;">ADDON: ${source}</span>`
+                    : '';
                 materialsHtml += `<div style="margin-bottom:10px;">
-                    <div style="font-size:10px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; font-weight:600; border-bottom:1px solid #2A3347; padding-bottom:4px;">${catLabels[cat] || cat}</div>
+                    <div style="font-size:10px; color:#6B7FA3; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; font-weight:600; border-bottom:1px solid #2A3347; padding-bottom:4px;">${catLabels[cat] || cat} ${srcBadge}</div>
                     <div style="display:flex; flex-wrap:wrap; gap:4px;">
                         ${filtered.map(mat => {
                             const isSelected = wizardData.cycleMaterials.includes(mat);
