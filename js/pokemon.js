@@ -39,8 +39,19 @@ function initPokemonTab() {
     });
   });
   
+  // Bloquear Todos
+  document.getElementById('btn-block-all-pkmn').addEventListener('click', () => {
+    if(confirm("¿Estás seguro de que quieres bloquear TODOS los Pokémon a la vez? (Los 1025 serán marcados)")) {
+      POKEMON_DB.forEach(p => POKEMON_STATE.blocked.add(p.dex));
+      saveBlockedState();
+      renderPokemonGrid();
+      showToast("¡Se han bloqueado todos los Pokémon!");
+    }
+  });
+
   // Limpiar Selección (Pokemons)
   document.getElementById('btn-clear-pkmn').addEventListener('click', () => {
+    if(POKEMON_STATE.blocked.size > 0 && !confirm("¿Seguro que quieres limpiar toda tu selección actual?")) return;
     POKEMON_STATE.blocked.clear();
     saveBlockedState();
     POKEMON_STATE.selected = null;
