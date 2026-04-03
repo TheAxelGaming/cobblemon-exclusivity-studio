@@ -2,13 +2,20 @@
  * pokemon.js — Lógica para la pestaña de Pokémon Spawn Blocker
  */
 
+const savedBlocked = localStorage.getItem('pkmn_blocked');
+const initialBlocked = savedBlocked ? new Set(JSON.parse(savedBlocked)) : new Set();
+
 const POKEMON_STATE = {
   selected: null, // Dex ID of the last selected for JSON preview
   activeGen: 0, // 0 = all
   activeType: 'all',
   search: '',
-  blocked: new Set() // Set con dex numbers de los Pokémon bloqueados
+  blocked: initialBlocked // Set con dex numbers de los Pokémon bloqueados
 };
+
+function saveBlockedState() {
+  localStorage.setItem('pkmn_blocked', JSON.stringify([...POKEMON_STATE.blocked]));
+}
 
 // ============================================================
 // INICIALIZADOR
@@ -35,6 +42,7 @@ function initPokemonTab() {
   // Limpiar Selección (Pokemons)
   document.getElementById('btn-clear-pkmn').addEventListener('click', () => {
     POKEMON_STATE.blocked.clear();
+    saveBlockedState();
     POKEMON_STATE.selected = null;
     document.getElementById('pkmn-json-output').innerHTML = '<span style="color:#75715E">// Selecciona un Pokémon para ver el JSON.</span>';
     document.getElementById('pkmn-preview-filename').textContent = '—';
@@ -118,6 +126,7 @@ function togglePokemonBlock(dex) {
   } else {
     POKEMON_STATE.blocked.add(dex);
   }
+  saveBlockedState();
   
   POKEMON_STATE.selected = dex;
 
