@@ -48,6 +48,40 @@ function initPokemonTab() {
     document.getElementById('pkmn-preview-filename').textContent = '—';
     renderPokemonGrid();
   });
+
+  // Exportar Código (Base64 csv)
+  document.getElementById('btn-export-pkmn').addEventListener('click', () => {
+    if (POKEMON_STATE.blocked.size === 0) {
+      alert("No has bloqueado ningún Pokémon para compartir.");
+      return;
+    }
+    const code = btoa(Array.from(POKEMON_STATE.blocked).join(','));
+    navigator.clipboard.writeText(code).then(() => {
+      showToast("¡Código copiado al portapapeles!");
+    }).catch(() => {
+      prompt("Copia este código manualmente:", code);
+    });
+  });
+
+  // Importar Código
+  document.getElementById('btn-import-pkmn').addEventListener('click', () => {
+    const code = prompt("Introduce el código de Pokémon a bloquear:");
+    if (!code) return;
+    try {
+      const decoded = atob(code);
+      const arr = decoded.split(',').map(n => parseInt(n)).filter(n => !isNaN(n) && n > 0 && n <= 1025);
+      if (arr.length > 0) {
+        POKEMON_STATE.blocked = new Set(arr);
+        saveBlockedState();
+        renderPokemonGrid();
+        showToast(`¡Se importaron ${arr.length} Pokémon exitosamente!`);
+      } else {
+        alert("El código no contiene ningún Pokémon válido.");
+      }
+    } catch(e) {
+      alert("El código introducido no es válido.");
+    }
+  });
 }
 
 // ============================================================
