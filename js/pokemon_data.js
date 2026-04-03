@@ -7,7 +7,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "bulbasaur"
+    "id": "bulbasaur",
+    "drops": [
+      {
+        "id": "melon_seeds",
+        "name": "Melon Seeds",
+        "text": "0-1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 2,
@@ -17,7 +29,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "ivysaur"
+    "id": "ivysaur",
+    "drops": [
+      {
+        "id": "melon_seeds",
+        "name": "Melon Seeds",
+        "text": "0-2"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 3,
@@ -27,7 +51,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "venusaur"
+    "id": "venusaur",
+    "drops": [
+      {
+        "id": "melon_seeds",
+        "name": "Melon Seeds",
+        "text": "0-3"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 4,
@@ -36,7 +72,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "charmander"
+    "id": "charmander",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "0-1"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 5,
@@ -45,7 +93,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "charmeleon"
+    "id": "charmeleon",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 6,
@@ -55,7 +115,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "charizard"
+    "id": "charizard",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "0-3"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 7,
@@ -64,7 +136,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "squirtle"
+    "id": "squirtle",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 8,
@@ -73,7 +157,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "wartortle"
+    "id": "wartortle",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-2"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 9,
@@ -82,7 +178,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "blastoise"
+    "id": "blastoise",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-3"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 10,
@@ -91,7 +199,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 1,
-    "id": "caterpie"
+    "id": "caterpie",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 11,
@@ -100,7 +220,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 1,
-    "id": "metapod"
+    "id": "metapod",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 12,
@@ -110,7 +242,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "butterfree"
+    "id": "butterfree",
+    "drops": [
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 13,
@@ -120,7 +269,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "weedle"
+    "id": "weedle",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 14,
@@ -130,7 +291,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "kakuna"
+    "id": "kakuna",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 15,
@@ -140,7 +313,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "beedrill"
+    "id": "beedrill",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 16,
@@ -150,7 +340,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "pidgey"
+    "id": "pidgey",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 17,
@@ -160,7 +367,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "pidgeotto"
+    "id": "pidgeotto",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 18,
@@ -170,7 +399,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "pidgeot"
+    "id": "pidgeot",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 19,
@@ -179,7 +430,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "rattata"
+    "id": "rattata",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 20,
@@ -188,7 +451,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "raticate"
+    "id": "raticate",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 21,
@@ -198,7 +473,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "spearow"
+    "id": "spearow",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 22,
@@ -208,7 +505,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "fearow"
+    "id": "fearow",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 23,
@@ -217,7 +536,14 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "ekans"
+    "id": "ekans",
+    "drops": [
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 24,
@@ -226,7 +552,14 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "arbok"
+    "id": "arbok",
+    "drops": [
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 25,
@@ -235,7 +568,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 1,
-    "id": "pikachu"
+    "id": "pikachu",
+    "drops": [
+      {
+        "id": "light_ball",
+        "name": "Light Ball",
+        "text": "5%"
+      },
+      {
+        "id": "thunder_stone",
+        "name": "Thunder Stone",
+        "text": "5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 26,
@@ -244,7 +594,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 1,
-    "id": "raichu"
+    "id": "raichu",
+    "drops": [
+      {
+        "id": "light_ball",
+        "name": "Light Ball",
+        "text": "10%"
+      },
+      {
+        "id": "thunder_stone",
+        "name": "Thunder Stone",
+        "text": "10%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 27,
@@ -253,7 +620,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "sandshrew"
+    "id": "sandshrew",
+    "drops": [
+      {
+        "id": "armadillo_scute",
+        "name": "Armadillo Scute",
+        "text": "0-1"
+      },
+      {
+        "id": "grip_claw",
+        "name": "Grip Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 28,
@@ -262,7 +651,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "sandslash"
+    "id": "sandslash",
+    "drops": [
+      {
+        "id": "armadillo_scute",
+        "name": "Armadillo Scute",
+        "text": "0-2"
+      },
+      {
+        "id": "grip_claw",
+        "name": "Grip Claw",
+        "text": "5%"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "5%"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 29,
@@ -271,7 +682,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "nidoran-f"
+    "id": "nidoran-f",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 30,
@@ -280,7 +703,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "nidorina"
+    "id": "nidorina",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 31,
@@ -290,7 +725,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "nidoqueen"
+    "id": "nidoqueen",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "10%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 32,
@@ -299,7 +746,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "nidoran-m"
+    "id": "nidoran-m",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 33,
@@ -308,7 +767,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "nidorino"
+    "id": "nidorino",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 34,
@@ -318,7 +789,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "nidoking"
+    "id": "nidoking",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "10%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 35,
@@ -327,7 +810,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 1,
-    "id": "clefairy"
+    "id": "clefairy",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 36,
@@ -336,7 +836,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 1,
-    "id": "clefable"
+    "id": "clefable",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "10%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "10%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 37,
@@ -345,7 +862,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "vulpix"
+    "id": "vulpix",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "1-3"
+      },
+      {
+        "id": "charcoal",
+        "name": "Charcoal",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 38,
@@ -354,7 +888,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "ninetales"
+    "id": "ninetales",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "charcoal",
+        "name": "Charcoal",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 39,
@@ -364,7 +915,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 1,
-    "id": "jigglypuff"
+    "id": "jigglypuff",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "5%"
+      },
+      {
+        "id": "air_balloon",
+        "name": "Air Balloon",
+        "text": "5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 40,
@@ -374,7 +942,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 1,
-    "id": "wigglytuff"
+    "id": "wigglytuff",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "10%"
+      },
+      {
+        "id": "air_balloon",
+        "name": "Air Balloon",
+        "text": "10%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 41,
@@ -384,7 +969,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "zubat"
+    "id": "zubat",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 42,
@@ -394,7 +996,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "golbat"
+    "id": "golbat",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 43,
@@ -404,7 +1023,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "oddish"
+    "id": "oddish",
+    "drops": [
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 44,
@@ -414,7 +1045,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "gloom"
+    "id": "gloom",
+    "drops": [
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-2"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 45,
@@ -424,7 +1072,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "vileplume"
+    "id": "vileplume",
+    "drops": [
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "10%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 46,
@@ -434,7 +1094,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 1,
-    "id": "paras"
+    "id": "paras",
+    "drops": [
+      {
+        "id": "red_mushroom",
+        "name": "Red Mushroom",
+        "text": "0-2"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 47,
@@ -444,7 +1116,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 1,
-    "id": "parasect"
+    "id": "parasect",
+    "drops": [
+      {
+        "id": "red_mushroom",
+        "name": "Red Mushroom",
+        "text": "1"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 48,
@@ -454,7 +1138,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "venonat"
+    "id": "venonat",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 49,
@@ -464,7 +1160,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "venomoth"
+    "id": "venomoth",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 50,
@@ -473,7 +1191,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "diglett"
+    "id": "diglett",
+    "drops": [
+      {
+        "id": "dirt",
+        "name": "Dirt",
+        "text": "0-1"
+      },
+      {
+        "id": "potato",
+        "name": "Potato",
+        "text": "2.5%"
+      },
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "2.5%"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 51,
@@ -482,7 +1222,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "dugtrio"
+    "id": "dugtrio",
+    "drops": [
+      {
+        "id": "dirt",
+        "name": "Dirt",
+        "text": "0-2"
+      },
+      {
+        "id": "potato",
+        "name": "Potato",
+        "text": "5%"
+      },
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "5%"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 52,
@@ -491,7 +1253,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "meowth"
+    "id": "meowth",
+    "drops": [
+      {
+        "id": "gold_nugget",
+        "name": "Gold Nugget",
+        "text": "0-1"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 53,
@@ -500,7 +1279,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "persian"
+    "id": "persian",
+    "drops": [
+      {
+        "id": "gold_nugget",
+        "name": "Gold Nugget",
+        "text": "0-2"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 54,
@@ -509,7 +1305,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "psyduck"
+    "id": "psyduck",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 55,
@@ -518,7 +1331,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "golduck"
+    "id": "golduck",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 56,
@@ -527,7 +1357,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "mankey"
+    "id": "mankey",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "2.5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 57,
@@ -536,7 +1378,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "primeape"
+    "id": "primeape",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 58,
@@ -545,7 +1399,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "growlithe"
+    "id": "growlithe",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 59,
@@ -554,7 +1420,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "arcanine"
+    "id": "arcanine",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 60,
@@ -563,7 +1441,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "poliwag"
+    "id": "poliwag",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "2.5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 61,
@@ -572,7 +1462,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "poliwhirl"
+    "id": "poliwhirl",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 62,
@@ -582,7 +1484,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "poliwrath"
+    "id": "poliwrath",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "10%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 63,
@@ -591,7 +1505,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "abra"
+    "id": "abra",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "2.5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 64,
@@ -600,7 +1531,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "kadabra"
+    "id": "kadabra",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-2"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 65,
@@ -609,7 +1557,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "alakazam"
+    "id": "alakazam",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-3"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "10%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 66,
@@ -618,7 +1583,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "machop"
+    "id": "machop",
+    "drops": [
+      {
+        "id": "focus_band",
+        "name": "Focus Band",
+        "text": "2.5%"
+      },
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "2.5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 67,
@@ -627,7 +1609,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "machoke"
+    "id": "machoke",
+    "drops": [
+      {
+        "id": "focus_band",
+        "name": "Focus Band",
+        "text": "5%"
+      },
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 68,
@@ -636,7 +1635,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "machamp"
+    "id": "machamp",
+    "drops": [
+      {
+        "id": "focus_band",
+        "name": "Focus Band",
+        "text": "10%"
+      },
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "10%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 69,
@@ -646,7 +1662,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "bellsprout"
+    "id": "bellsprout",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "2.5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 70,
@@ -656,7 +1684,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "weepinbell"
+    "id": "weepinbell",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 71,
@@ -666,7 +1706,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "victreebel"
+    "id": "victreebel",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "10%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 72,
@@ -676,7 +1728,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "tentacool"
+    "id": "tentacool",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "1-3"
+      },
+      {
+        "id": "glow_ink_sac_1-3",
+        "name": "Glow Ink Sac 1-3",
+        "text": "10%"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 73,
@@ -686,7 +1755,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "tentacruel"
+    "id": "tentacruel",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "2-4"
+      },
+      {
+        "id": "glow_ink_sac_2-4",
+        "name": "Glow Ink Sac 2-4",
+        "text": "10%"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 74,
@@ -696,7 +1782,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "geodude"
+    "id": "geodude",
+    "drops": [
+      {
+        "id": "gravel",
+        "name": "Gravel",
+        "text": "0-1"
+      },
+      {
+        "id": "everstone",
+        "name": "Everstone",
+        "text": "2.5%"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "2.5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 75,
@@ -706,7 +1814,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "graveler"
+    "id": "graveler",
+    "drops": [
+      {
+        "id": "gravel",
+        "name": "Gravel",
+        "text": "0-2"
+      },
+      {
+        "id": "everstone",
+        "name": "Everstone",
+        "text": "5%"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 76,
@@ -716,7 +1846,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "golem"
+    "id": "golem",
+    "drops": [
+      {
+        "id": "gravel",
+        "name": "Gravel",
+        "text": "0-3"
+      },
+      {
+        "id": "everstone",
+        "name": "Everstone",
+        "text": "10%"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "10%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 77,
@@ -725,7 +1877,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "ponyta"
+    "id": "ponyta",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-1"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 78,
@@ -734,7 +1903,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "rapidash"
+    "id": "rapidash",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 79,
@@ -744,7 +1930,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "slowpoke"
+    "id": "slowpoke",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "2.5%"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "2.5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 80,
@@ -754,7 +1957,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "slowbro"
+    "id": "slowbro",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "5%"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 81,
@@ -764,7 +1984,29 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 1,
-    "id": "magnemite"
+    "id": "magnemite",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "2.5%"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "2.5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 82,
@@ -774,7 +2016,29 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 1,
-    "id": "magneton"
+    "id": "magneton",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "5%"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 83,
@@ -794,7 +2058,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "doduo"
+    "id": "doduo",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 85,
@@ -804,7 +2090,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "dodrio"
+    "id": "dodrio",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 86,
@@ -813,7 +2121,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "seel"
+    "id": "seel",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-1"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "2.5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 87,
@@ -823,7 +2148,24 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 1,
-    "id": "dewgong"
+    "id": "dewgong",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-2"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 88,
@@ -832,7 +2174,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "grimer"
+    "id": "grimer",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-1"
+      },
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "2.5%"
+      },
+      {
+        "id": "toxic_orb",
+        "name": "Toxic Orb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 89,
@@ -841,7 +2200,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "muk"
+    "id": "muk",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      },
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "5%"
+      },
+      {
+        "id": "toxic_orb",
+        "name": "Toxic Orb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 90,
@@ -850,7 +2226,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "shellder"
+    "id": "shellder",
+    "drops": [
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "shell_bell",
+        "name": "Shell Bell",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 91,
@@ -860,7 +2248,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 1,
-    "id": "cloyster"
+    "id": "cloyster",
+    "drops": [
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      },
+      {
+        "id": "shell_bell",
+        "name": "Shell Bell",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 92,
@@ -870,7 +2270,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "gastly"
+    "id": "gastly",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "2.5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 93,
@@ -880,7 +2292,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "haunter"
+    "id": "haunter",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 94,
@@ -890,7 +2314,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "gengar"
+    "id": "gengar",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "10%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 95,
@@ -900,7 +2336,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "onix"
+    "id": "onix",
+    "drops": [
+      {
+        "id": "stone",
+        "name": "Stone",
+        "text": "1-3"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 96,
@@ -909,7 +2367,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "drowzee"
+    "id": "drowzee",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 97,
@@ -918,7 +2383,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "hypno"
+    "id": "hypno",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 98,
@@ -927,7 +2399,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "krabby"
+    "id": "krabby",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "2.5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 99,
@@ -936,7 +2420,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "kingler"
+    "id": "kingler",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 100,
@@ -945,7 +2441,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 1,
-    "id": "voltorb"
+    "id": "voltorb",
+    "drops": [
+      {
+        "id": "gunpowder",
+        "name": "Gunpowder",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 101,
@@ -954,7 +2457,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 1,
-    "id": "electrode"
+    "id": "electrode",
+    "drops": [
+      {
+        "id": "gunpowder",
+        "name": "Gunpowder",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 102,
@@ -964,7 +2474,29 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "exeggcute"
+    "id": "exeggcute",
+    "drops": [
+      {
+        "id": "egg",
+        "name": "Egg",
+        "text": "0-3"
+      },
+      {
+        "id": "oval_stone",
+        "name": "Oval Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "psychic_seed",
+        "name": "Psychic Seed",
+        "text": "2.5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 103,
@@ -974,7 +2506,29 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "exeggutor"
+    "id": "exeggutor",
+    "drops": [
+      {
+        "id": "egg",
+        "name": "Egg",
+        "text": "0-3"
+      },
+      {
+        "id": "oval_stone",
+        "name": "Oval Stone",
+        "text": "5%"
+      },
+      {
+        "id": "psychic_seed",
+        "name": "Psychic Seed",
+        "text": "5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 104,
@@ -983,7 +2537,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "cubone"
+    "id": "cubone",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 105,
@@ -992,7 +2558,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 1,
-    "id": "marowak"
+    "id": "marowak",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "1"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 106,
@@ -1001,7 +2579,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "hitmonlee"
+    "id": "hitmonlee",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 107,
@@ -1010,7 +2600,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 1,
-    "id": "hitmonchan"
+    "id": "hitmonchan",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 108,
@@ -1019,7 +2621,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "lickitung"
+    "id": "lickitung",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-1"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "2.5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 109,
@@ -1028,7 +2647,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "koffing"
+    "id": "koffing",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "2.5%"
+      },
+      {
+        "id": "smoke_ball",
+        "name": "Smoke Ball",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 110,
@@ -1037,7 +2668,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 1,
-    "id": "weezing"
+    "id": "weezing",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "5%"
+      },
+      {
+        "id": "smoke_ball",
+        "name": "Smoke Ball",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 111,
@@ -1047,7 +2690,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 1,
-    "id": "rhyhorn"
+    "id": "rhyhorn",
+    "drops": [
+      {
+        "id": "protector",
+        "name": "Protector",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 112,
@@ -1057,7 +2712,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 1,
-    "id": "rhydon"
+    "id": "rhydon",
+    "drops": [
+      {
+        "id": "protector",
+        "name": "Protector",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 113,
@@ -1066,7 +2733,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "chansey"
+    "id": "chansey",
+    "drops": [
+      {
+        "id": "lucky_egg_10%_or_oval_stone_10%_or_egg",
+        "name": "Lucky Egg 10% OR Oval Stone 10% OR Egg",
+        "text": "50%"
+      }
+    ]
   },
   {
     "dex": 114,
@@ -1075,7 +2749,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 1,
-    "id": "tangela"
+    "id": "tangela",
+    "drops": [
+      {
+        "id": "vine",
+        "name": "Vine",
+        "text": "0-1"
+      },
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 115,
@@ -1084,7 +2770,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "kangaskhan"
+    "id": "kangaskhan",
+    "drops": [
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 116,
@@ -1093,7 +2786,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "horsea"
+    "id": "horsea",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "0-1"
+      },
+      {
+        "id": "prismarine_shard",
+        "name": "Prismarine Shard",
+        "text": "0-1"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 117,
@@ -1102,7 +2812,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "seadra"
+    "id": "seadra",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "0-2"
+      },
+      {
+        "id": "prismarine_shard",
+        "name": "Prismarine Shard",
+        "text": "0-2"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 118,
@@ -1111,7 +2838,29 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "goldeen"
+    "id": "goldeen",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "2.5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 119,
@@ -1120,7 +2869,29 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "seaking"
+    "id": "seaking",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 120,
@@ -1129,7 +2900,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "staryu"
+    "id": "staryu",
+    "drops": []
   },
   {
     "dex": 121,
@@ -1139,7 +2911,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "starmie"
+    "id": "starmie",
+    "drops": []
   },
   {
     "dex": 122,
@@ -1159,7 +2932,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "scyther"
+    "id": "scyther",
+    "drops": [
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 124,
@@ -1169,7 +2949,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "jynx"
+    "id": "jynx",
+    "drops": [
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 125,
@@ -1178,7 +2965,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 1,
-    "id": "electabuzz"
+    "id": "electabuzz",
+    "drops": [
+      {
+        "id": "redstone",
+        "name": "Redstone",
+        "text": "0-2"
+      },
+      {
+        "id": "electirizer",
+        "name": "Electirizer",
+        "text": "5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 126,
@@ -1187,7 +2991,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "magmar"
+    "id": "magmar",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "magmarizer",
+        "name": "Magmarizer",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 127,
@@ -1196,7 +3017,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 1,
-    "id": "pinsir"
+    "id": "pinsir",
+    "drops": [
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 128,
@@ -1205,7 +3033,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "tauros"
+    "id": "tauros",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "beef",
+        "name": "Raw Beef",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 129,
@@ -1214,7 +3054,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "magikarp"
+    "id": "magikarp",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 130,
@@ -1224,7 +3081,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "gyarados"
+    "id": "gyarados",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 131,
@@ -1234,7 +3108,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 1,
-    "id": "lapras"
+    "id": "lapras",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "heart_of_the_sea",
+        "name": "Heart of the Sea",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 132,
@@ -1243,7 +3139,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "ditto"
+    "id": "ditto",
+    "drops": [
+      {
+        "id": "quick_powder",
+        "name": "Quick Powder",
+        "text": "0-1"
+      },
+      {
+        "id": "metal_powder",
+        "name": "Metal Powder",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 133,
@@ -1252,7 +3160,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "eevee"
+    "id": "eevee",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "5%"
+      },
+      {
+        "id": "eviolite",
+        "name": "Eviolite",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 134,
@@ -1261,7 +3181,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "vaporeon"
+    "id": "vaporeon",
+    "drops": [
+      {
+        "id": "water_stone",
+        "name": "Water Stone",
+        "text": "25%"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 135,
@@ -1270,7 +3202,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 1,
-    "id": "jolteon"
+    "id": "jolteon",
+    "drops": [
+      {
+        "id": "thunder_stone",
+        "name": "Thunder Stone",
+        "text": "25%"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 136,
@@ -1279,7 +3223,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 1,
-    "id": "flareon"
+    "id": "flareon",
+    "drops": [
+      {
+        "id": "fire_stone",
+        "name": "Fire Stone",
+        "text": "25%"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 137,
@@ -1288,7 +3244,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "porygon"
+    "id": "porygon",
+    "drops": []
   },
   {
     "dex": 138,
@@ -1298,7 +3255,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "omanyte"
+    "id": "omanyte",
+    "drops": [
+      {
+        "id": "nautilus_shell",
+        "name": "Nautilus Shell",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 139,
@@ -1308,7 +3277,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "omastar"
+    "id": "omastar",
+    "drops": [
+      {
+        "id": "nautilus_shell",
+        "name": "Nautilus Shell",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 140,
@@ -1318,7 +3299,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "kabuto"
+    "id": "kabuto",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 141,
@@ -1328,7 +3321,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 1,
-    "id": "kabutops"
+    "id": "kabutops",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "10%"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 142,
@@ -1338,7 +3343,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "aerodactyl"
+    "id": "aerodactyl",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-3"
+      },
+      {
+        "id": "rocky_helmet",
+        "name": "Rocky Helmet",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 143,
@@ -1347,7 +3364,29 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 1,
-    "id": "snorlax"
+    "id": "snorlax",
+    "drops": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "0-3"
+      },
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "0-3"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      },
+      {
+        "id": "leftovers",
+        "name": "Leftovers",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 144,
@@ -1357,7 +3396,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "articuno"
+    "id": "articuno",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 145,
@@ -1367,7 +3423,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "zapdos"
+    "id": "zapdos",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 146,
@@ -1377,7 +3450,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "moltres"
+    "id": "moltres",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      },
+      {
+        "id": "cooked_chicken",
+        "name": "Cooked Chicken",
+        "text": "1"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 147,
@@ -1386,7 +3476,29 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 1,
-    "id": "dratini"
+    "id": "dratini",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "0-1"
+      },
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "2.5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 148,
@@ -1395,7 +3507,29 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 1,
-    "id": "dragonair"
+    "id": "dragonair",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "0-2"
+      },
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "5%"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 149,
@@ -1405,7 +3539,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 1,
-    "id": "dragonite"
+    "id": "dragonite",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "0-3"
+      },
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "10%"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "10%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 150,
@@ -1414,7 +3570,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "mewtwo"
+    "id": "mewtwo",
+    "drops": [
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 151,
@@ -1423,7 +3586,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 1,
-    "id": "mew"
+    "id": "mew",
+    "drops": []
   },
   {
     "dex": 152,
@@ -1432,7 +3596,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "chikorita"
+    "id": "chikorita",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 153,
@@ -1441,7 +3612,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "bayleef"
+    "id": "bayleef",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 154,
@@ -1450,7 +3628,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "meganium"
+    "id": "meganium",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 155,
@@ -1459,7 +3644,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "cyndaquil"
+    "id": "cyndaquil",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 156,
@@ -1468,7 +3660,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "quilava"
+    "id": "quilava",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 157,
@@ -1477,7 +3676,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "typhlosion"
+    "id": "typhlosion",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 158,
@@ -1486,7 +3692,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "totodile"
+    "id": "totodile",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 159,
@@ -1495,7 +3708,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "croconaw"
+    "id": "croconaw",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 160,
@@ -1504,7 +3724,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "feraligatr"
+    "id": "feraligatr",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 161,
@@ -1513,7 +3740,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "sentret"
+    "id": "sentret",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "2.5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 162,
@@ -1522,7 +3761,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "furret"
+    "id": "furret",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 163,
@@ -1532,7 +3783,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "hoothoot"
+    "id": "hoothoot",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "2.5%"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 164,
@@ -1542,7 +3815,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "noctowl"
+    "id": "noctowl",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "5%"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 165,
@@ -1552,7 +3847,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "ledyba"
+    "id": "ledyba",
+    "drops": [
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 166,
@@ -1562,7 +3864,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "ledian"
+    "id": "ledian",
+    "drops": [
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 167,
@@ -1572,7 +3881,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 2,
-    "id": "spinarak"
+    "id": "spinarak",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "spider_eye",
+        "name": "Spider Eye",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 168,
@@ -1582,7 +3913,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 2,
-    "id": "ariados"
+    "id": "ariados",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "spider_eye",
+        "name": "Spider Eye",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 169,
@@ -1592,7 +3945,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "crobat"
+    "id": "crobat",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "10%"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "10%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 170,
@@ -1602,7 +3972,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "chinchou"
+    "id": "chinchou",
+    "drops": [
+      {
+        "id": "prismarine_crystal",
+        "name": "Prismarine Crystal",
+        "text": "0-1"
+      },
+      {
+        "id": "deep_sea_scale",
+        "name": "Deep Sea Scale",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 171,
@@ -1612,7 +3999,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "lanturn"
+    "id": "lanturn",
+    "drops": [
+      {
+        "id": "prismarine_crystal",
+        "name": "Prismarine Crystal",
+        "text": "0-2"
+      },
+      {
+        "id": "deep_sea_scale",
+        "name": "Deep Sea Scale",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 172,
@@ -1621,7 +4025,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "pichu"
+    "id": "pichu",
+    "drops": [
+      {
+        "id": "light_ball",
+        "name": "Light Ball",
+        "text": "2.5%"
+      },
+      {
+        "id": "thunder_stone",
+        "name": "Thunder Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 173,
@@ -1630,7 +4051,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "cleffa"
+    "id": "cleffa",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 174,
@@ -1640,7 +4078,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "igglybuff"
+    "id": "igglybuff",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "air_balloon",
+        "name": "Air Balloon",
+        "text": "2.5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 175,
@@ -1649,7 +4104,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "togepi"
+    "id": "togepi",
+    "drops": [
+      {
+        "id": "lucky_egg",
+        "name": "Lucky Egg",
+        "text": "2.5%"
+      },
+      {
+        "id": "shiny_stone",
+        "name": "Shiny Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 176,
@@ -1659,7 +4131,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "togetic"
+    "id": "togetic",
+    "drops": [
+      {
+        "id": "lucky_egg",
+        "name": "Lucky Egg",
+        "text": "5%"
+      },
+      {
+        "id": "shiny_stone",
+        "name": "Shiny Stone",
+        "text": "5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 177,
@@ -1669,7 +4158,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "natu"
+    "id": "natu",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 178,
@@ -1679,7 +4190,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "xatu"
+    "id": "xatu",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 179,
@@ -1688,7 +4221,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "mareep"
+    "id": "mareep",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "1-2"
+      },
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 180,
@@ -1697,7 +4247,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "flaaffy"
+    "id": "flaaffy",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "1-3"
+      },
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 181,
@@ -1706,7 +4273,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "ampharos"
+    "id": "ampharos",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "2-4"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 182,
@@ -1715,7 +4294,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "bellossom"
+    "id": "bellossom",
+    "drops": [
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "10%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 183,
@@ -1725,7 +4316,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "marill"
+    "id": "marill",
+    "drops": [
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 184,
@@ -1735,7 +4333,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "azumarill"
+    "id": "azumarill",
+    "drops": [
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 185,
@@ -1744,7 +4349,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 2,
-    "id": "sudowoodo"
+    "id": "sudowoodo",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 186,
@@ -1753,7 +4370,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "politoed"
+    "id": "politoed",
+    "drops": [
+      {
+        "id": "verdant_froglight",
+        "name": "Verdant Froglight",
+        "text": "1"
+      },
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "10%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 187,
@@ -1763,7 +4397,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "hoppip"
+    "id": "hoppip",
+    "drops": [
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 188,
@@ -1773,7 +4414,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "skiploom"
+    "id": "skiploom",
+    "drops": [
+      {
+        "id": "sunflower",
+        "name": "Sunflower",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 189,
@@ -1783,7 +4436,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "jumpluff"
+    "id": "jumpluff",
+    "drops": [
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1-3"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 190,
@@ -1792,7 +4457,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "aipom"
+    "id": "aipom",
+    "drops": [
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 191,
@@ -1801,7 +4473,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "sunkern"
+    "id": "sunkern",
+    "drops": [
+      {
+        "id": "wheat_seeds",
+        "name": "Wheat Seeds",
+        "text": "1"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 192,
@@ -1810,7 +4494,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "sunflora"
+    "id": "sunflora",
+    "drops": [
+      {
+        "id": "sunflower",
+        "name": "Sunflower",
+        "text": "1"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 193,
@@ -1820,7 +4516,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "yanma"
+    "id": "yanma",
+    "drops": [
+      {
+        "id": "wide_lens",
+        "name": "Wide Lens",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 194,
@@ -1830,7 +4538,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "wooper"
+    "id": "wooper",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 195,
@@ -1840,7 +4560,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "quagsire"
+    "id": "quagsire",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 196,
@@ -1849,7 +4581,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 2,
-    "id": "espeon"
+    "id": "espeon",
+    "drops": [
+      {
+        "id": "sun_stone",
+        "name": "Sun Stone",
+        "text": "25%"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 197,
@@ -1858,7 +4602,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 2,
-    "id": "umbreon"
+    "id": "umbreon",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "25%"
+      },
+      {
+        "id": "black_glasses",
+        "name": "Black Glasses",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 198,
@@ -1868,7 +4624,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "murkrow"
+    "id": "murkrow",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 199,
@@ -1878,7 +4651,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 2,
-    "id": "slowking"
+    "id": "slowking",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "10%"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "10%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 200,
@@ -1887,7 +4677,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 2,
-    "id": "misdreavus"
+    "id": "misdreavus",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "2.5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 201,
@@ -1896,7 +4703,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 2,
-    "id": "unown"
+    "id": "unown",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 202,
@@ -1905,7 +4719,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 2,
-    "id": "wobbuffet"
+    "id": "wobbuffet",
+    "drops": [
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 203,
@@ -1915,7 +4736,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 2,
-    "id": "girafarig"
+    "id": "girafarig",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-1"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 204,
@@ -1924,7 +4762,24 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 2,
-    "id": "pineco"
+    "id": "pineco",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "iron_ball",
+        "name": "Iron Ball",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 205,
@@ -1934,7 +4789,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 2,
-    "id": "forretress"
+    "id": "forretress",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      },
+      {
+        "id": "iron_ball",
+        "name": "Iron Ball",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 206,
@@ -1943,7 +4815,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "dunsparce"
+    "id": "dunsparce",
+    "drops": [
+      {
+        "id": "rocky_helmet",
+        "name": "Rocky Helmet",
+        "text": "2.5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 207,
@@ -1953,7 +4837,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "gligar"
+    "id": "gligar",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 208,
@@ -1963,7 +4869,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "steelix"
+    "id": "steelix",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "2-4"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "5%"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 209,
@@ -1972,7 +4900,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "snubbull"
+    "id": "snubbull",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 210,
@@ -1981,7 +4921,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 2,
-    "id": "granbull"
+    "id": "granbull",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 211,
@@ -1991,7 +4943,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 2,
-    "id": "qwilfish"
+    "id": "qwilfish",
+    "drops": [
+      {
+        "id": "pufferfish",
+        "name": "Pufferfish",
+        "text": "1"
+      },
+      {
+        "id": "prismarine_shard",
+        "name": "Prismarine Shard",
+        "text": "0-1"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 212,
@@ -2001,7 +4970,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 2,
-    "id": "scizor"
+    "id": "scizor",
+    "drops": [
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 213,
@@ -2011,7 +4987,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 2,
-    "id": "shuckle"
+    "id": "shuckle",
+    "drops": [
+      {
+        "id": "berry_juice",
+        "name": "Berry Juice",
+        "text": "1"
+      },
+      {
+        "id": "luminous_moss",
+        "name": "Luminous Moss",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 214,
@@ -2021,7 +5009,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 2,
-    "id": "heracross"
+    "id": "heracross",
+    "drops": [
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 215,
@@ -2031,7 +5026,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 2,
-    "id": "sneasel"
+    "id": "sneasel",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "grip_claw",
+        "name": "Grip Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 216,
@@ -2040,7 +5057,29 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "teddiursa"
+    "id": "teddiursa",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "1-3"
+      },
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-1"
+      },
+      {
+        "id": "peat_block",
+        "name": "Peat Block",
+        "text": "2.5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 217,
@@ -2049,7 +5088,29 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "ursaring"
+    "id": "ursaring",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-2"
+      },
+      {
+        "id": "peat_block",
+        "name": "Peat Block",
+        "text": "5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 218,
@@ -2058,7 +5119,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "slugma"
+    "id": "slugma",
+    "drops": [
+      {
+        "id": "magma_cream",
+        "name": "Magma Cream",
+        "text": "0-1"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 219,
@@ -2068,7 +5141,24 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 2,
-    "id": "magcargo"
+    "id": "magcargo",
+    "drops": [
+      {
+        "id": "magma_cream",
+        "name": "Magma Cream",
+        "text": "0-2"
+      },
+      {
+        "id": "basalt",
+        "name": "Basalt",
+        "text": "1"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 220,
@@ -2078,7 +5168,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "swinub"
+    "id": "swinub",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1"
+      },
+      {
+        "id": "brown_wool",
+        "name": "Brown Wool",
+        "text": "1"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "2.5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 221,
@@ -2088,7 +5200,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "piloswine"
+    "id": "piloswine",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1-2"
+      },
+      {
+        "id": "brown_wool",
+        "name": "Brown Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 222,
@@ -2098,7 +5232,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 2,
-    "id": "corsola"
+    "id": "corsola",
+    "drops": [
+      {
+        "id": "luminous_moss",
+        "name": "Luminous Moss",
+        "text": "5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 223,
@@ -2107,7 +5253,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "remoraid"
+    "id": "remoraid",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 224,
@@ -2116,7 +5279,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "octillery"
+    "id": "octillery",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "1-3"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 225,
@@ -2126,7 +5301,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "delibird"
+    "id": "delibird",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 226,
@@ -2136,7 +5328,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "mantine"
+    "id": "mantine",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-2"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 227,
@@ -2146,7 +5350,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "skarmory"
+    "id": "skarmory",
+    "drops": [
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 228,
@@ -2156,7 +5377,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "houndour"
+    "id": "houndour",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 229,
@@ -2166,7 +5409,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "houndoom"
+    "id": "houndoom",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 230,
@@ -2176,7 +5441,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 2,
-    "id": "kingdra"
+    "id": "kingdra",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "0-3"
+      },
+      {
+        "id": "prismarine_shard",
+        "name": "Prismarine Shard",
+        "text": "0-3"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 231,
@@ -2185,7 +5467,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "phanpy"
+    "id": "phanpy",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 232,
@@ -2194,7 +5488,24 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "donphan"
+    "id": "donphan",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "protector",
+        "name": "Protector",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 233,
@@ -2203,7 +5514,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "porygon2"
+    "id": "porygon2",
+    "drops": [
+      {
+        "id": "upgrade",
+        "name": "Up-Grade",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 234,
@@ -2212,7 +5530,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "stantler"
+    "id": "stantler",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-1"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 235,
@@ -2221,7 +5551,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "smeargle"
+    "id": "smeargle",
+    "drops": []
   },
   {
     "dex": 236,
@@ -2230,7 +5561,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 2,
-    "id": "tyrogue"
+    "id": "tyrogue",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "2.5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 237,
@@ -2239,7 +5582,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 2,
-    "id": "hitmontop"
+    "id": "hitmontop",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 238,
@@ -2249,7 +5604,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 2,
-    "id": "smoochum"
+    "id": "smoochum",
+    "drops": [
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 239,
@@ -2258,7 +5620,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "elekid"
+    "id": "elekid",
+    "drops": [
+      {
+        "id": "redstone",
+        "name": "Redstone",
+        "text": "0-1"
+      },
+      {
+        "id": "electirizer",
+        "name": "Electirizer",
+        "text": "2.5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 240,
@@ -2267,7 +5646,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "magby"
+    "id": "magby",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "magmarizer",
+        "name": "Magmarizer",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 241,
@@ -2276,7 +5672,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "miltank"
+    "id": "miltank",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "beef",
+        "name": "Raw Beef",
+        "text": "1-3"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 242,
@@ -2285,7 +5698,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 2,
-    "id": "blissey"
+    "id": "blissey",
+    "drops": [
+      {
+        "id": "lucky_egg_25%_or_oval_stone_25%_or_egg",
+        "name": "Lucky Egg 25% OR Oval Stone 25% OR Egg",
+        "text": "50%"
+      }
+    ]
   },
   {
     "dex": 243,
@@ -2294,7 +5714,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 2,
-    "id": "raikou"
+    "id": "raikou",
+    "drops": [
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 244,
@@ -2303,7 +5730,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 2,
-    "id": "entei"
+    "id": "entei",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "1"
+      },
+      {
+        "id": "sacred_ash",
+        "name": "Sacred Ash",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 245,
@@ -2312,7 +5751,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 2,
-    "id": "suicune"
+    "id": "suicune",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 246,
@@ -2322,7 +5768,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "larvitar"
+    "id": "larvitar",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 247,
@@ -2332,7 +5790,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 2,
-    "id": "pupitar"
+    "id": "pupitar",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 248,
@@ -2342,7 +5812,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 2,
-    "id": "tyranitar"
+    "id": "tyranitar",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "10%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 249,
@@ -2352,7 +5834,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "lugia"
+    "id": "lugia",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      }
+    ]
   },
   {
     "dex": 250,
@@ -2362,7 +5851,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 2,
-    "id": "ho-oh"
+    "id": "ho-oh",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      },
+      {
+        "id": "sacred_ash",
+        "name": "Sacred Ash",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 251,
@@ -2372,7 +5873,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 2,
-    "id": "celebi"
+    "id": "celebi",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 252,
@@ -2381,7 +5889,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "treecko"
+    "id": "treecko",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 253,
@@ -2390,7 +5910,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "grovyle"
+    "id": "grovyle",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-2"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 254,
@@ -2399,7 +5931,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "sceptile"
+    "id": "sceptile",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-3"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 255,
@@ -2408,7 +5952,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 3,
-    "id": "torchic"
+    "id": "torchic",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 256,
@@ -2418,7 +5979,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 3,
-    "id": "combusken"
+    "id": "combusken",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 257,
@@ -2428,7 +6006,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 3,
-    "id": "blaziken"
+    "id": "blaziken",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 258,
@@ -2437,7 +6032,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "mudkip"
+    "id": "mudkip",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 259,
@@ -2447,7 +6054,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "marshtomp"
+    "id": "marshtomp",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 260,
@@ -2457,7 +6076,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "swampert"
+    "id": "swampert",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-3"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 261,
@@ -2466,7 +6097,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "poochyena"
+    "id": "poochyena",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 262,
@@ -2475,7 +6123,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "mightyena"
+    "id": "mightyena",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 263,
@@ -2484,7 +6149,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "zigzagoon"
+    "id": "zigzagoon",
+    "drops": [
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 264,
@@ -2493,7 +6165,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "linoone"
+    "id": "linoone",
+    "drops": [
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 265,
@@ -2502,7 +6181,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "wurmple"
+    "id": "wurmple",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 266,
@@ -2511,7 +6202,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "silcoon"
+    "id": "silcoon",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 267,
@@ -2521,7 +6224,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "beautifly"
+    "id": "beautifly",
+    "drops": [
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 268,
@@ -2530,7 +6250,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "cascoon"
+    "id": "cascoon",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 269,
@@ -2540,7 +6272,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 3,
-    "id": "dustox"
+    "id": "dustox",
+    "drops": [
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 270,
@@ -2550,7 +6299,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "lotad"
+    "id": "lotad",
+    "drops": [
+      {
+        "id": "lily_pad",
+        "name": "Lily Pad",
+        "text": "0-1"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "2.5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 271,
@@ -2560,7 +6326,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "lombre"
+    "id": "lombre",
+    "drops": [
+      {
+        "id": "lily_pad",
+        "name": "Lily Pad",
+        "text": "0-2"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 272,
@@ -2570,7 +6353,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "ludicolo"
+    "id": "ludicolo",
+    "drops": [
+      {
+        "id": "lily_pad",
+        "name": "Lily Pad",
+        "text": "0-3"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "10%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 273,
@@ -2579,7 +6379,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "seedot"
+    "id": "seedot",
+    "drops": [
+      {
+        "id": "dark_oak_sapling",
+        "name": "Dark Oak Sapling",
+        "text": "0-1"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 274,
@@ -2589,7 +6401,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "nuzleaf"
+    "id": "nuzleaf",
+    "drops": [
+      {
+        "id": "dark_oak_sapling",
+        "name": "Dark Oak Sapling",
+        "text": "0-2"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 275,
@@ -2599,7 +6423,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "shiftry"
+    "id": "shiftry",
+    "drops": [
+      {
+        "id": "dark_oak_sapling",
+        "name": "Dark Oak Sapling",
+        "text": "0-3"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 276,
@@ -2609,7 +6445,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "taillow"
+    "id": "taillow",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 277,
@@ -2619,7 +6472,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "swellow"
+    "id": "swellow",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 278,
@@ -2629,7 +6504,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "wingull"
+    "id": "wingull",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 279,
@@ -2639,7 +6531,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "pelipper"
+    "id": "pelipper",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 280,
@@ -2649,7 +6558,29 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 3,
-    "id": "ralts"
+    "id": "ralts",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "2.5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 281,
@@ -2659,7 +6590,29 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 3,
-    "id": "kirlia"
+    "id": "kirlia",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-2"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "5%"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 282,
@@ -2669,7 +6622,29 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 3,
-    "id": "gardevoir"
+    "id": "gardevoir",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-3"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "10%"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "10%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 283,
@@ -2679,7 +6654,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "surskit"
+    "id": "surskit",
+    "drops": [
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 284,
@@ -2689,7 +6676,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "masquerain"
+    "id": "masquerain",
+    "drops": [
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 285,
@@ -2698,7 +6697,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "shroomish"
+    "id": "shroomish",
+    "drops": [
+      {
+        "id": "brown_mushroom",
+        "name": "Brown Mushroom",
+        "text": "0-1"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 286,
@@ -2708,7 +6719,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 3,
-    "id": "breloom"
+    "id": "breloom",
+    "drops": [
+      {
+        "id": "brown_mushroom",
+        "name": "Brown Mushroom",
+        "text": "0-2"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 287,
@@ -2717,7 +6740,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "slakoth"
+    "id": "slakoth",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 288,
@@ -2726,7 +6756,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "vigoroth"
+    "id": "vigoroth",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 289,
@@ -2735,7 +6772,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "slaking"
+    "id": "slaking",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 290,
@@ -2745,7 +6789,14 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "nincada"
+    "id": "nincada",
+    "drops": [
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 291,
@@ -2755,7 +6806,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "ninjask"
+    "id": "ninjask",
+    "drops": [
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 292,
@@ -2765,7 +6823,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 3,
-    "id": "shedinja"
+    "id": "shedinja",
+    "drops": [
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 293,
@@ -2774,7 +6839,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "whismur"
+    "id": "whismur",
+    "drops": [
+      {
+        "id": "throat_spray",
+        "name": "Throat Spray",
+        "text": "2.5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 294,
@@ -2783,7 +6860,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "loudred"
+    "id": "loudred",
+    "drops": [
+      {
+        "id": "throat_spray",
+        "name": "Throat Spray",
+        "text": "5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 295,
@@ -2792,7 +6881,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "exploud"
+    "id": "exploud",
+    "drops": [
+      {
+        "id": "throat_spray",
+        "name": "Throat Spray",
+        "text": "10%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 296,
@@ -2801,7 +6902,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 3,
-    "id": "makuhita"
+    "id": "makuhita",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "2.5%"
+      },
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "2.5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 297,
@@ -2810,7 +6928,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 3,
-    "id": "hariyama"
+    "id": "hariyama",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 298,
@@ -2820,7 +6955,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 3,
-    "id": "azurill"
+    "id": "azurill",
+    "drops": [
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 299,
@@ -2829,7 +6971,29 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 3,
-    "id": "nosepass"
+    "id": "nosepass",
+    "drops": [
+      {
+        "id": "flint",
+        "name": "Flint",
+        "text": "0-1"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "2.5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 300,
@@ -2838,7 +7002,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "skitty"
+    "id": "skitty",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 301,
@@ -2847,7 +7023,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "delcatty"
+    "id": "delcatty",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 302,
@@ -2857,7 +7045,34 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 3,
-    "id": "sableye"
+    "id": "sableye",
+    "drops": [
+      {
+        "id": "amethyst_shard",
+        "name": "Amethyst Shard",
+        "text": "0-2"
+      },
+      {
+        "id": "wide_lens",
+        "name": "Wide Lens",
+        "text": "5%"
+      },
+      {
+        "id": "diamond",
+        "name": "Diamond",
+        "text": "5%"
+      },
+      {
+        "id": "emerald",
+        "name": "Emerald",
+        "text": "5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 303,
@@ -2867,7 +7082,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 3,
-    "id": "mawile"
+    "id": "mawile",
+    "drops": [
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      },
+      {
+        "id": "iron_ball",
+        "name": "Iron Ball",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 304,
@@ -2877,7 +7109,24 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 3,
-    "id": "aron"
+    "id": "aron",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 305,
@@ -2887,7 +7136,24 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 3,
-    "id": "lairon"
+    "id": "lairon",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 306,
@@ -2897,7 +7163,24 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 3,
-    "id": "aggron"
+    "id": "aggron",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-3"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "10%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 307,
@@ -2907,7 +7190,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "meditite"
+    "id": "meditite",
+    "drops": [
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "2.5%"
+      },
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "2.5%"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 308,
@@ -2917,7 +7217,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "medicham"
+    "id": "medicham",
+    "drops": [
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "5%"
+      },
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 309,
@@ -2926,7 +7243,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 3,
-    "id": "electrike"
+    "id": "electrike",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 310,
@@ -2935,7 +7269,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 3,
-    "id": "manectric"
+    "id": "manectric",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 311,
@@ -2944,7 +7295,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 3,
-    "id": "plusle"
+    "id": "plusle",
+    "drops": [
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "5%"
+      },
+      {
+        "id": "cell_battery",
+        "name": "Cell Battery",
+        "text": "5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 312,
@@ -2953,7 +7321,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 3,
-    "id": "minun"
+    "id": "minun",
+    "drops": [
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "5%"
+      },
+      {
+        "id": "cell_battery",
+        "name": "Cell Battery",
+        "text": "5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 313,
@@ -2962,7 +7347,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "volbeat"
+    "id": "volbeat",
+    "drops": [
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 314,
@@ -2971,7 +7368,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "illumise"
+    "id": "illumise",
+    "drops": [
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "5%"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 315,
@@ -2981,7 +7390,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 3,
-    "id": "roselia"
+    "id": "roselia",
+    "drops": [
+      {
+        "id": "rose",
+        "name": "Rose",
+        "text": "0-1"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 316,
@@ -2990,7 +7421,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 3,
-    "id": "gulpin"
+    "id": "gulpin",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "2.5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 317,
@@ -2999,7 +7442,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 3,
-    "id": "swalot"
+    "id": "swalot",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 318,
@@ -3009,7 +7464,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "carvanha"
+    "id": "carvanha",
+    "drops": [
+      {
+        "id": "deep_sea_tooth",
+        "name": "Deep Sea Tooth",
+        "text": "2.5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 319,
@@ -3019,7 +7486,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "sharpedo"
+    "id": "sharpedo",
+    "drops": [
+      {
+        "id": "deep_sea_tooth",
+        "name": "Deep Sea Tooth",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 320,
@@ -3028,7 +7507,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "wailmer"
+    "id": "wailmer",
+    "drops": [
+      {
+        "id": "bone_block",
+        "name": "Bone Block",
+        "text": "0-1"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 321,
@@ -3037,7 +7528,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "wailord"
+    "id": "wailord",
+    "drops": [
+      {
+        "id": "bone_block",
+        "name": "Bone Block",
+        "text": "0-2"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 322,
@@ -3047,7 +7550,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "numel"
+    "id": "numel",
+    "drops": [
+      {
+        "id": "magma_cream",
+        "name": "Magma Cream",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 323,
@@ -3057,7 +7572,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "camerupt"
+    "id": "camerupt",
+    "drops": [
+      {
+        "id": "magma_cream",
+        "name": "Magma Cream",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 324,
@@ -3066,7 +7593,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 3,
-    "id": "torkoal"
+    "id": "torkoal",
+    "drops": [
+      {
+        "id": "coal",
+        "name": "Coal",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      },
+      {
+        "id": "smoke_ball",
+        "name": "Smoke Ball",
+        "text": "5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 325,
@@ -3075,7 +7624,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "spoink"
+    "id": "spoink",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1-2"
+      },
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 326,
@@ -3084,7 +7650,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "grumpig"
+    "id": "grumpig",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1-3"
+      },
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-2"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 327,
@@ -3093,7 +7676,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "spinda"
+    "id": "spinda",
+    "drops": [
+      {
+        "id": "bamboo",
+        "name": "Bamboo",
+        "text": "0-2"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 328,
@@ -3102,7 +7697,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "trapinch"
+    "id": "trapinch",
+    "drops": [
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 329,
@@ -3112,7 +7719,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 3,
-    "id": "vibrava"
+    "id": "vibrava",
+    "drops": [
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 330,
@@ -3122,7 +7741,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 3,
-    "id": "flygon"
+    "id": "flygon",
+    "drops": [
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "10%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 331,
@@ -3131,7 +7762,29 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "cacnea"
+    "id": "cacnea",
+    "drops": [
+      {
+        "id": "cactus",
+        "name": "Cactus",
+        "text": "0-1"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "sticky_barb",
+        "name": "Sticky Barb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 332,
@@ -3141,7 +7794,29 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "cacturne"
+    "id": "cacturne",
+    "drops": [
+      {
+        "id": "cactus",
+        "name": "Cactus",
+        "text": "0-2"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      },
+      {
+        "id": "sticky_barb",
+        "name": "Sticky Barb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 333,
@@ -3151,7 +7826,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "swablu"
+    "id": "swablu",
+    "drops": [
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 334,
@@ -3161,7 +7853,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "altaria"
+    "id": "altaria",
+    "drops": [
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 335,
@@ -3170,7 +7879,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "zangoose"
+    "id": "zangoose",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 336,
@@ -3179,7 +7905,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 3,
-    "id": "seviper"
+    "id": "seviper",
+    "drops": [
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 337,
@@ -3189,7 +7937,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "lunatone"
+    "id": "lunatone",
+    "drops": [
+      {
+        "id": "moon_stone",
+        "name": "Moon Stone",
+        "text": "5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 338,
@@ -3199,7 +7959,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "solrock"
+    "id": "solrock",
+    "drops": [
+      {
+        "id": "sun_stone",
+        "name": "Sun Stone",
+        "text": "5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 339,
@@ -3209,7 +7981,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "barboach"
+    "id": "barboach",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 340,
@@ -3219,7 +8003,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "whiscash"
+    "id": "whiscash",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 341,
@@ -3228,7 +8024,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "corphish"
+    "id": "corphish",
+    "drops": []
   },
   {
     "dex": 342,
@@ -3238,7 +8035,8 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "crawdaunt"
+    "id": "crawdaunt",
+    "drops": []
   },
   {
     "dex": 343,
@@ -3248,7 +8046,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "baltoy"
+    "id": "baltoy",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "2.5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 344,
@@ -3258,7 +8073,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "claydol"
+    "id": "claydol",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 345,
@@ -3268,7 +8100,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "lileep"
+    "id": "lileep",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 346,
@@ -3278,7 +8117,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 3,
-    "id": "cradily"
+    "id": "cradily",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 347,
@@ -3288,7 +8134,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "anorith"
+    "id": "anorith",
+    "drops": [
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 348,
@@ -3298,7 +8151,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 3,
-    "id": "armaldo"
+    "id": "armaldo",
+    "drops": [
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 349,
@@ -3307,7 +8167,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "feebas"
+    "id": "feebas",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "prism_scale",
+        "name": "Prism Scale",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 350,
@@ -3316,7 +8193,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "milotic"
+    "id": "milotic",
+    "drops": [
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      },
+      {
+        "id": "prism_scale",
+        "name": "Prism Scale",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 351,
@@ -3325,7 +8214,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "castform"
+    "id": "castform",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 352,
@@ -3334,7 +8230,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 3,
-    "id": "kecleon"
+    "id": "kecleon",
+    "drops": [
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 353,
@@ -3343,7 +8246,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 3,
-    "id": "shuppet"
+    "id": "shuppet",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 354,
@@ -3352,7 +8267,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 3,
-    "id": "banette"
+    "id": "banette",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 355,
@@ -3361,7 +8288,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 3,
-    "id": "duskull"
+    "id": "duskull",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "reaper_cloth",
+        "name": "Reaper Cloth",
+        "text": "2.5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 356,
@@ -3370,7 +8314,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 3,
-    "id": "dusclops"
+    "id": "dusclops",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "reaper_cloth",
+        "name": "Reaper Cloth",
+        "text": "5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 357,
@@ -3380,7 +8341,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "tropius"
+    "id": "tropius",
+    "drops": [
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 358,
@@ -3389,7 +8357,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "chimecho"
+    "id": "chimecho",
+    "drops": [
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      },
+      {
+        "id": "cleanse_tag",
+        "name": "Cleanse Tag",
+        "text": "5%"
+      },
+      {
+        "id": "soothe_bell",
+        "name": "Soothe Bell",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 359,
@@ -3398,7 +8383,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 3,
-    "id": "absol"
+    "id": "absol",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "life_orb",
+        "name": "Life Orb",
+        "text": "5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 360,
@@ -3407,7 +8409,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "wynaut"
+    "id": "wynaut",
+    "drops": [
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 361,
@@ -3416,7 +8425,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 3,
-    "id": "snorunt"
+    "id": "snorunt",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-1"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "2.5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 362,
@@ -3425,7 +8456,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 3,
-    "id": "glalie"
+    "id": "glalie",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-2"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "5%"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 363,
@@ -3435,7 +8488,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "spheal"
+    "id": "spheal",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-1"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 364,
@@ -3445,7 +8510,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "sealeo"
+    "id": "sealeo",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-2"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 365,
@@ -3455,7 +8532,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "walrein"
+    "id": "walrein",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-3"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 366,
@@ -3464,7 +8553,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "clamperl"
+    "id": "clamperl",
+    "drops": [
+      {
+        "id": "shell_bell",
+        "name": "Shell Bell",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 367,
@@ -3473,7 +8569,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "huntail"
+    "id": "huntail",
+    "drops": [
+      {
+        "id": "deep_sea_tooth",
+        "name": "Deep Sea Tooth",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 368,
@@ -3482,7 +8585,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "gorebyss"
+    "id": "gorebyss",
+    "drops": [
+      {
+        "id": "deep_sea_scale",
+        "name": "Deep Sea Scale",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 369,
@@ -3492,7 +8602,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 3,
-    "id": "relicanth"
+    "id": "relicanth",
+    "drops": [
+      {
+        "id": "deep_sea_scale",
+        "name": "Deep Sea Scale",
+        "text": "5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 370,
@@ -3501,7 +8623,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "luvdisc"
+    "id": "luvdisc",
+    "drops": [
+      {
+        "id": "deep_sea_scale",
+        "name": "Deep Sea Scale",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 371,
@@ -3510,7 +8639,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 3,
-    "id": "bagon"
+    "id": "bagon",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "2.5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 372,
@@ -3519,7 +8665,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 3,
-    "id": "shelgon"
+    "id": "shelgon",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "5%"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 373,
@@ -3529,7 +8692,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "salamence"
+    "id": "salamence",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "10%"
+      },
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "10%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 374,
@@ -3539,7 +8719,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "beldum"
+    "id": "beldum",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 375,
@@ -3549,7 +8741,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "metang"
+    "id": "metang",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-2"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 376,
@@ -3559,7 +8763,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "metagross"
+    "id": "metagross",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-3"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 377,
@@ -3568,7 +8784,14 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 3,
-    "id": "regirock"
+    "id": "regirock",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 378,
@@ -3577,7 +8800,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 3,
-    "id": "regice"
+    "id": "regice",
+    "drops": [
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 379,
@@ -3586,7 +8816,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 3,
-    "id": "registeel"
+    "id": "registeel",
+    "drops": [
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 380,
@@ -3596,7 +8833,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "latias"
+    "id": "latias",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      }
+    ]
   },
   {
     "dex": 381,
@@ -3606,7 +8850,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "latios"
+    "id": "latios",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "2-4"
+      }
+    ]
   },
   {
     "dex": 382,
@@ -3615,7 +8866,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 3,
-    "id": "kyogre"
+    "id": "kyogre",
+    "drops": [
+      {
+        "id": "heart_of_the_sea",
+        "name": "Heart of the Sea",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 383,
@@ -3624,7 +8882,14 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 3,
-    "id": "groudon"
+    "id": "groudon",
+    "drops": [
+      {
+        "id": "nether_star",
+        "name": "Nether Star",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 384,
@@ -3634,7 +8899,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 3,
-    "id": "rayquaza"
+    "id": "rayquaza",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "3-5"
+      }
+    ]
   },
   {
     "dex": 385,
@@ -3644,7 +8916,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 3,
-    "id": "jirachi"
+    "id": "jirachi",
+    "drops": []
   },
   {
     "dex": 386,
@@ -3662,7 +8935,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "turtwig"
+    "id": "turtwig",
+    "drops": [
+      {
+        "id": "oak_sapling",
+        "name": "Oak Sapling",
+        "text": "1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 388,
@@ -3671,7 +8956,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "grotle"
+    "id": "grotle",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 389,
@@ -3681,7 +8978,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "torterra"
+    "id": "torterra",
+    "drops": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "0-3"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 390,
@@ -3690,7 +8999,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 4,
-    "id": "chimchar"
+    "id": "chimchar",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 391,
@@ -3700,7 +9016,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 4,
-    "id": "monferno"
+    "id": "monferno",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 392,
@@ -3710,7 +9033,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 4,
-    "id": "infernape"
+    "id": "infernape",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 393,
@@ -3719,7 +9049,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "piplup"
+    "id": "piplup",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 394,
@@ -3728,7 +9075,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "prinplup"
+    "id": "prinplup",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 395,
@@ -3738,7 +9102,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "empoleon"
+    "id": "empoleon",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 396,
@@ -3748,7 +9129,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "starly"
+    "id": "starly",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 397,
@@ -3758,7 +9156,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "staravia"
+    "id": "staravia",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 398,
@@ -3768,7 +9188,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "staraptor"
+    "id": "staraptor",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 399,
@@ -3777,7 +9219,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "bidoof"
+    "id": "bidoof",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-1"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 400,
@@ -3787,7 +9241,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "bibarel"
+    "id": "bibarel",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-2"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 401,
@@ -3796,7 +9262,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 4,
-    "id": "kricketot"
+    "id": "kricketot",
+    "drops": [
+      {
+        "id": "metronome",
+        "name": "Metronome",
+        "text": "2.5%"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 402,
@@ -3805,7 +9283,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 4,
-    "id": "kricketune"
+    "id": "kricketune",
+    "drops": [
+      {
+        "id": "metronome",
+        "name": "Metronome",
+        "text": "5%"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 403,
@@ -3814,7 +9304,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 4,
-    "id": "shinx"
+    "id": "shinx",
+    "drops": [
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 404,
@@ -3823,7 +9325,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 4,
-    "id": "luxio"
+    "id": "luxio",
+    "drops": [
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 405,
@@ -3832,7 +9346,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 4,
-    "id": "luxray"
+    "id": "luxray",
+    "drops": [
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "10%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 406,
@@ -3842,7 +9368,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 4,
-    "id": "budew"
+    "id": "budew",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 407,
@@ -3852,7 +9395,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 4,
-    "id": "roserade"
+    "id": "roserade",
+    "drops": [
+      {
+        "id": "rose",
+        "name": "Rose",
+        "text": "1-2"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "10%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "10%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 408,
@@ -3861,7 +9426,14 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 4,
-    "id": "cranidos"
+    "id": "cranidos",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 409,
@@ -3870,7 +9442,14 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 4,
-    "id": "rampardos"
+    "id": "rampardos",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 410,
@@ -3880,7 +9459,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "shieldon"
+    "id": "shieldon",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 411,
@@ -3890,7 +9476,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "bastiodon"
+    "id": "bastiodon",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 412,
@@ -3899,7 +9492,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 4,
-    "id": "burmy"
+    "id": "burmy",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 413,
@@ -3919,7 +9524,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "mothim"
+    "id": "mothim",
+    "drops": [
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 415,
@@ -3929,7 +9546,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "combee"
+    "id": "combee",
+    "drops": [
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-1"
+      },
+      {
+        "id": "honeycomb",
+        "name": "Honey Comb",
+        "text": "0-1"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 416,
@@ -3939,7 +9578,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "vespiquen"
+    "id": "vespiquen",
+    "drops": [
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-3"
+      },
+      {
+        "id": "honeycomb",
+        "name": "Honey Comb",
+        "text": "0-3"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "10%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 417,
@@ -3948,7 +9609,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 4,
-    "id": "pachirisu"
+    "id": "pachirisu",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 418,
@@ -3957,7 +9625,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "buizel"
+    "id": "buizel",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "0-1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 419,
@@ -3966,7 +9646,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "floatzel"
+    "id": "floatzel",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "0-2"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 420,
@@ -3975,7 +9667,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "cherubi"
+    "id": "cherubi",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "1-3"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "2.5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 421,
@@ -3984,7 +9693,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "cherrim"
+    "id": "cherrim",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 422,
@@ -3993,7 +9719,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "shellos"
+    "id": "shellos",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 423,
@@ -4003,7 +9741,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "gastrodon"
+    "id": "gastrodon",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 424,
@@ -4012,7 +9762,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "ambipom"
+    "id": "ambipom",
+    "drops": [
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 425,
@@ -4022,7 +9779,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "drifloon"
+    "id": "drifloon",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "air_balloon",
+        "name": "Air Balloon",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 426,
@@ -4032,7 +9806,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "drifblim"
+    "id": "drifblim",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      },
+      {
+        "id": "air_balloon",
+        "name": "Air Balloon",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 427,
@@ -4041,7 +9832,34 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "buneary"
+    "id": "buneary",
+    "drops": [
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-1"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "2.5%"
+      },
+      {
+        "id": "carrot",
+        "name": "Carrot",
+        "text": "2.5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 428,
@@ -4050,7 +9868,34 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "lopunny"
+    "id": "lopunny",
+    "drops": [
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-2"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "5%"
+      },
+      {
+        "id": "carrot",
+        "name": "Carrot",
+        "text": "5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 429,
@@ -4059,7 +9904,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 4,
-    "id": "mismagius"
+    "id": "mismagius",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 430,
@@ -4069,7 +9931,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "honchkrow"
+    "id": "honchkrow",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 431,
@@ -4078,7 +9957,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "glameow"
+    "id": "glameow",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 432,
@@ -4087,7 +9973,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "purugly"
+    "id": "purugly",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 433,
@@ -4096,7 +9989,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "chingling"
+    "id": "chingling",
+    "drops": [
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "soothe_bell",
+        "name": "Soothe Bell",
+        "text": "2.5%"
+      },
+      {
+        "id": "cleanse_tag",
+        "name": "Cleanse Tag",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 434,
@@ -4106,7 +10016,14 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 4,
-    "id": "stunky"
+    "id": "stunky",
+    "drops": [
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 435,
@@ -4116,7 +10033,14 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 4,
-    "id": "skuntank"
+    "id": "skuntank",
+    "drops": [
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 436,
@@ -4126,7 +10050,29 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "bronzor"
+    "id": "bronzor",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "2.5%"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "2.5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 437,
@@ -4136,7 +10082,29 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "bronzong"
+    "id": "bronzong",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "5%"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 438,
@@ -4145,7 +10113,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 4,
-    "id": "bonsly"
+    "id": "bonsly",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 439,
@@ -4164,7 +10144,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "happiny"
+    "id": "happiny",
+    "drops": [
+      {
+        "id": "oval_stone",
+        "name": "Oval Stone",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 441,
@@ -4174,7 +10161,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "chatot"
+    "id": "chatot",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "metronome",
+        "name": "Metronome",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 442,
@@ -4184,7 +10193,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 4,
-    "id": "spiritomb"
+    "id": "spiritomb",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      },
+      {
+        "id": "smoke_ball",
+        "name": "Smoke Ball",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 443,
@@ -4194,7 +10215,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "gible"
+    "id": "gible",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 444,
@@ -4204,7 +10237,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "gabite"
+    "id": "gabite",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 445,
@@ -4214,7 +10259,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "garchomp"
+    "id": "garchomp",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "10%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 446,
@@ -4223,7 +10280,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "munchlax"
+    "id": "munchlax",
+    "drops": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "0-3"
+      },
+      {
+        "id": "leftovers",
+        "name": "Leftovers",
+        "text": "2.5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 447,
@@ -4232,7 +10306,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 4,
-    "id": "riolu"
+    "id": "riolu",
+    "drops": [
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 448,
@@ -4242,7 +10328,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "lucario"
+    "id": "lucario",
+    "drops": [
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 449,
@@ -4251,7 +10349,24 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "hippopotas"
+    "id": "hippopotas",
+    "drops": [
+      {
+        "id": "sand",
+        "name": "Sand",
+        "text": "0-1"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 450,
@@ -4260,7 +10375,24 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "hippowdon"
+    "id": "hippowdon",
+    "drops": [
+      {
+        "id": "sand",
+        "name": "Sand",
+        "text": "0-2"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 451,
@@ -4270,7 +10402,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 4,
-    "id": "skorupi"
+    "id": "skorupi",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 452,
@@ -4280,7 +10424,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 4,
-    "id": "drapion"
+    "id": "drapion",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 453,
@@ -4290,7 +10446,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 4,
-    "id": "croagunk"
+    "id": "croagunk",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "2.5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 454,
@@ -4300,7 +10468,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 4,
-    "id": "toxicroak"
+    "id": "toxicroak",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 455,
@@ -4309,7 +10489,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "carnivine"
+    "id": "carnivine",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      },
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 456,
@@ -4318,7 +10515,29 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "finneon"
+    "id": "finneon",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "prism_scale",
+        "name": "Prism Scale",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 457,
@@ -4327,7 +10546,29 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "lumineon"
+    "id": "lumineon",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      },
+      {
+        "id": "prism_scale",
+        "name": "Prism Scale",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 458,
@@ -4337,7 +10578,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "mantyke"
+    "id": "mantyke",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 459,
@@ -4347,7 +10600,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 4,
-    "id": "snover"
+    "id": "snover",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-1"
+      },
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "1-3"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "2.5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 460,
@@ -4357,7 +10632,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 4,
-    "id": "abomasnow"
+    "id": "abomasnow",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-2"
+      },
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 461,
@@ -4367,7 +10664,29 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 4,
-    "id": "weavile"
+    "id": "weavile",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "grip_claw",
+        "name": "Grip Claw",
+        "text": "5%"
+      },
+      {
+        "id": "quick_claw",
+        "name": "Quick Claw",
+        "text": "5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 462,
@@ -4377,7 +10696,29 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "magnezone"
+    "id": "magnezone",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-3"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "10%"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "10%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 463,
@@ -4386,7 +10727,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "lickilicky"
+    "id": "lickilicky",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "5%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 464,
@@ -4396,7 +10754,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 4,
-    "id": "rhyperior"
+    "id": "rhyperior",
+    "drops": [
+      {
+        "id": "protector",
+        "name": "Protector",
+        "text": "10%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 465,
@@ -4405,7 +10775,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "tangrowth"
+    "id": "tangrowth",
+    "drops": [
+      {
+        "id": "vine",
+        "name": "Vine",
+        "text": "0-2"
+      },
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 466,
@@ -4414,7 +10796,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 4,
-    "id": "electivire"
+    "id": "electivire",
+    "drops": [
+      {
+        "id": "redstone",
+        "name": "Redstone",
+        "text": "0-3"
+      },
+      {
+        "id": "electirizer",
+        "name": "Electirizer",
+        "text": "10%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 467,
@@ -4423,7 +10822,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 4,
-    "id": "magmortar"
+    "id": "magmortar",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "10%"
+      },
+      {
+        "id": "magmarizer",
+        "name": "Magmarizer",
+        "text": "10%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 468,
@@ -4433,7 +10849,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "togekiss"
+    "id": "togekiss",
+    "drops": [
+      {
+        "id": "lucky_egg",
+        "name": "Lucky Egg",
+        "text": "10%"
+      },
+      {
+        "id": "shiny_stone",
+        "name": "Shiny Stone",
+        "text": "10%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 469,
@@ -4443,7 +10876,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "yanmega"
+    "id": "yanmega",
+    "drops": [
+      {
+        "id": "wide_lens",
+        "name": "Wide Lens",
+        "text": "5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 470,
@@ -4452,7 +10897,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 4,
-    "id": "leafeon"
+    "id": "leafeon",
+    "drops": [
+      {
+        "id": "leaf_stone",
+        "name": "Leaf Stone",
+        "text": "25%"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 471,
@@ -4461,7 +10918,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 4,
-    "id": "glaceon"
+    "id": "glaceon",
+    "drops": [
+      {
+        "id": "ice_stone",
+        "name": "Ice Stone",
+        "text": "25%"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 472,
@@ -4471,7 +10940,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 4,
-    "id": "gliscor"
+    "id": "gliscor",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 473,
@@ -4481,7 +10972,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 4,
-    "id": "mamoswine"
+    "id": "mamoswine",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "2-3"
+      },
+      {
+        "id": "brown_wool",
+        "name": "Brown Wool",
+        "text": "2-3"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "10%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 474,
@@ -4490,7 +11003,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "porygon-z"
+    "id": "porygon-z",
+    "drops": [
+      {
+        "id": "dubious_disc",
+        "name": "Dubious Disc",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 475,
@@ -4500,7 +11020,29 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 4,
-    "id": "gallade"
+    "id": "gallade",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-3"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "10%"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "10%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 476,
@@ -4510,7 +11052,29 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "probopass"
+    "id": "probopass",
+    "drops": [
+      {
+        "id": "flint",
+        "name": "Flint",
+        "text": "0-3"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "5%"
+      },
+      {
+        "id": "magnet",
+        "name": "Magnet",
+        "text": "5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 477,
@@ -4519,7 +11083,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 4,
-    "id": "dusknoir"
+    "id": "dusknoir",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "10%"
+      },
+      {
+        "id": "reaper_cloth",
+        "name": "Reaper Cloth",
+        "text": "10%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 478,
@@ -4529,7 +11110,29 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 4,
-    "id": "froslass"
+    "id": "froslass",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-2"
+      },
+      {
+        "id": "dawn_stone",
+        "name": "Dawn Stone",
+        "text": "5%"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 479,
@@ -4539,7 +11142,8 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 4,
-    "id": "rotom"
+    "id": "rotom",
+    "drops": []
   },
   {
     "dex": 480,
@@ -4548,7 +11152,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "uxie"
+    "id": "uxie",
+    "drops": []
   },
   {
     "dex": 481,
@@ -4557,7 +11162,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "mesprit"
+    "id": "mesprit",
+    "drops": []
   },
   {
     "dex": 482,
@@ -4566,7 +11172,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "azelf"
+    "id": "azelf",
+    "drops": []
   },
   {
     "dex": 483,
@@ -4576,7 +11183,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 4,
-    "id": "dialga"
+    "id": "dialga",
+    "drops": []
   },
   {
     "dex": 484,
@@ -4586,7 +11194,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 4,
-    "id": "palkia"
+    "id": "palkia",
+    "drops": []
   },
   {
     "dex": 485,
@@ -4596,7 +11205,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 4,
-    "id": "heatran"
+    "id": "heatran",
+    "drops": [
+      {
+        "id": "magma_cream",
+        "name": "Magma Cream",
+        "text": "2-4"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2-4"
+      }
+    ]
   },
   {
     "dex": 486,
@@ -4605,7 +11226,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "regigigas"
+    "id": "regigigas",
+    "drops": []
   },
   {
     "dex": 487,
@@ -4624,7 +11246,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 4,
-    "id": "cresselia"
+    "id": "cresselia",
+    "drops": []
   },
   {
     "dex": 489,
@@ -4633,7 +11256,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "phione"
+    "id": "phione",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 490,
@@ -4642,7 +11272,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 4,
-    "id": "manaphy"
+    "id": "manaphy",
+    "drops": [
+      {
+        "id": "heart_of_the_sea",
+        "name": "Heart of the Sea",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 491,
@@ -4651,7 +11288,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 4,
-    "id": "darkrai"
+    "id": "darkrai",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2-4"
+      },
+      {
+        "id": "reaper_cloth",
+        "name": "Reaper Cloth",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 492,
@@ -4669,7 +11318,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 4,
-    "id": "arceus"
+    "id": "arceus",
+    "drops": []
   },
   {
     "dex": 494,
@@ -4679,7 +11329,8 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "victini"
+    "id": "victini",
+    "drops": []
   },
   {
     "dex": 495,
@@ -4688,7 +11339,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "snivy"
+    "id": "snivy",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 496,
@@ -4697,7 +11355,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "servine"
+    "id": "servine",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 497,
@@ -4706,7 +11371,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "serperior"
+    "id": "serperior",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 498,
@@ -4715,7 +11387,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "tepig"
+    "id": "tepig",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 499,
@@ -4725,7 +11409,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "pignite"
+    "id": "pignite",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1-3"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 500,
@@ -4735,7 +11431,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "emboar"
+    "id": "emboar",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "2-4"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 501,
@@ -4744,7 +11452,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "oshawott"
+    "id": "oshawott",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      },
+      {
+        "id": "shell_bell",
+        "name": "Shell Bell",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 502,
@@ -4753,7 +11473,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "dewott"
+    "id": "dewott",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      },
+      {
+        "id": "shell_bell",
+        "name": "Shell Bell",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 503,
@@ -4762,7 +11494,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "samurott"
+    "id": "samurott",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      },
+      {
+        "id": "shell_bell",
+        "name": "Shell Bell",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 504,
@@ -4771,7 +11515,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "patrat"
+    "id": "patrat",
+    "drops": [
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 505,
@@ -4780,7 +11531,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "watchog"
+    "id": "watchog",
+    "drops": [
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 506,
@@ -4789,7 +11547,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "lillipup"
+    "id": "lillipup",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "blue_wool",
+        "name": "Blue Wool",
+        "text": "1"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 507,
@@ -4798,7 +11573,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "herdier"
+    "id": "herdier",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "blue_wool",
+        "name": "Blue Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 508,
@@ -4807,7 +11599,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "stoutland"
+    "id": "stoutland",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-3"
+      },
+      {
+        "id": "blue_wool",
+        "name": "Blue Wool",
+        "text": "2-3"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 509,
@@ -4816,7 +11625,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "purrloin"
+    "id": "purrloin",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 510,
@@ -4825,7 +11646,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "liepard"
+    "id": "liepard",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 511,
@@ -4834,7 +11667,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "pansage"
+    "id": "pansage",
+    "drops": [
+      {
+        "id": "leaf_stone",
+        "name": "Leaf Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "2.5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 512,
@@ -4843,7 +11693,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "simisage"
+    "id": "simisage",
+    "drops": [
+      {
+        "id": "leaf_stone",
+        "name": "Leaf Stone",
+        "text": "5%"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 513,
@@ -4852,7 +11719,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "pansear"
+    "id": "pansear",
+    "drops": [
+      {
+        "id": "fire_stone",
+        "name": "Fire Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 514,
@@ -4861,7 +11745,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "simisear"
+    "id": "simisear",
+    "drops": [
+      {
+        "id": "fire_stone",
+        "name": "Fire Stone",
+        "text": "5%"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 515,
@@ -4870,7 +11771,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "panpour"
+    "id": "panpour",
+    "drops": [
+      {
+        "id": "water_stone",
+        "name": "Water Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "2.5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 516,
@@ -4879,7 +11797,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "simipour"
+    "id": "simipour",
+    "drops": [
+      {
+        "id": "water_stone",
+        "name": "Water Stone",
+        "text": "5%"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 517,
@@ -4888,7 +11823,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "munna"
+    "id": "munna",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 518,
@@ -4897,7 +11839,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "musharna"
+    "id": "musharna",
+    "drops": [
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 519,
@@ -4907,7 +11856,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "pidove"
+    "id": "pidove",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 520,
@@ -4917,7 +11883,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "tranquill"
+    "id": "tranquill",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 521,
@@ -4927,7 +11915,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "unfezant"
+    "id": "unfezant",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 522,
@@ -4936,7 +11946,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "blitzle"
+    "id": "blitzle",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-1"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 523,
@@ -4945,7 +11967,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "zebstrika"
+    "id": "zebstrika",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 524,
@@ -4954,7 +11988,29 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "roggenrola"
+    "id": "roggenrola",
+    "drops": [
+      {
+        "id": "raw_copper",
+        "name": "Raw Copper",
+        "text": "0-1"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "everstone",
+        "name": "Everstone",
+        "text": "2.5%"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 525,
@@ -4963,7 +12019,29 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "boldore"
+    "id": "boldore",
+    "drops": [
+      {
+        "id": "raw_copper",
+        "name": "Raw Copper",
+        "text": "0-2"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "5%"
+      },
+      {
+        "id": "everstone",
+        "name": "Everstone",
+        "text": "5%"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 526,
@@ -4972,7 +12050,29 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "gigalith"
+    "id": "gigalith",
+    "drops": [
+      {
+        "id": "raw_copper",
+        "name": "Raw Copper",
+        "text": "0-3"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "10%"
+      },
+      {
+        "id": "everstone",
+        "name": "Everstone",
+        "text": "10%"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 527,
@@ -4982,7 +12082,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "woobat"
+    "id": "woobat",
+    "drops": [
+      {
+        "id": "light_blue_wool",
+        "name": "Light Blue Wool",
+        "text": "1"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 528,
@@ -4992,7 +12104,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "swoobat"
+    "id": "swoobat",
+    "drops": [
+      {
+        "id": "light_blue_wool",
+        "name": "Light Blue Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 529,
@@ -5001,7 +12125,24 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 5,
-    "id": "drilbur"
+    "id": "drilbur",
+    "drops": [
+      {
+        "id": "dirt",
+        "name": "Dirt",
+        "text": "0-1"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 530,
@@ -5011,7 +12152,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "excadrill"
+    "id": "excadrill",
+    "drops": [
+      {
+        "id": "dirt",
+        "name": "Dirt",
+        "text": "0-2"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 531,
@@ -5020,7 +12178,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "audino"
+    "id": "audino",
+    "drops": [
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 532,
@@ -5029,7 +12199,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "timburr"
+    "id": "timburr",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "2.5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 533,
@@ -5038,7 +12220,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "gurdurr"
+    "id": "gurdurr",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 534,
@@ -5047,7 +12241,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "conkeldurr"
+    "id": "conkeldurr",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "10%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 535,
@@ -5056,7 +12262,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "tympole"
+    "id": "tympole",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 536,
@@ -5066,7 +12284,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 5,
-    "id": "palpitoad"
+    "id": "palpitoad",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 537,
@@ -5076,7 +12306,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 5,
-    "id": "seismitoad"
+    "id": "seismitoad",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-3"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 538,
@@ -5085,7 +12327,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "throh"
+    "id": "throh",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 539,
@@ -5094,7 +12353,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "sawk"
+    "id": "sawk",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 540,
@@ -5104,7 +12380,29 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "sewaddle"
+    "id": "sewaddle",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "2.5%"
+      },
+      {
+        "id": "revival_herb",
+        "name": "Revival Herb",
+        "text": "2.5%"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 541,
@@ -5114,7 +12412,29 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "swadloon"
+    "id": "swadloon",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "5%"
+      },
+      {
+        "id": "revival_herb",
+        "name": "Revival Herb",
+        "text": "5%"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 542,
@@ -5124,7 +12444,29 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "leavanny"
+    "id": "leavanny",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-3"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "10%"
+      },
+      {
+        "id": "revival_herb",
+        "name": "Revival Herb",
+        "text": "10%"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 543,
@@ -5134,7 +12476,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "venipede"
+    "id": "venipede",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 544,
@@ -5144,7 +12498,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "whirlipede"
+    "id": "whirlipede",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 545,
@@ -5154,7 +12520,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "scolipede"
+    "id": "scolipede",
+    "drops": [
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "10%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 546,
@@ -5164,7 +12542,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 5,
-    "id": "cottonee"
+    "id": "cottonee",
+    "drops": [
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 547,
@@ -5174,7 +12569,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 5,
-    "id": "whimsicott"
+    "id": "whimsicott",
+    "drops": [
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 548,
@@ -5183,7 +12595,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "petilil"
+    "id": "petilil",
+    "drops": [
+      {
+        "id": "revival_herb",
+        "name": "Revival Herb",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 549,
@@ -5192,7 +12621,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "lilligant"
+    "id": "lilligant",
+    "drops": [
+      {
+        "id": "revival_herb",
+        "name": "Revival Herb",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      },
+      {
+        "id": "absorb_bulb",
+        "name": "Absorb Bulb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 550,
@@ -5211,7 +12657,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "sandile"
+    "id": "sandile",
+    "drops": [
+      {
+        "id": "black_glasses",
+        "name": "Black Glasses",
+        "text": "2.5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 552,
@@ -5221,7 +12679,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "krokorok"
+    "id": "krokorok",
+    "drops": [
+      {
+        "id": "black_glasses",
+        "name": "Black Glasses",
+        "text": "5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 553,
@@ -5231,7 +12701,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "krookodile"
+    "id": "krookodile",
+    "drops": [
+      {
+        "id": "black_glasses",
+        "name": "Black Glasses",
+        "text": "10%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 554,
@@ -5240,7 +12722,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "darumaka"
+    "id": "darumaka",
+    "drops": [
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 555,
@@ -5258,7 +12747,29 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "maractus"
+    "id": "maractus",
+    "drops": [
+      {
+        "id": "cactus",
+        "name": "Cactus",
+        "text": "0-2"
+      },
+      {
+        "id": "grassy_seed",
+        "name": "Grassy Seed",
+        "text": "5%"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      },
+      {
+        "id": "sticky_barb",
+        "name": "Sticky Barb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 557,
@@ -5268,7 +12779,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "dwebble"
+    "id": "dwebble",
+    "drops": [
+      {
+        "id": "terracotta",
+        "name": "Terracotta",
+        "text": "0-1"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 558,
@@ -5278,7 +12801,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "crustle"
+    "id": "crustle",
+    "drops": [
+      {
+        "id": "terracotta",
+        "name": "Terracotta",
+        "text": "0-2"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 559,
@@ -5288,7 +12823,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "scraggy"
+    "id": "scraggy",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "2.5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "2.5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 560,
@@ -5298,7 +12850,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "scrafty"
+    "id": "scrafty",
+    "drops": [
+      {
+        "id": "black_belt",
+        "name": "Black Belt",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 561,
@@ -5308,7 +12877,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "sigilyph"
+    "id": "sigilyph",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 562,
@@ -5317,7 +12903,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 5,
-    "id": "yamask"
+    "id": "yamask",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 563,
@@ -5326,7 +12919,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 5,
-    "id": "cofagrigus"
+    "id": "cofagrigus",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 564,
@@ -5336,7 +12936,14 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "tirtouga"
+    "id": "tirtouga",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 565,
@@ -5346,7 +12953,14 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 5,
-    "id": "carracosta"
+    "id": "carracosta",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-3"
+      }
+    ]
   },
   {
     "dex": 566,
@@ -5356,7 +12970,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "archen"
+    "id": "archen",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 567,
@@ -5366,7 +12987,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "archeops"
+    "id": "archeops",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      }
+    ]
   },
   {
     "dex": 568,
@@ -5375,7 +13003,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "trubbish"
+    "id": "trubbish",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "2.5%"
+      },
+      {
+        "id": "leftovers",
+        "name": "Leftovers",
+        "text": "2.5%"
+      },
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 569,
@@ -5384,7 +13034,29 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "garbodor"
+    "id": "garbodor",
+    "drops": [
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "5%"
+      },
+      {
+        "id": "leftovers",
+        "name": "Leftovers",
+        "text": "5%"
+      },
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 570,
@@ -5393,7 +13065,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "zorua"
+    "id": "zorua",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "1-3"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 571,
@@ -5402,7 +13086,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 5,
-    "id": "zoroark"
+    "id": "zoroark",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 572,
@@ -5411,7 +13107,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "minccino"
+    "id": "minccino",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "2.5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 573,
@@ -5420,7 +13128,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "cinccino"
+    "id": "cinccino",
+    "drops": [
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "5%"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 574,
@@ -5429,7 +13149,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "gothita"
+    "id": "gothita",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 575,
@@ -5438,7 +13175,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "gothorita"
+    "id": "gothorita",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-2"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 576,
@@ -5447,7 +13201,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "gothitelle"
+    "id": "gothitelle",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-3"
+      },
+      {
+        "id": "twisted_spoon",
+        "name": "Twisted Spoon",
+        "text": "10%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 577,
@@ -5456,7 +13227,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "solosis"
+    "id": "solosis",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-1"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 578,
@@ -5465,7 +13248,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "duosion"
+    "id": "duosion",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 579,
@@ -5474,7 +13269,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "reuniclus"
+    "id": "reuniclus",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-3"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 580,
@@ -5484,7 +13291,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "ducklett"
+    "id": "ducklett",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 581,
@@ -5494,7 +13318,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "swanna"
+    "id": "swanna",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 582,
@@ -5503,7 +13349,24 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "vanillite"
+    "id": "vanillite",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-1"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "2.5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 583,
@@ -5512,7 +13375,24 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "vanillish"
+    "id": "vanillish",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-2"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 584,
@@ -5521,7 +13401,24 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "vanilluxe"
+    "id": "vanilluxe",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-3"
+      },
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "10%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 585,
@@ -5531,7 +13428,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "deerling"
+    "id": "deerling",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 586,
@@ -5541,7 +13450,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 5,
-    "id": "sawsbuck"
+    "id": "sawsbuck",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 587,
@@ -5551,7 +13472,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "emolga"
+    "id": "emolga",
+    "drops": [
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 588,
@@ -5560,7 +13488,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 5,
-    "id": "karrablast"
+    "id": "karrablast",
+    "drops": [
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 589,
@@ -5570,7 +13505,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "escavalier"
+    "id": "escavalier",
+    "drops": [
+      {
+        "id": "iron_helmet",
+        "name": "Iron Helmet",
+        "text": "5%"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 590,
@@ -5580,7 +13527,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "foongus"
+    "id": "foongus",
+    "drops": [
+      {
+        "id": "red_mushroom",
+        "name": "Red Mushroom",
+        "text": "0-1"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 591,
@@ -5590,7 +13549,19 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 5,
-    "id": "amoonguss"
+    "id": "amoonguss",
+    "drops": [
+      {
+        "id": "red_mushroom",
+        "name": "Red Mushroom",
+        "text": "0-2"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 592,
@@ -5600,7 +13571,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 5,
-    "id": "frillish"
+    "id": "frillish",
+    "drops": [
+      {
+        "id": "glow_ink_sac",
+        "name": "Glow Ink Sac",
+        "text": "0-1"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 593,
@@ -5610,7 +13593,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 5,
-    "id": "jellicent"
+    "id": "jellicent",
+    "drops": [
+      {
+        "id": "glow_ink_sac",
+        "name": "Glow Ink Sac",
+        "text": "0-2"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 594,
@@ -5619,7 +13614,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 5,
-    "id": "alomomola"
+    "id": "alomomola",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "deep_sea_scale",
+        "name": "Deep Sea Scale",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 595,
@@ -5629,7 +13641,29 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "joltik"
+    "id": "joltik",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "spider_eye",
+        "name": "Spider Eye",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 596,
@@ -5639,7 +13673,29 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "galvantula"
+    "id": "galvantula",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "spider_eye",
+        "name": "Spider Eye",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 597,
@@ -5649,7 +13705,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "ferroseed"
+    "id": "ferroseed",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "sticky_barb",
+        "name": "Sticky Barb",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 598,
@@ -5659,7 +13732,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "ferrothorn"
+    "id": "ferrothorn",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "5%"
+      },
+      {
+        "id": "sticky_barb",
+        "name": "Sticky Barb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 599,
@@ -5668,7 +13758,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "klink"
+    "id": "klink",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 600,
@@ -5677,7 +13774,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "klang"
+    "id": "klang",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 601,
@@ -5686,7 +13790,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "klinklang"
+    "id": "klinklang",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-3"
+      }
+    ]
   },
   {
     "dex": 602,
@@ -5695,7 +13806,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "tynamo"
+    "id": "tynamo",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 603,
@@ -5704,7 +13822,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "eelektrik"
+    "id": "eelektrik",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 604,
@@ -5713,7 +13838,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "eelektross"
+    "id": "eelektross",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-3"
+      }
+    ]
   },
   {
     "dex": 605,
@@ -5722,7 +13854,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "elgyem"
+    "id": "elgyem",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-1"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "2.5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 606,
@@ -5731,7 +13880,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 5,
-    "id": "beheeyem"
+    "id": "beheeyem",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "0-2"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 607,
@@ -5741,7 +13907,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "litwick"
+    "id": "litwick",
+    "drops": [
+      {
+        "id": "candle",
+        "name": "Candle",
+        "text": "0-1"
+      },
+      {
+        "id": "dusk_stone",
+        "name": "Dusk Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 608,
@@ -5751,7 +13934,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "lampent"
+    "id": "lampent",
+    "drops": [
+      {
+        "id": "candle",
+        "name": "Candle",
+        "text": "1"
+      },
+      {
+        "id": "dusk_stone",
+        "name": "Dusk Stone",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 609,
@@ -5761,7 +13961,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "chandelure"
+    "id": "chandelure",
+    "drops": [
+      {
+        "id": "candle",
+        "name": "Candle",
+        "text": "1-3"
+      },
+      {
+        "id": "dusk_stone",
+        "name": "Dusk Stone",
+        "text": "10%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 610,
@@ -5770,7 +13987,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "axew"
+    "id": "axew",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "2.5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 611,
@@ -5779,7 +14008,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "fraxure"
+    "id": "fraxure",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 612,
@@ -5788,7 +14029,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "haxorus"
+    "id": "haxorus",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "10%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 613,
@@ -5797,7 +14050,24 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "cubchoo"
+    "id": "cubchoo",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-1"
+      },
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-1"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 614,
@@ -5806,7 +14076,24 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "beartic"
+    "id": "beartic",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-2"
+      },
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-2"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 615,
@@ -5815,7 +14102,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "cryogonal"
+    "id": "cryogonal",
+    "drops": [
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 616,
@@ -5824,7 +14123,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 5,
-    "id": "shelmet"
+    "id": "shelmet",
+    "drops": [
+      {
+        "id": "iron_helmet",
+        "name": "Iron Helmet",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 617,
@@ -5833,7 +14139,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 5,
-    "id": "accelgor"
+    "id": "accelgor",
+    "drops": [
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 618,
@@ -5843,7 +14156,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "stunfisk"
+    "id": "stunfisk",
+    "drops": [
+      {
+        "id": "mud",
+        "name": "Mud",
+        "text": "0-2"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 619,
@@ -5852,7 +14177,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "mienfoo"
+    "id": "mienfoo",
+    "drops": [
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 620,
@@ -5861,7 +14198,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "mienshao"
+    "id": "mienshao",
+    "drops": [
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 621,
@@ -5870,7 +14219,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "druddigon"
+    "id": "druddigon",
+    "drops": [
+      {
+        "id": "dragon_fang",
+        "name": "Dragon Fang",
+        "text": "5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 622,
@@ -5880,7 +14241,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 5,
-    "id": "golett"
+    "id": "golett",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "2.5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 623,
@@ -5890,7 +14268,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 5,
-    "id": "golurk"
+    "id": "golurk",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "5%"
+      },
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 624,
@@ -5900,7 +14295,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "pawniard"
+    "id": "pawniard",
+    "drops": [
+      {
+        "id": "iron_helmet",
+        "name": "Iron Helmet",
+        "text": "2.5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 625,
@@ -5910,7 +14317,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "bisharp"
+    "id": "bisharp",
+    "drops": [
+      {
+        "id": "iron_helmet",
+        "name": "Iron Helmet",
+        "text": "5%"
+      },
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 626,
@@ -5919,7 +14338,29 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 5,
-    "id": "bouffalant"
+    "id": "bouffalant",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "beef",
+        "name": "Raw Beef",
+        "text": "1-3"
+      },
+      {
+        "id": "brown_wool",
+        "name": "Brown Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 627,
@@ -5929,7 +14370,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "rufflet"
+    "id": "rufflet",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 628,
@@ -5939,7 +14397,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "braviary"
+    "id": "braviary",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 629,
@@ -5949,7 +14429,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "vullaby"
+    "id": "vullaby",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 630,
@@ -5959,7 +14461,34 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 5,
-    "id": "mandibuzz"
+    "id": "mandibuzz",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 631,
@@ -5968,7 +14497,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "heatmor"
+    "id": "heatmor",
+    "drops": [
+      {
+        "id": "flame_orb",
+        "name": "Flame Orb",
+        "text": "5%"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 632,
@@ -5978,7 +14524,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "durant"
+    "id": "durant",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      },
+      {
+        "id": "occa_berry",
+        "name": "Occa Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 633,
@@ -5988,7 +14546,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "deino"
+    "id": "deino",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "0-1"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 634,
@@ -5998,7 +14568,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "zweilous"
+    "id": "zweilous",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "0-2"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 635,
@@ -6008,7 +14590,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 5,
-    "id": "hydreigon"
+    "id": "hydreigon",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "0-3"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 636,
@@ -6018,7 +14612,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "larvesta"
+    "id": "larvesta",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 637,
@@ -6028,7 +14644,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "volcarona"
+    "id": "volcarona",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 638,
@@ -6038,7 +14671,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "cobalion"
+    "id": "cobalion",
+    "drops": [
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 639,
@@ -6048,7 +14688,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "terrakion"
+    "id": "terrakion",
+    "drops": [
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 640,
@@ -6058,7 +14705,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 5,
-    "id": "virizion"
+    "id": "virizion",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 641,
@@ -6087,7 +14741,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 5,
-    "id": "reshiram"
+    "id": "reshiram",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "2-3"
+      }
+    ]
   },
   {
     "dex": 644,
@@ -6097,7 +14758,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 5,
-    "id": "zekrom"
+    "id": "zekrom",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "2-3"
+      }
+    ]
   },
   {
     "dex": 645,
@@ -6117,7 +14785,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 5,
-    "id": "kyurem"
+    "id": "kyurem",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "2-3"
+      }
+    ]
   },
   {
     "dex": 647,
@@ -6147,7 +14822,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 5,
-    "id": "genesect"
+    "id": "genesect",
+    "drops": [
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 650,
@@ -6156,7 +14838,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 6,
-    "id": "chespin"
+    "id": "chespin",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 651,
@@ -6165,7 +14854,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 6,
-    "id": "quilladin"
+    "id": "quilladin",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 652,
@@ -6175,7 +14871,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 6,
-    "id": "chesnaught"
+    "id": "chesnaught",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 653,
@@ -6184,7 +14887,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 6,
-    "id": "fennekin"
+    "id": "fennekin",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "0-1"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 654,
@@ -6193,7 +14908,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 6,
-    "id": "braixen"
+    "id": "braixen",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "1"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 655,
@@ -6203,7 +14935,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 6,
-    "id": "delphox"
+    "id": "delphox",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "1"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "0-3"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 656,
@@ -6212,7 +14961,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "froakie"
+    "id": "froakie",
+    "drops": [
+      {
+        "id": "pearlescent_froglight",
+        "name": "Pearlescent Froglight",
+        "text": "0-1"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 657,
@@ -6221,7 +14982,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "frogadier"
+    "id": "frogadier",
+    "drops": [
+      {
+        "id": "pearlescent_froglight",
+        "name": "Pearlescent Froglight",
+        "text": "0-2"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 658,
@@ -6231,7 +15004,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 6,
-    "id": "greninja"
+    "id": "greninja",
+    "drops": [
+      {
+        "id": "pearlescent_froglight",
+        "name": "Pearlescent Froglight",
+        "text": "0-3"
+      },
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 659,
@@ -6240,7 +15025,34 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 6,
-    "id": "bunnelby"
+    "id": "bunnelby",
+    "drops": [
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-1"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "2.5%"
+      },
+      {
+        "id": "carrot",
+        "name": "Carrot",
+        "text": "2.5%"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 660,
@@ -6250,7 +15062,34 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 6,
-    "id": "diggersby"
+    "id": "diggersby",
+    "drops": [
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-2"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "5%"
+      },
+      {
+        "id": "carrot",
+        "name": "Carrot",
+        "text": "5%"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 661,
@@ -6260,7 +15099,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 6,
-    "id": "fletchling"
+    "id": "fletchling",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 662,
@@ -6270,7 +15126,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 6,
-    "id": "fletchinder"
+    "id": "fletchinder",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 663,
@@ -6280,7 +15158,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 6,
-    "id": "talonflame"
+    "id": "talonflame",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 664,
@@ -6289,7 +15189,24 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 6,
-    "id": "scatterbug"
+    "id": "scatterbug",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 665,
@@ -6298,7 +15215,24 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 6,
-    "id": "spewpa"
+    "id": "spewpa",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 666,
@@ -6308,7 +15242,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 6,
-    "id": "vivillon"
+    "id": "vivillon",
+    "drops": [
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "5%"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 667,
@@ -6318,7 +15269,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 6,
-    "id": "litleo"
+    "id": "litleo",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 668,
@@ -6328,7 +15296,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 6,
-    "id": "pyroar"
+    "id": "pyroar",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 669,
@@ -6346,7 +15331,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "floette"
+    "id": "floette",
+    "drops": [
+      {
+        "id": "poppy",
+        "name": "Poppy",
+        "text": "1"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 671,
@@ -6355,7 +15352,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "florges"
+    "id": "florges",
+    "drops": [
+      {
+        "id": "poppy",
+        "name": "Poppy",
+        "text": "0-3"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 672,
@@ -6364,7 +15373,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 6,
-    "id": "skiddo"
+    "id": "skiddo",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "1-2"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 673,
@@ -6373,7 +15394,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 6,
-    "id": "gogoat"
+    "id": "gogoat",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "1-3"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 674,
@@ -6382,7 +15415,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 6,
-    "id": "pancham"
+    "id": "pancham",
+    "drops": [
+      {
+        "id": "bamboo",
+        "name": "Bamboo",
+        "text": "0-1"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "2.5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 675,
@@ -6392,7 +15442,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 6,
-    "id": "pangoro"
+    "id": "pangoro",
+    "drops": [
+      {
+        "id": "bamboo",
+        "name": "Bamboo",
+        "text": "0-2"
+      },
+      {
+        "id": "mental_herb",
+        "name": "Mental Herb",
+        "text": "5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 676,
@@ -6401,7 +15468,24 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 6,
-    "id": "furfrou"
+    "id": "furfrou",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "silk_scarf",
+        "name": "Silk Scarf",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 677,
@@ -6410,7 +15494,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 6,
-    "id": "espurr"
+    "id": "espurr",
+    "drops": [
+      {
+        "id": "colbur_berry",
+        "name": "Colbur Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 678,
@@ -6429,7 +15520,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 6,
-    "id": "honedge"
+    "id": "honedge",
+    "drops": [
+      {
+        "id": "iron_nugget",
+        "name": "Iron Nugget",
+        "text": "0-1"
+      },
+      {
+        "id": "iron_sword",
+        "name": "Iron Sword",
+        "text": "2.5%"
+      },
+      {
+        "id": "dusk_stone",
+        "name": "Dusk Stone",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 680,
@@ -6439,7 +15547,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 6,
-    "id": "doublade"
+    "id": "doublade",
+    "drops": [
+      {
+        "id": "iron_nugget",
+        "name": "Iron Nugget",
+        "text": "0-2"
+      },
+      {
+        "id": "iron_sword",
+        "name": "Iron Sword",
+        "text": "5%"
+      },
+      {
+        "id": "dusk_stone",
+        "name": "Dusk Stone",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 681,
@@ -6458,7 +15583,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "spritzee"
+    "id": "spritzee",
+    "drops": [
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 683,
@@ -6467,7 +15604,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "aromatisse"
+    "id": "aromatisse",
+    "drops": [
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 684,
@@ -6476,7 +15625,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "swirlix"
+    "id": "swirlix",
+    "drops": [
+      {
+        "id": "sugar",
+        "name": "Sugar",
+        "text": "0-1"
+      },
+      {
+        "id": "cake",
+        "name": "Cake",
+        "text": "2.5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 685,
@@ -6485,7 +15651,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "slurpuff"
+    "id": "slurpuff",
+    "drops": [
+      {
+        "id": "sugar",
+        "name": "Sugar",
+        "text": "0-2"
+      },
+      {
+        "id": "cake",
+        "name": "Cake",
+        "text": "5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 686,
@@ -6495,7 +15678,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 6,
-    "id": "inkay"
+    "id": "inkay",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "0-1"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 687,
@@ -6505,7 +15700,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 6,
-    "id": "malamar"
+    "id": "malamar",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "0-2"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 688,
@@ -6515,7 +15722,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "binacle"
+    "id": "binacle",
+    "drops": [
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 689,
@@ -6525,7 +15739,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "barbaracle"
+    "id": "barbaracle",
+    "drops": [
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 690,
@@ -6535,7 +15756,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "skrelp"
+    "id": "skrelp",
+    "drops": [
+      {
+        "id": "kelp",
+        "name": "Kelp",
+        "text": "0-1"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 691,
@@ -6545,7 +15778,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "dragalge"
+    "id": "dragalge",
+    "drops": [
+      {
+        "id": "kelp",
+        "name": "Kelp",
+        "text": "0-2"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 692,
@@ -6554,7 +15799,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "clauncher"
+    "id": "clauncher",
+    "drops": []
   },
   {
     "dex": 693,
@@ -6563,7 +15809,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "clawitzer"
+    "id": "clawitzer",
+    "drops": []
   },
   {
     "dex": 694,
@@ -6573,7 +15820,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 6,
-    "id": "helioptile"
+    "id": "helioptile",
+    "drops": []
   },
   {
     "dex": 695,
@@ -6583,7 +15831,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 6,
-    "id": "heliolisk"
+    "id": "heliolisk",
+    "drops": []
   },
   {
     "dex": 696,
@@ -6593,7 +15842,14 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "tyrunt"
+    "id": "tyrunt",
+    "drops": [
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 697,
@@ -6603,7 +15859,14 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "tyrantrum"
+    "id": "tyrantrum",
+    "drops": [
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 698,
@@ -6613,7 +15876,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 6,
-    "id": "amaura"
+    "id": "amaura",
+    "drops": [
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 699,
@@ -6623,7 +15893,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 6,
-    "id": "aurorus"
+    "id": "aurorus",
+    "drops": [
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 700,
@@ -6632,7 +15909,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "sylveon"
+    "id": "sylveon",
+    "drops": [
+      {
+        "id": "shiny_stone",
+        "name": "Shiny Stone",
+        "text": "25%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 701,
@@ -6642,7 +15931,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 6,
-    "id": "hawlucha"
+    "id": "hawlucha",
+    "drops": [
+      {
+        "id": "kings_rock",
+        "name": "King's Rock",
+        "text": "5%"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 702,
@@ -6652,7 +15958,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "dedenne"
+    "id": "dedenne",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 703,
@@ -6662,7 +15975,24 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "carbink"
+    "id": "carbink",
+    "drops": [
+      {
+        "id": "diamond",
+        "name": "Diamond",
+        "text": "5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      },
+      {
+        "id": "float_stone",
+        "name": "Float Stone",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 704,
@@ -6671,7 +16001,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "goomy"
+    "id": "goomy",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-1"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "2.5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 705,
@@ -6680,7 +16027,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "sliggoo"
+    "id": "sliggoo",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 706,
@@ -6689,7 +16053,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "goodra"
+    "id": "goodra",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-3"
+      },
+      {
+        "id": "shed_shell",
+        "name": "Shed Shell",
+        "text": "10%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 707,
@@ -6699,7 +16080,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "klefki"
+    "id": "klefki",
+    "drops": [
+      {
+        "id": "name_tag",
+        "name": "Name Tag",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 708,
@@ -6709,7 +16097,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 6,
-    "id": "phantump"
+    "id": "phantump",
+    "drops": [
+      {
+        "id": "oak_log",
+        "name": "Oak Log",
+        "text": "1"
+      },
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 709,
@@ -6719,7 +16124,24 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 6,
-    "id": "trevenant"
+    "id": "trevenant",
+    "drops": [
+      {
+        "id": "oak_log",
+        "name": "Oak Log",
+        "text": "1-3"
+      },
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 710,
@@ -6748,7 +16170,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 6,
-    "id": "bergmite"
+    "id": "bergmite",
+    "drops": [
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "2.5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 713,
@@ -6757,7 +16191,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 6,
-    "id": "avalugg"
+    "id": "avalugg",
+    "drops": [
+      {
+        "id": "never-melt_ice",
+        "name": "Never-Melt Ice",
+        "text": "5%"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 714,
@@ -6767,7 +16213,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "noibat"
+    "id": "noibat",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 715,
@@ -6777,7 +16235,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 6,
-    "id": "noivern"
+    "id": "noivern",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 716,
@@ -6786,7 +16256,8 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "xerneas"
+    "id": "xerneas",
+    "drops": []
   },
   {
     "dex": 717,
@@ -6796,7 +16267,8 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 6,
-    "id": "yveltal"
+    "id": "yveltal",
+    "drops": []
   },
   {
     "dex": 718,
@@ -6816,7 +16288,8 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 6,
-    "id": "diancie"
+    "id": "diancie",
+    "drops": []
   },
   {
     "dex": 720,
@@ -6826,7 +16299,8 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 6,
-    "id": "hoopa"
+    "id": "hoopa",
+    "drops": []
   },
   {
     "dex": 721,
@@ -6836,7 +16310,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 6,
-    "id": "volcanion"
+    "id": "volcanion",
+    "drops": []
   },
   {
     "dex": 722,
@@ -6846,7 +16321,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 7,
-    "id": "rowlet"
+    "id": "rowlet",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 723,
@@ -6856,7 +16348,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 7,
-    "id": "dartrix"
+    "id": "dartrix",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 724,
@@ -6866,7 +16375,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 7,
-    "id": "decidueye"
+    "id": "decidueye",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 725,
@@ -6875,7 +16401,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 7,
-    "id": "litten"
+    "id": "litten",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 726,
@@ -6884,7 +16422,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 7,
-    "id": "torracat"
+    "id": "torracat",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 727,
@@ -6894,7 +16444,19 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 7,
-    "id": "incineroar"
+    "id": "incineroar",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      },
+      {
+        "id": "expert_belt",
+        "name": "Expert Belt",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 728,
@@ -6903,7 +16465,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "popplio"
+    "id": "popplio",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      },
+      {
+        "id": "throat_spray",
+        "name": "Throat Spray",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 729,
@@ -6912,7 +16486,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "brionne"
+    "id": "brionne",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      },
+      {
+        "id": "throat_spray",
+        "name": "Throat Spray",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 730,
@@ -6922,7 +16508,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "primarina"
+    "id": "primarina",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      },
+      {
+        "id": "throat_spray",
+        "name": "Throat Spray",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 731,
@@ -6932,7 +16530,19 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 7,
-    "id": "pikipek"
+    "id": "pikipek",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 732,
@@ -6942,7 +16552,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 7,
-    "id": "trumbeak"
+    "id": "trumbeak",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 733,
@@ -6952,7 +16579,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 7,
-    "id": "toucannon"
+    "id": "toucannon",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 734,
@@ -6961,7 +16605,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 7,
-    "id": "yungoos"
+    "id": "yungoos",
+    "drops": [
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 735,
@@ -6970,7 +16621,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 7,
-    "id": "gumshoos"
+    "id": "gumshoos",
+    "drops": [
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 736,
@@ -6979,7 +16637,24 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 7,
-    "id": "grubbin"
+    "id": "grubbin",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "cell_battery",
+        "name": "Cell Battery",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 737,
@@ -6989,7 +16664,24 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 7,
-    "id": "charjabug"
+    "id": "charjabug",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      },
+      {
+        "id": "cell_battery",
+        "name": "Cell Battery",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 738,
@@ -6999,7 +16691,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 7,
-    "id": "vikavolt"
+    "id": "vikavolt",
+    "drops": [
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "10%"
+      },
+      {
+        "id": "cell_battery",
+        "name": "Cell Battery",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 739,
@@ -7008,7 +16712,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "crabrawler"
+    "id": "crabrawler",
+    "drops": [
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 740,
@@ -7018,7 +16729,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 7,
-    "id": "crabominable"
+    "id": "crabominable",
+    "drops": [
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 741,
@@ -7038,7 +16756,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "cutiefly"
+    "id": "cutiefly",
+    "drops": [
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-1"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 743,
@@ -7048,7 +16778,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "ribombee"
+    "id": "ribombee",
+    "drops": [
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-2"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 744,
@@ -7057,7 +16799,29 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 7,
-    "id": "rockruff"
+    "id": "rockruff",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "hard_stone",
+        "name": "Hard Stone",
+        "text": "2.5%"
+      },
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 745,
@@ -7085,7 +16849,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "mareanie"
+    "id": "mareanie",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-1"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "2.5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 748,
@@ -7095,7 +16876,24 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "toxapex"
+    "id": "toxapex",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 749,
@@ -7104,7 +16902,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 7,
-    "id": "mudbray"
+    "id": "mudbray",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-1"
+      },
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-1"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 750,
@@ -7113,7 +16933,29 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 7,
-    "id": "mudsdale"
+    "id": "mudsdale",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "light_clay",
+        "name": "Light Clay",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 751,
@@ -7123,7 +16965,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 7,
-    "id": "dewpider"
+    "id": "dewpider",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "2.5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 752,
@@ -7133,7 +16987,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 7,
-    "id": "araquanid"
+    "id": "araquanid",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 753,
@@ -7142,7 +17008,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 7,
-    "id": "fomantis"
+    "id": "fomantis",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "2.5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 754,
@@ -7151,7 +17029,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 7,
-    "id": "lurantis"
+    "id": "lurantis",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 755,
@@ -7161,7 +17051,29 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "morelull"
+    "id": "morelull",
+    "drops": [
+      {
+        "id": "brown_mushroom",
+        "name": "Brown Mushroom",
+        "text": "0-1"
+      },
+      {
+        "id": "luminous_moss",
+        "name": "Luminous Moss",
+        "text": "2.5%"
+      },
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 756,
@@ -7171,7 +17083,29 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "shiinotic"
+    "id": "shiinotic",
+    "drops": [
+      {
+        "id": "brown_mushroom",
+        "name": "Brown Mushroom",
+        "text": "0-2"
+      },
+      {
+        "id": "luminous_moss",
+        "name": "Luminous Moss",
+        "text": "5%"
+      },
+      {
+        "id": "bright_powder",
+        "name": "Bright Powder",
+        "text": "5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 757,
@@ -7181,7 +17115,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 7,
-    "id": "salandit"
+    "id": "salandit",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "smoke_ball",
+        "name": "Smoke Ball",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 758,
@@ -7191,7 +17142,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 7,
-    "id": "salazzle"
+    "id": "salazzle",
+    "drops": [
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      },
+      {
+        "id": "smoke_ball",
+        "name": "Smoke Ball",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 759,
@@ -7201,7 +17169,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "stufful"
+    "id": "stufful",
+    "drops": [
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 760,
@@ -7211,7 +17186,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "bewear"
+    "id": "bewear",
+    "drops": [
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 761,
@@ -7220,7 +17202,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 7,
-    "id": "bounsweet"
+    "id": "bounsweet",
+    "drops": [
+      {
+        "id": "grassy_seed",
+        "name": "Grassy Seed",
+        "text": "2.5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 762,
@@ -7229,7 +17223,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 7,
-    "id": "steenee"
+    "id": "steenee",
+    "drops": [
+      {
+        "id": "grassy_seed",
+        "name": "Grassy Seed",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 763,
@@ -7238,7 +17244,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 7,
-    "id": "tsareena"
+    "id": "tsareena",
+    "drops": [
+      {
+        "id": "grassy_seed",
+        "name": "Grassy Seed",
+        "text": "10%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 764,
@@ -7247,7 +17265,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "comfey"
+    "id": "comfey",
+    "drops": [
+      {
+        "id": "misty_seed",
+        "name": "Misty Seed",
+        "text": "5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 765,
@@ -7257,7 +17287,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 7,
-    "id": "oranguru"
+    "id": "oranguru",
+    "drops": [
+      {
+        "id": "wise_glasses",
+        "name": "Wise Glasses",
+        "text": "5%"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 766,
@@ -7266,7 +17308,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "passimian"
+    "id": "passimian",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 767,
@@ -7276,7 +17330,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "wimpod"
+    "id": "wimpod",
+    "drops": [
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 768,
@@ -7286,7 +17347,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "golisopod"
+    "id": "golisopod",
+    "drops": [
+      {
+        "id": "bluk_berry",
+        "name": "Bluk Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 769,
@@ -7296,7 +17364,24 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 7,
-    "id": "sandygast"
+    "id": "sandygast",
+    "drops": [
+      {
+        "id": "sand",
+        "name": "Sand",
+        "text": "0-1"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 770,
@@ -7306,7 +17391,24 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 7,
-    "id": "palossand"
+    "id": "palossand",
+    "drops": [
+      {
+        "id": "sand",
+        "name": "Sand",
+        "text": "0-2"
+      },
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 771,
@@ -7315,7 +17417,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 7,
-    "id": "pyukumuku"
+    "id": "pyukumuku",
+    "drops": [
+      {
+        "id": "slime_ball",
+        "name": "Slimeball",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 772,
@@ -7333,7 +17442,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 7,
-    "id": "silvally"
+    "id": "silvally",
+    "drops": []
   },
   {
     "dex": 774,
@@ -7352,7 +17462,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 7,
-    "id": "komala"
+    "id": "komala",
+    "drops": [
+      {
+        "id": "acacia_log",
+        "name": "Acacia Log",
+        "text": "1"
+      },
+      {
+        "id": "chesto_berry",
+        "name": "Chesto Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 776,
@@ -7362,7 +17484,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 7,
-    "id": "turtonator"
+    "id": "turtonator",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal",
+        "name": "Charcoal",
+        "text": "5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 777,
@@ -7372,7 +17511,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 7,
-    "id": "togedemaru"
+    "id": "togedemaru",
+    "drops": [
+      {
+        "id": "electric_seed",
+        "name": "Electric Seed",
+        "text": "5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 778,
@@ -7392,7 +17543,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 7,
-    "id": "bruxish"
+    "id": "bruxish",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 780,
@@ -7402,7 +17570,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 7,
-    "id": "drampa"
+    "id": "drampa",
+    "drops": [
+      {
+        "id": "dragons_breath",
+        "name": "Dragon's Breath",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 781,
@@ -7412,7 +17592,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 7,
-    "id": "dhelmise"
+    "id": "dhelmise",
+    "drops": [
+      {
+        "id": "kelp",
+        "name": "Kelp",
+        "text": "0-2"
+      },
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 782,
@@ -7421,7 +17613,24 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 7,
-    "id": "jangmo-o"
+    "id": "jangmo-o",
+    "drops": [
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "0-1"
+      },
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "2.5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 783,
@@ -7431,7 +17640,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "hakamo-o"
+    "id": "hakamo-o",
+    "drops": [
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "0-2"
+      },
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 784,
@@ -7441,7 +17667,24 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "kommo-o"
+    "id": "kommo-o",
+    "drops": [
+      {
+        "id": "dragon_scale",
+        "name": "Dragon Scale",
+        "text": "0-3"
+      },
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "10%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 785,
@@ -7490,7 +17733,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 7,
-    "id": "cosmog"
+    "id": "cosmog",
+    "drops": []
   },
   {
     "dex": 790,
@@ -7499,7 +17743,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 7,
-    "id": "cosmoem"
+    "id": "cosmoem",
+    "drops": []
   },
   {
     "dex": 791,
@@ -7509,7 +17754,8 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 7,
-    "id": "solgaleo"
+    "id": "solgaleo",
+    "drops": []
   },
   {
     "dex": 792,
@@ -7519,7 +17765,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 7,
-    "id": "lunala"
+    "id": "lunala",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "3-5"
+      }
+    ]
   },
   {
     "dex": 793,
@@ -7529,7 +17782,14 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 7,
-    "id": "nihilego"
+    "id": "nihilego",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 794,
@@ -7539,7 +17799,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "buzzwole"
+    "id": "buzzwole",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 795,
@@ -7549,7 +17816,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 7,
-    "id": "pheromosa"
+    "id": "pheromosa",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 796,
@@ -7558,7 +17832,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 7,
-    "id": "xurkitree"
+    "id": "xurkitree",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 797,
@@ -7568,7 +17849,14 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 7,
-    "id": "celesteela"
+    "id": "celesteela",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 798,
@@ -7578,7 +17866,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 7,
-    "id": "kartana"
+    "id": "kartana",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 799,
@@ -7588,7 +17883,14 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 7,
-    "id": "guzzlord"
+    "id": "guzzlord",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 800,
@@ -7597,7 +17899,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 7,
-    "id": "necrozma"
+    "id": "necrozma",
+    "drops": []
   },
   {
     "dex": 801,
@@ -7607,7 +17910,8 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 7,
-    "id": "magearna"
+    "id": "magearna",
+    "drops": []
   },
   {
     "dex": 802,
@@ -7617,7 +17921,8 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 7,
-    "id": "marshadow"
+    "id": "marshadow",
+    "drops": []
   },
   {
     "dex": 803,
@@ -7626,7 +17931,14 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 7,
-    "id": "poipole"
+    "id": "poipole",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-2"
+      }
+    ]
   },
   {
     "dex": 804,
@@ -7636,7 +17948,14 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 7,
-    "id": "naganadel"
+    "id": "naganadel",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 805,
@@ -7646,7 +17965,14 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 7,
-    "id": "stakataka"
+    "id": "stakataka",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 806,
@@ -7656,7 +17982,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 7,
-    "id": "blacephalon"
+    "id": "blacephalon",
+    "drops": [
+      {
+        "id": "echo_shard",
+        "name": "Echo Shard",
+        "text": "1-3"
+      }
+    ]
   },
   {
     "dex": 807,
@@ -7665,7 +17998,8 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 7,
-    "id": "zeraora"
+    "id": "zeraora",
+    "drops": []
   },
   {
     "dex": 808,
@@ -7674,7 +18008,8 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 7,
-    "id": "meltan"
+    "id": "meltan",
+    "drops": []
   },
   {
     "dex": 809,
@@ -7683,7 +18018,8 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 7,
-    "id": "melmetal"
+    "id": "melmetal",
+    "drops": []
   },
   {
     "dex": 810,
@@ -7692,7 +18028,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "grookey"
+    "id": "grookey",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-1"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 811,
@@ -7701,7 +18049,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "thwackey"
+    "id": "thwackey",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-2"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 812,
@@ -7710,7 +18070,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "rillaboom"
+    "id": "rillaboom",
+    "drops": [
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "1-2"
+      },
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 813,
@@ -7719,7 +18091,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 8,
-    "id": "scorbunny"
+    "id": "scorbunny",
+    "drops": [
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-1"
+      },
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "5%"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 814,
@@ -7728,7 +18122,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 8,
-    "id": "raboot"
+    "id": "raboot",
+    "drops": [
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-2"
+      },
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "10%"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 815,
@@ -7737,7 +18153,29 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 8,
-    "id": "cinderace"
+    "id": "cinderace",
+    "drops": [
+      {
+        "id": "rabbit_hide",
+        "name": "Rabbit Hide",
+        "text": "0-3"
+      },
+      {
+        "id": "rabbit",
+        "name": "Raw Rabbit",
+        "text": "1"
+      },
+      {
+        "id": "rabbits_foot",
+        "name": "Rabbit's Foot",
+        "text": "25%"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 816,
@@ -7746,7 +18184,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "sobble"
+    "id": "sobble",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 817,
@@ -7755,7 +18200,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "drizzile"
+    "id": "drizzile",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 818,
@@ -7764,7 +18216,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "inteleon"
+    "id": "inteleon",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 819,
@@ -7773,7 +18232,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 8,
-    "id": "skwovet"
+    "id": "skwovet",
+    "drops": [
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 820,
@@ -7782,7 +18248,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 8,
-    "id": "greedent"
+    "id": "greedent",
+    "drops": [
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 821,
@@ -7791,7 +18264,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 8,
-    "id": "rookidee"
+    "id": "rookidee",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 822,
@@ -7800,7 +18290,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 8,
-    "id": "corvisquire"
+    "id": "corvisquire",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 823,
@@ -7810,7 +18322,29 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 8,
-    "id": "corviknight"
+    "id": "corviknight",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-3"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "metal_coat",
+        "name": "Metal Coat",
+        "text": "10%"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 824,
@@ -7819,7 +18353,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 8,
-    "id": "blipbug"
+    "id": "blipbug",
+    "drops": [
+      {
+        "id": "psychic_seed",
+        "name": "Psychic Seed",
+        "text": "2.5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 825,
@@ -7829,7 +18375,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 8,
-    "id": "dottler"
+    "id": "dottler",
+    "drops": [
+      {
+        "id": "psychic_seed",
+        "name": "Psychic Seed",
+        "text": "5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 826,
@@ -7839,7 +18397,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 8,
-    "id": "orbeetle"
+    "id": "orbeetle",
+    "drops": [
+      {
+        "id": "psychic_seed",
+        "name": "Psychic Seed",
+        "text": "10%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 827,
@@ -7848,7 +18418,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 8,
-    "id": "nickit"
+    "id": "nickit",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "1-3"
+      },
+      {
+        "id": "emerald",
+        "name": "Emerald",
+        "text": "2.5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 828,
@@ -7857,7 +18444,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 8,
-    "id": "thievul"
+    "id": "thievul",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "2-4"
+      },
+      {
+        "id": "emerald",
+        "name": "Emerald",
+        "text": "5%"
+      },
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 829,
@@ -7866,7 +18470,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "gossifleur"
+    "id": "gossifleur",
+    "drops": [
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 830,
@@ -7875,7 +18486,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "eldegoss"
+    "id": "eldegoss",
+    "drops": [
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1-2"
+      },
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 831,
@@ -7884,7 +18507,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 8,
-    "id": "wooloo"
+    "id": "wooloo",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "1-2"
+      },
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 832,
@@ -7893,7 +18528,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 8,
-    "id": "dubwool"
+    "id": "dubwool",
+    "drops": [
+      {
+        "id": "mutton",
+        "name": "Raw Mutton",
+        "text": "1-3"
+      },
+      {
+        "id": "white_wool",
+        "name": "White Wool",
+        "text": "1-2"
+      }
+    ]
   },
   {
     "dex": 833,
@@ -7902,7 +18549,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "chewtle"
+    "id": "chewtle",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-1"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 834,
@@ -7912,7 +18571,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 8,
-    "id": "drednaw"
+    "id": "drednaw",
+    "drops": [
+      {
+        "id": "turtle_scute",
+        "name": "Turtle Scute",
+        "text": "0-2"
+      },
+      {
+        "id": "rindo_berry",
+        "name": "Rindo Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 835,
@@ -7921,7 +18592,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 8,
-    "id": "yamper"
+    "id": "yamper",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 836,
@@ -7930,7 +18613,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 8,
-    "id": "boltund"
+    "id": "boltund",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 837,
@@ -7939,7 +18634,24 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 8,
-    "id": "rolycoly"
+    "id": "rolycoly",
+    "drops": [
+      {
+        "id": "coal",
+        "name": "Coal",
+        "text": "0-1"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "2.5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 838,
@@ -7949,7 +18661,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 8,
-    "id": "carkol"
+    "id": "carkol",
+    "drops": [
+      {
+        "id": "coal",
+        "name": "Coal",
+        "text": "0-2"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "5%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 839,
@@ -7959,7 +18688,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 8,
-    "id": "coalossal"
+    "id": "coalossal",
+    "drops": [
+      {
+        "id": "coal",
+        "name": "Coal",
+        "text": "0-3"
+      },
+      {
+        "id": "black_augurite",
+        "name": "Black Augurite",
+        "text": "10%"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 840,
@@ -7969,7 +18715,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "applin"
+    "id": "applin",
+    "drops": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 841,
@@ -7979,7 +18737,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "flapple"
+    "id": "flapple",
+    "drops": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 842,
@@ -7989,7 +18759,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "appletun"
+    "id": "appletun",
+    "drops": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "text": "1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 843,
@@ -7998,7 +18780,14 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 8,
-    "id": "silicobra"
+    "id": "silicobra",
+    "drops": [
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 844,
@@ -8007,7 +18796,14 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 8,
-    "id": "sandaconda"
+    "id": "sandaconda",
+    "drops": [
+      {
+        "id": "soft_sand",
+        "name": "Soft Sand",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 845,
@@ -8017,7 +18813,29 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "cramorant"
+    "id": "cramorant",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-2"
+      },
+      {
+        "id": "wacan_berry",
+        "name": "Wacan Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 846,
@@ -8026,7 +18844,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "arrokuda"
+    "id": "arrokuda",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 847,
@@ -8035,7 +18865,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 8,
-    "id": "barraskewda"
+    "id": "barraskewda",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 848,
@@ -8045,7 +18887,14 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 8,
-    "id": "toxel"
+    "id": "toxel",
+    "drops": [
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 849,
@@ -8065,7 +18914,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 8,
-    "id": "sizzlipede"
+    "id": "sizzlipede",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 851,
@@ -8075,7 +18936,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 8,
-    "id": "centiskorch"
+    "id": "centiskorch",
+    "drops": [
+      {
+        "id": "blaze_powder",
+        "name": "Blaze Powder",
+        "text": "5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 852,
@@ -8084,7 +18957,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 8,
-    "id": "clobbopus"
+    "id": "clobbopus",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "1-3"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 853,
@@ -8093,7 +18978,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 8,
-    "id": "grapploct"
+    "id": "grapploct",
+    "drops": [
+      {
+        "id": "ink_sac",
+        "name": "Ink Sac",
+        "text": "2-4"
+      },
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 854,
@@ -8102,7 +18999,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "sinistea"
+    "id": "sinistea",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 855,
@@ -8111,7 +19015,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "polteageist"
+    "id": "polteageist",
+    "drops": [
+      {
+        "id": "spell_tag",
+        "name": "Spell Tag",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 856,
@@ -8120,7 +19031,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 8,
-    "id": "hatenna"
+    "id": "hatenna",
+    "drops": [
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 857,
@@ -8129,7 +19047,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 8,
-    "id": "hattrem"
+    "id": "hattrem",
+    "drops": [
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 858,
@@ -8139,7 +19064,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "hatterene"
+    "id": "hatterene",
+    "drops": [
+      {
+        "id": "babiri_berry",
+        "name": "Babiri Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 859,
@@ -8149,7 +19081,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "impidimp"
+    "id": "impidimp",
+    "drops": [
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 860,
@@ -8159,7 +19098,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "morgrem"
+    "id": "morgrem",
+    "drops": [
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 861,
@@ -8169,7 +19115,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "grimmsnarl"
+    "id": "grimmsnarl",
+    "drops": [
+      {
+        "id": "roseli_berry",
+        "name": "Roseli Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 862,
@@ -8179,7 +19132,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 8,
-    "id": "obstagoon"
+    "id": "obstagoon",
+    "drops": [
+      {
+        "id": "chople_berry",
+        "name": "Chople Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 863,
@@ -8188,7 +19148,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 8,
-    "id": "perrserker"
+    "id": "perrserker",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 864,
@@ -8197,7 +19169,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "cursola"
+    "id": "cursola",
+    "drops": [
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 865,
@@ -8226,7 +19205,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "runerigus"
+    "id": "runerigus",
+    "drops": [
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 868,
@@ -8235,7 +19221,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "milcery"
+    "id": "milcery",
+    "drops": [
+      {
+        "id": "sugar",
+        "name": "Sugar",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 869,
@@ -8244,7 +19237,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "alcremie"
+    "id": "alcremie",
+    "drops": [
+      {
+        "id": "sugar",
+        "name": "Sugar",
+        "text": "0-2"
+      },
+      {
+        "id": "cake",
+        "name": "Cake",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 870,
@@ -8253,7 +19258,19 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 8,
-    "id": "falinks"
+    "id": "falinks",
+    "drops": [
+      {
+        "id": "gold_helmet",
+        "name": "Gold Helmet",
+        "text": "5%"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 871,
@@ -8262,7 +19279,8 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 8,
-    "id": "pincurchin"
+    "id": "pincurchin",
+    "drops": []
   },
   {
     "dex": 872,
@@ -8272,7 +19290,24 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 8,
-    "id": "snom"
+    "id": "snom",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-1"
+      },
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "2.5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 873,
@@ -8282,7 +19317,24 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 8,
-    "id": "frosmoth"
+    "id": "frosmoth",
+    "drops": [
+      {
+        "id": "snowball",
+        "name": "Snowball",
+        "text": "0-2"
+      },
+      {
+        "id": "silver_powder",
+        "name": "Silver Powder",
+        "text": "5%"
+      },
+      {
+        "id": "charti_berry",
+        "name": "Charti Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 874,
@@ -8291,7 +19343,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 8,
-    "id": "stonjourner"
+    "id": "stonjourner",
+    "drops": [
+      {
+        "id": "stone",
+        "name": "Stone",
+        "text": "2"
+      },
+      {
+        "id": "luminous_moss",
+        "name": "Luminous Moss",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 875,
@@ -8329,7 +19393,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 8,
-    "id": "cufant"
+    "id": "cufant",
+    "drops": [
+      {
+        "id": "raw_copper",
+        "name": "Raw Copper",
+        "text": "0-1"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "2.5%"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 879,
@@ -8338,7 +19419,24 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 8,
-    "id": "copperajah"
+    "id": "copperajah",
+    "drops": [
+      {
+        "id": "raw_copper",
+        "name": "Raw Copper",
+        "text": "0-2"
+      },
+      {
+        "id": "lagging_tail",
+        "name": "Lagging Tail",
+        "text": "5%"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 880,
@@ -8348,7 +19446,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "dracozolt"
+    "id": "dracozolt",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 881,
@@ -8358,7 +19468,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 8,
-    "id": "arctozolt"
+    "id": "arctozolt",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 882,
@@ -8368,7 +19490,19 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "dracovish"
+    "id": "dracovish",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 883,
@@ -8378,7 +19512,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 8,
-    "id": "arctovish"
+    "id": "arctovish",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 884,
@@ -8388,7 +19534,14 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "duraludon"
+    "id": "duraludon",
+    "drops": [
+      {
+        "id": "iron_ingot",
+        "name": "Iron Ingot",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 885,
@@ -8398,7 +19551,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "dreepy"
+    "id": "dreepy",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "2.5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 886,
@@ -8408,7 +19573,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "drakloak"
+    "id": "drakloak",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "5%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 887,
@@ -8418,7 +19595,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "dragapult"
+    "id": "dragapult",
+    "drops": [
+      {
+        "id": "phantom_membrane",
+        "name": "Phantom Membrane",
+        "text": "10%"
+      },
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 888,
@@ -8427,7 +19616,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 8,
-    "id": "zacian"
+    "id": "zacian",
+    "drops": [
+      {
+        "id": "diamond_sword",
+        "name": "Diamond Sword",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 889,
@@ -8436,7 +19632,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 8,
-    "id": "zamazenta"
+    "id": "zamazenta",
+    "drops": [
+      {
+        "id": "ability_shield",
+        "name": "Ability Shield",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 890,
@@ -8446,7 +19649,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "eternatus"
+    "id": "eternatus",
+    "drops": []
   },
   {
     "dex": 891,
@@ -8455,7 +19659,8 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 8,
-    "id": "kubfu"
+    "id": "kubfu",
+    "drops": []
   },
   {
     "dex": 892,
@@ -8475,7 +19680,8 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "zarude"
+    "id": "zarude",
+    "drops": []
   },
   {
     "dex": 894,
@@ -8484,7 +19690,8 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 8,
-    "id": "regieleki"
+    "id": "regieleki",
+    "drops": []
   },
   {
     "dex": 895,
@@ -8493,7 +19700,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 8,
-    "id": "regidrago"
+    "id": "regidrago",
+    "drops": []
   },
   {
     "dex": 896,
@@ -8502,7 +19710,8 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 8,
-    "id": "glastrier"
+    "id": "glastrier",
+    "drops": []
   },
   {
     "dex": 897,
@@ -8511,7 +19720,8 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 8,
-    "id": "spectrier"
+    "id": "spectrier",
+    "drops": []
   },
   {
     "dex": 898,
@@ -8521,7 +19731,8 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 8,
-    "id": "calyrex"
+    "id": "calyrex",
+    "drops": []
   },
   {
     "dex": 899,
@@ -8531,7 +19742,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 8,
-    "id": "wyrdeer"
+    "id": "wyrdeer",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 900,
@@ -8541,7 +19764,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 8,
-    "id": "kleavor"
+    "id": "kleavor",
+    "drops": [
+      {
+        "id": "stone_axe",
+        "name": "Stone Axe",
+        "text": "0-2"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 901,
@@ -8551,7 +19786,29 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 8,
-    "id": "ursaluna"
+    "id": "ursaluna",
+    "drops": [
+      {
+        "id": "sweet_berries",
+        "name": "Sweet Berries",
+        "text": "3-5"
+      },
+      {
+        "id": "honey_bottle",
+        "name": "Honey Bottle",
+        "text": "0-3"
+      },
+      {
+        "id": "peat_block",
+        "name": "Peat Block",
+        "text": "10%"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 902,
@@ -8571,7 +19828,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 8,
-    "id": "sneasler"
+    "id": "sneasler",
+    "drops": [
+      {
+        "id": "razor_claw",
+        "name": "Razor Claw",
+        "text": "5%"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 904,
@@ -8581,7 +19855,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 8,
-    "id": "overqwil"
+    "id": "overqwil",
+    "drops": [
+      {
+        "id": "pufferfish",
+        "name": "Pufferfish",
+        "text": "1"
+      },
+      {
+        "id": "prismarine_shard",
+        "name": "Prismarine Shard",
+        "text": "0-2"
+      },
+      {
+        "id": "poison_barb",
+        "name": "Poison Barb",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 905,
@@ -8600,7 +19891,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "sprigatito"
+    "id": "sprigatito",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 907,
@@ -8609,7 +19907,14 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "floragato"
+    "id": "floragato",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 908,
@@ -8619,7 +19924,14 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 9,
-    "id": "meowscarada"
+    "id": "meowscarada",
+    "drops": [
+      {
+        "id": "miracle_seed",
+        "name": "Miracle Seed",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 909,
@@ -8628,7 +19940,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 9,
-    "id": "fuecoco"
+    "id": "fuecoco",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 910,
@@ -8637,7 +19956,14 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 9,
-    "id": "crocalor"
+    "id": "crocalor",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 911,
@@ -8647,7 +19973,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "skeledirge"
+    "id": "skeledirge",
+    "drops": [
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 912,
@@ -8656,7 +19989,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 9,
-    "id": "quaxly"
+    "id": "quaxly",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 913,
@@ -8665,7 +20005,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 9,
-    "id": "quaxwell"
+    "id": "quaxwell",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 914,
@@ -8675,7 +20022,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 9,
-    "id": "quaquaval"
+    "id": "quaquaval",
+    "drops": [
+      {
+        "id": "mystic_water",
+        "name": "Mystic Water",
+        "text": "25%"
+      }
+    ]
   },
   {
     "dex": 915,
@@ -8684,7 +20038,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "lechonk"
+    "id": "lechonk",
+    "drops": [
+      {
+        "id": "porkchop",
+        "name": "Raw Porkchop",
+        "text": "1-2"
+      },
+      {
+        "id": "oran_berry",
+        "name": "Oran Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 916,
@@ -8702,7 +20068,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 9,
-    "id": "tarountula"
+    "id": "tarountula",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-1"
+      },
+      {
+        "id": "spider_eye",
+        "name": "Spider Eye",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 918,
@@ -8711,7 +20089,19 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 9,
-    "id": "spidops"
+    "id": "spidops",
+    "drops": [
+      {
+        "id": "string",
+        "name": "String",
+        "text": "0-2"
+      },
+      {
+        "id": "spider_eye",
+        "name": "Spider Eye",
+        "text": "0-2"
+      }
+    ]
   },
   {
     "dex": 919,
@@ -8720,7 +20110,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 9,
-    "id": "nymble"
+    "id": "nymble",
+    "drops": [
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 920,
@@ -8730,7 +20127,14 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 9,
-    "id": "lokix"
+    "id": "lokix",
+    "drops": [
+      {
+        "id": "coba_berry",
+        "name": "Coba Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 921,
@@ -8739,7 +20143,14 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 9,
-    "id": "pawmi"
+    "id": "pawmi",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 922,
@@ -8749,7 +20160,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 9,
-    "id": "pawmo"
+    "id": "pawmo",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 923,
@@ -8759,7 +20177,14 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 9,
-    "id": "pawmot"
+    "id": "pawmot",
+    "drops": [
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 924,
@@ -8768,7 +20193,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "tandemaus"
+    "id": "tandemaus",
+    "drops": [
+      {
+        "id": "wheat_seeds",
+        "name": "Wheat Seeds",
+        "text": "0-1"
+      },
+      {
+        "id": "chilan_berry",
+        "name": "Chilan Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 925,
@@ -8786,7 +20223,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 9,
-    "id": "fidough"
+    "id": "fidough",
+    "drops": [
+      {
+        "id": "bread",
+        "name": "Bread",
+        "text": "0-1"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 927,
@@ -8795,7 +20244,19 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 9,
-    "id": "dachsbun"
+    "id": "dachsbun",
+    "drops": [
+      {
+        "id": "bread",
+        "name": "Bread",
+        "text": "0-2"
+      },
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 928,
@@ -8805,7 +20266,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "smoliv"
+    "id": "smoliv",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "2.5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 929,
@@ -8815,7 +20288,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "dolliv"
+    "id": "dolliv",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "5%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 930,
@@ -8825,7 +20310,19 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "arboliva"
+    "id": "arboliva",
+    "drops": [
+      {
+        "id": "big_root",
+        "name": "Big Root",
+        "text": "10%"
+      },
+      {
+        "id": "kebia_berry",
+        "name": "Kebia Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 931,
@@ -8844,7 +20341,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 9,
-    "id": "nacli"
+    "id": "nacli",
+    "drops": [
+      {
+        "id": "calcite",
+        "name": "Calcite",
+        "text": "0-1"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 933,
@@ -8853,7 +20362,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 9,
-    "id": "naclstack"
+    "id": "naclstack",
+    "drops": [
+      {
+        "id": "calcite",
+        "name": "Calcite",
+        "text": "0-2"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 934,
@@ -8862,7 +20383,19 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 9,
-    "id": "garganacl"
+    "id": "garganacl",
+    "drops": [
+      {
+        "id": "calcite",
+        "name": "Calcite",
+        "text": "0-3"
+      },
+      {
+        "id": "passho_berry",
+        "name": "Passho Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 935,
@@ -8871,7 +20404,24 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 9,
-    "id": "charcadet"
+    "id": "charcadet",
+    "drops": [
+      {
+        "id": "charcoal",
+        "name": "Charcoal",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "2.5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 936,
@@ -8881,7 +20431,29 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "armarouge"
+    "id": "armarouge",
+    "drops": [
+      {
+        "id": "charcoal",
+        "name": "Charcoal",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      },
+      {
+        "id": "auspicious_armor",
+        "name": "Auspicious Armor",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 937,
@@ -8891,7 +20463,29 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "ceruledge"
+    "id": "ceruledge",
+    "drops": [
+      {
+        "id": "charcoal",
+        "name": "Charcoal",
+        "text": "0-2"
+      },
+      {
+        "id": "charcoal_stick",
+        "name": "Charcoal Stick",
+        "text": "5%"
+      },
+      {
+        "id": "malicious_armor",
+        "name": "Malicious Armor",
+        "text": "5%"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 938,
@@ -8900,7 +20494,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 9,
-    "id": "tadbulb"
+    "id": "tadbulb",
+    "drops": [
+      {
+        "id": "ochre_froglight",
+        "name": "Ochre Froglight",
+        "text": "2.5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 939,
@@ -8909,7 +20515,19 @@ const POKEMON_DB = [
       "electric"
     ],
     "gen": 9,
-    "id": "bellibolt"
+    "id": "bellibolt",
+    "drops": [
+      {
+        "id": "ochre_froglight",
+        "name": "Ochre Froglight",
+        "text": "5%"
+      },
+      {
+        "id": "wepear_berry",
+        "name": "Wepear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 940,
@@ -8919,7 +20537,24 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 9,
-    "id": "wattrel"
+    "id": "wattrel",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-1"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 941,
@@ -8929,7 +20564,29 @@ const POKEMON_DB = [
       "flying"
     ],
     "gen": 9,
-    "id": "kilowattrel"
+    "id": "kilowattrel",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "sharp_beak",
+        "name": "Sharp Beak",
+        "text": "2.5%"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 942,
@@ -8938,7 +20595,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 9,
-    "id": "maschiff"
+    "id": "maschiff",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-1"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 943,
@@ -8947,7 +20621,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 9,
-    "id": "mabosstiff"
+    "id": "mabosstiff",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "0-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 944,
@@ -8957,7 +20648,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "shroodle"
+    "id": "shroodle",
+    "drops": [
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 945,
@@ -8967,7 +20665,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "grafaiai"
+    "id": "grafaiai",
+    "drops": [
+      {
+        "id": "nanab_berry",
+        "name": "Nanab Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 946,
@@ -8977,7 +20682,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "bramblin"
+    "id": "bramblin",
+    "drops": [
+      {
+        "id": "dead_bush",
+        "name": "Dead Bush",
+        "text": "0-1"
+      },
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-1"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 947,
@@ -8987,7 +20709,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "brambleghast"
+    "id": "brambleghast",
+    "drops": [
+      {
+        "id": "dead_bush",
+        "name": "Dead Bush",
+        "text": "0-2"
+      },
+      {
+        "id": "stick",
+        "name": "Stick",
+        "text": "0-2"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 948,
@@ -8997,7 +20736,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "toedscool"
+    "id": "toedscool",
+    "drops": [
+      {
+        "id": "brown_mushroom",
+        "name": "Brown Mushroom",
+        "text": "0-1"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 949,
@@ -9007,7 +20758,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "toedscruel"
+    "id": "toedscruel",
+    "drops": [
+      {
+        "id": "brown_mushroom",
+        "name": "Brown Mushroom",
+        "text": "0-2"
+      },
+      {
+        "id": "yache_berry",
+        "name": "Yache Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 950,
@@ -9016,7 +20779,14 @@ const POKEMON_DB = [
       "rock"
     ],
     "gen": 9,
-    "id": "klawf"
+    "id": "klawf",
+    "drops": [
+      {
+        "id": "pinap_berry",
+        "name": "Pinap Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 951,
@@ -9025,7 +20795,19 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "capsakid"
+    "id": "capsakid",
+    "drops": [
+      {
+        "id": "roasted_leek",
+        "name": "Roasted Leek",
+        "text": "0-1"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 952,
@@ -9035,7 +20817,19 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 9,
-    "id": "scovillain"
+    "id": "scovillain",
+    "drops": [
+      {
+        "id": "roasted_leek",
+        "name": "Roasted Leek",
+        "text": "0-2"
+      },
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 953,
@@ -9044,7 +20838,14 @@ const POKEMON_DB = [
       "bug"
     ],
     "gen": 9,
-    "id": "rellor"
+    "id": "rellor",
+    "drops": [
+      {
+        "id": "mud",
+        "name": "Mud",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 954,
@@ -9054,7 +20855,14 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "rabsca"
+    "id": "rabsca",
+    "drops": [
+      {
+        "id": "ender_pearl",
+        "name": "Ender Pearl",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 955,
@@ -9063,7 +20871,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "flittle"
+    "id": "flittle",
+    "drops": [
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 956,
@@ -9072,7 +20892,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "espathra"
+    "id": "espathra",
+    "drops": [
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "tanga_berry",
+        "name": "Tanga Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 957,
@@ -9082,7 +20914,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 9,
-    "id": "tinkatink"
+    "id": "tinkatink",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-1"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 958,
@@ -9092,7 +20936,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 9,
-    "id": "tinkatuff"
+    "id": "tinkatuff",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-2"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 959,
@@ -9102,7 +20958,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 9,
-    "id": "tinkaton"
+    "id": "tinkaton",
+    "drops": [
+      {
+        "id": "raw_iron",
+        "name": "Raw Iron",
+        "text": "0-3"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 960,
@@ -9111,7 +20979,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 9,
-    "id": "wiglett"
+    "id": "wiglett",
+    "drops": []
   },
   {
     "dex": 961,
@@ -9120,7 +20989,8 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 9,
-    "id": "wugtrio"
+    "id": "wugtrio",
+    "drops": []
   },
   {
     "dex": 962,
@@ -9130,7 +21000,24 @@ const POKEMON_DB = [
       "dark"
     ],
     "gen": 9,
-    "id": "bombirdier"
+    "id": "bombirdier",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "razz_berry",
+        "name": "Razz Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 963,
@@ -9139,7 +21026,14 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 9,
-    "id": "finizen"
+    "id": "finizen",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "0-1"
+      }
+    ]
   },
   {
     "dex": 964,
@@ -9158,7 +21052,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 9,
-    "id": "varoom"
+    "id": "varoom",
+    "drops": [
+      {
+        "id": "iron_nugget",
+        "name": "Iron Nugget",
+        "text": "0-1"
+      },
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "2.5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 966,
@@ -9168,7 +21079,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 9,
-    "id": "revavroom"
+    "id": "revavroom",
+    "drops": [
+      {
+        "id": "iron_nugget",
+        "name": "Iron Nugget",
+        "text": "0-2"
+      },
+      {
+        "id": "black_sludge",
+        "name": "Black Sludge",
+        "text": "5%"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 967,
@@ -9178,7 +21106,14 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "cyclizar"
+    "id": "cyclizar",
+    "drops": [
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 968,
@@ -9187,7 +21122,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 9,
-    "id": "orthworm"
+    "id": "orthworm",
+    "drops": [
+      {
+        "id": "iron_nugget",
+        "name": "Iron Nugget",
+        "text": "0-2"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 969,
@@ -9197,7 +21144,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 9,
-    "id": "glimmet"
+    "id": "glimmet",
+    "drops": [
+      {
+        "id": "amethyst_shard",
+        "name": "Amethyst Shard",
+        "text": "0-1"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "2.5%"
+      },
+      {
+        "id": "float_stone",
+        "name": "Float Stone",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 970,
@@ -9207,7 +21171,24 @@ const POKEMON_DB = [
       "poison"
     ],
     "gen": 9,
-    "id": "glimmora"
+    "id": "glimmora",
+    "drops": [
+      {
+        "id": "amethyst_shard",
+        "name": "Amethyst Shard",
+        "text": "0-2"
+      },
+      {
+        "id": "shuca_berry",
+        "name": "Shuca Berry",
+        "text": "5%"
+      },
+      {
+        "id": "float_stone",
+        "name": "Float Stone",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 971,
@@ -9216,7 +21197,29 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "greavard"
+    "id": "greavard",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "1-2"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-1"
+      },
+      {
+        "id": "candle",
+        "name": "Candle",
+        "text": "2.5%"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 972,
@@ -9225,7 +21228,24 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "houndstone"
+    "id": "houndstone",
+    "drops": [
+      {
+        "id": "bone",
+        "name": "Bone",
+        "text": "1-3"
+      },
+      {
+        "id": "rotten_flesh",
+        "name": "Rotten Flesh",
+        "text": "0-2"
+      },
+      {
+        "id": "kasib_berry",
+        "name": "Kasib Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 973,
@@ -9235,7 +21255,29 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 9,
-    "id": "flamigo"
+    "id": "flamigo",
+    "drops": [
+      {
+        "id": "feather",
+        "name": "Feather",
+        "text": "0-2"
+      },
+      {
+        "id": "chicken",
+        "name": "Raw Chicken",
+        "text": "1"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "5%"
+      },
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 974,
@@ -9244,7 +21286,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 9,
-    "id": "cetoddle"
+    "id": "cetoddle",
+    "drops": [
+      {
+        "id": "bone_block",
+        "name": "Bone Block",
+        "text": "0-1"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 975,
@@ -9253,7 +21307,19 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 9,
-    "id": "cetitan"
+    "id": "cetitan",
+    "drops": [
+      {
+        "id": "bone_block",
+        "name": "Bone Block",
+        "text": "0-2"
+      },
+      {
+        "id": "aspear_berry",
+        "name": "Aspear Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 976,
@@ -9263,7 +21329,19 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "veluza"
+    "id": "veluza",
+    "drops": [
+      {
+        "id": "cod",
+        "name": "Raw Cod",
+        "text": "1-3"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 977,
@@ -9272,7 +21350,19 @@ const POKEMON_DB = [
       "water"
     ],
     "gen": 9,
-    "id": "dondozo"
+    "id": "dondozo",
+    "drops": [
+      {
+        "id": "salmon",
+        "name": "Raw Salmon",
+        "text": "1"
+      },
+      {
+        "id": "bone_meal",
+        "name": "Bone Meal",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 978,
@@ -9292,7 +21382,19 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "annihilape"
+    "id": "annihilape",
+    "drops": [
+      {
+        "id": "muscle_band",
+        "name": "Muscle Band",
+        "text": "10%"
+      },
+      {
+        "id": "payapa_berry",
+        "name": "Payapa Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 980,
@@ -9302,7 +21404,19 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 9,
-    "id": "clodsire"
+    "id": "clodsire",
+    "drops": [
+      {
+        "id": "clay_ball",
+        "name": "Clay Ball",
+        "text": "0-2"
+      },
+      {
+        "id": "pecha_berry",
+        "name": "Pecha Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 981,
@@ -9312,7 +21426,24 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "farigiraf"
+    "id": "farigiraf",
+    "drops": [
+      {
+        "id": "leather",
+        "name": "Leather",
+        "text": "0-2"
+      },
+      {
+        "id": "razor_fang",
+        "name": "Razor Fang",
+        "text": "5%"
+      },
+      {
+        "id": "persim_berry",
+        "name": "Persim Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 982,
@@ -9331,7 +21462,19 @@ const POKEMON_DB = [
       "steel"
     ],
     "gen": 9,
-    "id": "kingambit"
+    "id": "kingambit",
+    "drops": [
+      {
+        "id": "rocky_helmet",
+        "name": "Rocky Helmet",
+        "text": "5%"
+      },
+      {
+        "id": "cheri_berry",
+        "name": "Cheri Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 984,
@@ -9461,7 +21604,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 9,
-    "id": "frigibax"
+    "id": "frigibax",
+    "drops": [
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 997,
@@ -9471,7 +21621,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 9,
-    "id": "arctibax"
+    "id": "arctibax",
+    "drops": [
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 998,
@@ -9481,7 +21638,14 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 9,
-    "id": "baxcalibur"
+    "id": "baxcalibur",
+    "drops": [
+      {
+        "id": "haban_berry",
+        "name": "Haban Berry",
+        "text": "10%"
+      }
+    ]
   },
   {
     "dex": 999,
@@ -9490,7 +21654,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "gimmighoul"
+    "id": "gimmighoul",
+    "drops": [
+      {
+        "id": "relic_coin",
+        "name": "Relic Coin",
+        "text": "24-48"
+      }
+    ]
   },
   {
     "dex": 1000,
@@ -9500,7 +21671,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "gholdengo"
+    "id": "gholdengo",
+    "drops": [
+      {
+        "id": "relic_coin",
+        "name": "Relic Coin",
+        "text": "24-48"
+      }
+    ]
   },
   {
     "dex": 1001,
@@ -9510,7 +21688,8 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "wo-chien"
+    "id": "wo-chien",
+    "drops": []
   },
   {
     "dex": 1002,
@@ -9520,7 +21699,8 @@ const POKEMON_DB = [
       "ice"
     ],
     "gen": 9,
-    "id": "chien-pao"
+    "id": "chien-pao",
+    "drops": []
   },
   {
     "dex": 1003,
@@ -9530,7 +21710,8 @@ const POKEMON_DB = [
       "ground"
     ],
     "gen": 9,
-    "id": "ting-lu"
+    "id": "ting-lu",
+    "drops": []
   },
   {
     "dex": 1004,
@@ -9540,7 +21721,8 @@ const POKEMON_DB = [
       "fire"
     ],
     "gen": 9,
-    "id": "chi-yu"
+    "id": "chi-yu",
+    "drops": []
   },
   {
     "dex": 1005,
@@ -9570,7 +21752,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 9,
-    "id": "koraidon"
+    "id": "koraidon",
+    "drops": []
   },
   {
     "dex": 1008,
@@ -9580,7 +21763,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 9,
-    "id": "miraidon"
+    "id": "miraidon",
+    "drops": []
   },
   {
     "dex": 1009,
@@ -9610,7 +21794,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 9,
-    "id": "dipplin"
+    "id": "dipplin",
+    "drops": []
   },
   {
     "dex": 1012,
@@ -9620,7 +21805,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "poltchageist"
+    "id": "poltchageist",
+    "drops": [
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "2.5%"
+      }
+    ]
   },
   {
     "dex": 1013,
@@ -9630,7 +21822,14 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "sinistcha"
+    "id": "sinistcha",
+    "drops": [
+      {
+        "id": "rawst_berry",
+        "name": "Rawst Berry",
+        "text": "5%"
+      }
+    ]
   },
   {
     "dex": 1014,
@@ -9640,7 +21839,8 @@ const POKEMON_DB = [
       "fighting"
     ],
     "gen": 9,
-    "id": "okidogi"
+    "id": "okidogi",
+    "drops": []
   },
   {
     "dex": 1015,
@@ -9650,7 +21850,8 @@ const POKEMON_DB = [
       "psychic"
     ],
     "gen": 9,
-    "id": "munkidori"
+    "id": "munkidori",
+    "drops": []
   },
   {
     "dex": 1016,
@@ -9660,7 +21861,14 @@ const POKEMON_DB = [
       "fairy"
     ],
     "gen": 9,
-    "id": "fezandipiti"
+    "id": "fezandipiti",
+    "drops": [
+      {
+        "id": "fairy_feather",
+        "name": "Fairy Feather",
+        "text": "1"
+      }
+    ]
   },
   {
     "dex": 1017,
@@ -9669,7 +21877,8 @@ const POKEMON_DB = [
       "grass"
     ],
     "gen": 9,
-    "id": "ogerpon"
+    "id": "ogerpon",
+    "drops": []
   },
   {
     "dex": 1018,
@@ -9679,7 +21888,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 9,
-    "id": "archaludon"
+    "id": "archaludon",
+    "drops": []
   },
   {
     "dex": 1019,
@@ -9689,7 +21899,8 @@ const POKEMON_DB = [
       "dragon"
     ],
     "gen": 9,
-    "id": "hydrapple"
+    "id": "hydrapple",
+    "drops": []
   },
   {
     "dex": 1020,
@@ -9738,7 +21949,8 @@ const POKEMON_DB = [
       "normal"
     ],
     "gen": 9,
-    "id": "terapagos"
+    "id": "terapagos",
+    "drops": []
   },
   {
     "dex": 1025,
@@ -9748,6 +21960,7 @@ const POKEMON_DB = [
       "ghost"
     ],
     "gen": 9,
-    "id": "pecharunt"
+    "id": "pecharunt",
+    "drops": []
   }
 ];

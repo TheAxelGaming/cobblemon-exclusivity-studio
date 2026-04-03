@@ -61,6 +61,342 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "ancient_azure_ball",
+    "name": "Ancient Azure Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_azure_rod",
+    "name": "Ancient Azure Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_azure_rod_cast",
+    "name": "Ancient Azure Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_citrine_ball",
+    "name": "Ancient Citrine Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_citrine_rod",
+    "name": "Ancient Citrine Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_citrine_rod_cast",
+    "name": "Ancient Citrine Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_feather_ball",
+    "name": "Ancient Feather Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_feather_rod",
+    "name": "Ancient Feather Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_feather_rod_cast",
+    "name": "Ancient Feather Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_gigaton_ball",
+    "name": "Ancient Gigaton Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_gigaton_rod",
+    "name": "Ancient Gigaton Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_gigaton_rod_cast",
+    "name": "Ancient Gigaton Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_great_ball",
+    "name": "Ancient Great Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_great_rod",
+    "name": "Ancient Great Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_great_rod_cast",
+    "name": "Ancient Great Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_heavy_ball",
+    "name": "Ancient Heavy Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_heavy_rod",
+    "name": "Ancient Heavy Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_heavy_rod_cast",
+    "name": "Ancient Heavy Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_ivory_ball",
+    "name": "Ancient Ivory Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_ivory_rod",
+    "name": "Ancient Ivory Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_ivory_rod_cast",
+    "name": "Ancient Ivory Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_jet_ball",
+    "name": "Ancient Jet Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_jet_rod",
+    "name": "Ancient Jet Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_jet_rod_cast",
+    "name": "Ancient Jet Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_leaden_ball",
+    "name": "Ancient Leaden Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_leaden_rod",
+    "name": "Ancient Leaden Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_leaden_rod_cast",
+    "name": "Ancient Leaden Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_origin_ball",
+    "name": "Ancient Origin Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_origin_rod",
+    "name": "Ancient Origin Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_origin_rod_cast",
+    "name": "Ancient Origin Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_poke_ball",
+    "name": "Ancient Poke Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_poke_rod",
+    "name": "Ancient Poke Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_poke_rod_cast",
+    "name": "Ancient Poke Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_roseate_ball",
+    "name": "Ancient Roseate Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_roseate_rod",
+    "name": "Ancient Roseate Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_roseate_rod_cast",
+    "name": "Ancient Roseate Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_slate_ball",
+    "name": "Ancient Slate Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_slate_rod",
+    "name": "Ancient Slate Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_slate_rod_cast",
+    "name": "Ancient Slate Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_ultra_ball",
+    "name": "Ancient Ultra Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_ultra_rod",
+    "name": "Ancient Ultra Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_ultra_rod_cast",
+    "name": "Ancient Ultra Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_verdant_ball",
+    "name": "Ancient Verdant Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_verdant_rod",
+    "name": "Ancient Verdant Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_verdant_rod_cast",
+    "name": "Ancient Verdant Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_wing_ball",
+    "name": "Ancient Wing Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_wing_rod",
+    "name": "Ancient Wing Rod",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ancient_wing_rod_cast",
+    "name": "Ancient Wing Rod Cast",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "antidote",
     "name": "Antidote",
     "cat": "held",
@@ -117,8 +453,22 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "aprijuice_black_overlay_umbrella",
+    "name": "Aprijuice Black Overlay Umbrella",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "aprijuice_blue",
     "name": "Aprijuice Blue",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "aprijuice_blue_overlay_umbrella",
+    "name": "Aprijuice Blue Overlay Umbrella",
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
@@ -131,8 +481,36 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "aprijuice_green_overlay_umbrella",
+    "name": "Aprijuice Green Overlay Umbrella",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "aprijuice_overlay1",
+    "name": "Aprijuice Overlay1",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "aprijuice_overlay2",
+    "name": "Aprijuice Overlay2",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "aprijuice_pink",
     "name": "Aprijuice Pink",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "aprijuice_pink_overlay_umbrella",
+    "name": "Aprijuice Pink Overlay Umbrella",
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
@@ -145,6 +523,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "aprijuice_red_overlay_umbrella",
+    "name": "Aprijuice Red Overlay Umbrella",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "aprijuice_white",
     "name": "Aprijuice White",
     "cat": "held",
@@ -152,8 +537,22 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "aprijuice_white_overlay_umbrella",
+    "name": "Aprijuice White Overlay Umbrella",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "aprijuice_yellow",
     "name": "Aprijuice Yellow",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "aprijuice_yellow_overlay_umbrella",
+    "name": "Aprijuice Yellow Overlay Umbrella",
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
@@ -1132,6 +1531,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "escape_rope",
+    "name": "Escape Rope",
+    "cat": "held",
+    "emoji": "🪢",
+    "desc": "Permite escapar de cuevas rápidamente"
+  },
+  {
     "id": "ether",
     "name": "Ether",
     "cat": "medicine",
@@ -1377,6 +1783,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "full_incense",
+    "name": "Full Incense",
+    "cat": "held",
+    "emoji": "💨",
+    "desc": "Hace que el portador ataque de último"
+  },
+  {
     "id": "full_restore",
     "name": "Full Restore",
     "cat": "held",
@@ -1438,6 +1851,13 @@ const ITEMS = [
     "cat": "gem",
     "emoji": "💎",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "gold_bottle_cap",
+    "name": "Gold Bottle Cap",
+    "cat": "held",
+    "emoji": "🥇",
+    "desc": "Maximiza todos los IVs de un Pokémon"
   },
   {
     "id": "grass_gem",
@@ -1585,6 +2005,13 @@ const ITEMS = [
     "cat": "medicine",
     "emoji": "💊",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "healer",
+    "name": "Healer",
+    "cat": "utility",
+    "emoji": "🏥",
+    "desc": "Máquina portátil para curar Pokémon"
   },
   {
     "id": "health_candy",
@@ -1811,6 +2238,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "key_stone",
+    "name": "Key Stone",
+    "cat": "stone",
+    "emoji": "💎",
+    "desc": "Piedra clave para la Mega Evolución"
+  },
+  {
     "id": "kings_rock",
     "name": "Kings Rock",
     "cat": "held",
@@ -1837,6 +2271,13 @@ const ITEMS = [
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "lax_incense",
+    "name": "Lax Incense",
+    "cat": "held",
+    "emoji": "💨",
+    "desc": "Reduce la precisión del oponente"
   },
   {
     "id": "lax_mint",
@@ -1977,6 +2418,13 @@ const ITEMS = [
     "cat": "candy",
     "emoji": "🍬",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "luck_incense",
+    "name": "Luck Incense",
+    "cat": "held",
+    "emoji": "🍀",
+    "desc": "Duplica el dinero ganado en combate"
   },
   {
     "id": "lucky_egg",
@@ -2427,6 +2875,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "odd_incense",
+    "name": "Odd Incense",
+    "cat": "held",
+    "emoji": "🔮",
+    "desc": "Potencia movimientos de tipo Psíquico"
+  },
+  {
     "id": "old_amber_fossil",
     "name": "Old Amber Fossil",
     "cat": "stone",
@@ -2459,6 +2914,447 @@ const ITEMS = [
     "name": "Oval Stone",
     "cat": "stone",
     "emoji": "💎",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_berry",
+    "name": "Overlay Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter",
+    "name": "Overlay Bitter",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_berry",
+    "name": "Overlay Bitter Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_clover",
+    "name": "Overlay Bitter Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_flower",
+    "name": "Overlay Bitter Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_love",
+    "name": "Overlay Bitter Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_ribbon",
+    "name": "Overlay Bitter Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_star",
+    "name": "Overlay Bitter Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_bitter_strawberry",
+    "name": "Overlay Bitter Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_clover",
+    "name": "Overlay Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry",
+    "name": "Overlay Dry",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_berry",
+    "name": "Overlay Dry Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_clover",
+    "name": "Overlay Dry Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_flower",
+    "name": "Overlay Dry Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_love",
+    "name": "Overlay Dry Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_ribbon",
+    "name": "Overlay Dry Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_star",
+    "name": "Overlay Dry Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_dry_strawberry",
+    "name": "Overlay Dry Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_flower",
+    "name": "Overlay Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_love",
+    "name": "Overlay Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild",
+    "name": "Overlay Mild",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_berry",
+    "name": "Overlay Mild Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_clover",
+    "name": "Overlay Mild Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_flower",
+    "name": "Overlay Mild Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_love",
+    "name": "Overlay Mild Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_ribbon",
+    "name": "Overlay Mild Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_star",
+    "name": "Overlay Mild Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_mild_strawberry",
+    "name": "Overlay Mild Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain",
+    "name": "Overlay Plain",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_berry",
+    "name": "Overlay Plain Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_clover",
+    "name": "Overlay Plain Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_flower",
+    "name": "Overlay Plain Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_love",
+    "name": "Overlay Plain Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_ribbon",
+    "name": "Overlay Plain Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_star",
+    "name": "Overlay Plain Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_plain_strawberry",
+    "name": "Overlay Plain Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_ribbon",
+    "name": "Overlay Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour",
+    "name": "Overlay Sour",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_berry",
+    "name": "Overlay Sour Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_clover",
+    "name": "Overlay Sour Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_flower",
+    "name": "Overlay Sour Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_love",
+    "name": "Overlay Sour Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_ribbon",
+    "name": "Overlay Sour Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_star",
+    "name": "Overlay Sour Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sour_strawberry",
+    "name": "Overlay Sour Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy",
+    "name": "Overlay Spicy",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_berry",
+    "name": "Overlay Spicy Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_clover",
+    "name": "Overlay Spicy Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_flower",
+    "name": "Overlay Spicy Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_love",
+    "name": "Overlay Spicy Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_ribbon",
+    "name": "Overlay Spicy Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_star",
+    "name": "Overlay Spicy Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_spicy_strawberry",
+    "name": "Overlay Spicy Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_star",
+    "name": "Overlay Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_strawberry",
+    "name": "Overlay Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet",
+    "name": "Overlay Sweet",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_berry",
+    "name": "Overlay Sweet Berry",
+    "cat": "berry",
+    "emoji": "🫐",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_clover",
+    "name": "Overlay Sweet Clover",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_flower",
+    "name": "Overlay Sweet Flower",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_love",
+    "name": "Overlay Sweet Love",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_ribbon",
+    "name": "Overlay Sweet Ribbon",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_star",
+    "name": "Overlay Sweet Star",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "overlay_sweet_strawberry",
+    "name": "Overlay Sweet Strawberry",
+    "cat": "berry",
+    "emoji": "🫐",
     "desc": "Ítem de Cobblemon"
   },
   {
@@ -2623,11 +3519,32 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "poke_bait_overlay1",
+    "name": "Poke Bait Overlay1",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "poke_bait_overlay2",
+    "name": "Poke Bait Overlay2",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "poke_ball",
     "name": "Poke Ball",
     "cat": "pokeball",
     "emoji": "🔵",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "poke_egg",
+    "name": "Poké Egg",
+    "cat": "utility",
+    "emoji": "🥚",
+    "desc": "Huevo de Pokémon que puede eclosionar"
   },
   {
     "id": "poke_puff_base_bitter",
@@ -2700,6 +3617,20 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "poke_snack_overlay",
+    "name": "Poke Snack Overlay",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "pokedex",
+    "name": "Pokédex",
+    "cat": "utility",
+    "emoji": "📱",
+    "desc": "Enciclopedia digital de Pokémon"
+  },
+  {
     "id": "pokedex_black",
     "name": "Pokedex Black",
     "cat": "held",
@@ -2730,6 +3661,27 @@ const ITEMS = [
   {
     "id": "pokedex_red",
     "name": "Pokedex Red",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "pokedex_screen",
+    "name": "Pokedex Screen",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "pokedex_screen_off",
+    "name": "Pokedex Screen Off",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "pokedex_screen_scan",
+    "name": "Pokedex Screen Scan",
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
@@ -3071,6 +4023,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "pure_incense",
+    "name": "Pure Incense",
+    "cat": "held",
+    "emoji": "🤍",
+    "desc": "Reduce encuentros con Pokémon salvajes"
+  },
+  {
     "id": "qualot_berry",
     "name": "Qualot Berry",
     "cat": "berry",
@@ -3274,6 +4233,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "repel",
+    "name": "Repel",
+    "cat": "held",
+    "emoji": "🔵",
+    "desc": "Repele Pokémon salvajes temporalmente"
+  },
+  {
     "id": "resist_feather",
     "name": "Resist Feather",
     "cat": "held",
@@ -3299,6 +4265,13 @@ const ITEMS = [
     "name": "Revive",
     "cat": "medicine",
     "emoji": "💊",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "ribbon_sweet",
+    "name": "Ribbon Sweet",
+    "cat": "held",
+    "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
   },
   {
@@ -3337,6 +4310,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "rock_incense",
+    "name": "Rock Incense",
+    "cat": "held",
+    "emoji": "🪨",
+    "desc": "Potencia movimientos de tipo Roca"
+  },
+  {
     "id": "rocky_helmet",
     "name": "Rocky Helmet",
     "cat": "held",
@@ -3356,6 +4336,13 @@ const ITEMS = [
     "cat": "stone",
     "emoji": "💎",
     "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "rose_incense",
+    "name": "Rose Incense",
+    "cat": "held",
+    "emoji": "🌹",
+    "desc": "Potencia movimientos de tipo Planta"
   },
   {
     "id": "roseate_ball",
@@ -3526,6 +4513,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "sea_incense",
+    "name": "Sea Incense",
+    "cat": "held",
+    "emoji": "🌊",
+    "desc": "Incienso que potencia movimientos de tipo Agua"
+  },
+  {
     "id": "serious_mint",
     "name": "Serious Mint",
     "cat": "mint",
@@ -3568,6 +4562,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "shiny_charm",
+    "name": "Shiny Charm",
+    "cat": "held",
+    "emoji": "✨",
+    "desc": "Aumenta la probabilidad de encontrar Pokémon Shiny"
+  },
+  {
     "id": "shiny_icon",
     "name": "Shiny Icon",
     "cat": "held",
@@ -3603,6 +4604,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "silver_bottle_cap",
+    "name": "Silver Bottle Cap",
+    "cat": "held",
+    "emoji": "🥈",
+    "desc": "Maximiza un IV de un Pokémon"
+  },
+  {
     "id": "silver_powder",
     "name": "Silver Powder",
     "cat": "held",
@@ -3617,8 +4625,29 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "sinister_tea_masterpiece_overlay",
+    "name": "Sinister Tea Masterpiece Overlay",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "sinister_tea_overlay",
+    "name": "Sinister Tea Overlay",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
     "id": "sinister_tea_unremarkable_base",
     "name": "Sinister Tea Unremarkable Base",
+    "cat": "held",
+    "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "sinister_tea_unremarkable_overlay",
+    "name": "Sinister Tea Unremarkable Overlay",
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
@@ -3782,6 +4811,13 @@ const ITEMS = [
     "name": "Sticky Glob",
     "cat": "held",
     "emoji": "🎒",
+    "desc": "Ítem de Cobblemon"
+  },
+  {
+    "id": "strange_ball",
+    "name": "Strange Ball",
+    "cat": "pokeball",
+    "emoji": "🔵",
     "desc": "Ítem de Cobblemon"
   },
   {
@@ -4086,6 +5122,13 @@ const ITEMS = [
     "desc": "Ítem de Cobblemon"
   },
   {
+    "id": "wave_incense",
+    "name": "Wave Incense",
+    "cat": "held",
+    "emoji": "🌊",
+    "desc": "Potencia movimientos de tipo Agua"
+  },
+  {
     "id": "weak_candy",
     "name": "Weak Candy",
     "cat": "candy",
@@ -4245,132 +5288,6 @@ const ITEMS = [
     "cat": "held",
     "emoji": "🎒",
     "desc": "Ítem de Cobblemon"
-  },
-  {
-    "id": "silver_bottle_cap",
-    "name": "Silver Bottle Cap",
-    "cat": "held",
-    "emoji": "🥈",
-    "desc": "Maximiza un IV de un Pokémon"
-  },
-  {
-    "id": "gold_bottle_cap",
-    "name": "Gold Bottle Cap",
-    "cat": "held",
-    "emoji": "🥇",
-    "desc": "Maximiza todos los IVs de un Pokémon"
-  },
-  {
-    "id": "repel",
-    "name": "Repel",
-    "cat": "held",
-    "emoji": "🔵",
-    "desc": "Repele Pokémon salvajes temporalmente"
-  },
-  {
-    "id": "escape_rope",
-    "name": "Escape Rope",
-    "cat": "held",
-    "emoji": "🪢",
-    "desc": "Permite escapar de cuevas rápidamente"
-  },
-  {
-    "id": "shiny_charm",
-    "name": "Shiny Charm",
-    "cat": "held",
-    "emoji": "✨",
-    "desc": "Aumenta la probabilidad de encontrar Pokémon Shiny"
-  },
-  {
-    "id": "key_stone",
-    "name": "Key Stone",
-    "cat": "stone",
-    "emoji": "💎",
-    "desc": "Piedra clave para la Mega Evolución"
-  },
-  {
-    "id": "sea_incense",
-    "name": "Sea Incense",
-    "cat": "held",
-    "emoji": "🌊",
-    "desc": "Incienso que potencia movimientos de tipo Agua"
-  },
-  {
-    "id": "luck_incense",
-    "name": "Luck Incense",
-    "cat": "held",
-    "emoji": "🍀",
-    "desc": "Duplica el dinero ganado en combate"
-  },
-  {
-    "id": "lax_incense",
-    "name": "Lax Incense",
-    "cat": "held",
-    "emoji": "💨",
-    "desc": "Reduce la precisión del oponente"
-  },
-  {
-    "id": "full_incense",
-    "name": "Full Incense",
-    "cat": "held",
-    "emoji": "💨",
-    "desc": "Hace que el portador ataque de último"
-  },
-  {
-    "id": "rose_incense",
-    "name": "Rose Incense",
-    "cat": "held",
-    "emoji": "🌹",
-    "desc": "Potencia movimientos de tipo Planta"
-  },
-  {
-    "id": "pure_incense",
-    "name": "Pure Incense",
-    "cat": "held",
-    "emoji": "🤍",
-    "desc": "Reduce encuentros con Pokémon salvajes"
-  },
-  {
-    "id": "rock_incense",
-    "name": "Rock Incense",
-    "cat": "held",
-    "emoji": "🪨",
-    "desc": "Potencia movimientos de tipo Roca"
-  },
-  {
-    "id": "odd_incense",
-    "name": "Odd Incense",
-    "cat": "held",
-    "emoji": "🔮",
-    "desc": "Potencia movimientos de tipo Psíquico"
-  },
-  {
-    "id": "wave_incense",
-    "name": "Wave Incense",
-    "cat": "held",
-    "emoji": "🌊",
-    "desc": "Potencia movimientos de tipo Agua"
-  },
-  {
-    "id": "healer",
-    "name": "Healer",
-    "cat": "utility",
-    "emoji": "🏥",
-    "desc": "Máquina portátil para curar Pokémon"
-  },
-  {
-    "id": "pokedex",
-    "name": "Pokédex",
-    "cat": "utility",
-    "emoji": "📱",
-    "desc": "Enciclopedia digital de Pokémon"
-  },
-  {
-    "id": "poke_egg",
-    "name": "Poké Egg",
-    "cat": "utility",
-    "emoji": "🥚",
-    "desc": "Huevo de Pokémon que puede eclosionar"
   }
 ];
 

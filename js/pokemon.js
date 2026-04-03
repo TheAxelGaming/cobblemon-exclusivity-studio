@@ -139,6 +139,11 @@ function renderPokemonGrid() {
         togglePokemonBlock(p.dex);
     });
 
+    // Tooltip events (Drops)
+    card.addEventListener('mouseenter', (e) => showPokemonTooltip(e, p));
+    card.addEventListener('mousemove', (e) => movePokemonTooltip(e));
+    card.addEventListener('mouseleave', hidePokemonTooltip);
+
     const typesHtml = p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('');
     
     // Official artwork load slower, but for a grid it's superior. Let's use the lowres local sprite but style it nicely. Using official artwork:
@@ -199,6 +204,87 @@ function updatePokemonPreview(dex) {
 
 // Assign globally to be called from app.js tab logic if needed
 window.renderPokemonList = renderPokemonGrid;
+
+// ============================================================
+// TOOLTIP (DROPS) LOGIC
+// ============================================================
+
+function showPokemonTooltip(e, p) {
+  const tooltip = document.getElementById('pokemon-tooltip');
+  if (!tooltip) return;
+
+  // Si no hay drops registrados o el array está vacío
+  if (!p.drops || p.drops.length === 0) {
+    tooltip.innerHTML = `
+      <div class="pokemon-tooltip-title">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Drops - ${p.name}
+      </div>
+      <div class="pokemon-tooltip-empty">Sin drops registrados</div>
+    `;
+  } else {
+    // Construir la lista de ítems
+    let dropsHtml = `<div class="pokemon-tooltip-title">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </svg>
+      Drops - ${p.name}
+    </div>`;
+
+    p.drops.forEach(drop => {
+      // Intentamos encontrarlo en minecraft_data.js o ITEMS
+      let imgSrc = `assets/items/${drop.id}.png`; // por defecto asumimos minúscula
+      
+      // Fallback por si la imagen no carga, mostraremos un icono genérico
+      dropsHtml += `
+        <div class="pokemon-tooltip-item">
+          <div class="pokemon-tooltip-item-left">
+            <img src="${imgSrc}" class="pokemon-tooltip-icon" 
+                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'20\\' height=\\'20\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'%236B7FA3\\' stroke-width=\\'2\\'><circle cx=\\'12\\' cy=\\'12\\' r=\\'10\\'/><path d=\\'M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3\\'/><line x1=\\'12\\' y1=\\'17\\' x2=\\'12.01\\' y2=\\'17\\'/></svg>'"/>
+            <span class="pokemon-tooltip-name" title="${drop.name}">${drop.name}</span>
+          </div>
+          <span class="pokemon-tooltip-chance">${drop.text}</span>
+        </div>
+      `;
+    });
+    tooltip.innerHTML = dropsHtml;
+  }
+
+  tooltip.classList.remove('hidden');
+  movePokemonTooltip(e);
+}
+
+function movePokemonTooltip(e) {
+  const tooltip = document.getElementById('pokemon-tooltip');
+  if (!tooltip || tooltip.classList.contains('hidden')) return;
+
+  const offset = 15;
+  let x = e.clientX + offset;
+  let y = e.clientY + offset;
+
+  const rect = tooltip.getBoundingClientRect();
+  
+  // Evitar salir por la derecha
+  if (x + rect.width > window.innerWidth) {
+    x = e.clientX - rect.width - offset;
+  }
+  
+  // Evitar salir por abajo
+  if (y + rect.height > window.innerHeight) {
+    y = e.clientY - rect.height - offset;
+  }
+
+  tooltip.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function hidePokemonTooltip() {
+  const tooltip = document.getElementById('pokemon-tooltip');
+  if (tooltip) {
+    tooltip.classList.add('hidden');
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // We defer initPokemonTab so that POKEMON_DB has time to load if it's placed before
