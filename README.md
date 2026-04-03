@@ -8,6 +8,7 @@
 *   **Datapacks Studio (Anteriormente Exclusivity):**
     *   **Bloqueo de Recetas (Fabric):** Genera archivos `recipe.json` con `fabric:load_conditions`.
     *   **Bloqueo de Drops:** Genera sobreescrituras de especies con `drops: { "amount": 0 }`.
+    *   **Bloqueo de Spawns de Pokémon:** Interfaz en cuadrícula para seleccionar y desactivar instantáneamente la generación natural de los 1025 Pokémon (filtrado por Generaciones y Tipos), creando `spawn_pool_world/{dex}_name.json` configurados en `enabled: false`.
     *   **Exportación Masiva:** Genera un Data Pack `.zip` completo con un clic.
 *   **BattlePass Studio (NUEVO):**
     *   **Gestión de Niveles (Tiers):** Configura los 100 niveles del pase con recompensas gratuitas y premium.

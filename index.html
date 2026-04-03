@@ -12,6 +12,7 @@
 
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/battlepass.css">
+  <link rel="stylesheet" href="css/pokemon.css">
   <style>
 /* ================================================================
    styles.css — Estilos de Cobblemon Exclusivity Studio
@@ -294,7 +295,8 @@ html, body {
       </div>
     </div>
     <div style="display:flex;gap:5px;background:#0F1117;padding:4px;border-radius:10px;border:1px solid #2A3347;margin:0 20px;">
-      <button id="tab-exclusivity" class="active" style="padding:6px 16px;border-radius:8px;border:none;background:#2A3347;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">Datapacks</button>
+      <button id="tab-exclusivity" class="active" style="padding:6px 16px;border-radius:8px;border:none;background:#2A3347;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">Items (Recetas/Drops)</button>
+      <button id="tab-pokemon" style="padding:6px 16px;border-radius:8px;border:none;background:transparent;color:#6B7FA3;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">Pokémon (Spawns)</button>
       <button id="tab-battlepass" style="padding:6px 16px;border-radius:8px;border:none;background:transparent;color:#6B7FA3;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;">BattlePass</button>
     </div>
     <div style="display:flex;align-items:center;gap:10px;">
@@ -568,10 +570,54 @@ html, body {
 // ✦ Cobblemon Exclusivity Studio
 // ✦ Fabric 1.21 — fabric:load_conditions</span></div>
 
-      <!-- Botón colapsar -->
       <button id="btn-toggle-right" class="sidebar-toggle" aria-label="Contraer panel derecho">→</button>
     </aside>
   </div><!-- /exclusivity-view -->
+
+  <!-- POKEMON VIEW -->
+  <div id="pokemon-view" style="display:none; flex:1; overflow:hidden;">
+    <main id="pkmn-panel-main" style="flex:1; display:flex; flex-direction:column; background:#0F1117; overflow:hidden;">
+      <!-- CABECERA DE FILTROS -->
+      <div style="padding:16px 20px; background:#161B27; border-bottom:1px solid #2A3347; display:flex; flex-direction:column; gap:12px; flex-shrink:0;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="display:flex; align-items:center; gap:16px; flex:1;">
+            <input id="pkmn-search" type="search" placeholder="🔍 Buscar Pokémon..." style="width:280px; background:#0F1117; border:1px solid #2A3347; border-radius:8px; padding:8px 12px; font-size:13px; color:#C8D4E8; outline:none; transition:border-color .2s;"/>
+            <div class="gen-filters" style="margin-bottom:0;">
+              <button class="gen-pill active" data-gen="0">Todos</button>
+              <button class="gen-pill" data-gen="1">Gen 1</button>
+              <button class="gen-pill" data-gen="2">Gen 2</button>
+              <button class="gen-pill" data-gen="3">Gen 3</button>
+              <button class="gen-pill" data-gen="4">Gen 4</button>
+              <button class="gen-pill" data-gen="5">Gen 5</button>
+              <button class="gen-pill" data-gen="6">Gen 6</button>
+              <button class="gen-pill" data-gen="7">Gen 7</button>
+              <button class="gen-pill" data-gen="8">Gen 8</button>
+              <button class="gen-pill" data-gen="9">Gen 9</button>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <div style="text-align:right;">
+              <div style="font-size:12px; color:#6B7FA3;">Total: <span style="font-weight:700; color:#4A90D9;" id="pkmn-total-count">0</span></div>
+              <div style="font-size:12px; color:#6B7FA3;">Bloqueados: <span style="font-weight:700; color:#EF5350;" id="pkmn-blocked-count">0</span></div>
+            </div>
+            <button class="btn-ghost" id="btn-clear-pkmn" style="font-size:12px; padding:6px 12px; border-color:#EF535044; color:#EF5350;">Limpiar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID DE POKEMON -->
+      <div id="pkmn-grid" style="flex:1; overflow-y:auto; padding:20px; display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:16px; align-content:start;">
+        <!-- Se inyectan las cards desde JS -->
+      </div>
+    </main>
+
+    <aside id="pkmn-panel-right" class="panel-right">
+      <div style="padding:12px 14px;border-bottom:1px solid #2A3347;display:flex;align-items:center;">
+        <span style="font-size:12px;color:#6B7FA3;font-family:'JetBrains Mono',monospace;" id="pkmn-preview-filename">—</span>
+      </div>
+      <div class="json-preview" id="pkmn-json-output"><span style="color:#75715E">// Selecciona un Pokémon para ver el JSON.</span></div>
+    </aside>
+  </div><!-- /pokemon-view -->
 
     <!-- BATTLEPASS VIEW -->
     <div id="battlepass-view" style="display:none; flex:1; overflow:hidden;">
@@ -719,6 +765,8 @@ html, body {
 <script src="js/data.js"></script>
 <script src="js/generator.js"></script>
 <script src="js/ui.js"></script>
+<script src="js/pokemon_data.js"></script>
+<script src="js/pokemon.js"></script>
 <script src="js/app.js"></script>
 
 <!-- BattlePass Modules -->

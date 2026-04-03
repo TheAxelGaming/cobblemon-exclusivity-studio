@@ -98,9 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   document.getElementById('btn-gen-pack').addEventListener('click', async () => {
     const packItems = ITEMS.filter(i => state.options[i.id].inPack);
+    const packPokemons = Array.from(typeof POKEMON_STATE !== 'undefined' ? POKEMON_STATE.blocked : []);
 
-    if (packItems.length === 0) {
-      showToast('⚠️', 'Selecciona al menos 1 ítem para el Pack');
+    if (packItems.length === 0 && packPokemons.length === 0) {
+      showToast('⚠️', 'Selecciona al menos 1 ítem o Pokémon para el Pack');
       return;
     }
 
@@ -170,8 +171,23 @@ document.addEventListener('DOMContentLoaded', () => {
           recipeCount++;
         }
       });
+      
+      // Inject Pokemon Blocks
+      let pkmnCount = 0;
+      packPokemons.forEach(dex => {
+        const p = POKEMON_DB.find(i => i.dex === dex);
+        if (p) {
+          const paddedDex = dex.toString().padStart(4, '0');
+          const filename = `${paddedDex}_${p.id}.json`;
+          zip.file(
+            `data/${NAMESPACE}/spawn_pool_world/${filename}`,
+            JSON.stringify({ "enabled": false }, null, 2)
+          );
+          pkmnCount++;
+        }
+      });
 
-      showToast('📦', `Generando Pack (${packItems.length} ítems)…`);
+      showToast('📦', `Generando Pack (${packItems.length} ítems, ${pkmnCount} pokémon)…`);
 
       const blob = await zip.generateAsync({ type: 'blob' });
       const a    = document.createElement('a');
@@ -180,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       a.click();
       URL.revokeObjectURL(a.href);
 
-      showToast('✅', `Pack generado! ${recipeCount} recetas + ${dropCount} drops bloqueados`);
+      showToast('✅', `Pack generado! ${recipeCount} req, ${dropCount} drops, ${pkmnCount} pokémon`);
 
     } catch (err) {
       console.error('[CobblemonStudio] Error generando ZIP:', err);

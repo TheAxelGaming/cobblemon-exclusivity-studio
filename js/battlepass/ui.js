@@ -325,19 +325,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
   // Navbar Tabs
   const tabExc = document.getElementById('tab-exclusivity');
+  const tabPkmn = document.getElementById('tab-pokemon');
   const tabBP = document.getElementById('tab-battlepass');
   const viewExc = document.getElementById('exclusivity-view');
+  const viewPkmn = document.getElementById('pokemon-view');
   const viewBP = document.getElementById('battlepass-view');
 
   tabExc.addEventListener('click', () => {
     tabExc.classList.add('active');
     tabExc.style.background = '#2A3347';
     tabExc.style.color = '#fff';
+    tabPkmn.classList.remove('active');
+    tabPkmn.style.background = 'transparent';
+    tabPkmn.style.color = '#6B7FA3';
     tabBP.classList.remove('active');
     tabBP.style.background = 'transparent';
     tabBP.style.color = '#6B7FA3';
 
     viewExc.style.display = 'flex';
+    viewPkmn.style.display = 'none';
     viewBP.style.display = 'none';
 
     // Button Visibility Logic
@@ -349,6 +355,30 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('bp_view', 'exclusivity');
   });
 
+  tabPkmn.addEventListener('click', () => {
+    tabPkmn.classList.add('active');
+    tabPkmn.style.background = '#2A3347';
+    tabPkmn.style.color = '#fff';
+    tabExc.classList.remove('active');
+    tabExc.style.background = 'transparent';
+    tabExc.style.color = '#6B7FA3';
+    tabBP.classList.remove('active');
+    tabBP.style.background = 'transparent';
+    tabBP.style.color = '#6B7FA3';
+
+    viewExc.style.display = 'none';
+    viewPkmn.style.display = 'flex';
+    viewBP.style.display = 'none';
+
+    // Button Visibility Logic
+    if (document.getElementById('btn-export-bp-zip')) document.getElementById('btn-export-bp-zip').style.display = 'none';
+    if (document.getElementById('btn-gen-pack')) document.getElementById('btn-gen-pack').style.display = 'inline-flex';
+    if (document.getElementById('sel-count-badge')) document.getElementById('sel-count-badge').style.display = 'inline-flex';
+
+    if (window.renderPokemonList) window.renderPokemonList();
+    localStorage.setItem('bp_view', 'pokemon');
+  });
+
   tabBP.addEventListener('click', () => {
     tabBP.classList.add('active');
     tabBP.style.background = '#2A3347';
@@ -356,8 +386,12 @@ document.addEventListener('DOMContentLoaded', () => {
     tabExc.classList.remove('active');
     tabExc.style.background = 'transparent';
     tabExc.style.color = '#6B7FA3';
+    tabPkmn.classList.remove('active');
+    tabPkmn.style.background = 'transparent';
+    tabPkmn.style.color = '#6B7FA3';
 
     viewExc.style.display = 'none';
+    viewPkmn.style.display = 'none';
     viewBP.style.display = 'flex';
     
     // Button Visibility Logic
@@ -373,6 +407,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedView = localStorage.getItem('bp_view');
   if (savedView === 'battlepass') {
       tabBP.click();
+  } else if (savedView === 'pokemon') {
+      tabPkmn.click();
   } else {
       tabExc.click(); // Ensure buttons visibility correct in initial state
   }
