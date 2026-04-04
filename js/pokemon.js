@@ -16,11 +16,12 @@ const savedOverrides = localStorage.getItem('pkmn_overrides');
 const initialOverrides = savedOverrides ? JSON.parse(savedOverrides) : {};
 
 const POKEMON_STATE = {
-  selected: null, // Dex ID of the last selected for config/preview
+  selected: null,       // Dex ID del Pokémon seleccionado
+  selectedSpawnIdx: 0,  // Índice del spawn seleccionado si tiene varios
   activeGen: 0,
   activeType: 'all',
   search: '',
-  blocked: initialBlocked, // Set con dex numbers de los Pokémon bloqueados
+  blocked: initialBlocked,
   globalConfig: initialGlobalCfg,
   overrides: initialOverrides // dex -> { level, weight, biomes }
 };
@@ -158,6 +159,50 @@ function initPokemonTab() {
   });
 }
 
+/**
+ * Obtiene los datos de spawn por defecto del Pokémon desde POKEMON_SPAWN_DATA.
+ * Si tiene varios spawns, devuelve el del índice seleccionado.
+ */
+function getDefaultSpawnCfg(pokemonId) {
+  const spawns = (typeof POKEMON_SPAWN_DATA !== 'undefined') ? POKEMON_SPAWN_DATA[pokemonId] : null;
+  if (!spawns || spawns.length === 0) return null;
+  const idx = POKEMON_STATE.selectedSpawnIdx || 0;
+  const spawn = spawns[Math.min(idx, spawns.length - 1)];
+  const biomesStr = Array.isArray(spawn.biomes) ? spawn.biomes.join('\n') : '';
+  return {
+    level: spawn.level || '1-60',
+    weight: spawn.weight || 1.0,
+    biomes: biomesStr,
+    context: spawn.context || 'grounded',
+    bucket: spawn.bucket || 'common',
+    presets: spawn.presets || ['natural', 'wild'],
+    allSpawns: spawns
+  };
+}
+
+/**
+ * Renderiza los tabs de selector de spawn si el Pokémon tiene varios spawn entries.
+ */
+function renderSpawnSelector(p) {
+  const container = document.getElementById('pkmn-spawn-selector');
+  if (!container) return;
+  const spawns = (typeof POKEMON_SPAWN_DATA !== 'undefined') ? POKEMON_SPAWN_DATA[p.id] : null;
+  if (!spawns || spawns.length <= 1) {
+    container.style.display = 'none';
+    return;
+  }
+  container.style.display = 'flex';
+  container.innerHTML = spawns.map((s, i) => {
+    const active = i === (POKEMON_STATE.selectedSpawnIdx || 0);
+    return `<button 
+      onclick="POKEMON_STATE.selectedSpawnIdx=${i}; refreshConfigUI(); renderPokemonJSON();"
+      style="flex:1; padding:4px 6px; font-size:10px; background:${ active ? 'rgba(74,144,217,0.2)' : 'transparent'};
+        border:1px solid ${ active ? '#4A90D9' : '#2A3347'}; border-radius:4px; color:${ active ? '#4A90D9' : '#6B7FA3'};
+        cursor:pointer; transition:all 0.2s;"
+    >Spawn ${i+1}${s.context ? ' · '+s.context : ''}</button>`;
+  }).join('');
+}
+
 function refreshConfigUI() {
   const selectedDex = POKEMON_STATE.selected;
   const cbOverride = document.getElementById('pkmn-override-check');
@@ -165,33 +210,70 @@ function refreshConfigUI() {
   const weightInput = document.getElementById('pkmn-cfg-weight');
   const biomesInput = document.getElementById('pkmn-cfg-biomes');
   const configTitle = document.getElementById('pkmn-config-title');
+  const defaultBadge = document.getElementById('pkmn-default-badge');
   
   if (selectedDex) {
+    const p = POKEMON_DB.find(i => i.dex === selectedDex);
     const hasOverride = !!POKEMON_STATE.overrides[selectedDex];
     cbOverride.checked = hasOverride;
-    configTitle.textContent = "Ajustes Individuales";
-    configTitle.style.color = hasOverride ? "#E6DB74" : "#6B7FA3";
     
-    // Si tiene override, cargar sus valores. Si no, cargar globales como visualización.
-    const cfg = hasOverride ? POKEMON_STATE.overrides[selectedDex] : POKEMON_STATE.globalConfig;
+    // Obtener la configuración a mostrar: override > datos reales del jar > global
+    let cfg, source;
+    if (hasOverride) {
+      cfg = POKEMON_STATE.overrides[selectedDex];
+      source = 'override';
+    } else {
+      const defaultCfg = p ? getDefaultSpawnCfg(p.id) : null;
+      if (defaultCfg) {
+        cfg = defaultCfg;
+        source = 'default';
+      } else {
+        cfg = POKEMON_STATE.globalConfig;
+        source = 'global';
+      }
+    }
+    
     levelInput.value = cfg.level;
     weightInput.value = cfg.weight;
     biomesInput.value = cfg.biomes;
     
-    // Si cbOverride NO está checked, desactivar inputs visualmente
+    // Mostrar de dónde vienen estos datos
+    if (defaultBadge) {
+      if (source === 'override') {
+        configTitle.textContent = 'Excepción Individual';
+        configTitle.style.color = '#E6DB74';
+        defaultBadge.textContent = '✏️ Override activo';
+        defaultBadge.style.color = '#E6DB74';
+      } else if (source === 'default') {
+        configTitle.textContent = 'Datos del Juego (por defecto)';
+        configTitle.style.color = '#A6E22E';
+        defaultBadge.textContent = '📦 Datos reales de Cobblemon';
+        defaultBadge.style.color = '#A6E22E';
+      } else {
+        configTitle.textContent = 'Sin datos — Usando Config Global';
+        configTitle.style.color = '#6B7FA3';
+        defaultBadge.textContent = '🌐 Usando ajuste global';
+        defaultBadge.style.color = '#6B7FA3';
+      }
+    }
+    
+    // Los inputs solo son editables si override está activo
     levelInput.disabled = !hasOverride;
     weightInput.disabled = !hasOverride;
     biomesInput.disabled = !hasOverride;
     
   } else {
     // Modo Global
-    configTitle.textContent = "Ajustes Globales de Aparición";
-    configTitle.style.color = "#E6DB74";
+    configTitle.textContent = 'Ajustes Globales de Aparición';
+    configTitle.style.color = '#E6DB74';
+    if (defaultBadge) {
+      defaultBadge.textContent = 'Se aplican a todos los Pokémon sin excepción individual';
+      defaultBadge.style.color = '#6B7FA3';
+    }
     const cfg = POKEMON_STATE.globalConfig;
     levelInput.value = cfg.level;
     weightInput.value = cfg.weight;
     biomesInput.value = cfg.biomes;
-    
     levelInput.disabled = false;
     weightInput.disabled = false;
     biomesInput.disabled = false;
@@ -204,6 +286,7 @@ function renderPokemonJSON() {
 
   const out = document.getElementById('pkmn-json-output');
   const p = POKEMON_DB.find(i => i.dex === dex);
+  if (!p) return;
   const isBlocked = POKEMON_STATE.blocked.has(dex);
   
   if (isBlocked) {
@@ -212,9 +295,24 @@ function renderPokemonJSON() {
     return;
   }
 
-  // Active spawn generation logic
-  const cfg = POKEMON_STATE.overrides[dex] || POKEMON_STATE.globalConfig;
-  const biomesArr = cfg.biomes.split('\n').map(b => b.trim()).filter(b => b.length > 0);
+  // Prioridad: override individual > datos reales por defecto > config global
+  let cfg, context = 'grounded', bucket = 'common', presets = ['natural', 'wild'];
+  if (POKEMON_STATE.overrides[dex]) {
+    cfg = POKEMON_STATE.overrides[dex];
+  } else {
+    const defaultCfg = getDefaultSpawnCfg(p.id);
+    if (defaultCfg) {
+      cfg = defaultCfg;
+      context = defaultCfg.context || 'grounded';
+      bucket = defaultCfg.bucket || 'common';
+      presets = defaultCfg.presets || ['natural', 'wild'];
+    } else {
+      cfg = POKEMON_STATE.globalConfig;
+    }
+  }
+
+  const biomesStr = cfg.biomes || '';
+  const biomesArr = biomesStr.split('\n').map(b => b.trim()).filter(b => b.length > 0);
   
   const code = {
     "enabled": true,
@@ -224,13 +322,10 @@ function renderPokemonJSON() {
         {
             "id": `${p.id}-1`,
             "pokemon": p.id,
-            "presets": [
-                "natural",
-                "wild"
-            ],
+            "presets": presets,
             "type": "pokemon",
-            "context": "grounded",
-            "bucket": "common",
+            "context": context,
+            "bucket": bucket,
             "level": cfg.level,
             "weight": parseFloat(cfg.weight),
             "condition": {
@@ -306,15 +401,16 @@ function renderPokemonGrid() {
       <div class="pkmn-grid-types">${typesHtml}</div>
     `;
 
-    // Click behavior:
-    // Left click: Select for configuration
+    // Click izquierdo: Seleccionar para configurar
     card.addEventListener('click', (e) => {
       e.stopPropagation();
       POKEMON_STATE.selected = p.dex;
+      POKEMON_STATE.selectedSpawnIdx = 0; // Reset al primer spawn
       renderPokemonGrid();
-      document.getElementById('pkmn-preview-filename').textContent = `Configuración - ${p.name}`;
+      document.getElementById('pkmn-preview-filename').textContent = `Configuración — ${p.name}`;
       document.getElementById('pkmn-override-toggle-container').style.display = 'flex';
       refreshConfigUI();
+      renderSpawnSelector(p);
       renderPokemonJSON();
     });
 
