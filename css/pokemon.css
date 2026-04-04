@@ -148,6 +148,30 @@
   box-shadow: inset 0 0 0 2px rgba(239,83,80,0.3);
 }
 
+/* State: Seleccionado (clic izquierdo) */
+.pkmn-grid-card.selected {
+  border-color: #4A90D9;
+  background: #1A2540;
+  box-shadow: 0 0 0 3px rgba(74,144,217,0.35), 0 6px 20px rgba(0,0,0,0.4);
+  transform: translateY(-3px);
+}
+
+/* State: Excepción Individual configurada (estrella dorada) */
+.pkmn-grid-card.has-override {
+  border-color: #E6DB74;
+  box-shadow: 0 4px 12px rgba(230,219,116,0.2);
+}
+
+.pkmn-grid-card.has-override::after {
+  content: "★";
+  position: absolute;
+  top: 6px; right: 8px;
+  color: #E6DB74;
+  font-size: 11px;
+  line-height: 1;
+  text-shadow: 0 0 6px rgba(230,219,116,0.6);
+}
+
 .pkmn-grid-img-wrap {
   width: 90px;
   height: 90px;
@@ -196,6 +220,33 @@
   justify-content: center;
   margin-top: 4px;
 }
+
+/* ── Spawn Config Panel ── */
+#pkmn-config-panel input:disabled,
+#pkmn-config-panel textarea:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #0A0D14 !important;
+}
+
+#pkmn-config-panel input:not(:disabled):focus,
+#pkmn-config-panel textarea:not(:disabled):focus {
+  outline: none;
+  border-color: #4A90D9 !important;
+  box-shadow: 0 0 0 2px rgba(74,144,217,0.2);
+}
+
+#pkmn-config-panel input:not(:disabled):hover,
+#pkmn-config-panel textarea:not(:disabled):hover {
+  border-color: #3A5070 !important;
+}
+
+/* Override checkbox label style when active */
+#pkmn-override-toggle-container input:checked + span,
+#pkmn-override-toggle-container.active {
+  color: #E6DB74;
+}
+
 
 /* ── Pokemon Tooltip (Drops) ── */
 .pokemon-tooltip {
