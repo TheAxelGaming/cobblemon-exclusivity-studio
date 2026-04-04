@@ -23,7 +23,8 @@ const POKEMON_STATE = {
   search: '',
   blocked: initialBlocked,
   globalConfig: initialGlobalCfg,
-  overrides: initialOverrides // dex -> { level, weight, biomes }
+  overrides: initialOverrides, // dex -> { level, weight, biomes }
+  dirtyFields: new Set()       // Campos modificados por el usuario
 };
 
 function saveConfigState() {
@@ -69,6 +70,7 @@ function initPokemonTab() {
     POKEMON_STATE.blocked.clear();
     POKEMON_STATE.selected = null;
     POKEMON_STATE.overrides = {};
+    POKEMON_STATE.dirtyFields.clear();
     saveConfigState();
     document.getElementById('pkmn-json-output').innerHTML = '<span style="color:#75715E">// Usa la configuración de arriba para moldear el JSON.</span>';
     document.getElementById('pkmn-preview-filename').textContent = 'Configuración Global';
@@ -81,6 +83,7 @@ function initPokemonTab() {
   document.getElementById('pkmn-grid').addEventListener('click', (e) => {
     if(e.target.id === 'pkmn-grid') {
       POKEMON_STATE.selected = null;
+      POKEMON_STATE.dirtyFields.clear();
       document.getElementById('pkmn-preview-filename').textContent = 'Configuración Global';
       document.getElementById('pkmn-override-toggle-container').style.display = 'none';
       refreshConfigUI();
@@ -127,36 +130,164 @@ function initPokemonTab() {
   refreshConfigUI();
   
   const cbOverride = document.getElementById('pkmn-override-check');
+
+  // Rastrear campos modificados (dirty tracking)
+  const dirtyIndicator = document.getElementById('pkmn-dirty-indicator');
+  ['pkmn-cfg-level', 'pkmn-cfg-weight', 'pkmn-cfg-biomes'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      POKEMON_STATE.dirtyFields.add(id);
+      if (dirtyIndicator) dirtyIndicator.style.display = 'block';
+    });
+  });
+
+  // Helper para ocultar el indicador dirty
+  function clearDirtyUI() {
+    POKEMON_STATE.dirtyFields.clear();
+    if (dirtyIndicator) dirtyIndicator.style.display = 'none';
+  }
+
   cbOverride.addEventListener('change', () => {
     if (!POKEMON_STATE.selected) return;
     const dex = POKEMON_STATE.selected;
     if (cbOverride.checked) {
-      // Activar override copiando valores globales iniciales
-      POKEMON_STATE.overrides[dex] = { ...POKEMON_STATE.globalConfig };
+      // Activar override: copiar valores que ya se muestran (default del juego o global)
+      const p = POKEMON_DB.find(i => i.dex === dex);
+      const defaultCfg = p ? getDefaultSpawnCfg(p.id) : null;
+      const base = defaultCfg || POKEMON_STATE.globalConfig;
+      POKEMON_STATE.overrides[dex] = { ...base };
     } else {
       // Remover override
       delete POKEMON_STATE.overrides[dex];
     }
+    clearDirtyUI();
     refreshConfigUI();
     saveConfigState();
     renderPokemonJSON();
   });
   
   document.getElementById('btn-save-pkmn-cfg').addEventListener('click', () => {
-    const level = document.getElementById('pkmn-cfg-level').value;
-    const weight = parseFloat(document.getElementById('pkmn-cfg-weight').value) || 5.4;
-    const biomes = document.getElementById('pkmn-cfg-biomes').value;
-    
-    if (POKEMON_STATE.selected && cbOverride.checked) {
-      POKEMON_STATE.overrides[POKEMON_STATE.selected] = { level, weight, biomes };
-      showToast(`Ajustes guardados para el Pokémon`);
-    } else {
-      POKEMON_STATE.globalConfig = { level, weight, biomes };
-      showToast(`Ajustes globales guardados`);
-    }
-    saveConfigState();
-    renderPokemonJSON();
+    savePkmnConfig(POKEMON_STATE.selected);
   });
+
+  // Botón: Aplicar a todos los Pokémon activos (no bloqueados)
+  document.getElementById('btn-apply-active-pkmn').addEventListener('click', () => {
+    const activeList = POKEMON_DB.filter(p => !POKEMON_STATE.blocked.has(p.dex));
+    if (activeList.length === 0) {
+      showToast('No hay Pokémon activos a los que aplicar la configuración.', 'warn');
+      return;
+    }
+    const levelVal  = document.getElementById('pkmn-cfg-level').value.trim();
+    const weightVal = document.getElementById('pkmn-cfg-weight').value.trim();
+    const biomesVal = document.getElementById('pkmn-cfg-biomes').value.trim();
+    const dirty = POKEMON_STATE.dirtyFields;
+
+    activeList.forEach(p => {
+      // Obtener base actual del Pokémon
+      const existing = POKEMON_STATE.overrides[p.dex];
+      const defaultCfg = getDefaultSpawnCfg(p.id);
+      const base = existing || defaultCfg || { ...POKEMON_STATE.globalConfig };
+
+      const updated = { ...base };
+      if (dirty.has('pkmn-cfg-level')   && levelVal)  updated.level  = levelVal;
+      if (dirty.has('pkmn-cfg-weight')  && weightVal) updated.weight = parseFloat(weightVal) || base.weight;
+      if (dirty.has('pkmn-cfg-biomes')  && biomesVal) updated.biomes = biomesVal;
+
+      // Solo crear override si hay algo que difiere de los datos reales del juego
+      const hasChanges = dirty.size > 0 && (levelVal || weightVal || biomesVal);
+      if (hasChanges) {
+        POKEMON_STATE.overrides[p.dex] = updated;
+      }
+    });
+
+    clearDirtyUI();
+    saveConfigState();
+    renderPokemonGrid();
+    if (POKEMON_STATE.selected) renderPokemonJSON();
+    showToast(`✅ Cambios aplicados a ${activeList.length} Pokémon activos`);
+  });
+}
+
+/**
+ * Vuelve inmediatamente a la configuración global, deseleccionando cualquier Pokémon.
+ * Llamado desde el botón "Config Global" del panel derecho.
+ */
+function resetToGlobalConfig() {
+  POKEMON_STATE.selected = null;
+  POKEMON_STATE.dirtyFields.clear();
+
+  // Ocultar indicador dirty si estaba visible
+  const di = document.getElementById('pkmn-dirty-indicator');
+  if (di) di.style.display = 'none';
+
+  // Resetear UI del panel
+  document.getElementById('pkmn-preview-filename').textContent = 'Configuración Global';
+  document.getElementById('pkmn-override-toggle-container').style.display = 'none';
+  document.getElementById('pkmn-json-output').innerHTML = '<span style="color:#75715E">// Ajustes globales — se aplican a todos los Pokémon\n// sin excepción individual configurada.</span>';
+
+  // Ocultar selector de spawn si estaba abierto
+  const spawnSel = document.getElementById('pkmn-spawn-selector');
+  if (spawnSel) spawnSel.style.display = 'none';
+
+  refreshConfigUI();
+
+  // Feedback visual en el botón
+  const btn = document.getElementById('btn-global-cfg');
+  if (btn) {
+    btn.style.background = 'rgba(74,144,217,0.3)';
+    btn.style.borderColor = '#4A90D9';
+    setTimeout(() => {
+      btn.style.background = 'rgba(74,144,217,0.1)';
+      btn.style.borderColor = 'rgba(74,144,217,0.3)';
+    }, 400);
+  }
+
+  // Re-render grid para quitar el "selected" visual de alguna card
+  renderPokemonGrid();
+}
+
+/**
+ * Guarda la configuración del panel para un Pokémon concreto o globalmente.
+ * Solo modifica los campos que el usuario tocó (dirty fields).
+ */
+function savePkmnConfig(selectedDex) {
+  const levelInput  = document.getElementById('pkmn-cfg-level');
+  const weightInput = document.getElementById('pkmn-cfg-weight');
+  const biomesInput = document.getElementById('pkmn-cfg-biomes');
+  const cbOverride  = document.getElementById('pkmn-override-check');
+  const dirty = POKEMON_STATE.dirtyFields;
+
+  const isIndividual = selectedDex && cbOverride.checked;
+
+  // Obtener la config base actual (lo que ya había guardado)
+  let base;
+  if (isIndividual) {
+    const p = POKEMON_DB.find(i => i.dex === selectedDex);
+    const defaultCfg = p ? getDefaultSpawnCfg(p.id) : null;
+    base = POKEMON_STATE.overrides[selectedDex] || defaultCfg || { ...POKEMON_STATE.globalConfig };
+  } else {
+    base = { ...POKEMON_STATE.globalConfig };
+  }
+
+  const updated = { ...base };
+
+  // Solo sobreescribir campos que el usuario modificó explícitamente
+  if (dirty.has('pkmn-cfg-level')  && levelInput.value.trim())  updated.level  = levelInput.value.trim();
+  if (dirty.has('pkmn-cfg-weight') && weightInput.value.trim()) updated.weight = parseFloat(weightInput.value) || base.weight;
+  if (dirty.has('pkmn-cfg-biomes') && biomesInput.value.trim()) updated.biomes = biomesInput.value.trim();
+
+  if (isIndividual) {
+    POKEMON_STATE.overrides[selectedDex] = updated;
+    showToast('✅ Solo los campos modificados fueron guardados para este Pokémon');
+  } else {
+    POKEMON_STATE.globalConfig = updated;
+    showToast('✅ Solo los campos modificados fueron guardados globalmente');
+  }
+
+  POKEMON_STATE.dirtyFields.clear();
+  const di = document.getElementById('pkmn-dirty-indicator');
+  if (di) di.style.display = 'none';
+  saveConfigState();
+  renderPokemonJSON();
 }
 
 /**
@@ -211,11 +342,25 @@ function refreshConfigUI() {
   const biomesInput = document.getElementById('pkmn-cfg-biomes');
   const configTitle = document.getElementById('pkmn-config-title');
   const defaultBadge = document.getElementById('pkmn-default-badge');
+  const weightWrap = document.getElementById('pkmn-cfg-weight-wrap');
+  const biomesWrap = document.getElementById('pkmn-cfg-biomes-wrap');
+  const fieldsGrid = document.getElementById('pkmn-cfg-fields-grid');
   
   if (selectedDex) {
+    // Modo individual — mostrar todos los campos
+    if (weightWrap) weightWrap.style.display = 'block';
+    if (biomesWrap) biomesWrap.style.display = 'block';
+    if (fieldsGrid) fieldsGrid.style.gridTemplateColumns = '1fr 1fr';
+
     const p = POKEMON_DB.find(i => i.dex === selectedDex);
     const hasOverride = !!POKEMON_STATE.overrides[selectedDex];
     cbOverride.checked = hasOverride;
+
+    // Mostrar "Aplicar a Activos" solo en modo individual
+    const applyBtn = document.getElementById('btn-apply-active-pkmn');
+    const actionBtns = document.getElementById('pkmn-action-btns');
+    if (applyBtn) applyBtn.style.display = 'flex';
+    if (actionBtns) actionBtns.style.gridTemplateColumns = '1fr 1fr';
     
     // Obtener la configuración a mostrar: override > datos reales del jar > global
     let cfg, source;
@@ -263,20 +408,25 @@ function refreshConfigUI() {
     biomesInput.disabled = !hasOverride;
     
   } else {
-    // Modo Global
-    configTitle.textContent = 'Ajustes Globales de Aparición';
+    // Modo Global — solo nivel, sin botón "Aplicar a Activos"
+    if (weightWrap) weightWrap.style.display = 'none';
+    if (biomesWrap) biomesWrap.style.display = 'none';
+    if (fieldsGrid) fieldsGrid.style.gridTemplateColumns = '1fr';
+
+    const applyBtn = document.getElementById('btn-apply-active-pkmn');
+    const actionBtns = document.getElementById('pkmn-action-btns');
+    if (applyBtn) applyBtn.style.display = 'none';
+    if (actionBtns) actionBtns.style.gridTemplateColumns = '1fr';
+
+    configTitle.textContent = 'Nivel Global de Aparición';
     configTitle.style.color = '#E6DB74';
     if (defaultBadge) {
-      defaultBadge.textContent = 'Se aplican a todos los Pokémon sin excepción individual';
+      defaultBadge.textContent = 'Se aplica a todos los Pokémon sin excepción individual';
       defaultBadge.style.color = '#6B7FA3';
     }
     const cfg = POKEMON_STATE.globalConfig;
     levelInput.value = cfg.level;
-    weightInput.value = cfg.weight;
-    biomesInput.value = cfg.biomes;
     levelInput.disabled = false;
-    weightInput.disabled = false;
-    biomesInput.disabled = false;
   }
 }
 
@@ -406,6 +556,7 @@ function renderPokemonGrid() {
       e.stopPropagation();
       POKEMON_STATE.selected = p.dex;
       POKEMON_STATE.selectedSpawnIdx = 0; // Reset al primer spawn
+      POKEMON_STATE.dirtyFields.clear(); // Limpiar campos sucios al cambiar selección
       renderPokemonGrid();
       document.getElementById('pkmn-preview-filename').textContent = `Configuración — ${p.name}`;
       document.getElementById('pkmn-override-toggle-container').style.display = 'flex';

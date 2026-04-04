@@ -622,11 +622,20 @@ html, body {
     </main>
 
     <aside id="pkmn-panel-right" class="panel-right" style="display:flex; flex-direction:column;">
-      <div style="padding:12px 14px;border-bottom:1px solid #2A3347;display:flex;align-items:center;justify-content:space-between; flex-shrink:0;">
-        <span style="font-size:12px;color:#6B7FA3;font-family:'JetBrains Mono',monospace;" id="pkmn-preview-filename">Configuración Global</span>
-        <div style="display:flex; gap:8px;">
-          <button class="btn-ghost" id="btn-import-pkmn" style="font-size:11px; padding:4px 8px; border-color:#4CAF5044; color:#4CAF50;" title="Importar código">📥 Importar</button>
-          <button class="btn-ghost" id="btn-export-pkmn" style="font-size:11px; padding:4px 8px; border-color:#F5C51844; color:#F5C518;" title="Obtener código">📤 Compartir</button>
+      <div style="padding:8px 14px;border-bottom:1px solid #2A3347;display:flex;align-items:center;justify-content:space-between; flex-shrink:0; gap:8px;">
+        <!-- Botón siempre visible para volver a Config Global -->
+        <button id="btn-global-cfg" onclick="resetToGlobalConfig()"
+          style="display:flex; align-items:center; gap:5px; background:rgba(74,144,217,0.1); border:1px solid rgba(74,144,217,0.3);
+                 border-radius:6px; padding:5px 10px; font-size:11px; color:#4A90D9; cursor:pointer; font-weight:600;
+                 transition:all 0.2s; white-space:nowrap; flex-shrink:0;"
+          title="Volver a la configuración global (aplica a todos)">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Config Global
+        </button>
+        <span style="font-size:11px;color:#6B7FA3;font-family:'JetBrains Mono',monospace; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; text-align:center;" id="pkmn-preview-filename">Configuración Global</span>
+        <div style="display:flex; gap:6px; flex-shrink:0;">
+          <button class="btn-ghost" id="btn-import-pkmn" style="font-size:11px; padding:4px 8px; border-color:#4CAF5044; color:#4CAF50;" title="Importar código">📥</button>
+          <button class="btn-ghost" id="btn-export-pkmn" style="font-size:11px; padding:4px 8px; border-color:#F5C51844; color:#F5C518;" title="Compartir">📤</button>
         </div>
       </div>
       
@@ -649,20 +658,20 @@ html, body {
         <div id="pkmn-spawn-selector" style="display:none; flex-wrap:wrap; gap:4px;"></div>
 
         <!-- Campos de configuración -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-          <div>
+        <div id="pkmn-cfg-fields-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div id="pkmn-cfg-level-wrap">
             <label style="font-size:10px; color:#6B7FA3; margin-bottom:3px; display:block; text-transform:uppercase; letter-spacing:0.04em;">Nivel</label>
             <input type="text" id="pkmn-cfg-level" placeholder="ej. 10-35" value="10-35" 
                    style="width:100%; box-sizing:border-box; background:#0F1117; border:1px solid #2A3347; border-radius:6px; padding:6px 10px; font-size:12px; color:#fff; font-family:'JetBrains Mono',monospace;">
           </div>
-          <div>
+          <div id="pkmn-cfg-weight-wrap">
             <label style="font-size:10px; color:#6B7FA3; margin-bottom:3px; display:block; text-transform:uppercase; letter-spacing:0.04em;">Peso</label>
             <input type="number" id="pkmn-cfg-weight" placeholder="ej. 5.4" value="5.4" step="0.1" 
                    style="width:100%; box-sizing:border-box; background:#0F1117; border:1px solid #2A3347; border-radius:6px; padding:6px 10px; font-size:12px; color:#fff;">
           </div>
         </div>
 
-        <div>
+        <div id="pkmn-cfg-biomes-wrap">
           <label style="font-size:10px; color:#6B7FA3; margin-bottom:3px; display:block; text-transform:uppercase; letter-spacing:0.04em;">Biomas (uno por línea)</label>
           <textarea id="pkmn-cfg-biomes" rows="4" 
                     style="width:100%; box-sizing:border-box; background:#0F1117; border:1px solid #2A3347; border-radius:6px; padding:8px 10px; font-size:10px; color:#fff; font-family:'JetBrains Mono',monospace; resize:vertical;">#cobblemon:is_forest
@@ -671,10 +680,23 @@ html, body {
 #cobblemon:is_snowy_taiga
 #cobblemon:is_taiga</textarea>
         </div>
-        
-        <button class="btn-primary" id="btn-save-pkmn-cfg" style="width:100%; padding:8px;">
-          Guardar Configuración
-        </button>
+
+        <!-- Indicador de campos modificados -->
+        <div id="pkmn-dirty-indicator" style="font-size:10px; color:#6B7FA3; display:none; text-align:center; background:rgba(230,219,116,0.07); border-radius:4px; padding:3px 6px;">
+          ✏️ Campos modificados — <span style="color:#E6DB74;">sin guardar</span>
+        </div>
+
+        <!-- Botones de acción -->
+        <div id="pkmn-action-btns" style="display:grid; grid-template-columns:1fr; gap:8px;">
+          <button class="btn-primary" id="btn-save-pkmn-cfg" style="padding:8px; font-size:12px;" title="Guarda solo los campos que hayas modificado">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Guardar
+          </button>
+          <button class="btn-ghost" id="btn-apply-active-pkmn" style="display:none; padding:8px; font-size:12px; border-color:rgba(166,226,46,0.3); color:#A6E22E;" title="Aplica los campos modificados a todos los Pokémon que NO están bloqueados">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+            Aplicar a Activos
+          </button>
+        </div>
       </div>
 
       <div class="json-preview" id="pkmn-json-output" style="flex:1;"><span style="color:#75715E">// Usa la configuración de arriba para moldear el JSON.</span></div>
