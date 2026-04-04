@@ -5,16 +5,30 @@
 const savedBlocked = localStorage.getItem('pkmn_blocked');
 const initialBlocked = savedBlocked ? new Set(JSON.parse(savedBlocked)) : new Set();
 
-const POKEMON_STATE = {
-  selected: null, // Dex ID of the last selected for JSON preview
-  activeGen: 0, // 0 = all
-  activeType: 'all',
-  search: '',
-  blocked: initialBlocked // Set con dex numbers de los Pokémon bloqueados
+const savedGlobalCfg = localStorage.getItem('pkmn_global_cfg');
+const initialGlobalCfg = savedGlobalCfg ? JSON.parse(savedGlobalCfg) : {
+  level: "10-35",
+  weight: 5.4,
+  biomes: "#cobblemon:is_forest\n#cobblemon:is_hills\n#cobblemon:is_snowy_forest\n#cobblemon:is_snowy_taiga\n#cobblemon:is_taiga"
 };
 
-function saveBlockedState() {
+const savedOverrides = localStorage.getItem('pkmn_overrides');
+const initialOverrides = savedOverrides ? JSON.parse(savedOverrides) : {};
+
+const POKEMON_STATE = {
+  selected: null, // Dex ID of the last selected for config/preview
+  activeGen: 0,
+  activeType: 'all',
+  search: '',
+  blocked: initialBlocked, // Set con dex numbers de los Pokémon bloqueados
+  globalConfig: initialGlobalCfg,
+  overrides: initialOverrides // dex -> { level, weight, biomes }
+};
+
+function saveConfigState() {
   localStorage.setItem('pkmn_blocked', JSON.stringify([...POKEMON_STATE.blocked]));
+  localStorage.setItem('pkmn_global_cfg', JSON.stringify(POKEMON_STATE.globalConfig));
+  localStorage.setItem('pkmn_overrides', JSON.stringify(POKEMON_STATE.overrides));
 }
 
 // ============================================================
@@ -39,11 +53,10 @@ function initPokemonTab() {
     });
   });
   
-  // Bloquear Todos
   document.getElementById('btn-block-all-pkmn').addEventListener('click', () => {
     if(confirm("¿Estás seguro de que quieres bloquear TODOS los Pokémon a la vez? (Los 1025 serán marcados)")) {
       POKEMON_DB.forEach(p => POKEMON_STATE.blocked.add(p.dex));
-      saveBlockedState();
+      saveConfigState();
       renderPokemonGrid();
       showToast("¡Se han bloqueado todos los Pokémon!");
     }
@@ -51,13 +64,28 @@ function initPokemonTab() {
 
   // Limpiar Selección (Pokemons)
   document.getElementById('btn-clear-pkmn').addEventListener('click', () => {
-    if(POKEMON_STATE.blocked.size > 0 && !confirm("¿Seguro que quieres limpiar toda tu selección actual?")) return;
+    if(POKEMON_STATE.blocked.size > 0 && !confirm("¿Seguro que quieres limpiar toda tu selección y configuración actual?")) return;
     POKEMON_STATE.blocked.clear();
-    saveBlockedState();
     POKEMON_STATE.selected = null;
-    document.getElementById('pkmn-json-output').innerHTML = '<span style="color:#75715E">// Selecciona un Pokémon para ver el JSON.</span>';
-    document.getElementById('pkmn-preview-filename').textContent = '—';
+    POKEMON_STATE.overrides = {};
+    saveConfigState();
+    document.getElementById('pkmn-json-output').innerHTML = '<span style="color:#75715E">// Usa la configuración de arriba para moldear el JSON.</span>';
+    document.getElementById('pkmn-preview-filename').textContent = 'Configuración Global';
+    document.getElementById('pkmn-override-toggle-container').style.display = 'none';
+    refreshConfigUI();
     renderPokemonGrid();
+  });
+
+  // Background clic deselecciona
+  document.getElementById('pkmn-grid').addEventListener('click', (e) => {
+    if(e.target.id === 'pkmn-grid') {
+      POKEMON_STATE.selected = null;
+      document.getElementById('pkmn-preview-filename').textContent = 'Configuración Global';
+      document.getElementById('pkmn-override-toggle-container').style.display = 'none';
+      refreshConfigUI();
+      renderPokemonGrid();
+      document.getElementById('pkmn-json-output').innerHTML = '<span style="color:#75715E">// Usa la configuración de arriba para moldear el JSON.</span>';
+    }
   });
 
   // Exportar Código (Base64 csv)
@@ -83,9 +111,9 @@ function initPokemonTab() {
       const arr = decoded.split(',').map(n => parseInt(n)).filter(n => !isNaN(n) && n > 0 && n <= 1025);
       if (arr.length > 0) {
         POKEMON_STATE.blocked = new Set(arr);
-        saveBlockedState();
+        saveConfigState();
         renderPokemonGrid();
-        showToast(`¡Se importaron ${arr.length} Pokémon exitosamente!`);
+        showToast(`¡Se importaron ${arr.length} Pokémon bloqueados exitosamente!`);
       } else {
         alert("El código no contiene ningún Pokémon válido.");
       }
@@ -93,6 +121,126 @@ function initPokemonTab() {
       alert("El código introducido no es válido.");
     }
   });
+
+  // Config UI listeners
+  refreshConfigUI();
+  
+  const cbOverride = document.getElementById('pkmn-override-check');
+  cbOverride.addEventListener('change', () => {
+    if (!POKEMON_STATE.selected) return;
+    const dex = POKEMON_STATE.selected;
+    if (cbOverride.checked) {
+      // Activar override copiando valores globales iniciales
+      POKEMON_STATE.overrides[dex] = { ...POKEMON_STATE.globalConfig };
+    } else {
+      // Remover override
+      delete POKEMON_STATE.overrides[dex];
+    }
+    refreshConfigUI();
+    saveConfigState();
+    renderPokemonJSON();
+  });
+  
+  document.getElementById('btn-save-pkmn-cfg').addEventListener('click', () => {
+    const level = document.getElementById('pkmn-cfg-level').value;
+    const weight = parseFloat(document.getElementById('pkmn-cfg-weight').value) || 5.4;
+    const biomes = document.getElementById('pkmn-cfg-biomes').value;
+    
+    if (POKEMON_STATE.selected && cbOverride.checked) {
+      POKEMON_STATE.overrides[POKEMON_STATE.selected] = { level, weight, biomes };
+      showToast(`Ajustes guardados para el Pokémon`);
+    } else {
+      POKEMON_STATE.globalConfig = { level, weight, biomes };
+      showToast(`Ajustes globales guardados`);
+    }
+    saveConfigState();
+    renderPokemonJSON();
+  });
+}
+
+function refreshConfigUI() {
+  const selectedDex = POKEMON_STATE.selected;
+  const cbOverride = document.getElementById('pkmn-override-check');
+  const levelInput = document.getElementById('pkmn-cfg-level');
+  const weightInput = document.getElementById('pkmn-cfg-weight');
+  const biomesInput = document.getElementById('pkmn-cfg-biomes');
+  const configTitle = document.getElementById('pkmn-config-title');
+  
+  if (selectedDex) {
+    const hasOverride = !!POKEMON_STATE.overrides[selectedDex];
+    cbOverride.checked = hasOverride;
+    configTitle.textContent = "Ajustes Individuales";
+    configTitle.style.color = hasOverride ? "#E6DB74" : "#6B7FA3";
+    
+    // Si tiene override, cargar sus valores. Si no, cargar globales como visualización.
+    const cfg = hasOverride ? POKEMON_STATE.overrides[selectedDex] : POKEMON_STATE.globalConfig;
+    levelInput.value = cfg.level;
+    weightInput.value = cfg.weight;
+    biomesInput.value = cfg.biomes;
+    
+    // Si cbOverride NO está checked, desactivar inputs visualmente
+    levelInput.disabled = !hasOverride;
+    weightInput.disabled = !hasOverride;
+    biomesInput.disabled = !hasOverride;
+    
+  } else {
+    // Modo Global
+    configTitle.textContent = "Ajustes Globales de Aparición";
+    configTitle.style.color = "#E6DB74";
+    const cfg = POKEMON_STATE.globalConfig;
+    levelInput.value = cfg.level;
+    weightInput.value = cfg.weight;
+    biomesInput.value = cfg.biomes;
+    
+    levelInput.disabled = false;
+    weightInput.disabled = false;
+    biomesInput.disabled = false;
+  }
+}
+
+function renderPokemonJSON() {
+  const dex = POKEMON_STATE.selected;
+  if (!dex) return;
+
+  const out = document.getElementById('pkmn-json-output');
+  const p = POKEMON_DB.find(i => i.dex === dex);
+  const isBlocked = POKEMON_STATE.blocked.has(dex);
+  
+  if (isBlocked) {
+    const code = { "enabled": false };
+    out.innerHTML = syntaxHighlight(JSON.stringify(code, null, 2));
+    return;
+  }
+
+  // Active spawn generation logic
+  const cfg = POKEMON_STATE.overrides[dex] || POKEMON_STATE.globalConfig;
+  const biomesArr = cfg.biomes.split('\n').map(b => b.trim()).filter(b => b.length > 0);
+  
+  const code = {
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": `${p.id}-1`,
+            "pokemon": p.id,
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": cfg.level,
+            "weight": parseFloat(cfg.weight),
+            "condition": {
+                "biomes": biomesArr
+            }
+        }
+    ]
+  };
+
+  out.innerHTML = syntaxHighlight(JSON.stringify(code, null, 2));
 }
 
 // ============================================================
@@ -121,23 +269,24 @@ function renderPokemonGrid() {
     </div>`;
     return;
   } else {
-    // Restaurar grid
     list.style.display = 'grid';
   }
 
-  // Optimize appending by grouping fragments if needed, but innerHTML assignment is usually fine via document fragment:
   const fragment = document.createDocumentFragment();
 
   filtered.forEach(p => {
+    let classes = ['pkmn-grid-card', 'fade-in'];
+
     const isBlocked = POKEMON_STATE.blocked.has(p.dex);
+    if (isBlocked) classes.push('blocked-card');
+
+    if (POKEMON_STATE.selected === p.dex) classes.push('selected');
+    
+    // Si tiene un override local configurado, añadir clase para styling local visual
+    if (POKEMON_STATE.overrides[p.dex]) classes.push('has-override');
 
     const card = document.createElement('div');
-    card.className = `pkmn-grid-card fade-in ${isBlocked ? 'blocked-card' : ''}`;
-    
-    // Toggle on click
-    card.addEventListener('click', () => {
-        togglePokemonBlock(p.dex);
-    });
+    card.className = classes.join(' ');
 
     // Tooltip events (Drops)
     card.addEventListener('mouseenter', (e) => showPokemonTooltip(e, p));
@@ -145,8 +294,6 @@ function renderPokemonGrid() {
     card.addEventListener('mouseleave', hidePokemonTooltip);
 
     const typesHtml = p.types.map(t => `<span class="type-badge type-${t}">${t}</span>`).join('');
-    
-    // Official artwork load slower, but for a grid it's superior. Let's use the lowres local sprite but style it nicely. Using official artwork:
     const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${p.dex}.png`;
 
     card.innerHTML = `
@@ -154,56 +301,41 @@ function renderPokemonGrid() {
         <img src="${imgUrl}" class="pkmn-grid-img" loading="lazy" 
              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B7FA3%22 stroke-width=%222%22%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%2210%22/%3E%3Cline x1=%2212%22 y1=%2222%22 x2=%2212%22 y2=%2212%22/%3E%3C/svg%3E'"/>
       </div>
-      <div class="pkmn-grid-name">${p.name}</div>
+      <div class="pkmn-grid-name">${p.name} ${POKEMON_STATE.overrides[p.dex] && !isBlocked ? '<span style="color:#E6DB74;">★</span>' : ''}</div>
       <div class="pkmn-grid-dex">#${p.dex.toString().padStart(4, '0')} &bull; Gen ${p.gen}</div>
       <div class="pkmn-grid-types">${typesHtml}</div>
     `;
+
+    // Click behavior:
+    // Left click: Select for configuration
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      POKEMON_STATE.selected = p.dex;
+      renderPokemonGrid();
+      document.getElementById('pkmn-preview-filename').textContent = `Configuración - ${p.name}`;
+      document.getElementById('pkmn-override-toggle-container').style.display = 'flex';
+      refreshConfigUI();
+      renderPokemonJSON();
+    });
+
+    // Right click: Toggle Block state
+    card.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      if (isBlocked) {
+        POKEMON_STATE.blocked.delete(p.dex);
+      } else {
+        POKEMON_STATE.blocked.add(p.dex);
+      }
+      saveConfigState();
+      renderPokemonGrid();
+      if(POKEMON_STATE.selected === p.dex) renderPokemonJSON();
+    });
 
     fragment.appendChild(card);
   });
   
   list.appendChild(fragment);
 }
-
-// ============================================================
-// TOGGLE & PREVIEW
-// ============================================================
-
-function togglePokemonBlock(dex) {
-  const currentlyBlocked = POKEMON_STATE.blocked.has(dex);
-  if (currentlyBlocked) {
-    POKEMON_STATE.blocked.delete(dex);
-  } else {
-    POKEMON_STATE.blocked.add(dex);
-  }
-  saveBlockedState();
-  
-  POKEMON_STATE.selected = dex;
-
-  updatePokemonPreview(dex);
-  renderPokemonGrid();
-}
-
-function buildPokemonSpawnBlockJSON() {
-  return {
-    "enabled": false
-  };
-}
-
-function updatePokemonPreview(dex) {
-  const p = POKEMON_DB.find(i => i.dex === dex);
-  const out = document.getElementById('pkmn-json-output');
-  const fn = document.getElementById('pkmn-preview-filename');
-  
-  const paddedDex = dex.toString().padStart(4, '0');
-  const filename = `${paddedDex}_${p.id}.json`;
-  
-  fn.textContent = `data/${NAMESPACE}/spawn_pool_world/${filename}`;
-  out.innerHTML = syntaxHighlight(buildPokemonSpawnBlockJSON());
-}
-
-// Assign globally to be called from app.js tab logic if needed
-window.renderPokemonList = renderPokemonGrid;
 
 // ============================================================
 // TOOLTIP (DROPS) LOGIC
@@ -213,7 +345,6 @@ function showPokemonTooltip(e, p) {
   const tooltip = document.getElementById('pokemon-tooltip');
   if (!tooltip) return;
 
-  // Si no hay drops registrados o el array está vacío
   if (!p.drops || p.drops.length === 0) {
     tooltip.innerHTML = `
       <div class="pokemon-tooltip-title">
@@ -223,7 +354,6 @@ function showPokemonTooltip(e, p) {
       <div class="pokemon-tooltip-empty">Sin drops registrados</div>
     `;
   } else {
-    // Construir la lista de ítems
     let dropsHtml = `<div class="pokemon-tooltip-title">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -234,10 +364,8 @@ function showPokemonTooltip(e, p) {
     </div>`;
 
     p.drops.forEach(drop => {
-      // Intentamos encontrarlo en minecraft_data.js o ITEMS
-      let imgSrc = `assets/items/${drop.id}.png`; // por defecto asumimos minúscula
+      let imgSrc = `assets/items/${drop.id}.png`;
       
-      // Fallback por si la imagen no carga, mostraremos un icono genérico
       dropsHtml += `
         <div class="pokemon-tooltip-item">
           <div class="pokemon-tooltip-item-left">

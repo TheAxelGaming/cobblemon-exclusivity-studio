@@ -172,20 +172,69 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       
-      // Inject Pokemon Blocks
+      // Inject Pokemon Blocks & Spawns
       let pkmnCount = 0;
-      packPokemons.forEach(dex => {
-        const p = POKEMON_DB.find(i => i.dex === dex);
-        if (p) {
-          const paddedDex = dex.toString().padStart(4, '0');
+      let pkmnBlockedCount = 0;
+      let pkmnAllowedCount = 0;
+      
+      const pState = typeof POKEMON_STATE !== 'undefined' ? POKEMON_STATE : null;
+      
+      if (pState && typeof POKEMON_DB !== 'undefined') {
+        POKEMON_DB.forEach(p => {
+          const paddedDex = p.dex.toString().padStart(4, '0');
           const filename = `${paddedDex}_${p.id}.json`;
-          zip.file(
-            `data/${NAMESPACE}/spawn_pool_world/${filename}`,
-            JSON.stringify({ "enabled": false }, null, 2)
-          );
-          pkmnCount++;
-        }
-      });
+          const isBlocked = pState.blocked.has(p.dex);
+          
+          if (isBlocked) {
+            zip.file(
+              `data/${NAMESPACE}/spawn_pool_world/${filename}`,
+              JSON.stringify({ "enabled": false }, null, 2)
+            );
+            pkmnBlockedCount++;
+            pkmnCount++;
+          } else {
+            // Generar spawn avanzado para los permitidos
+            const cfg = pState.overrides[p.dex] || pState.globalConfig || { level: "10-35", weight: 5.4, biomes: [] };
+            let biomesArr = [];
+            if (cfg.biomes && typeof cfg.biomes === 'string') {
+              biomesArr = cfg.biomes.split('\n').map(b => b.trim()).filter(b => b.length > 0);
+            } else if (Array.isArray(cfg.biomes)) {
+              biomesArr = cfg.biomes;
+            }
+            
+            const spawnConfig = {
+              "enabled": true,
+              "neededInstalledMods": [],
+              "neededUninstalledMods": [],
+              "spawns": [
+                  {
+                      "id": `${p.id}-1`,
+                      "pokemon": p.id,
+                      "presets": [
+                          "natural",
+                          "wild"
+                      ],
+                      "type": "pokemon",
+                      "context": "grounded",
+                      "bucket": "common",
+                      "level": cfg.level,
+                      "weight": parseFloat(cfg.weight),
+                      "condition": {
+                          "biomes": biomesArr
+                      }
+                  }
+              ]
+            };
+            
+            zip.file(
+              `data/${NAMESPACE}/spawn_pool_world/${filename}`,
+              JSON.stringify(spawnConfig, null, 2)
+            );
+            pkmnAllowedCount++;
+            pkmnCount++;
+          }
+        });
+      }
 
       showToast('📦', `Generando Pack (${packItems.length} ítems, ${pkmnCount} pokémon)…`);
 

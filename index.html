@@ -612,15 +612,49 @@ html, body {
       </div>
     </main>
 
-    <aside id="pkmn-panel-right" class="panel-right">
-      <div style="padding:12px 14px;border-bottom:1px solid #2A3347;display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:12px;color:#6B7FA3;font-family:'JetBrains Mono',monospace;" id="pkmn-preview-filename">—</span>
+    <aside id="pkmn-panel-right" class="panel-right" style="display:flex; flex-direction:column;">
+      <div style="padding:12px 14px;border-bottom:1px solid #2A3347;display:flex;align-items:center;justify-content:space-between; flex-shrink:0;">
+        <span style="font-size:12px;color:#6B7FA3;font-family:'JetBrains Mono',monospace;" id="pkmn-preview-filename">Configuración Global</span>
         <div style="display:flex; gap:8px;">
           <button class="btn-ghost" id="btn-import-pkmn" style="font-size:11px; padding:4px 8px; border-color:#4CAF5044; color:#4CAF50;" title="Importar código">📥 Importar</button>
           <button class="btn-ghost" id="btn-export-pkmn" style="font-size:11px; padding:4px 8px; border-color:#F5C51844; color:#F5C518;" title="Obtener código">📤 Compartir</button>
         </div>
       </div>
-      <div class="json-preview" id="pkmn-json-output"><span style="color:#75715E">// Selecciona un Pokémon para ver el JSON.</span></div>
+      
+      <!-- Panel de configuración de spawns -->
+      <div id="pkmn-config-panel" style="padding:16px; border-bottom:1px solid #2A3347; display:flex; flex-direction:column; gap:12px; flex-shrink:0;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <h3 id="pkmn-config-title" style="margin:0; font-size:13px; color:#E6DB74; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Ajustes Globales de Aparición</h3>
+          <label id="pkmn-override-toggle-container" style="display:none; align-items:center; gap:6px; font-size:11px; color:#C8D4E8; cursor:pointer;">
+            <input type="checkbox" id="pkmn-override-check" style="accent-color:#E6DB74;">
+            Habilitar Excepción Individual
+          </label>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="form-group">
+            <label style="font-size:11px; color:#6B7FA3; margin-bottom:4px; display:block;">Rango de Nivel</label>
+            <input type="text" id="pkmn-cfg-level" placeholder="ej. 10-35" value="10-35" style="width:100%; background:#0F1117; border:1px solid #2A3347; border-radius:6px; padding:6px 10px; font-size:12px; color:#fff;">
+          </div>
+          <div class="form-group">
+            <label style="font-size:11px; color:#6B7FA3; margin-bottom:4px; display:block;">Peso (Probabilidad)</label>
+            <input type="number" id="pkmn-cfg-weight" placeholder="ej. 5.4" value="5.4" step="0.1" style="width:100%; background:#0F1117; border:1px solid #2A3347; border-radius:6px; padding:6px 10px; font-size:12px; color:#fff;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="font-size:11px; color:#6B7FA3; margin-bottom:4px; display:block;">Biomas Permitidos (uno por línea)</label>
+          <textarea id="pkmn-cfg-biomes" rows="4" style="width:100%; background:#0F1117; border:1px solid #2A3347; border-radius:6px; padding:8px 10px; font-size:11px; color:#fff; font-family:'JetBrains Mono',monospace; resize:vertical;">#cobblemon:is_forest
+#cobblemon:is_hills
+#cobblemon:is_snowy_forest
+#cobblemon:is_snowy_taiga
+#cobblemon:is_taiga</textarea>
+        </div>
+        
+        <button class="btn-primary" id="btn-save-pkmn-cfg" style="width:100%; margin-top:4px;">Guardar Configuración</button>
+      </div>
+
+      <div class="json-preview" id="pkmn-json-output" style="flex:1;"><span style="color:#75715E">// Usa la configuración de arriba para moldear el JSON.</span></div>
     </aside>
   </div><!-- /pokemon-view -->
 
